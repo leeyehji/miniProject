@@ -1,0 +1,527 @@
+/* 폰트 -----------------------------------------------------------------------*/
+
+@font-face {
+    font-family: "ffont";
+    src: url("../font/온글잎밑미.ttf") format("truetype");
+}
+
+body {
+    font-family: "ffont";
+}
+
+/* 배너와 네비게이션 스타일 ---------------------------------------------*/
+
+nav {
+    margin-right: -5%;
+}
+
+nav>li>a {
+    white-space: nowrap;
+    /* 호버시 글씨 밑으로 내려감 방지 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 50%;
+}
+
+.menu-content>li {
+    position: relative;
+    list-style-type: none;
+    text-align: left;
+    left: 10%;
+
+}
+
+.menu-content>li>a {
+    text-align: center;
+    display: block;
+    padding: 15% 15%;
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+.nav>li {
+    padding-right: 7%;
+}
+
+.nav>li>a {
+    margin-left: 50%;
+    text-decoration: none;
+
+}
+
+.container {
+    position: absolute;
+    bottom: 10%;
+    background-color: #ffffff;
+    transition: 0.5s ease;
+    display: flex;
+    overflow: hidden;
+}
+
+.menu:hover .container {
+    bottom: 70%;
+}
+
+.menu {
+    display: flex;
+}
+
+section {
+    display: flex;
+    white-space: nowrap;
+    /* 글씨 밑으로 내려감 방지 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 19%;
+    padding-right: 15%;
+    margin-top: 0.9%;
+}
+
+/* 입력 필드 스타일 조정 */
+aside {
+    display: flex;
+    white-space: nowrap;
+    /* 호버시 글씨 밑으로 내려감 방지 */
+    text-overflow: ellipsis;
+    padding: 1.4% 0 0 9%;
+}
+
+.banner {
+    list-style-type: none;
+    /* 앞에 점 지우기 */
+    display: block;
+    background-color: #ffffff;
+    /* 메뉴바 색상 */
+    width: 100%;
+    bottom: 0%;
+    box-shadow: 5px 5px 5px 5px gray;
+}
+
+.nav_section .nav {
+    padding: 0.5%;
+    list-style-type: none;
+    /* 앞에 점 지우기 */
+    display: flex;
+    /* Flex 컨테이너로 지정합니다. */
+    align-items: center;
+    /* 가로 축(세로선) 기준으로 중앙 정렬합니다. */
+    margin-top: 1.2%;
+    flex-grow: 0;
+    /* 나머지 요소들과 비교해 콘텐츠의 크기만큼 공간을 차지하도록 설정합니다. */
+    font-size: 20px;
+    /* 로고의 글자 크기 */
+}
+
+/* 네비게이션 링크 스타일 */
+section .nav a {
+    padding-left: 6%;
+    padding-right: 5%;
+}
+
+/* 로고 스타일 조정 */
+section .nav {
+    margin-top: 1.2%;
+    /* 나머지 요소들과 비교해 콘텐츠의 크기만큼 공간을 차지하도록 설정합니다. */
+    font-size: 20px;
+    /* 로고의 글자 크기 */
+}
+
+section a:hover {
+    color: #6b97f7;
+    /* 호버 상태일 때의 색상 */
+}
+
+/* footer 풋터 -----------------------------------------------------------------------------*/
+
+footer .sns_list .tit {
+    display: inline-block;
+    margin-top: 1.4%;
+    padding-left: 3.3%;
+    font-weight: 700;
+    color: #333;
+    font-size: 16px;
+}
+
+footer .sns_list {
+    /* 여행 후기를 SNS에 남겨주세요!  */
+    display: block;
+    clear: both;
+    text-align: center;
+    margin-right: 10%;
+}
+
+footer ul>li {
+    list-style-type: none;
+    display: inline-block;
+    /* 앞에 점 지우기 */
+}
+
+footer .sns_list .icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 40px 40px;
+    vertical-align: middle;
+}
+
+footer .sns_list .sns_name {
+
+    display: inline-block;
+    margin-left: 0.3%;
+    color: #666;
+    font-size: 15px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+footer .sns_list ul {
+    /* 아이콘 */
+    padding: 0.2%;
+    display: flex;
+    margin-left: 10%;
+    justify-content: space-between;
+}
+
+/* sns 아이콘 */
+footer .sns_list .icon_blog {
+    background-image: url(../icon/sns1.png);
+}
+
+footer .sns_list li:hover .icon_blog {
+    background-image: url(../icon/sns1-2.png);
+}
+
+footer .sns_list .icon_post {
+    background-image: url(../icon/sns2.png);
+}
+
+footer .sns_list li:hover .icon_post {
+    background-image: url(../icon/sns2-2.png);
+}
+
+footer .sns_list .icon_band {
+    background-image: url(../icon/sns3.png);
+}
+
+footer .sns_list li:hover .icon_band {
+    background-image: url(../icon/sns3-2.png);
+}
+
+footer .sns_list .icon_facebook {
+    background-image: url(../icon/sns4.png);
+}
+
+footer .sns_list li:hover .icon_facebook {
+    background-image: url(../icon/sns4-2.png);
+}
+
+footer .sns_list .icon_twitter {
+    background-image: url(../icon/sns5.png);
+}
+
+footer .sns_list li:hover .icon_twitter {
+    background-image: url(../icon/sns5-2.png);
+}
+
+footer .sns_list .icon_kakaostory {
+    background-image: url(../icon/sns6.png);
+}
+
+footer .sns_list li:hover .icon_kakaostory {
+    background-image: url(../icon/sns6-2.png);
+}
+
+footer .sns_list .icon_instagram {
+    background-image: url(../icon/sns7.png);
+}
+
+footer .sns_list li:hover .icon_instagram {
+    background-image: url(../icon/sns7-2.png);
+}
+
+/*-----------------------------------------------------*/
+
+.btm_menu a {
+    display: flex;
+    white-space: nowrap;
+    /* 호버시 글씨 밑으로 내려감 방지 */
+    text-overflow: ellipsis;
+    margin-left: 10%;
+    color: #666;
+    font-size: 20px;
+    letter-spacing: -0.25px;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+
+footer .badak {
+    position: relative;
+    /* 상대 위치 지정 */
+    display: flex;
+}
+
+footer .badak>div {
+    position: absolute;
+    /* 절대 위치 지정 */
+    right: 5%;
+    /* 우측에서 0의 위치에 배치 */
+}
+
+/*----------------------------------------------------------------*/
+
+/* slide.css */
+
+* {
+    box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Hide the images by default */
+
+.mySlides>img {
+    width: 100%;
+    height: 500px;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev,
+.next {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* slide.css */
+
+/* 추천여행지 */
+
+h2 {
+    display: block;
+    clear: both;
+    text-align: center;
+}
+
+.destination-grid {
+    display: grid;
+    gap: 1%;
+    grid-template-columns: repeat(5, 1fr); /* 두 개의 열을 동일한 너비로 설정 */
+}
+
+.destination-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destination-card h3 {
+    margin: 0;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 18px;
+}
+
+.destination-card p {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* 추천여행지 */
+
+/* 캘린더 */
+
+.two {
+    background-color: antiquewhite;
+    position: relative;
+
+}
+
+.travel_planner {
+    display: flex;
+    height: 400px;
+
+}
+
+.selected_date {
+    width: 300px;
+    /* 박스의 넓이 */
+    height: 100px;
+    /* 박스의 높이 */
+    padding: 20px;
+    /* 내부 여백 */
+    background-color: white;
+    /* 백그라운드 색상 */
+    border: 2px solid black;
+    /* 박스의 테두리 */
+    right: 200px;
+    /* 오른쪽에서부터의 거리 */
+    top: 110px;
+    /* 위쪽에서부터의 거리 */
+    box-shadow: 5px 5px 5px 5px gray;
+}
+
+.selected_date h3 {
+    margin: 5px 0;
+    /* 상하 여백 */
+}
+
+.calendar {
+    background-color: white;
+    width: 500px;
+    border: 1px solid #ccc;
+    padding: 10px;
+
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.month {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.prev_btn,
+.next_btn {
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.days {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.day {
+    width: 30px;
+    text-align: center;
+}
+
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+
+}
+
+.date {
+    text-align: center;
+    padding: 5px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+
+}
+
+.date:hover {
+    background-color: #ccc;
+}
+
+
+/* 캘린더 */
