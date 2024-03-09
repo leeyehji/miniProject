@@ -11,6 +11,21 @@ $(function () {
     );
   });
 
+  var mybutton = document.getElementById("myButton");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        mybutton.style.display = "block";
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+
+    
   // mulslide.js
 
   var slides = document.querySelector('.slides'),

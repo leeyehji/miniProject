@@ -222,7 +222,79 @@ aside .login {
     padding-left: 5%
 }
 
-/* footer 풋터 -----------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------고객센터------ */
+
+#container {
+    background: url("./image/bg_snb.png") repeat-y 170px 0;
+    padding-bottom: 80%;
+    margin-top: -8px;
+    margin-bottom: -8px;
+    border: 1px solid #000000;
+}
+
+.snb{
+    float: left;
+    width: 22%;
+}
+
+.snb h2 {
+    padding: 28px 14px 8px 0;
+    margin-left: 11px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #cccccc;
+    color: #000000;
+    font-size: 28px;
+    text-align: right;
+}
+.snb ul {
+    list-style-type: none;
+    margin-left: 11px;
+}
+.snb ul a {
+    display: block;
+    padding-right: 14px;
+    color: #000000;
+    font-size: 20px;
+    text-align: right;
+    text-decoration: none;
+    line-height: 40px;
+}
+
+#content {
+    position: relative; 
+    float: right;
+    width: 560px;
+}
+
+#inquiryContent {
+    display: none;
+}
+
+#qnaContent{
+    display: none;
+}
+
+#content h2 {
+    padding: 24px 0;
+    color: #000000;
+    font-size: 24px;
+}
+
+#content .text {
+    margin-left: 148px;
+}
+#content .text p {
+    margin-bottom: 15px;
+    line-height: 1.4; /* 글자 사이 여백 */
+}
+
+#wrap{
+    background-color: antiquewhite;
+    width: 760px;
+    margin: 0 auto;
+}
+
+/* ---footer---------------------------------------------------------------------------- */
 
 footer .sns_list .tit {
     display: inline-block;
@@ -366,265 +438,3 @@ footer .badak>div {
     right: 5%;
     /* 우측에서 0의 위치에 배치 */
 }
-
-/*----------------------------------------------------------------*/
-
-/* slide.css */
-
-* {
-    box-sizing: border-box
-    
-}
-
-/* Slideshow container */
-.slideshow-container {
-    width: 100%;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    /* margin-left: 20%;
-    margin-right: 20%; */
-
-}
-
-/* Hide the images by default */
-
-.mySlides>img {
-    /* 사진 크기 */
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-    right: 0;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev,
-.next {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Caption text */
-.text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-}
-
-/* The dots/bullets/indicators */
-.dotBtn {
-    display: flex;
-    justify-content: center;
-}
-
-.dot {
-    text-align:center;
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active,
-.dot:hover {
-    background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-/* slide.css */
-
-/* 추천여행지 */
-
-.hot {
-    width: 100%;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-}
-
-h2 {
-    display: block;
-    clear: both;
-    text-align: center;
-}
-
-.destination-grid {
-    display: grid;
-    gap: 1%;
-    grid-template-columns: repeat(5, 1fr); /* 두 개의 열을 동일한 너비로 설정 */
-}
-
-.destination-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.destination-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.destination-card h3 {
-    margin: 0;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    font-size: 18px;
-}
-
-.destination-card p {
-    padding: 10px;
-    font-size: 16px;
-}
-
-/* 추천여행지 */
-
-/* 캘린더 */
-
-.calender_section {
-    width: 100%;
-    background-color: antiquewhite;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 1%;
-
-}
-
-.travel_planner {
-    display: flex;
-    height: auto;
-
-}
-
-.selected_date {
-    width: auto;
-    height: auto;
-    /* 박스의 넓이 */
-    padding: 10px;
-    /* 내부 여백 */
-    background-color: white;
-    /* 백그라운드 색상 */
-    border: 2px solid black;
-    /* 박스의 테두리 */
-    right: 200px;
-    /* 오른쪽에서부터의 거리 */
-    top: 110px;
-    /* 위쪽에서부터의 거리 */
-}
-
-.selected_date h3 {
-    margin: 5px 0;
-    /* 상하 여백 */
-}
-
-.calendar {
-    background-color: white;
-    width: 500px;
-    border: 1px solid #ccc;
-    padding: 10px;
-
-}
-
-.calendar_container {
-    text-align: center;
-}
-
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.month {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.prev_btn,
-.next_btn {
-    background-color: #ccc;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.days {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.day {
-    width: 30px;
-    text-align: center;
-}
-
-.dates {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-
-}
-
-.date {
-    text-align: center;
-    padding: 5px;
-    background-color: #f1f1f1;
-    cursor: pointer;
-
-}
-
-.date:hover {
-    background-color: #ccc;
-}
-
-
-/* 캘린더 */

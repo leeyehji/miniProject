@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/serviceCenter.css" />
+</head>
+<body>
+    <button onclick="topFunction()" id="myButton" title="Go to top">TOP</button>
+  <header class="banner">
+    <div class="menu">
+      <div class="container"></div>
+
+      <nav>
+        <li>
+          <a class="logo">Nadeuli</a>
+        </li>
+      </nav>
+
+      <section class="nav_section">
+        <ul class="nav">
+          <li class="top-menu-item">
+            <a href="miniproject.html">홈</a>
+            <ul class="menu-content">
+              <br><br><br><br><br>
+            </ul>
+          </li>
+        
+          <li class="top-menu-item">
+            <a href="miniproject.html">여행지</a>
+            <div class="submenu">
+              <ul class="menu-content">
+                <br>
+                <li><a href="#">테마별 여행지</a></li>
+                <li><a href="#">여행지 TOP 10</a></li>
+              </ul>
+            </div>
+          </li>
+        
+          <li class="top-menu-item">
+            <a href="miniproject.html">후기</a>
+            <ul class="menu-content">
+                <br>
+              <li><a href="#">여행 후기</a></li>
+              <li><a href="#">블로그 후기</a></li>
+            </ul>
+          </li>
+        
+          <li class="top-menu-item">
+            <a href="miniproject.html">이벤트</a>
+            <ul class="menu-content">
+                <br>
+              <li><a href="#">진행중인 이벤트</a></li>
+              <li><a href="#">종료된 이벤트</a></li>
+            </ul>
+          </li>
+        
+          <li class="top-menu-item">
+            <a href="miniproject.html">고객센터</a>
+            <ul class="menu-content" >
+                <br>
+              <li><a href="#">1 : 1 문의</a></li>
+              <li><a href="#">Q&A</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      
+      <aside>
+        <div>
+          <input type="text" placeholder="여행을 가고싶다면 어디로.." title="검색" id="inp_search" autocomplete="off" />
+          <input type="button" id="searchBtn" value="검색" src="" />
+          <div class="menu-content"></div>
+        </div>
+
+        <div class="login">
+          <input type="button" id="loginBtn" value="로그인" src="" />
+          <input id="JoinBtn" type="button" value="회원가입" src="" />
+        </div>
+      </aside>
+
+    </div>
+  </header>
+
+    <hr>
+
+    <div id="wrap">
+
+        <div id="container">
+            <div class="snb"><!--snb-->
+                <h2>고객센터</h2>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">1 : 1 문의</a></li>
+                    <li><a href="#">Q & A</a></li>
+                </ul>
+            </div><!-- snb -->
+
+            <div id="content">
+
+                <div id="noticeContent">
+                    <h2>공지사항</h2>
+                   
+                </div>
+    
+                <div id="inquiryContent">
+                    <h2>1 : 1 문의</h2>
+                   
+                </div>
+    
+                <div id="qnaContent">
+                    <h2>Q & A</h2>
+                   
+                </div>
+
+            </div><!--content-->
+        </div><!--container-->
+
+    </div> <!-- wrap -->
+
+    <hr>
+
+    <footer>
+
+        <div class="sns_list">
+          <strong class="tit">여행 후기를 SNS에 남겨주세요!</strong>
+          <ul>
+            <li>
+              <a href="http://blog.naver.com" target="_blank" title="새창">
+                <span class="icon icon_blog"></span>
+                <em class="sns_name">네이버 블로그</em>
+              </a>
+            </li>
+            <li>
+              <a href="http://post.naver.com" target="_blank" title="새창">
+                <span class="icon icon_post"></span>
+                <em class="sns_name">포스트</em>
+              </a>
+            </li>
+            <li>
+              <a href="https://band.us" target="_blank" title="새창">
+                <span class="icon icon_band"></span>
+                <em class="sns_name">네이버<br />밴드</em>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com" target="_blank" title="새창">
+                <span class="icon icon_facebook"></span>
+                <em class="sns_name">페이스북</em>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com" target="_blank" title="새창">
+                <span class="icon icon_twitter"></span>
+                <em class="sns_name">엑스</em>
+              </a>
+            </li>
+            <li>
+              <a href="https://story.kakao.com" target="_blank" title="새창">
+                <span class="icon icon_kakaostory"></span>
+                <em class="sns_name">카카오<br />스토리</em>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com" target="_blank" title="새창">
+                <span class="icon icon_instagram"></span>
+                <em class="sns_name">인스타<br />그램</em>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <br>
+        <div>
+          <ul class="btm_menu">
+            <li><a href="javascript:" onclick="goTerm(1);" class="personal_info">개인정보처리방침</a></li>
+            <li><a href="javascript:" onclick="goTerm(2);">이용약관</a></li><!-- 0703 추가 -->
+            <li><a href="javascript:" onclick="goTerm(3);">위치기반서비스 이용약관</a></li><!-- 0717 추가 -->
+            <li><a href="" target="_blank" title="새창">저작권정책</a></li>
+            <li><a href="" target="_blank" title="새창">고객서비스헌장</a></li>
+            <li><a href="" target="_blank" title="새창">전자우편무단수집거부</a></li>
+            <li><a href="javascript:" onclick="goQA();" title="페이지이동">Q&amp;A</a></li>
+            <li><a href="" target="_blank" title="새창">찾아오시는 길</a></li>
+          </ul>
+        </div>
+        <br>
+        <hr />
+        <div class="badak">
+          <p>
+            미니프로젝트
+            <a href="https://naver.com">naver_cloud_camp</a>
+          </p>
+          <div>
+            <a href="https://api.visitkorea.or.kr/#/" target="_blank" title="새창"><img src="./css/image/Tour_api.png"
+                alt="TourAPI 4.0"></a>
+          </div>
+        </div>
+      </footer>
+
+</body> 
+
+<script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+<script src="./js/serviceCenter.js"></script>
+
+</html>
