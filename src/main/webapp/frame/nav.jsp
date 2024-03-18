@@ -28,6 +28,7 @@
 					<li><a href="../review/reviewWrite.jsp">후기 쓰기</a></li>
 				</ul>
 			</li>
+
 			<br>
 			<li><a href="#">블로그 후기</a></li>
 			<br>
