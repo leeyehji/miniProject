@@ -313,8 +313,8 @@ aside .login {
 
 /*page contennt*/
 #content {
-	min-width: 800px; /*1920*1080기준 px로 수정*/
-	width: 800px; /*min w= w*/
+	min-width: 1000px; /*1920*1080기준 px로 수정*/
+	width: 1000px; /*min w= w*/
 	padding: 40px 70px;
 	border-right: #A0E3F2 solid 3px;
 }
