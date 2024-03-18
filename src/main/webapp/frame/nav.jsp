@@ -22,7 +22,13 @@
 	
 	<li>후기
 		<ul class="nav-content">
-			<li><a href="#">여행 후기</a></li>
+			<li><a href="#">여행 후기</a>
+				<ul>
+					<li><a href="../review/reviewList.jsp">후기 목록</a></li>
+					<li><a href="../review/reviewWrite.jsp">후기 쓰기</a></li>
+				</ul>
+			</li>
+
 			<br>
 			<li><a href="#">블로그 후기</a></li>
 			<br>

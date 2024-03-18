@@ -16,14 +16,16 @@
 		<div class="themaBoard">
 			<div class="themaBoardImg"></div>
 			<div class="vertical-container">
-				<div class="themaTitle">테마관광지 제목</div>
+				<div class="themaTitle">경복궁</div>
+
 				<br>
 				<div class="themaText">
 					해당 관광지에 대한 설명입니다.<br> 해당 관광지에 대한 설명입니다.<br> 해당 관광지에 대한
 					설명입니다.<br> 해당 관광지에 대한 설명입니다.<br>
 				</div>
 				<br>
-				<div class="themaAddress">관광지 위치</div>
+				<div class="themaAddress">서울특별시 종로구 사직로 161</div>
+
 			</div>
 		</div>
 	</div>
