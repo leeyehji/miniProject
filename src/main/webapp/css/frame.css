@@ -228,6 +228,7 @@ aside .login {
 }
 
 #nadeuliNav {
+	margin-top: 45px;
 	border: #A0E3F2 solid;
 	border-radius: 10px;
 	width: 200px;
@@ -313,6 +314,12 @@ aside .login {
 
 /*page contennt*/
 #content {
+	min-width: 800px; /*1920*1080기준 px로 수정*/
+	width: 800px; /*min w= w*/
+	padding: 40px 70px;
+	border-right: #A0E3F2 solid 3px;
+}
+#main_map{
 	min-width: 800px; /*1920*1080기준 px로 수정*/
 	width: 800px; /*min w= w*/
 	padding: 40px 70px;
