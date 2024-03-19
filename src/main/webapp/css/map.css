@@ -4,11 +4,14 @@
     /*font-size: 18pt;*/
 }
 
+
 #main_map {
-    border-radius: 0;
-    height: 900px;
-    /*background-color: #fff5db;*/
+    min-width: 800px; /*1920*1080기준 px로 수정*/
+    width: 800px; /*min w= w*/
+    padding: 40px 70px;
+    border-right: #A0E3F2 solid 3px;
 }
+
 #main_map > .leftmain {
     float: left;
     margin-top: 0.5%;
@@ -19,6 +22,7 @@
     text-align: center;
     background-color: #dbf0ff;
 }
+
 #main_map > .leftmain > .clickedsubjectsub {
     width: 90px;
     margin: 200px auto 0 auto;
@@ -26,11 +30,13 @@
     font-size: 18px;
     border: 3px solid #bde3ff;
 }
+
 #main_map > .leftmain > .clickedsubject {
     margin: 50px auto;
     font-size: 14px;
     /* border: 3px solid #BDE3FF; */
 }
+
 #main_map > .leftmain > .clickedcontentsub {
     width: 90px;
     margin: 150px auto 0 auto;
@@ -38,6 +44,7 @@
     font-size: 18px;
     border: 3px solid #bde3ff;
 }
+
 #main_map > .leftmain > .clickedcontent {
     margin: 50px auto;
     font-size: 14px;
@@ -51,6 +58,7 @@
     height: 98%;
     background-color: #dbf0ff;
 }
+
 .middlemain > .clickthemap {
     margin: 50px 15% 40px 15%;
     text-align: center;
@@ -58,6 +66,7 @@
     border-radius: 10px;
     padding-top: 5px;
 }
+
 .middlemain > .mapmain {
     margin: 20px auto;
     position: relative;
@@ -79,6 +88,7 @@
     border-radius: 10px;
     text-align: center;
 }
+
 #main_map > .rightmain > .locationsub {
     width: 70px;
     margin: 60px auto 40px auto;
@@ -105,9 +115,11 @@
     padding-top: 5px;
     text-align: center;
 }
+
 #main_map > .rightmain > .theme {
     margin: auto;
 }
+
 .theme > button {
     text-align: center;
     display: inline-block;
@@ -121,9 +133,11 @@
     color: #fff; /* hover 시 텍스트 색상 */
     background-color: #3498db; /* hover 시 배경 색상 */
 }
+
 button.active {
     background-color: #3498db; /* 선택된 버튼의 배경 색상 */
 }
+
 /* main_map */
 
 .main_toursite {
@@ -133,6 +147,7 @@ button.active {
     background-color: #ffeadb;
     min-width: 1930px;
 }
+
 .main_toursite > h1 {
     height: 20px;
     /*font-size: 20pt;*/
@@ -140,6 +155,7 @@ button.active {
     padding-top: 5px;
     margin-left: 170px;
 }
+
 .flex-container-1 {
     width: 550px;
     margin-top: 35px;
@@ -149,14 +165,17 @@ button.active {
     display: inline-flex;
     align-items: center; /* 세로축 중앙 정렬 */
 }
+
 .flex-container-1 #img {
     width: 100px;
     height: 100px;
 }
+
 .flex-container #img {
     width: 100px;
     height: 100px;
 }
+
 .flex-container {
     width: 550px;
     display: inline-flex;
@@ -170,21 +189,27 @@ button.active {
     display: inline-block;
     flex-direction: column; /* 텍스트를 세로로 배열 */
 }
+
 .text-content #content h1 a {
     text-decoration-line: none;
 }
+
 .text-content #content h1 a:link {
     color: black;
 }
+
 .text-content #content h1 a:visited {
     color: black;
 }
+
 .text-content #content h1 a:hover {
     color: skyblue;
 }
+
 .text-content #content h1 a:active {
     color: darkblue;
 }
+
 /* main_toursite */
 
 /* footer */

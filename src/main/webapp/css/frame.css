@@ -228,7 +228,7 @@ aside .login {
 }
 
 #nadeuliNav {
-	margin-top: 45px;
+	margin-top: 50px;
 	border: #A0E3F2 solid;
 	border-radius: 10px;
 	width: 200px;
@@ -314,46 +314,17 @@ aside .login {
 
 /*page contennt*/
 #content {
-	min-width: 1000px; /*1920*1080기준 px로 수정*/
-	width: 1000px; /*min w= w*/
-	padding: 40px 70px;
-	border-right: #A0E3F2 solid 3px;
-}
-#main_map{
 	min-width: 800px; /*1920*1080기준 px로 수정*/
 	width: 800px; /*min w= w*/
 	padding: 40px 70px;
 	border-right: #A0E3F2 solid 3px;
 }
 
+
 /*footer*/
 /*site map*/
 
 /* footer 풋터 -----------------------------------------------------------------------------*/
-footer{
-	margin-top:40px;
-}
-footer #siteMap{
-	text-align:center;	
-}
-footer select{
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: #378CE7;
-            cursor: pointer;
-        }
-
-footer #siteMap>       button {
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: none;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-
 footer .sns_list .tit {
 	display: inline-block;
 	margin-top: 2%;

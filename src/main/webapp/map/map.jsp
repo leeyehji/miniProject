@@ -11,12 +11,12 @@
 </head>
 <body>
 <header>
-    <jsp:include page="../frame/header.jsp"></jsp:include>
+    <jsp:include page="../frame/header.jsp"/>
 </header>
 
 <div id="frameContent">
     <div id="frameNav">
-        <jsp:include page="../frame/nav.jsp"></jsp:include>
+        <jsp:include page="../frame/nav.jsp"/>
     </div>
     <div id="main_map">
         <div class="leftmain">
@@ -123,4 +123,56 @@
 <script src="../js/header.js"></script>
 <script src="../js/footer.js"></script>
 <script src="../js/mypage.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const jsonUrl = "./korea.json";
+
+        fetch(jsonUrl)
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error("데이터를 불러오는데 실패했습니다.");
+            })
+            .then((regionsData) => {
+                document
+                    .querySelectorAll(".location button")
+                    .forEach((button) => {
+                        button.addEventListener("click", function () {
+                            const regionData =
+                                regionsData.features.find(
+                                    (feature) =>
+                                        feature.properties.CTPRVN_CD ===
+                                        button.id
+                                );
+                            if (regionData) {
+                                document.getElementById(
+                                    "clickedsubject"
+                                ).textContent =
+                                    regionData.properties.CTP_KOR_NM;
+                                document.getElementById(
+                                    "clickedcontent"
+                                ).textContent =
+                                    regionData.properties.CTP_Description;
+
+                                // 모든 버튼의 'active' 클래스를 제거
+                                document
+                                    .querySelectorAll(
+                                        ".location button"
+                                    )
+                                    .forEach((btn) =>
+                                        btn.classList.remove("active")
+                                    );
+
+                                // 클릭한 버튼에만 'active' 클래스 추가
+                                button.classList.add("active");
+                            }
+                        });
+                    });
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    });
+</script>
 </html>

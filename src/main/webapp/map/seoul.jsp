@@ -65,6 +65,14 @@
                             geojson.resetStyle(e.target);
                             e.target.closeTooltip();
                         },
+                        click: function (e) {
+                            //클릭 이벤트 추가
+                            if (feature.properties.nm === "종로구") {
+                                window.location.href = "seoul/jongrogu.jsp"; // 종로를 클릭하면 jongrogu.jsp로 이동
+                            } else if (feature.properties.nm === "중구") {
+                                window.location.href = "seoul/junggu.jsp";
+                            }
+                        }
                     });
                 },
                 // 초기 스타일 설정

@@ -76,7 +76,7 @@
                             if (
                                 feature.properties.CTP_KOR_NM === "서울"
                             ) {
-                                window.location.href = "seoul.jsp"; // 서울을 클릭하면 seoul.html로 이동
+                                window.location.href = "seoul.jsp"; // 서울을 클릭하면 seoul.jsp로 이동
                             }
                         },
                     });
