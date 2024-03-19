@@ -46,7 +46,7 @@ display: inline-block;
     padding-left: 10px;
     border:#CAE9FF solid 3px;
     border-radius: 10px;
-    width:577px;
+    width:777px;
     height: 194px;
     font-size: 0.95em;
     color:rgb(77, 109, 142)
@@ -63,7 +63,7 @@ display: inline-block;
 
 .contentBox {
     height: 500px; /* 원하는 높이로 수정 */
-    width: 770px;
+    width: 970px;
     padding: 10px;
     margin: 10px 0 10px 0;
     font-weight: bolder;
