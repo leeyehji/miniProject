@@ -1,38 +1,52 @@
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="findId.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="../css/findId.css">
+<link rel="stylesheet" href="../css/memberJoin.css">
 </head>
-<head>
-    <link rel="stylesheet" href="memberjoin.css">
-    <link rel="JavaScript" href="">
-</head>
+
 <body>
-<div id="regist_wrap" class="wrap">
-    <div>
-        <h1>아이디 찾기</h1>
-        <form action="" method="post" name="regiform" id="regist_form" class="form" onsubmit="return sendit()">
-            <p><input type="text" name="username" id="username" placeholder="이름 입력"></p>
-            <p><input type="text" name="userphone" id="userphone" placeholder="전화번호 입력해주세요"></p>
-            <p><input type="text" name="useremail" id="useremail" placeholder="E-mail"></p>
+	<div id="regist_wrap" class="wrap">
+		<div>
+			<h1>아이디 찾기</h1>
+			<form action="" method="post" name="regiform" id="regist_form"
+				class="form" onsubmit="return sendit()">
+				<p>
+					<input type="text" name="username" id="username"
+						placeholder="이름 입력">
+				</p>
+				<p>
+					<input type="text" name="userphone" id="userphone"
+						placeholder="전화번호 입력해주세요">
+				</p>
+				<p>
+					<input type="text" name="useremail" id="useremail"
+						placeholder="E-mail">
+				</p>
 
-            <p><input type="submit" value="아이디찾기" class="signup_btn"></p>
-            <p class="pre_btn"><a href="">Login.</a></p>
+				<p>
+					<input type="submit" value="아이디찾기" class="signup_btn">
+				</p>
+				<p class="pre_btn">
+					<a href="">Login.</a>
+				</p>
 
 
-        </form>
-    </div>
-</div>
+			</form>
+		</div>
+	</div>
 
-<!-- JavaScript 코드 추가 -->
-<script>
+	<!-- JavaScript 코드 추가 -->
+	<script>
     const sendit = () => {
         // Input들을 각각 변수에 대입
         const username = document.regiform.username;
