@@ -4,16 +4,38 @@
 
 <footer>
 	<div id="siteMap">
-		<select id="site-select">
-			<option value="">사이트 선택...</option>
-			<option value="https://www.google.com">Google</option>
-			<option value="https://www.naver.com">Naver</option>
-			<option value="https://www.daum.net">Daum</option>
-		</select>
-		<button onclick="goToSite()">이동</button>
+		<div class="selectBox">
+			<select id="site-select1" class="site-select">
+				<option value="">관광 사이트 선택...</option>
+				<option value="https://www.daum.net">관광정보</option>
+				<option value="https://www.daum.net">가이드북</option>
+				<option value="https://www.daum.net">공공와이파이</option>
+				<option value="https://www.daum.net">템플스테이</option>
+				<option value="https://www.daum.net">TourAPI4.0</option>
+				<option value="https://www.daum.net">한국관광콘텐츠랩</option>
+			</select> <span class="siteSelectBtn"><img
+				src="https://design-science.or.kr/app/dubu_subcontent/docs/imgs/1586411111_arrow.png"></span>
+		</div>
+		<button id="goSite1" onclick="goToSite1()">이동</button>
+		
+		<div class="selectBox">
+			<select id="site-select2" class="site-select">
+				<option value="">기관 사이트 선택...</option>
+				<option value="https://www.naver.com">국가mice포털</option>
+				<option value="https://www.naver.com">국립현대미술관</option>
+				<option value="https://www.naver.com">서울관광재단</option>
+				<option value="https://www.naver.com">문화체육관광부</option>
+				<option value="https://www.naver.com">문화가 있는 날</option>
+				<option value="https://www.naver.com">박물관 길위의 인문학</option>
+			</select> <span class="siteSelectBtn"><img
+				src="https://design-science.or.kr/app/dubu_subcontent/docs/imgs/1586411111_arrow.png"></span>
+		</div>
+		<button id="goSite2" onclick="goToSite2()">이동</button>
 	</div>
+
+	<strong class="tit">여행 후기를 SNS에 남겨주세요!</strong>
+
 	<div class="sns_list">
-		<strong class="tit">여행 후기를 SNS에 남겨주세요!</strong>
 		<ul>
 			<li><a href="http://blog.naver.com" target="_blank" title="새창">
 					<span class="icon icon_blog"></span> <em class="sns_name">네이버
@@ -44,6 +66,7 @@
 			</a></li>
 		</ul>
 	</div>
+
 	<hr />
 	<br>
 	<div>
@@ -57,7 +80,8 @@
 			<li><a href="" target="_blank" title="새창">저작권정책</a></li>
 			<li><a href="" target="_blank" title="새창">고객서비스헌장</a></li>
 			<li><a href="" target="_blank" title="새창">전자우편무단수집거부</a></li>
-			<li><a href="javascript:" onclick="goQA();" title="페이지이동">Q&amp;A</a></li>
+			<li><a href="serviceCenter.html#qna" onclick="goQA();"
+				title="페이지이동">Q&amp;A</a></li>
 			<li><a href="" target="_blank" title="새창">찾아오시는 길</a></li>
 		</ul>
 	</div>
@@ -68,8 +92,9 @@
 			미니프로젝트 <a href="https://naver.com">naver_cloud_camp</a>
 		</p>
 		<div>
-			<a href="https://api.visitkorea.or.kr/#/" target="_blank" title="새창"><img
-				src="./css/image/Tour_api.png" alt="TourAPI 4.0"></a>
+			<a href="https://api.visitkorea.or.kr/#/" id="TourAPI"
+				target="_blank" title="새창"><img src="../css/image/Tour_api.png"
+				alt="TourAPI 4.0"></a>
 		</div>
 	</div>
 </footer>

@@ -14,9 +14,10 @@
 
 	<div class="boxContent">
 		<div class="themaBoard">
+		
 			<div class="themaBoardImg"></div>
 			<div class="vertical-container">
-				<div class="themaTitle">경복궁</div>
+				<div class="themaTitle"><a href="/miniProject/detail/detailPage.jsp">경복궁</a></div>
 
 				<br>
 				<div class="themaText">
@@ -27,7 +28,9 @@
 				<div class="themaAddress">서울특별시 종로구 사직로 161</div>
 
 			</div>
+			
 		</div>
+		
 	</div>
 
 	<div class="boxContent">

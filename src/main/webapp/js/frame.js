@@ -1,31 +1,34 @@
 /*header*/
-/*main menu nav*/
-$(function() {
-	$(".menu-content").hide();
+// 메뉴바 시작
+function toggleNavSections() {
+  var navSection = document.querySelector('.nav_section');
+  navSection.classList.toggle('show');
+}
 
-	$(".nav").hover(
-		function() {
-			$(this).find(".menu-content").stop(true, true).slideDown(300);
-		},
-		function() {
-			$(this).find(".menu-content").stop(true, true).slideUp(300);
-		}
-	);
+//재
+window.addEventListener('scroll', function () {
+  var menu = document.querySelector('div.menu');
+  var footer = document.querySelector('footer');
+  var toTopBtn = document.getElementById('myBtnTop');
+  var toBottomBtn = document.getElementById('myBtnBottom');
+
+  var menuPosition = menu.getBoundingClientRect();
+  var footerPosition = footer.getBoundingClientRect();
+
+  // div.menu가 화면에서 사라졌는지 확인합니다.
+  if (menuPosition.bottom < 0) {
+    toTopBtn.style.display = 'block'; // 버튼 표시
+  } else {
+    toTopBtn.style.display = 'none'; // 버튼 숨김
+  }
+
+  // footer가 화면에 보이는지 확인합니다.
+  if (footerPosition.top < window.innerHeight) {
+    toBottomBtn.style.display = 'none'; // 버튼 숨김
+  } else {
+    toBottomBtn.style.display = 'block'; // 버튼 표시
+  }
 });
-
-var mybutton = document.getElementById("myButton");
-
-window.onscroll = function() { scrollFunction() };
-
-function scrollFunction() {
-	mybutton.style.display = "block";
-}
-
-function topFunction() {
-	document.body.scrollTop = 0;
-	document.documentElement.scrollTop = 0;
-}
-
 
 
 /*contnent*/
@@ -44,17 +47,30 @@ $(function() {
 	});
 });
 
+
+/*로그인 페이지 */
+$("#loginBtn").click(function(){
+	window.location.href="/miniProject/member/login.jsp";
+} );
+/*회원가입페이지 */
+$("#JoinBtn").click(function(){
+	window.location.href="/miniProject/member/memberJoin.jsp";
+} );
 /*page content*/
 
 
 /*footer*/
 /*site map*/
-function goToSite() {
-	var site = document.getElementById('site-select').value;
-	if (site) {
-		window.location = site;
-	} else {
-		alert('사이트를 선택해주세요.');
+function goToSite1() {
+	var selectedSite1 = document.getElementById('site-select1').value;
+	if (selectedSite1 != "") {
+		window.open(selectedSite1, '_blank'); // 새 탭에서 선택한 사이트를 엽니다.
+	}
+}
+function goToSite2() {
+	var selectedSite2 = document.getElementById('site-select2').value;
+	if (selectedSite2 != "") {
+		window.open(selectedSite2, '_blank'); // 새 탭에서 선택한 사이트를 엽니다.
 	}
 }
 /*main footer*/
