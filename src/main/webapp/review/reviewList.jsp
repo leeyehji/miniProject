@@ -225,8 +225,6 @@
 
 	<script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
 	<script src="../js/frame.js"></script>
-	<script src="../js/header.js"></script>
-	<script src="../js/footer.js"></script>
 	<script src="../js/review.js"></script>
 
 

@@ -77,12 +77,18 @@
 					<div id="reviewUtil">
 
 						<div id="like">
-							<input type="button" value="좋아요"> <span>10</span>
+							<button>
+								좋아요 &emsp; <span>10</span>
+							</button>
 						</div>
-
-						<input type="button" value="이전"> <input type="button"
-							value="글삭제"> <input type="button" value="글수정"> <input
-							type="button" value="다음">
+						<div id="delUpdate" style='margin-top:20px'>
+							
+							
+							<button>이전글</button>
+							<button>글 수정</button>
+							<button>글 삭제</button>
+							<button>다음글</button>
+						</div>
 					</div>
 				</div>
 
@@ -102,7 +108,7 @@
 
 				</div>
 
-				<input id="reviewListBtn" type="button" value="목록으로">
+				<input id="reviewListBtn" type="button" value="목록으로 >">
 			</div>
 		</div>
 		<!-- 리뷰 끝 -->
@@ -120,11 +126,10 @@
 
 	<script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
 	<script src="../js/frame.js"></script>
-	<script src="../js/header.js"></script>
-	<script src="../js/footer.js"></script>
+
 	<script src="../js/review.js"></script>
 
-	
+
 
 
 </body>
