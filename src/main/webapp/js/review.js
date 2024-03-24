@@ -5,9 +5,9 @@
 $(document).ready(function () {
             $('#summernote').summernote({
                 placeholder: '내용을 작성하세요',
-                height: 520,
-                maxheight: 520,
-                minheight: 520,
+                height: 1000,
+                maxheight: 1000,
+                minheight: 1000,
                 lang: "ko-KR",
                 toolbar: [
                     ['style', ['style']], // 글자 스타일 설정 옵션

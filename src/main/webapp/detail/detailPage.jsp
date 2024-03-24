@@ -34,7 +34,7 @@
 
 					<div id="detailMain">
 						<div id="detailImg">
-							<img src="../240308_페이지/css/image/경복궁.jpg" alt="경복궁">
+							<img src="../css/image/경복궁.jpg" alt="경복궁">
 						</div>
 						<div>
 							<h3>상세정보</h3>
@@ -81,23 +81,26 @@
 								</td>
 							</tr>
 							<tr>
-								<td>* 애완동물</td>
-								<td>가능</td>
-								<td>* 주차여부</td>
-								<td>불가능</td>
-							</tr>
-							<tr>
 								<td>* 공휴일</td>
 								<td>일요일</td>
 								<td>* 이용요금</td>
 								<td>무료</td>
 							</tr>
+							<tr>
+							<td colspan="4" id="icon">
+								<img src="../icon/pet.png" id="pet" class="noAllow"/>
+								<img src="../icon/stoller.png" id="stoller" class="noAllow"/>
+								<img src="../icon/parking.png" id="parking" class="noAllow"/>
+								<img src="../icon/wheelchair.png" id="wheelchair" class="noAllow"/>
+								<img src="../icon/disabled.png" id="disabled" class="noAllow"/>
+							</td>
+							</tr>
 						</table>
 					</div>
 					<hr>
 					<div id="detailFoot" style="text-align: center;">
-						<button>조회수 &emsp; 100</button>
-						<button>좋아요 &emsp; 22</button>
+						<button>조회수 &emsp; <span>100</span></button>
+						<button>좋아요 &emsp; <span>22</span></button>
 						<button class="btn-open-modal" onclick="">일정 추가</button>
 
 					</div>
@@ -175,6 +178,27 @@
 							<option value="8">8</option>
 							<option value="9">9</option>
 							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
 						</select>
 					</div>
 					<div>
@@ -204,9 +228,12 @@
 
 	<script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
 	<script src="../js/frame.js"></script>
-	<script src="../js/header.js"></script>
-	<script src="../js/footer.js"></script>
 	<script src="../js/detailPage.js"></script>
+	<script>
+		$('#pet').removeClass('noAllow');
+		$('#disabled').removeClass('noAllow');
+	
+	</script>
 </body>
 
 </html>
