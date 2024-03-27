@@ -140,3 +140,4 @@ $RECYCLE.BIN/
 
 # end of https://www.toptal.com/developers/gitignore/api/windows,eclipse,java,maven
 .DS_Store
+/build/

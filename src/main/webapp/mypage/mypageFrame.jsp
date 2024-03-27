@@ -18,7 +18,14 @@
 				&emsp14;travelKing<br> <strong>아이디:</strong> &emsp14;hong1234<br>
 				<strong>이메일:</strong> &emsp14;hong1234@naver.com<br> <strong>가입일:</strong>
 				&emsp14;2024.03.08<br> <strong>작성한 글:</strong> &emsp14;5개
+				
+				<div class="btnRight">
+					<input type="button" onclick="location.href='/miniProject/mypage/memberUpdate.jsp'" value="회원정보 수정" class="mypageChangeBtn">		
+				</div>
+			
 			</div>
+			
+			
 		</div>
 	</div>
 
@@ -31,12 +38,19 @@
 
 
 					<div id="box1Img"></div>
-					<div id="box1Txt">여기에 뭔가 글을 써야겠지. 무슨말이 좋을까.일단 아무렇게나 써두면 미래의
-						내가 수습하겠지. 집에 가고싶다. 근데 할 것이 산 더미라서 집에 가지를 못하네. 내 몸이 한 3개쯤 되면 집에 빨리
-						갈 수 있을까? 몸이 3개면 먹일 입도 3개라 똑같겠지. 살기 참 힘들다.</div>
+					<div id="box1Txt">
+						대표글 변경 버튼 누르지 마세요. 
+						
+					</div>
+					
 				</div>
+				
 			</div>
+			<div class="btnRight">
+						<input type="button" onclick="location.href='/miniProject/mypage/myBoard.jsp'" value="대표글 변경" class="mypageChangeBtn">		
+					</div>
 		</div>
+		
 		<div style="height: 30px; background-color: white;"></div>
 		<div class="contentBox">
 			<div class="boxContent">
@@ -56,6 +70,10 @@
 					</div>
 					<!--캘린더 끝-->
 					<div id="mycalendarTxt"></div>
+					
+					<div class="btnRight">
+						<input type="button" onclick="location.href='/miniProject/mypage/memberCalendar.jsp'" value="캘린더 수정" class="mypageChangeBtn">		
+					</div>
 				</div>
 			</div>
 		</div>

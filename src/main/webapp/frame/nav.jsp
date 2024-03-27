@@ -48,7 +48,7 @@
 		<ul class="nav-content">
 			<li><a href="/miniProject/mypage/mypage.jsp">회원정보관리</a>
 				<ul>
-					<li><a href="#">회원정보 수정</a></li>
+					<li><a href="/miniProject/mypage/memberUpdate.jsp">회원정보 수정</a></li>
 					<br>
 					<li><a href="#">내가 쓴 글</a></li>
 					<br>
@@ -57,7 +57,7 @@
 				</ul>
 			</li>
 			<br>
-			<li><a href="#">나의 일정 관리</a>
+			<li><a href="/miniProject/mypage/memberCalendar.jsp">나의 일정 관리</a>
 				<ul>
 					<li><a href="#">캘린더 보기</a></li>
 					<br>

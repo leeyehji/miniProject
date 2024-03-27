@@ -38,6 +38,7 @@ display: inline-block;
     border: none;
     border-radius: 5px;
     color: white;
+    cursor:pointer;
 }
 #userIntro {
     margin: 0;
@@ -55,6 +56,20 @@ display: inline-block;
     /*border: white dotted;*/
     padding: 20px 5px 20px 25px; 
 }
+.btnRight{
+	text-align:right;
+	margin: 0 20px 20px 0;
+}
+.mypageChangeBtn{
+	background:#378CE7;
+	width:100px;
+	height:50px;
+	color:white;
+	border:none;
+	border-radius:7px;
+	cursor:pointer;
+}
+
 
 #boxes{
     margin-top: 60px;
