@@ -7,6 +7,7 @@ function toggleNavSections() {
 
 // //로그인 시작
 // // 로그인 성공을 가정하는 함수입니다.
+
 // // 실제 프로젝트에서는 로그인 성공 여부를 판단하는 로직이 필요합니다.
 // function loginSuccess() {
 //   // 로그인 버튼을 찾아서 마이페이지 버튼으로 변경합니다.
@@ -35,6 +36,11 @@ function toggleNavSections() {
 
 // 위아래 버튼 시작
 // 네비게이션 섹션 토글 기능
+function toggleNavSections() {
+  var navSection = document.querySelector('.nav_section');
+  navSection.classList.toggle('show');
+}
+
 function bottomFunction() {
   window.scrollTo({
     top: document.body.scrollHeight,
@@ -74,6 +80,7 @@ window.addEventListener('scroll', function () {
   }
 });
 //빈
+
 // 스크롤 시 버튼 디스플레이 로직을 처리하는 함수
 // function scrollFunction() {
 //   var myBtnTop = document.getElementById("myBtnTop");

@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -18,8 +16,8 @@
 </head>
 
 <body>
-<button onclick="topFunction()" style="display: none;" id="myBtnTop" title="Go to top">위로</button>
-<button onclick="bottomFunction()" style="display: none;" id="myBtnBottom" title="Go to bottom">아래로</button>
+<button onclick="topFunction()"  id="myBtnTop" title="Go to top">위로</button>
+<button onclick="bottomFunction()" id="myBtnBottom" title="Go to bottom">아래로</button>
 
 
 <header class="banner">
@@ -32,7 +30,7 @@
             </nav>
 
             <div class="search">
-                <input type="text" placeholder="여행을 가고싶다면 어디로.." title="검색" id="inp_search" autocomplete="off" />
+                <input type="text" placeholder="여행을 가고싶다면 어디로.." title="검색" id="inp_search" name="inp_search" autocomplete="off" />
                 <input type="button" id="searchBtn" value="검색하기" />
             </div>
 
@@ -51,8 +49,8 @@
                     <span></span>
                 </div>
 
-                <li class="a1"><a href="/miniProject/mainpage.jsp">홈</a></li>
-          <li class="a2"><a href="/miniProject/map/map.jsp">여행지</a></li>
+                <li class="a1"><a href="./mainpage.html">홈</a></li>
+                <li class="a2"><a href="./miniproject.html">여행지</a></li>
                 <li class="a3"><a href="./miniproject.html">후기</a></li>
                 <li class="a4"><a href="./miniproject.html">이벤트</a></li>
                 <li class="a5"><a href="./serviceCenter.html">고객센터</a></li>
@@ -87,14 +85,14 @@
             <ul>
                 <li><a href="serviceCenter.html#notice">공지사항</a></li>
                 <li><a href="serviceCenter.html#inquiry">1 : 1 문의</a></li>
-                <li><a href="serviceCenter.html#qna" style="margin-left: 6%;">FQA</a></li>
+                <li><a href="serviceCenter.html#qna" style="margin-left: 20px;">FQA</a></li>
             </ul>
         </div>
     </div>
 
 </header>
 
-<table class="main">
+<table id="main">
     <thead>
 
     <div class="slideshow-container">
@@ -135,22 +133,20 @@
 
     </div>
 
-    <br>
+
     </thead>
 
-    <br>
-    <hr>
-    <br>
+
+
+
     <tbody>
-    <h2 id="cln">캘린더</h2>
-    <div id="datepicker"></div>
-    <!-- <input type="text" id="datepicker" /> -->
-    <div id="cldout"></div>
+    <div id="maincln">
+        <h2 id="cln">캘린더</h2>
+        <div id="datepicker"></div>
+        <!-- <input type="text" id="datepicker" /> -->
+        <div id="cldout"></div>
+    </div>
     </tbody>
-
-    <br>
-    <hr>
-
 
     <tfoot>
     <section class="hot">
@@ -243,62 +239,63 @@
 
 </table>
 
-<br>
-<hr>
+
 
 <footer>
 
-    <strong class="tit">여행 후기를 SNS에 남겨주세요!</strong>
+    <div id="titcontent">
+        <div class="tit">여행 후기를 SNS에 남겨주세요!</div>
+        <div class="sns_list">
 
-    <div class="sns_list">
-        <ul>
-            <li>
-                <a href="http://blog.naver.com" target="_blank" title="새창">
-                    <span class="icon icon_blog"></span>
-                    <em class="sns_name">네이버 블로그</em>
-                </a>
-            </li>
-            <li>
-                <a href="http://post.naver.com" target="_blank" title="새창">
-                    <span class="icon icon_post"></span>
-                    <em class="sns_name">포스트</em>
-                </a>
-            </li>
-            <li>
-                <a href="https://band.us" target="_blank" title="새창">
-                    <span class="icon icon_band"></span>
-                    <em class="sns_name">네이버<br />밴드</em>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com" target="_blank" title="새창">
-                    <span class="icon icon_facebook"></span>
-                    <em class="sns_name">페이스북</em>
-                </a>
-            </li>
-            <li>
-                <a href="https://twitter.com" target="_blank" title="새창">
-                    <span class="icon icon_twitter"></span>
-                    <em class="sns_name">엑스</em>
-                </a>
-            </li>
-            <li>
-                <a href="https://story.kakao.com" target="_blank" title="새창">
-                    <span class="icon icon_kakaostory"></span>
-                    <em class="sns_name">카카오<br />스토리</em>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com" target="_blank" title="새창">
-                    <span class="icon icon_instagram"></span>
-                    <em class="sns_name">인스타<br />그램</em>
-                </a>
-            </li>
-        </ul>
+            <ul>
+                <li>
+                    <a href="http://blog.naver.com" target="_blank" title="새창">
+                        <span class="icon icon_blog"></span>
+                        <em class="sns_name">네이버 블로그</em>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://post.naver.com" target="_blank" title="새창">
+                        <span class="icon icon_post"></span>
+                        <em class="sns_name">포스트</em>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://band.us" target="_blank" title="새창">
+                        <span class="icon icon_band"></span>
+                        <em class="sns_name">네이버<br />밴드</em>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank" title="새창">
+                        <span class="icon icon_facebook"></span>
+                        <em class="sns_name">페이스북</em>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com" target="_blank" title="새창">
+                        <span class="icon icon_twitter"></span>
+                        <em class="sns_name">엑스</em>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://story.kakao.com" target="_blank" title="새창">
+                        <span class="icon icon_kakaostory"></span>
+                        <em class="sns_name">카카오<br />스토리</em>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank" title="새창">
+                        <span class="icon icon_instagram"></span>
+                        <em class="sns_name">인스타<br />그램</em>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 
-    <hr />
-    <br>
+
+
     <div>
         <ul class="btm_menu">
             <li><a href="javascript:" onclick="goTerm(1);" class="personal_info">개인정보처리방침</a></li>
@@ -311,14 +308,13 @@
             <li><a href="" target="_blank" title="새창">찾아오시는 길</a></li>
         </ul>
     </div>
-    <br>
-    <hr />
+
     <div class="badak">
         <p>
             미니프로젝트
             <a href="https://naver.com">naver_cloud_camp</a>
         </p>
-        <div>
+        <div class="TourAPI">
             <a href="https://api.visitkorea.or.kr/#/" id="TourAPI" target="_blank" title="새창"><img
                     src="./css/image/Tour_api.png" alt="TourAPI 4.0"></a>
         </div>
