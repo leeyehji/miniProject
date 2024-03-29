@@ -1,4 +1,4 @@
-/* 폰트 ----------------------------------------------------------------------*/
+/* 폰트 -----------------------------------------------------------------------*/
 
 @font-face {
     font-family: "ffont";
@@ -16,6 +16,7 @@
 }
 
 body {
+    margin: 8px;
     list-style-type: none;
     font-family: "ffont";
     min-width: 1920px;
@@ -67,7 +68,7 @@ hr {
 /* 여기부터 메뉴바 */
 
 .banner {
-    width: 100%;
+    width: 1920px;
     display: flex;
     flex-direction: column;
 }
@@ -91,7 +92,7 @@ hr {
 }
 
 nav .logo {
-    top: 2px;
+    top: 7px;
     font-family: "logo";
     position: relative;
     left:50px;
@@ -109,7 +110,7 @@ nav .logo {
 
 .nav_section div ul li {
     /* margin-left: 200%; */
-    width: 100%;
+    width: 300px;
     padding: 20px;
     /* 내부 여백 */
 
@@ -119,7 +120,8 @@ nav .logo {
     display: flex;
     top: 135px;
     position: absolute;
-    width: 100%;
+    width: 1920px;
+    height: 200px;
     opacity: 80%;
 }
 
@@ -130,6 +132,7 @@ aside {
 }
 
 .nav ul{
+    position: relative;
     list-style: none;
     padding-left: 380px;
 }
@@ -137,6 +140,8 @@ aside {
 .nav_section ul {
     list-style: none;
     padding-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .nav ul li,
@@ -159,55 +164,49 @@ aside {
 }
 
 .nav .a1 {
-    margin-left: 30%;
-    margin-right: 5%;
+    margin-left: 300px;
+    margin-right: 50px;
 }
 
 .nav .a2 {
-    margin-right: 1.5%;
-    margin-left: 10%;
+    margin-right: 15px;
+    margin-left: 100px;
 }
 
 .nav .a3 {
-    margin-left: 9%;
-    margin-right: 1%;
+    margin-left: 90px;
+    margin-right: 10px;
 }
 
 .nav .a4 {
-    margin-left: 10%;
+    margin-left: 100px;
 }
 
 .nav .a5 {
-    margin-left: 10%;
+    margin-left: 100px;
 }
 
-.service-center {
-    margin-left: -1%;
-}
-
-.sub_menu.event{
-    left: 400px;
-}
-
-.sub_menu.service-center{
-    left: 330px;
-}
-
-.sub_menu.travel,.sub_menu.review,.sub_menu.event,.sub_menu.service-center{
+.sub_menu.travel,
+.sub_menu.review,
+.sub_menu.event,
+.sub_menu.service-center {
     position: relative;
 }
-.sub_menu.travel{
-    left: 630px;
-}
-.sub_menu.review{
-    left: 450px;
-}
-.travel {
-    margin-left: 1%;
+
+.sub_menu.travel {
+    left: 607px;
 }
 
-.review {
-    margin-left: 4.3%;
+.sub_menu.review {
+    left: 360px;
+}
+
+.sub_menu.event {
+    left: 90px;
+}
+
+.sub_menu.service-center {
+    right: 150px;
 }
 
 .sub_menu {
@@ -219,15 +218,14 @@ aside {
 }
 
 .nav .menu-icon {
-    /* 내부 요소를 flexbox로 정렬 */
     cursor: pointer;
     /* 마우스 오버 시 커서 변경 */
-    margin-left: -10%;
-    padding-top: 3%;
+    margin-left: -100px;
+    padding-top: 3px;
 }
 
 .menu-icon span {
-    margin-top: 0.5%;
+    margin-top: 5px;
     background: #333;
     position: absolute;
     height: 3px;
@@ -241,7 +239,7 @@ aside {
     background: #333;
     position: absolute;
     height: 3px;
-    width: 100%;
+    width: 25px;
     left: 0;
     transition: 0.2s;
     cursor: pointer;
@@ -263,14 +261,14 @@ aside {
 }
 
 .login {
-    margin-left: 15%;
-    margin-top: -0.4%;
-    width: 30%;
+    margin-left: 250px;
+    margin-top: 5px;
+    width: 450px;
     text-overflow: ellipsis;
 }
 
 .search {
-    margin-left: 25%;
+    margin-left: 500px;
     width: 500px;
     position: relative;
     display: flex;
@@ -305,8 +303,8 @@ aside {
 }
 
 .login #loginBtn {
-    margin-left: 50%;
-    width: 20%;
+    margin-left: 200px;
+    width: 100px;
     /* 박스의 넓이 */
     color: #000000;
     /* 내부 여백 */
@@ -317,8 +315,8 @@ aside {
 }
 
 .login #JoinBtn {
-    width: 20%;
-    margin-left: 5%;
+    width: 100px;
+    margin-left: 10px;
     /* 박스의 넓이 */
     color: #000000;
     /* 내부 여백 */
@@ -332,7 +330,6 @@ aside {
 #searchBtn,
 #loginBtn,
 #JoinBtn {
-
     border-radius: 10px;
     /* 원하는 둥근 정도를 픽셀로 지정 */
     margin-top: 15px;
@@ -359,24 +356,39 @@ aside {
 /* 여기까지 메뉴바 */
 /* footer 풋터 -----------------------------------------------------------------------------*/
 
+#titcontent {
+    align-items: center; /* 세로 중앙 정렬 */
+    clear: both;
+}
+
 footer .tit {
-    /* 여행 후기를 SNS에 남겨주세요!  */
-    display: inline-block;
-    margin-bottom: 1%;
-    margin-top: 1%;
-    padding-left: 40%;
+    position: relative;
+    width: 1920px;
+    border-left: 1px solid #CAE9FF;
+    border-right: 1px solid #CAE9FF;
+    display: flex; /* inline-block에서 flex로 변경 */
+    justify-content: center; /* 가로축 중앙 정렬 */
+    align-items: center; /* 세로축 중앙 정렬 */
+    height: 90px;
     color: #333;
     font-size: 30px;
+    text-align: center; /* 텍스트 가로 중앙 정렬 */
 }
 
 footer .sns_list {
+    border-bottom: 1px solid #CAE9FF;
+    border-left: 1px solid #CAE9FF;
+    border-right: 1px solid #CAE9FF;
+    width: 1920px;
+    height: 80px;
     display: flex;
     justify-content: center;
-    clear: both;
-    text-align: center;
 }
 
 footer ul>li {
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
     list-style-type: none;
     display: inline-block;
     /* 앞에 점 지우기 */
@@ -395,7 +407,7 @@ footer .sns_list .icon {
 footer .sns_list .sns_name {
 
     display: inline-block;
-    margin-left: 0.3%;
+    margin-left: 3px;
     color: #666;
     font-size: 15px;
     vertical-align: middle;
@@ -404,11 +416,10 @@ footer .sns_list .sns_name {
 
 footer .sns_list ul {
     /* 아이콘 */
-    padding: 0.2%;
+    padding: 2px;
     display: flex;
     justify-content: space-between;
 }
-
 /* sns 아이콘 */
 footer .sns_list .icon_blog {
     background-image: url(../icon/sns1.png);
@@ -468,7 +479,18 @@ footer .sns_list li:hover .icon_instagram {
 
 /*-----------------------------------------------------*/
 
+.btm_menu {
+    margin: 0px;
+    padding: 0px;
+    width: 1920px;
+    height: 60px;
+    border-bottom: 1px solid #CAE9FF;
+    border-left: 1px solid #CAE9FF;
+    border-right: 1px solid #CAE9FF;
+}
+
 .btm_menu a {
+    margin-top: 18px;
     display: flex;
     white-space: nowrap;
     /* 호버시 글씨 밑으로 내려감 방지 */
@@ -488,42 +510,47 @@ a:active {
     text-decoration: none;
 }
 
+.badak p {
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
 footer .badak {
+    border-bottom: 1px solid #CAE9FF;
+    border-left: 1px solid #CAE9FF;
+    border-right: 1px solid #CAE9FF;
+    width: 1920px;
+    height: 60px;
     position: relative;
     /* 상대 위치 지정 */
     display: flex;
 }
 
-footer .badak>div {
-    margin-top: 0.5%;
+.TourAPI {
+    padding-top: 5px;
     position: absolute;
     /* 절대 위치 지정 */
-    right: 7%;
-    /* 우측에서 0의 위치에 배치 */
+    right: 110px;
 }
 
 /*----------------------------------------------------------------*/
 
 /* slide.css */
 
-* {
-    box-sizing: border-box
-}
-
 /* Slideshow container */
 .slideshow-container {
-    width: 100%;
+    border-left: 1px solid #CAE9FF;
+    border-right: 1px solid #CAE9FF;
+    width: 1920px;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5%;
+    padding-bottom: 100px;
 }
 
 /* Hide the images by default */
 
 .mySlides>img {
     /* 사진 크기 */
-    width: 100%;
+    width: 1920px;
     height: 500px;
     object-fit: cover;
 }
@@ -533,9 +560,9 @@ footer .badak>div {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 230px;
     width: auto;
-    margin-top: -22px;
+    padding-top: -22px;
     padding: 16px;
     color: white;
     font-weight: bold;
@@ -565,7 +592,8 @@ footer .badak>div {
     position: absolute;
     bottom: 360px;
     left: 50px;
-    width: 100%;
+    /* 내용입력 범위 */
+    width: 600px;
 }
 
 /* The dots/bullets/indicators */
@@ -581,7 +609,7 @@ footer .badak>div {
     width: 15px;
     margin: 0 2px;
     background-color: #bbb;
-    border-radius: 50%;
+    border-radius: 50px;
     display: inline-block;
     transition: background-color 0.6s ease;
 }
@@ -612,15 +640,20 @@ footer .badak>div {
 /* 추천여행지 */
 
 .hot {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    width: 100%;
+    border-top: 1px solid #CAE9FF;
+    border-left: 1px solid #CAE9FF;
+    border-right: 1px solid #CAE9FF;
+    border-bottom: 1px solid #CAE9FF;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 1920px;
     justify-content: center;
     position: relative;
     text-align: center;
 }
 
 h2 {
+    padding-bottom: 50px;
     display: block;
     clear: both;
     text-align: center;
@@ -628,7 +661,7 @@ h2 {
 
 .destination-grid {
     display: grid;
-    gap: 1%;
+    gap: 1px;
     grid-template-columns: repeat(5, 1fr);
     /* 두 개의 열을 동일한 너비로 설정 */
 }
@@ -636,12 +669,16 @@ h2 {
 .destination-card {
     border: 1px solid #ddd;
     border-radius: 10px;
+    width: 370px;
 }
 
 .destination-card img {
-    width: 100%;
+    margin-bottom: -5px;
+    width: 370px;
     height: 200px;
     object-fit: cover;
+    border-radius: 10px;
+    padding-bottom: -5px;
 }
 
 .destination-card h3 {
@@ -661,13 +698,17 @@ h2 {
 
 /* 캘린더 */
 #cln {
-    margin-top: 5%;
+    margin: 0px;
+    height: 50px;
+    width: 1920px;
+    padding-top: 100px;
+    padding-bottom: 20px;
 }
 
 #datepicker {
-    margin-left: 400px;
-    margin-bottom: 5%;
-}
+    width: 1920px;
+    padding-bottom: 50px;
+    }
 
 #datepicker > div:nth-child(1) {
     display: flex !important;
@@ -679,27 +720,23 @@ h2 {
 }
 
 .ui-datepicker {
-    width: 70%;
-    padding: 0;
+    left: 400px;
+    position: relative;
+    width: 1100px;
     display: flex;
-    border: 0;
 }
 
-.ui-datepicker-current-day > a{ /* 선택한 날짜 위치 */
-  position: relative;
-  left: 40px !important;
-}
 .ui-state-default{
     margin: 10px 0;
 }
+
 .ui-state-active{
     display: inline-block;
-    width: 30%;
-    height: 30%;
+
 }
 
 #datepicker > div:nth-child(1) > div:nth-child(1) {
-    width: 30%;
+    width: 300px;
 }
 
 .ui-widget.ui-widget-content {
@@ -712,26 +749,11 @@ h2 {
 .ui-datepicker .ui-widget-header {
     /*달력상단색상*/
     position: relative;
-    padding: 6px 0 36px 0;
+    padding: px 0 36px 0;
     border: 0;
     background: #CAE9FF;
     color: #fff;
     border-radius: 0;
-}
-
-.ui-datepicker-today >a{ /* 오늘 날짜 위치 */
-position: relative;
-left: 40px;
-}
-
-.ui-state-hover,.ui-state-highlight{
-    width: 30%;
-    height: 30%;
-}
-
-.ui-state-default.ui-state-hover{ /* 호버된 날짜 위치 */
-    position: relative;
-    left: 40px;
 }
 
 
@@ -750,25 +772,26 @@ left: 40px;
 /* 오늘 날짜 스타일 */
 #datepicker .ui-datepicker-today a {
     background: #CAE9FF !important;
-    border-radius: 50%;
+    border-radius: 50px;
 }
 
 /* hover한 날짜의 배경색 변경 */
 .ui-datepicker td a:hover {
     background: #CAE9FF !important;
-    border-radius: 50%;
+    border-radius: 50px;
 }
 
 /* 클릭한 날짜 배경색 */
 .ui-datepicker td.ui-datepicker-current-day a:not(.ui-datepicker-today a) {
     background: #378CE7 !important;
     border: red solid 1px;
-    border-radius: 50%;
+    border-radius: 50px;
     color: white !important;
 }
 
 
 #cldout {
+    /* 날짜 출력 */
     font-family: "cld";
     position: relative;
     background-color: #CAE9FF;
@@ -776,10 +799,16 @@ left: 40px;
     height: 30px;
     z-index: 99;
     left: 445px;
-    bottom: 350px;
+    bottom: 300px;
     font-size: 14px;
     font-weight: 700;
 }
 
+#maincln {
+    width: 1920px;
+    border-top: 1px solid #CAE9FF;
+    border-left: 1px solid #CAE9FF;
+    border-right: 1px solid #CAE9FF;
+}
 
 /* 캘린더 */
