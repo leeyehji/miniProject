@@ -1,0 +1,241 @@
+#main_map {
+    min-width: 1500px; /*1920*1080기준 px로 수정*/
+    width: 1500px; /*min w= w*/
+    height: 1000px;
+    padding: 40px 70px;
+    border-right: #A0E3F2 solid 3px;
+}
+
+#main_map > .leftmain {
+    float: left;
+    margin-top: 0.5%;
+    margin-left: 0;
+    margin-bottom: 0.5%;
+    width: 200px;
+    height: 98%;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #dbf0ff;
+}
+
+#main_map > .leftmain > .clickedsubjectsub {
+    width: 90px;
+    margin: 280px auto 0 auto;
+    height: auto;
+    padding-top: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 3px solid #bde3ff;
+}
+
+#main_map > .leftmain > .clickedsubjectsub > h3 {
+    font-size: 20px;
+    margin: 5px auto 5px auto;
+}
+
+#main_map > .leftmain > .clickedsubject {
+    margin: 50px auto;
+    font-size: 14px;
+    /* border: 3px solid #BDE3FF; */
+}
+
+#main_map > .leftmain > .clickedcontentsub {
+    width: 90px;
+    margin: 150px auto 0 auto;
+    padding-top: 5px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 3px solid #bde3ff;
+}
+
+#main_map > .leftmain > .clickedcontentsub > h3 {
+    font-size: 20px;
+    margin: 5px auto 5px auto;
+}
+
+#main_map > .leftmain > .clickedcontent {
+    margin: 50px auto;
+    font-size: 14px;
+    /* border: 3px solid #BDE3FF; */
+}
+#main_map > .leftmain > .clickedcontent > h3{
+    margin: 1px 5px;
+}
+
+#main_map > .middlemain {
+    float: left;
+    margin: 0.5% 0.1% 0.5% 0.1%;
+    width: 650px;
+    height: 98%;
+    border-radius: 10px;
+    background-color: #dbf0ff;
+}
+
+.middlemain > .clickthemap {
+    margin: 50px 5% 40px 5%;
+    text-align: center;
+    border: 3px solid #bde3ff;
+    border-radius: 10px;
+    width: 90%;
+    padding-top: 5px;
+}
+
+.middlemain > .mapmain {
+    margin: 20px 5% 20px 5%   ;
+    position: relative;
+    width: 90%;
+    height: 700px;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+#main_map > .rightmain {
+    float: left;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    margin-right: 0.5%;
+    width: 200px;
+    height: 98%;
+    background-color: #dbf0ff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+#main_map > .rightmain > .locationsub {
+    width: 70px;
+    margin: 200px auto 40px auto;
+    padding-top: 5px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid #bde3ff;
+}
+#main_map > .rightmain > .locationsub > h3{
+    font-size: 20px;
+    margin: 5px auto 5px auto;
+}
+
+.location > button {
+    text-align: center;
+    display: inline-block;
+    margin: 10px auto 10px auto;
+    border: 3px solid #bde3ff;
+    background-color: #dbf0ff;
+    border-radius: 10px;
+    color: none;
+}
+
+#main_map > .rightmain > .themesub {
+    width: 70px;
+    border: 3px solid #bde3ff;
+    margin: 60px auto 40px auto;
+    font-size: 18px;
+    padding-top: 5px;
+    border-radius: 10px;
+    text-align: center;
+}
+#main_map > .rightmain > .themesub > h3{
+    font-size: 20px;
+    margin: 5px auto 5px auto;
+}
+
+#main_map > .rightmain > .theme {
+    border-radius: 10px;
+    margin: auto;
+}
+
+.theme > button {
+    text-align: center;
+    display: inline-block;
+    margin: 10px auto 10px auto;
+    border: 3px solid #bde3ff;
+    background-color: #dbf0ff;
+    border-radius: 10px;
+    color: none;
+}
+
+.location button:hover {
+    color: #fff; /* hover 시 텍스트 색상 */
+    background-color: #3498db; /* hover 시 배경 색상 */
+}
+
+button.active {
+    background-color: #3498db; /* 선택된 버튼의 배경 색상 */
+}
+
+/* main_map */
+
+.main_toursite {
+    margin: 0px auto 0px auto;
+    border-radius: 0;
+    height: 450px;
+    background-color: #ffeadb;
+    min-width: 1930px;
+}
+
+.main_toursite > h1 {
+    height: 20px;
+    /*font-size: 20pt;*/
+    margin: 0px auto 0px auto;
+    padding-top: 5px;
+    margin-left: 170px;
+}
+
+.flex-container-1 {
+    width: 550px;
+    margin-top: 35px;
+    margin-bottom: 40px;
+    margin-left: 170px;
+    margin-right: 10px;
+    display: inline-flex;
+    align-items: center; /* 세로축 중앙 정렬 */
+}
+
+.flex-container-1 #img {
+    width: 100px;
+    height: 100px;
+}
+
+.flex-container #img {
+    width: 100px;
+    height: 100px;
+}
+
+.flex-container {
+    width: 550px;
+    display: inline-flex;
+    margin-right: 10px;
+    align-items: center; /* 세로축 중앙 정렬 */
+    margin-bottom: 20px; /* flex-container 간의 간격 */
+}
+
+.text-content {
+    margin-left: 20px; /* 사진과 텍스트 사이의 간격 */
+    display: inline-block;
+    flex-direction: column; /* 텍스트를 세로로 배열 */
+}
+
+.text-content #content h1 a {
+    text-decoration-line: none;
+}
+
+.text-content #content h1 a:link {
+    color: black;
+}
+
+.text-content #content h1 a:visited {
+    color: black;
+}
+
+.text-content #content h1 a:hover {
+    color: skyblue;
+}
+
+.text-content #content h1 a:active {
+    color: darkblue;
+}
+
+/* main_toursite */
+
+/* footer */

@@ -1,0 +1,139 @@
+
+  #reviewContent {
+    margin: 0;
+    
+    width: 1200px;
+    min-width:1200px;
+    height: 100%;
+    
+  }
+
+
+  .reviewContent #backList {
+
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  .reviewContent #backList a {
+    text-decoration: underline;
+    color: black;
+
+    cursor: pointer;
+  }
+
+ 
+
+  .reviewContent #reviewItem {
+	
+    border:#CAE9FF solid 3px;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 100%;
+    padding:20px;
+
+  }
+
+  .reviewContent #reviewInfo h2 {
+    text-align: left;
+  }
+
+
+  .reviewContent #reviewMain #detail img {
+    width: 700px;
+    height: 400px;
+    display: block;
+    margin: 40px auto;
+
+  }
+
+
+  .reviewContent #etc {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+
+  }
+
+  .reviewContent #etc p {
+    display: inline-block;
+  }
+
+  .reviewContent #reviewMain {
+
+    position: relative;
+    margin-top: 20px;
+    height: 50%;
+    padding: 20px;
+    line-height: 25px;
+  }
+
+  .reviewContent #like {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .reviewContent #reviewUtil button{
+  	width: 200px;
+	height: 50px;
+	margin: 10px;
+	border: 1px solid rgba(0, 0, 0, .3);
+	border-radius: 10px;
+	background-color: white;
+	cursor: pointer;
+	}
+	
+  .reviewContent #reviewFoot {
+    width:1200px;
+    min-width:1200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 10px;
+  }
+
+  .reviewContent #commentWrite {
+    border: 1px solid black;
+    margin-left: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+
+  }
+
+  .reviewContent #commentWrite textarea {
+    padding: 15px;
+    width: 81%;
+    border: none;
+    resize: none;
+    outline: none;
+    line-height: 1;
+  }
+
+  .reviewContent #commentWrite button {
+    vertical-align: top;
+    margin-left: 0;
+    width: 167px;
+    height: 100px;
+    border: none;
+    cursor: pointer;
+    background-color: #F8F6F4;
+  }
+#reviewListBtn{
+	  	width: 200px;
+	height: 50px;
+	margin: 10px;
+	border: 1px solid rgba(0, 0, 0, .3);
+	border-radius: 10px;
+	background-color: white;
+	cursor: pointer;
+}
+
+
+  .reviewContent #reviewUtil {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
