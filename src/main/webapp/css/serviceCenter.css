@@ -11,17 +11,17 @@
 }
 
 @font-face {
-    font-family: "cld";
-    src: url("../font/캘린더.ttf") format("truetype");
+    font-family: "logo";
+    src: url("../font/사이트명.ttf") format("truetype");
 }
 
 body {
     margin: 8px;
     list-style-type: none;
     font-family: "ffont";
-    min-width: 1890px;
+    min-width: 1892px;
     /* 원하는 최소 너비 설정 */
-    min-height: 1080px;
+    min-height: 100px;
     /* 원하는 최소 높이 설정 */
     overflow: auto;
     /* 필요한 경우 스크롤바 표시 */
@@ -30,7 +30,7 @@ body {
 hr {
     border-style: solid;
     /* 테두리 스타일 */
-    border-width: 2px;
+    border-width: 1px;
     /* 테두리 두께 */
     border-color: #CAE9FF;
     /* 테두리 색상 */
@@ -68,22 +68,25 @@ hr {
 /* 여기부터 메뉴바 */
 
 .banner {
-    width: 1890px;
+    width: 1892px;
     display: flex;
     flex-direction: column;
 }
 
 .menu {
+    height: 130px;
     flex-direction: column;
     /* 요소들을 세로로 쌓음 */
     display: flex;
     align-items: center;
     justify-content: space-between;
     border: 2px solid #CAE9FF;
+    border-bottom: none;
 }
 
 
 .nav {
+    top: -18px;
     position: relative;
     right: 380px;
     font-size: 18px;
@@ -95,7 +98,7 @@ nav .logo {
     top: 7px;
     font-family: "logo";
     position: relative;
-    left:50px;
+    left: 50px;
     font-size: 60px;
 }
 
@@ -117,11 +120,11 @@ nav .logo {
 }
 
 .show {
-    display: flex;
-    top: 135px;
-    position: absolute;
-    width: 1890px;
     height: 200px;
+    width: 0px;
+    display: flex;
+    top: 138.4px;
+    position: absolute;
     opacity: 80%;
 }
 
@@ -131,7 +134,7 @@ aside {
     display: flex;
 }
 
-.nav ul{
+.nav ul {
     position: relative;
     list-style: none;
     padding-left: 380px;
@@ -140,8 +143,6 @@ aside {
 .nav_section ul {
     list-style: none;
     padding-left: 10px;
-    margin-top: 0px;
-    margin-bottom: 0px;
 }
 
 .nav ul li,
@@ -149,7 +150,8 @@ aside {
     display: inline-block;
     padding: 0 10px;
 }
-.menu-icon{
+
+.menu-icon {
     display: inline-block;
     width: 50px;
     height: 35px;
@@ -157,7 +159,8 @@ aside {
     left: 10px;
     top: 20px;
 }
-.menu-icon span{
+
+.menu-icon span {
     bottom: 20px;
     left: 20px;
 
@@ -221,7 +224,6 @@ aside {
     cursor: pointer;
     /* 마우스 오버 시 커서 변경 */
     margin-left: -100px;
-    padding-top: 3px;
 }
 
 .menu-icon span {
@@ -256,7 +258,7 @@ aside {
 /* 버튼 크기 조절 및 이미지 추가 */
 
 .logobar {
-    width: 1890px;
+    width: 1892px;
     display: flex;
 }
 
@@ -289,7 +291,6 @@ aside {
 }
 
 .search #searchBtn {
-    bottom: 2px;
     position: relative;
     width: 100px;
     height: 35px;
@@ -301,6 +302,7 @@ aside {
     border: 2px solid #CAE9FF;
     /* 박스의 테두리 */
 }
+
 
 .login #loginBtn {
     margin-left: 200px;
@@ -330,6 +332,7 @@ aside {
 #searchBtn,
 #loginBtn,
 #JoinBtn {
+
     border-radius: 10px;
     /* 원하는 둥근 정도를 픽셀로 지정 */
     margin-top: 15px;
@@ -337,27 +340,122 @@ aside {
 
 /* 검색 버튼 호버 스타일 */
 #searchBtn:hover {
-    background-color: #CAE9FF; /* 녹색으로 변경 */
-    color: #000000; /* 텍스트 색상을 흰색으로 변경 */
-  }
-  
-  /* 로그인 버튼 호버 스타일 */
-  #loginBtn:hover {
-    background-color: #CAE9FF; /* 파란색으로 변경 */
-    color: #000000; /* 텍스트 색상을 흰색으로 변경 */
-  }
-  
-  /* 회원가입 버튼 호버 스타일 */
-  #JoinBtn:hover {
-    background-color: #CAE9FF; /* 빨간색으로 변경 */
-    color: #000000; /* 텍스트 색상을 흰색으로 변경 */
-  }
-  
+    background-color: #CAE9FF;
+    /* 녹색으로 변경 */
+    color: #000000;
+    /* 텍스트 색상을 흰색으로 변경 */
+}
+
+/* 로그인 버튼 호버 스타일 */
+#loginBtn:hover {
+    background-color: #CAE9FF;
+    /* 파란색으로 변경 */
+    color: #000000;
+    /* 텍스트 색상을 흰색으로 변경 */
+}
+
+/* 회원가입 버튼 호버 스타일 */
+#JoinBtn:hover {
+    background-color: #CAE9FF;
+    /* 빨간색으로 변경 */
+    color: #000000;
+    /* 텍스트 색상을 흰색으로 변경 */
+}
+
 /* 여기까지 메뉴바 */
-/* footer 풋터 -----------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------고객센터------ */
+
+#container {
+    position: relative;
+    background: url("./image/bg_snb.png") repeat-y 310px 0;
+    color: #CAE9FF;
+    padding-bottom: 1000px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border: 1px solid #CAE9FF;
+
+}
+
+.snb {
+    float: left;
+    width: 310px;
+}
+
+.snb h2 {
+    padding: 28px 14px 8px 0;
+    margin-left: 11px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #CAE9FF;
+    color: #000000;
+    font-size: 40px;
+    text-align: right;
+}
+
+.snb ul {
+    list-style-type: none;
+    margin-left: 11px;
+}
+
+.snb ul a {
+    display: block;
+    padding-right: 14px;
+    color: #000000;
+    font-size: 30px;
+    text-align: right;
+    text-decoration: none;
+    line-height: 40px;
+}
+
+#content {
+    position: relative;
+    float: left;
+    width: 800px;
+    left: 50px;
+}
+
+#content h2 {
+    padding: 24px 0;
+    color: #000000;
+    font-size: 50px;
+
+}
+
+#content .text {
+    margin-left: 148px;
+
+}
+
+#content .text p {
+    margin-bottom: 15px;
+
+    line-height: 1.4;
+    /* 글자 사이 여백 */
+}
+
+#wrap {
+    float: left;
+    background-color: ns#ffffff;
+    width: 1892px;
+    margin: 0 auto;
+}
+
+#noticeContent {
+    display: none;
+}
+
+#inquiryContent {
+    display: none;
+}
+
+#qnaContent {
+    display: none;
+}
+
+/* ---footer---------------------------------------------------------------------------- */
 
 #titcontent {
-    align-items: center; /* 세로 중앙 정렬 */
+    align-items: center;
+    /* 세로 중앙 정렬 */
     clear: both;
 }
 
@@ -366,13 +464,17 @@ footer .tit {
     width: 1890px;
     border-left: 1px solid #CAE9FF;
     border-right: 1px solid #CAE9FF;
-    display: flex; /* inline-block에서 flex로 변경 */
-    justify-content: center; /* 가로축 중앙 정렬 */
-    align-items: center; /* 세로축 중앙 정렬 */
+    display: flex;
+    /* inline-block에서 flex로 변경 */
+    justify-content: center;
+    /* 가로축 중앙 정렬 */
+    align-items: center;
+    /* 세로축 중앙 정렬 */
     height: 90px;
     color: #333;
     font-size: 30px;
-    text-align: center; /* 텍스트 가로 중앙 정렬 */
+    text-align: center;
+    /* 텍스트 가로 중앙 정렬 */
 }
 
 footer .sns_list {
@@ -420,6 +522,7 @@ footer .sns_list ul {
     display: flex;
     justify-content: space-between;
 }
+
 /* sns 아이콘 */
 footer .sns_list .icon_blog {
     background-image: url(../icon/sns1.png);
@@ -480,9 +583,9 @@ footer .sns_list li:hover .icon_instagram {
 /*-----------------------------------------------------*/
 
 .btm_menu {
-    margin: 0px;
-    padding: 0px;
-    width: 1890px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    width: 1850px;
     height: 60px;
     border-bottom: 1px solid #CAE9FF;
     border-left: 1px solid #CAE9FF;
@@ -506,7 +609,6 @@ a:visited,
 a:hover,
 a:focus,
 a:active {
-
     text-decoration: none;
 }
 
@@ -533,282 +635,179 @@ footer .badak {
     right: 110px;
 }
 
-/*----------------------------------------------------------------*/
+/* ------------1:1 문의 하기 ---------------------------------------------- */
 
-/* slide.css */
-
-/* Slideshow container */
-.slideshow-container {
-    border-left: 1px solid #CAE9FF;
-    border-right: 1px solid #CAE9FF;
-    width: 1890px;
-    position: relative;
-    padding-bottom: 100px;
-}
-
-/* Hide the images by default */
-
-.mySlides>img {
-    /* 사진 크기 */
-    width: 1890px;
-    height: 500px;
-    object-fit: cover;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 230px;
-    width: auto;
-    padding-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-    right: 0;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev,
-.next {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Caption text */
-.text {
-    color: #ffffff;
-    text-shadow: 2px 2px 2px #000000;
-    font-size: 40px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 360px;
-    left: 50px;
-    /* 내용입력 범위 */
+#inquiryContent {
     width: 600px;
-}
-
-/* The dots/bullets/indicators */
-.dotBtn {
-    display: flex;
-    justify-content: center;
-}
-
-.dot {
-    text-align: center;
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50px;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active,
-.dot:hover {
-    background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-/* slide.css */
-
-/* 추천여행지 */
-
-.hot {
-    border-top: 1px solid #CAE9FF;
-    border-left: 1px solid #CAE9FF;
-    border-right: 1px solid #CAE9FF;
-    border-bottom: 1px solid #CAE9FF;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    width: 1890px;
-    justify-content: center;
-    position: relative;
-    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 h2 {
-    padding-bottom: 50px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
     display: block;
-    clear: both;
-    text-align: center;
+    margin-bottom: 5px;
 }
 
-.destination-grid {
-    display: grid;
-    gap: 1px;
-    grid-template-columns: repeat(5, 1fr);
-    /* 두 개의 열을 동일한 너비로 설정 */
-}
-
-.destination-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 370px;
-}
-
-.destination-card img {
-    margin-bottom: -5px;
-    width: 370px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    padding-bottom: -5px;
-}
-
-.destination-card h3 {
-    margin: 0;
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
     padding: 10px;
-    background-color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#inquiryBtn {
+    display: inline-block;
+    background-color: #007bff;
     color: white;
-    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.destination-card p {
+#inquiryBtn:hover {
+    background-color: #0056b3;
+}
+
+/* ------------------------FAQ-------------------------------------- */
+
+#faqContent {
+    position: relative;
+    left: 400px;
+    top: 60px;
+}
+
+#faqContent h2 {
+    margin-left: 400px;    
+}
+
+.faq-container {
+    left: 50px;
+    position: relative;
+    width: 1200px;
+}
+
+.question {
+
+    height: 30px;
+    width: 900px;
+    position: relative;
+    background: #1d76d4;
+    color: #ffffff;
+    padding: 5px;
+    margin: 0;
+    cursor: pointer;
+    user-select: none;
+    /* 사용자가 텍스트를 선택하지 못하게 함 */
+    border-radius: 5px;
+}
+
+.answer {
+    height: 30px;
+    width: 897px;
+    position: relative;
+    padding: 5px;
+    border: 1px solid #ddd;
+    color: #000000;
+    border-top: none;
+    display: block;
+}
+
+.delete-btn,
+.create-btn {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+.create-btn {
+    position: relative;
+    left: 50px;
+}
+
+/* 공지사항 */
+
+#writeForm {
+    display: none;
+}
+
+#noticeContent {
+
+    max-width: 1000px;
+    margin: 20px;
+    padding: 20px;
+
+}
+
+#noticeContent h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.notices {
+    margin-bottom: 20px;
     padding: 10px;
+    background-color: #ffffff;
     font-size: 16px;
 }
 
-/* 추천여행지 */
-
-/* 캘린더 */
-#cln {
-    margin: 0px;
-    height: 50px;
-    width: 1890px;
-    padding-top: 100px;
-    padding-bottom: 20px;
-}
-
-#datepicker {
-    width: 1890px;
-    padding-bottom: 50px;
-    }
-
-#datepicker > div:nth-child(1) {
-    display: flex !important;
-}
-
-#datepicker > div:nth-child(1) > table:nth-child(2){
-    border: 1px solid #CAE9FF;
-    margin-bottom: -0em;
-}
-
-.ui-datepicker {
-    left: 400px;
-    position: relative;
-    width: 1100px;
-    display: flex;
-}
-
-.ui-state-default{
-    margin: 10px 0;
-}
-
-.ui-state-active{
+#noticeContent>button {
     display: inline-block;
-
-}
-
-#datepicker > div:nth-child(1) > div:nth-child(1) {
-    width: 300px;
-}
-
-.ui-widget.ui-widget-content {
-    border: 0;
+    /* 버튼을 인라인 블록 요소로 만들어 줄 바꿈 없이 나열 */
+    margin-right: 10px;
+    background-color: #ece5e5;
+    color: #000000;
+    border: none;
+    padding: 5px 10px;
     border-radius: 5px;
-    overflow: hidden;
-    background: #fff;
+    cursor: pointer;
 }
 
-.ui-datepicker .ui-widget-header {
-    /*달력상단색상*/
+#noticeContent>button:hover {
+    background-color: #9ea3a7;
+}
+
+.toggleBtn {
+    /* 공지사항 제목 */
+    border-radius: 10px;
+    text-align: left;
+    width: 647px;
     position: relative;
-    padding: px 0 36px 0;
-    border: 0;
-    background: #CAE9FF;
-    color: #fff;
-    border-radius: 0;
+    height: 50px;
+    font-size: 18px;
+    color: #000000;
+    background-color: #8eb7f1;
+    margin-bottom: 5px;
 }
 
-
-/* 날짜 글씨색 변경 */
-
-.ui-datepicker td a {
-    color: black !important;
-    background: #fff !important;
-    border: none !important;
-    text-align: center;
-    padding: 10px 0;
-}
-.ui-datepicker-week-end{
-    left: 44px !important;
-}
-/* 오늘 날짜 스타일 */
-#datepicker .ui-datepicker-today a {
-    background: #CAE9FF !important;
-    border-radius: 50px;
-}
-
-/* hover한 날짜의 배경색 변경 */
-.ui-datepicker td a:hover {
-    background: #CAE9FF !important;
-    border-radius: 50px;
-}
-
-/* 클릭한 날짜 배경색 */
-.ui-datepicker td.ui-datepicker-current-day a:not(.ui-datepicker-today a) {
-    background: #378CE7 !important;
-    border: red solid 1px;
-    border-radius: 50px;
-    color: white !important;
-}
-
-
-#cldout {
-    /* 날짜 출력 */
-    font-family: "cld";
+.ntccontent {
+    /* 공지사항 내용 */
+    overflow-y: scroll;
+    color: #000000;
+    margin-top: -5px;
+    padding-top: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-left: 5px;
+    text-align: left;
+    width: 630px;
     position: relative;
-    background-color: #CAE9FF;
-    width: 170px;
-    height: 30px;
-    z-index: 99;
-    left: 445px;
-    bottom: 300px;
-    font-size: 14px;
-    font-weight: 700;
+    height: 100px;
+    font-size: 18px;
+    border: 1px solid #000000;
+    margin-bottom: 5px;
 }
-
-#maincln {
-    width: 1890px;
-    border-top: 1px solid #CAE9FF;
-    border-left: 1px solid #CAE9FF;
-    border-right: 1px solid #CAE9FF;
-}
-
-/* 캘린더 */
