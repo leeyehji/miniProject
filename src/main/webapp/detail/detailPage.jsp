@@ -62,7 +62,7 @@
                         <br>
                         8) 보물 경복궁 풍기대
                         
-                    </pre>
+                  	  </pre>
 
 						</div>
 
@@ -71,10 +71,10 @@
 					<div id="datailInfo">
 						<table style="font-size: 11pt; margin: 0 auto;">
 							<tr>
-								<td><span></span>* 문의 및 안내</td>
-								<td>02-3700-3900</td>
+								<td >* 문의 및 안내</td>
+								<td id="phone" >02-3700-3900</td>
 								<td>* 홈페이지</td>
-								<td>경복궁 http://www.royalpalace.go.kr<br> 궁궐길라잡이
+								<td id="homepage">경복궁 http://www.royalpalace.go.kr<br> 궁궐길라잡이
 									http://www.palaceguide.or.kr<br> 한국의재발견
 									http://www.rekor.or.kr<br> 야간관람
 									예매https://ticket.11st.co.kr/
@@ -82,9 +82,9 @@
 							</tr>
 							<tr>
 								<td>* 공휴일</td>
-								<td>일요일</td>
+								<td id="holiday">일요일</td>
 								<td>* 이용요금</td>
-								<td>무료</td>
+								<td id="price">무료</td>
 							</tr>
 							<tr>
 							<td colspan="4" id="icon">
@@ -99,8 +99,8 @@
 					</div>
 					<hr>
 					<div id="detailFoot" style="text-align: center;">
-						<button>조회수 &emsp; <span>100</span></button>
-						<button>좋아요 &emsp; <span>22</span></button>
+						<button id="view">조회수 &emsp; <span>100</span></button>
+						<button id="like">좋아요 &emsp; <span>22</span></button>
 						<button class="btn-open-modal" onclick="">일정 추가</button>
 
 					</div>
@@ -112,7 +112,10 @@
 			<div id="modal">
 				<div id="detailModal" style="text-align: center;">
 					<div>
-						<span>여행지</span> <input type="text" id="modalTitle" readonly>
+						<span>여행지</span> <input type="text" id="modalContentName" name="modalContentName" readonly>
+					</div>
+					<div>
+						<span>일정 제목</span> <input type="text" id="modalTitle" name="modalTitle" readonly>
 					</div>
 					<div>
 						<span>시작 날짜</span> <select name="year" id="year">
@@ -134,7 +137,7 @@
 							<option value="10">10</option>
 							<option value="11">11</option>
 							<option value="12">12</option>
-						</select> <select name="day" id="day">
+						</select>  <select name="day" id="day">
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -145,6 +148,27 @@
 							<option value="8">8</option>
 							<option value="9">9</option>
 							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
 						</select>
 					</div>
 					<div>
