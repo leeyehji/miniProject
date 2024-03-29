@@ -61,7 +61,7 @@
 				<ul>
 					<li><a href="#">캘린더 보기</a></li>
 					<br>
-					<li><a href="#">캘린더 작성하기</a></li>
+					<li><a href="/miniProject/mypage/myCalendarWrite.jsp">캘린더 작성하기</a></li>
 					<br>
 					<li><a href="#">캘린더 수정하기</a></li>
 					<br>
