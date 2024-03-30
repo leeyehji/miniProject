@@ -38,7 +38,7 @@
 		<div id="content">
 
 			<!-- 글쓰기 시작 -->
-			<div id="reviewWrite">
+			<div id="reviewWrite" class="reviewWrite">
 					<div id="reviewWriteMain">
 						<form action="#" id=reviewWriteForm>
 							<table>
