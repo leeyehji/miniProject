@@ -115,16 +115,16 @@
 						<span>여행지</span> <input type="text" id="modalContentName" name="modalContentName" readonly>
 					</div>
 					<div>
-						<span>일정 제목</span> <input type="text" id="modalTitle" name="modalTitle" readonly>
+						<span>일정 제목</span> <input type="text" id="modalTitle" name="modalTitle">
 					</div>
 					<div>
-						<span>시작 날짜</span> <select name="year" id="year">
+						<span>시작 날짜</span> <select name="startYear" id="startYear">
 							<option value="2021">2021</option>
 							<option value="2022">2022</option>
 							<option value="2023">2023</option>
 							<option value="2024">2024</option>
 							<option value="2025">2025</option>
-						</select> <select name="month" id="month">
+						</select> <select name="startMonth" id="startMonth">
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -137,7 +137,7 @@
 							<option value="10">10</option>
 							<option value="11">11</option>
 							<option value="12">12</option>
-						</select>  <select name="day" id="day">
+						</select>  <select name="startDay" id="startDay">
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -172,13 +172,13 @@
 						</select>
 					</div>
 					<div>
-						<span>종료 날짜</span> <select name="year" id="year">
+						<span>종료 날짜</span> <select name="endYear" id="endYear">
 							<option value="2021">2021</option>
 							<option value="2022">2022</option>
 							<option value="2023">2023</option>
 							<option value="2024">2024</option>
 							<option value="2025">2025</option>
-						</select> <select name="month" id="month">
+						</select> <select name="endMonth" id="endMonth">
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -191,7 +191,7 @@
 							<option value="10">10</option>
 							<option value="11">11</option>
 							<option value="12">12</option>
-						</select> <select name="day" id="day">
+						</select> <select name="endDay" id="endDay">
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
