@@ -190,65 +190,75 @@
                             let regionPage = './korea.jsp'; // 기본값
                             switch (regionData.properties.CTP_ENG_NM.toLowerCase()) {
                                 case 'seoul':
-                                    regionPage = './seoul.jsp';
-                                    fetch("./seoul_EPSG5179.json")
+                                    regionPage = './sido/seoul.jsp';
+                                    fetch("./sido/seoul.json")
                                         .then(response => response.json())
                                         .then(seoulData => {
                                             const locationButton = document.querySelector(".rightmain .location button");
-                                            if (locationButton && seoulData.properties && seoulData.properties.nm) { // 여기에서 데이터 검증 추가
-                                                locationButton.textContent = seoulData.properties.nm;
-                                                locationButton.id = seoulData.properties.nm;
+                                            if (locationButton && seoulData.properties && seoulData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = seoulData.properties.SIG_KOR_NM;
+                                                locationButton.id = seoulData.properties.SIG_KOR_NM;
                                             }
                                         })
                                         .catch(error => console.error("서울 데이터 로드 실패:", error));
                                     break;
                                 case 'gyeonggi':
-                                    regionPage = './gyeonggi.jsp';
+                                    regionPage = './sido/gyeonggi.jsp';
                                     break;
                                 case 'incheon':
-                                    regionPage = './incheon.jsp';
+                                    regionPage = './sido/incheon.jsp';
                                     break;
                                 case 'gangwon':
-                                    regionPage = './gangwon.jsp';
+                                    regionPage = './sido/gangwon.jsp';
                                     break;
                                 case 'chungbuk':
-                                    regionPage = './chungbuk.jsp';
+                                    regionPage = './sido/chungbuk.jsp';
                                     break;
                                 case 'chungnam':
-                                    regionPage = './chungnam.jsp';
+                                    regionPage = './sido/chungnam.jsp';
                                     break;
                                 case 'sejong':
-                                    regionPage = './sejong.jsp';
+                                    regionPage = './sido/sejong.jsp';
                                     break;
                                 case 'daejeon':
-                                    regionPage = './daejeon.jsp';
+                                    regionPage = './sido/daejeon.jsp';
                                     break;
                                 case 'busan':
-                                    regionPage = './busan.jsp';
+                                    regionPage = './sido/busan.jsp';
+                                    fetch("./sido/busan.json")
+                                        .then(response => response.json())
+                                        .then(busanData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && busanData.properties && busanData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = busanData.properties.SIG_KOR_NM;
+                                                locationButton.id = busanData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("서울 데이터 로드 실패:", error));
                                     break;
                                 case 'gwangju':
-                                    regionPage = './gwangju.jsp';
+                                    regionPage = './sido/gwangju.jsp';
                                     break;
                                 case 'gyeongbuk':
-                                    regionPage = './gyeongbuk.jsp';
+                                    regionPage = './sido/gyeongbuk.jsp';
                                     break;
                                 case 'gyeongnam':
-                                    regionPage = './gyeongnam.jsp';
+                                    regionPage = './sido/gyeongnam.jsp';
                                     break;
                                 case 'jeonbuk':
-                                    regionPage = './jeonbuk.jsp';
+                                    regionPage = './sido/jeonbuk.jsp';
                                     break;
                                 case 'jeonnam':
-                                    regionPage = './jeonnam.jsp';
+                                    regionPage = './sido/jeonnam.jsp';
                                     break;
                                 case 'daegu':
-                                    regionPage = './daegu.jsp';
+                                    regionPage = './sido/daegu.jsp';
                                     break;
                                 case 'ulsan':
-                                    regionPage = './ulsan.jsp';
+                                    regionPage = './sido/ulsan.jsp';
                                     break;
                                 case 'jeju':
-                                    regionPage = './jeju.jsp';
+                                    regionPage = './sido/jeju.jsp';
                                     break;
                                 // 다른 지역에 대한 case 추가
                                 default:
