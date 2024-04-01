@@ -4,7 +4,7 @@
     
 #mypageContent {
  display: flex;
-   
+  margin-left:40px;
 display: inline-block;
 
 }
@@ -47,7 +47,7 @@ display: inline-block;
     padding-left: 10px;
     border:#CAE9FF solid 3px;
     border-radius: 10px;
-    width:777px;
+    width:1200px;
     height: 194px;
     font-size: 0.95em;
     color:rgb(77, 109, 142)
@@ -78,7 +78,7 @@ display: inline-block;
 
 .contentBox {
     height: 500px; /* 원하는 높이로 수정 */
-    width: 970px;
+    width: 1395px;
     padding: 10px;
     margin: 10px 0 10px 0;
     font-weight: bolder;

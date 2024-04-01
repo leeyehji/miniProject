@@ -1,225 +1,132 @@
-/* btn css */
-.clickBtn {
-  width: 70px;
-  height: 35px;
-  border-radius: 10%;
-  font-size: 15px;
-  font-weight: 600;
-  border: none;
-  background: rgb(160, 227, 242);
-  margin-right: 30px;
-  cursor:pointer;
+
+
+/*calendar*/
+#myCalendar {
+  display: flex;
+  align-items: center; /* 세로 중앙 정렬 */
 }
 
-/* header */
-#calendarHeader {
-  border-bottom: 1px solid #e4e4e4; 
-  padding: 10px;
-  height: 7%;
-  text-align:center;
+#calendarPageTitle{
+	font-size:50px;
+	text-align:center;
+	margin-bottom:160px;
 }
-.fa-calendar-check {
-	color: #fa709a; 
-	margin-right: 2%; 
-	vertical-align: middle;
+#selectDate{
+	font-size:80px;
+	text-align: center;
+	color:#378CE7;
+	margin-bottom:70px;
+	font-weight:bold;
 }
-#calendarHeader > h1 > span {
-	color: black; 
-	font-size: 50px; 
-	font-weight: 400; 
-	vertical-align: bottom;
-	}
-.calendar_title { margin: 0 auto;}
-.calendar_title .prev , .next{
-  width: 40px;
-  height: 100%;
-  cursor: pointer;
-  border: none;
-  font-size: 35px;
-  outline: none;
-  color: grey;
+#selectWeek{
+	margin-bottom:70px; 
+	font-size:30px;
 }
-.calendar_title .current-year-month {
-  font-size: 40px;
-  color: #378CE7;
-  display: inline-block;
-  margin: 0 20px;
+#todoList{
+	margin-top:50px;
+	padding:10px;
+}
+#schedule{
+	font-weight:bold;
+	font-size:50px;
+	color:#5c5c5c;
+	margin-bottom:30px;
+}
+#todoListTitle{
+	font-size:30px;
+	margin: 10px auto 30px auto;
+	border-bottom: #378CE7 dashed 3px;
+}
+#todoListContent{
+	font-size:20px;
+}
+#returnToday{
+	text-align:right;
+	margin: 30px 0;
+}
+#returnTodayBtn{
+	background:rgb(160, 227, 242);
+	font-size:15px;
+	font-weight:bold;
+	cursor:pointer;
+	border:none;
+	border-radius:5px;
+	width:100px;
+	height:50px;
 }
 
-/* content left */
-.content-left {
-  float: left;
-  box-sizing: border-box;
-  width: 20%;
+/*캘린더 datepicker*/
+#datepicker {
+  margin: 10px; 
+/*height:900px;*/
 }
-.left-main {margin-top: 20%;}
-.left-main .main-wrap {
-  text-align: center;
-  font-weight: 700;
+.vertical-container {
+  margin: 15px 30px; 
 }
-.left-main .main-wrap .main-day {
-  padding: 10% 0;
-  font-size: 30px;
-  color: #378CE7;
+.ui-datepicker { /*datepicker 크기*/
+	width: 1100px;
+	/*height:900px*/
+	
+	padding: 0; 
+	display: none; 
+	border: none; 
+	margin-top: 10px;
 }
-.left-main .main-wrap .main-date {
-  margin: 10% 0;
-  font-size: 80px;
-  color: #378CE7;
-}
-.left-main .todo-wrap {padding: 20% 0 10% 10%;}
-.left-main .todo-wrap .todo-title {
-  font-size: 40px;
-  font-weight: 600;
-  margin-bottom: 10%;
-  color: #5c5c5c;
-}
-.left-main .todo-wrap .input-form .input-box {
-  width: 90%;
-  height: 50px;
-  font-size: 20px;
-  border: 0;
-  border-bottom: 2px dashed #378CE7;;
-  margin-bottom: 30px;
-  outline-style: none;
-}
-/* content right */
-.content-right {
-  float: right;
-  box-sizing: border-box;
-  width: 80%;
-}
-.content-right .day-of-week {
-  background: rgb(160, 227, 242);
-  width: 100%;
-  height: 100%;
-}
-.content-right .day-of-week .dayHeader {
-  display: inline-block;
-  width: calc(100% / 7.2);
-  height: 100%;
-  text-align: center;
-  padding: 1%;
-  box-sizing: border-box;
-  font-weight: 600;
-  font-size: 18px;
-}
-.content-right .day-of-week .dayHeader.sun {color: #f02f2f;}
-.content-right .day-of-week .dayHeader.sat {color: #2208e7;}
 
-/* calendar body  */
-#weekly > div {
-  box-sizing: border-box;
-  text-align: center;
-  width: calc(100% / 7);
-  height: 130px;
-  display: inline-block;
-  border-bottom: 1px solid #e4e4e4;
-  vertical-align: top;
-  padding: 1%;
-  color: #378CE7;;
-  overflow-y: auto;
-  cursor:pointer;
+.ui-widget.ui-widget-content{ 
+	border: none !important; 
+	border-radius: 5px; 
+	overflow: hidden; 
+	background: #fff; 
+	
 }
-#weekly > div:hover {
-  background: #e4e4e4;
+a.ui-state-default{/*달력 1칸*/
+    padding: 0 !important;
+    font-size: 15px;
+    height:130px;
+    color:#378CE7;
 }
-#weekly > div.active {
-  background: #CAE9FF;
-}
-#weekly > div + div{
-  border-left: 1px solid #e4e4e4;
-}
-.calendar-body #weekly > div:first-child {border-left: 1px solid #e4e4e4;}
-.calendar-body #weekly > div:last-child {border-right: 1px solid #e4e4e4;}
 
-/* todoList */
-.todoList {
-  margin-top: 10%;
-  font-size: 20px;
+
+.ui-datepicker .ui-widget-header { /*달력 상단 색상*/
+	position: relative; 
+	background: white;
+	color: #378CE7; 
+	border-radius: 0;
+	font-size:40px; 
+	padding: 0 !important;
+	border: none !important; 
 }
-.todoList > li {position: relative;}
-.todoList > li > span{
-  white-space: nowrap;
-  width: 70%;
-  overflow: hidden;
-  display: block;
-  text-overflow: ellipsis;
+.ui-datepicker-calendar thead{
+	background: rgb(160, 227, 242); 
+	border:rgb(160, 227, 242) solid;
+	height: 60px;
+	font-size:	18px;
 }
-.todoList > li+li {
-  margin-top: 5%;
+.ui-datepicker-week-end:first-of-type span{color:red;}
+.ui-datepicker-week-end span{color:blue;}
+/* 날짜 글씨색 변경 */
+.ui-datepicker td{
+	border: #e4e4e4 solid 1px;
 }
-.todoList > li > .del-data{
-  position: absolute;
-  top: 0; right: 5%;
-  width: 20%;
-  height: 25px;
-  background: none;
-  border: none;
-  font-size: 0px;
+.ui-datepicker td a {
+    color: #378CE7 !important;
+    background: none !important;
+    border: none !important;
+    margin-top:10px;
+    text-align:center;
 }
-.todoList > li > .del-data::after, .todoList > li > .del-data::before{
-  content: '';
-  position: absolute;
-  top:0; left: 50%;
-  display: block;
-  width: 4px;
-  height: 18px;
-  background: #378CE7;;
+/* 오늘 날짜 스타일 */
+#datepicker .ui-datepicker-today {
+	background: #CAE9FF !important;
 }
-.todoList > li > .del-data::after, .closed::after {transform: rotate(45deg);}
-.todoList > li > .del-data::before, .closed::before{transform: rotate(-45deg);}
-.showList {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgb(255, 38, 179);
-  width: 400px;
-  height: 300px;
-  z-index: 1;
-  border-radius: 20px;
-  overflow: hidden;
+/* hover한 날짜의 배경색 변경 */
+.ui-datepicker td:hover {
+    background: #E4E4E4 !important; 
+    
 }
-.closed {
-  position: absolute;
-  top: 5%; right: 5%; 
-  width: 40px; 
-  height: 40px;
-  font-size: 0;
-  background: none;
-  border: none;
-}
-.closed::after, .closed::before {
-  content: '';
-  position: absolute;
-  top: 14%; right: 44%;
-  width: 3px;
-  height: 25px;
-  background: #fff;
-}
-.listText {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  word-break:break-all;
-  width: 70%;
-  font-size: 20px;
-  color: #fff;
-}
-.createDate {
-  position: absolute;
-  bottom: 7%;
-  right: 7%;
-  font-size: 20px;
-  color: #e4e4e4;
-}
-.bgblack {
-  display: none;
-  background: rgb(172, 172, 172);
-  opacity: 0.6;
-  position: absolute;
-  left: 0; right: 0; top: 0; bottom: 0;
+/* 클릭한 날짜 배경색 */
+.ui-datepicker td.ui-datepicker-current-day:not(.ui-datepicker-today) {    		
+    background: rgb(160, 227, 242) !important; 
+    color:white !important; 
 }

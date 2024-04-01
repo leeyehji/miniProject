@@ -6,9 +6,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="../css/frame.css">
 <link rel="stylesheet" type="text/css" href="../css/memberCalendar.css">
-    
+<script src="../js/memberCalendar.js"></script>
 </head>
 <body>
 <header><jsp:include page="../frame/header.jsp"></jsp:include></header>
@@ -16,54 +18,40 @@
     <div id="frameContent">
         <div id="frameNav"><jsp:include page="../frame/nav.jsp"></jsp:include></div>
         <div id="content">
-           
-         <div id="scheduleCalendarContent">
-
-            <div id="calendarHeader">
-               <h1>
-                  <i class="far fa-calendar-check"></i> <span>캘린더</span>
-               </h1>
-               <div class="calendar_title">
-                  <button class="prev">&#60;</button>
-                  <span class="current-year-month"></span>
-                  <button class="next">&#62;</button>
-               </div>
-            </div>
-            <section class="content-left">
-               <div class="left-main">
-                  <div class="main-wrap">
-                     <div class="main-day"></div>
-                     <div class="main-date"></div>
-                  </div>
-                  <div class="todo-wrap">
-                     <div class="todo-title">Schedule List</div>
-                     <form class="input-form">
-                        <input type="text" placeholder="write here!!" class="input-box" />
-                        <button type="submit" class="input-btn clickBtn">INPUT</button>
-                     </form>
-                     <ul class="todoList"></ul>
-                     <div class="showList">
-                        <span class="listText"></span> <span class="createDate"></span>
-                        <button class="closed">close</button>
-                     </div>
-                     <div class="bgblack"></div>
-                  </div>
-               </div>
-            </section>
-            <section class="content-right">
-               <div class="day-of-week">
-                  <div class="dayHeader sun">Sun</div>
-                  <div class="dayHeader">Mon</div>
-                  <div class="dayHeader">Tue</div>
-                  <div class="dayHeader">Wed</div>
-                  <div class="dayHeader">Thu</div>
-                  <div class="dayHeader">Fri</div>
-                  <div class="dayHeader sat">Sat</div>
-               </div>
-               <div class="calendar-body"></div>
-            </section>
-
-         </div>
+        		<!-- <div id="calendarPageTitle">캘린더</div> -->
+        
+           <div id="myCalendar">
+						<div class="vertical-container">
+						<div id="calendarPageTitle">캘린더</div>
+						<div id="selectDate">
+						<div id="selectWeek">
+						선택한 요일
+						</div>
+						<div id="selectDay">
+						선택한 일
+						</div>
+						</div>
+						
+			
+						<div id="todoList">
+						<div id="schedule">Schedule List</div>
+						<div id="todoListTitle">
+							일정 제목입니다.
+						</div>
+						<div id="todoListContent">
+							일정 내용입니다. 잘 해봅시다.
+						</div>
+						
+						<div id="returnToday">
+							<input type="button" id="returnTodayBtn" value="오늘 날짜">
+						</div>
+						</div>
+						
+						</div>
+						<div id="datepicker"></div>
+						
+					</div>
+         
       </div>
    </div>
        
@@ -78,6 +66,6 @@
 <script src="../js/frame.js"></script>
 <script src="../js/header.js"></script>
 <script src="../js/footer.js"></script>
-<script src="../js/memberCalendar.js"></script>
+
 </body>
 </html>

@@ -7,12 +7,12 @@
 		<div class="selectBox">
 			<select id="site-select1" class="site-select">
 				<option value="">관광 사이트 선택...</option>
-				<option value="https://www.daum.net">관광정보</option>
-				<option value="https://www.daum.net">가이드북</option>
-				<option value="https://www.daum.net">공공와이파이</option>
-				<option value="https://www.daum.net">템플스테이</option>
-				<option value="https://www.daum.net">TourAPI4.0</option>
-				<option value="https://www.daum.net">한국관광콘텐츠랩</option>
+				<option value="https://korean1.visitkorea.or.kr/kor/tt/pr_gallery/new_photo_gallery/main/main_ssot.jsp">관광사진갤러리</option>
+				<option value="https://korean.visitkorea.or.kr/notice/guide_book.do">가이드북</option>
+				<option value="https://www.wififree.kr/index.do">공공와이파이</option>
+				<option value="https://www.templestay.com/">템플스테이</option>
+				<option value="https://api.visitkorea.or.kr/#/">TourAPI4.0</option>
+				<option value="https://conlab.visitkorea.or.kr/">한국관광콘텐츠랩</option>
 			</select> <span class="siteSelectBtn"><img
 				src="https://design-science.or.kr/app/dubu_subcontent/docs/imgs/1586411111_arrow.png"></span>
 		</div>
@@ -21,14 +21,16 @@
 		<div class="selectBox">
 			<select id="site-select2" class="site-select">
 				<option value="">기관 사이트 선택...</option>
-				<option value="https://www.naver.com">국가mice포털</option>
-				<option value="https://www.naver.com">국립현대미술관</option>
-				<option value="https://www.naver.com">서울관광재단</option>
-				<option value="https://www.naver.com">문화체육관광부</option>
-				<option value="https://www.naver.com">문화가 있는 날</option>
-				<option value="https://www.naver.com">박물관 길위의 인문학</option>
-			</select> <span class="siteSelectBtn"><img
-				src="https://design-science.or.kr/app/dubu_subcontent/docs/imgs/1586411111_arrow.png"></span>
+				<option value="https://k-mice.visitkorea.or.kr/main.kto?func_name=mainStart">국가mice포털</option>
+				<option value="https://www.mmca.go.kr/">국립현대미술관</option>
+				<option value="http://www.seoulwelcome.com/">서울관광재단</option>
+				<option value="https://www.mcst.go.kr/kor/main.jsp">문화체육관광부</option>
+				<option value="https://www.culture.go.kr/wday/index.do">문화가 있는 날</option>
+				<option value="https://museumonroad.org/">박물관 길위의 인문학</option>
+			</select> 
+			<span class="siteSelectBtn">
+				<img src="https://design-science.or.kr/app/dubu_subcontent/docs/imgs/1586411111_arrow.png">
+			</span>
 		</div>
 		<button id="goSite2" onclick="goToSite2()">이동</button>
 	</div>

@@ -1,24 +1,64 @@
-#myCalendarWrite {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* form */
+#content {/*header, footer 크기에 맞게 조정*/
+	display: flex;
+	margin: 0;
+	display: inline-block;
 }
 
+#myCalendarWrite {
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 18px;
+}
+
+/*일정 날짜 선택*/
 .selectDate {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+	margin-bottom: 20px;
+	padding: 10px;
+	background-color: #f9f9f9;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+#datepickerStart, #datepickerEnd {
+	display: inline-block;
+	width: 150px;
+	height: 30px;
+	margin: 5px 20px 5px 0;
+	border: 1px solid #ccc;
 }
 
 #CalendarTitle, #CalendarContent {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 20px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	margin: 5px 0 20px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	resize:none;
+}
+ 
+.btnRight {
+	text-align: right;
+}
+.resetBtn{
+	margin-right:50px !important;
+}
+#myCalendarWriteFormBtn, .resetBtn, #selectReview{
+	width: 100px;
+	height: 40px; 
+	border-radius : 5px;
+	background: #CAE9FF;
+	border: none;
+	margin: 10px 0px 10px 0;
+	cursor:pointer;
+}
+#reviewSeq{
+	height:30px;
+	width:1295px;
+	margin-left:10px;
+	border: 1px solid #ccc;
 }

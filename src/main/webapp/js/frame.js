@@ -5,30 +5,6 @@ function toggleNavSections() {
   navSection.classList.toggle('show');
 }
 
-//재
-window.addEventListener('scroll', function () {
-  var menu = document.querySelector('div.menu');
-  var footer = document.querySelector('footer');
-  var toTopBtn = document.getElementById('myBtnTop');
-  var toBottomBtn = document.getElementById('myBtnBottom');
-
-  var menuPosition = menu.getBoundingClientRect();
-  var footerPosition = footer.getBoundingClientRect();
-
-  // div.menu가 화면에서 사라졌는지 확인합니다.
-  if (menuPosition.bottom < 0) {
-    toTopBtn.style.display = 'block'; // 버튼 표시
-  } else {
-    toTopBtn.style.display = 'none'; // 버튼 숨김
-  }
-
-  // footer가 화면에 보이는지 확인합니다.
-  if (footerPosition.top < window.innerHeight) {
-    toBottomBtn.style.display = 'none'; // 버튼 숨김
-  } else {
-    toBottomBtn.style.display = 'block'; // 버튼 표시
-  }
-});
 
 
 /*contnent*/
