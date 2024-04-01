@@ -108,11 +108,11 @@
 
 		<!-- 네이버 API -->
 		<!-- https://mvnrepository.com/artifact/com.naver.maps.open/naver-map-api -->
-		<dependency>
+		<!--<dependency>
     			<groupId>com.naver.maps.open</groupId>
     			<artifactId>naver-map-api</artifactId>
     			<version>2.1.2</version>
-		</dependency>
+		</dependency>-->
 		
 		<!-- 파일 업로드 -->
 		<dependency>
