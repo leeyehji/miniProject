@@ -21,11 +21,11 @@
             <jsp:include page="./mypageFrame.jsp"></jsp:include>
         </div>
     </div>
-    <div id="upDownBtn">
+   <div id="upDownBtn">
         <a href="#"><button id="upBtn">위로</button></a>
         <a href="#bottom"><button id="downBtn">아래</button></a>
     </div>
-    <footer><jsp:include page="../frame/footer.jsp"></jsp:include></footer>
+    <footer><jsp:include page= "../frame/footer.jsp"></jsp:include></footer>
 <div id="bottom"></div>
 </body>
 

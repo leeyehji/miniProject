@@ -40,46 +40,45 @@ function toggleNavSections() {
   navSection.classList.toggle('show');
 }
 
-// 페이지 맨 아래로 이동하는 함수
 function bottomFunction() {
   window.scrollTo({
-    top:document.body.scrollHeight,
-    behavior:'smooth'
+    top: document.body.scrollHeight,
+    behavior: 'smooth'
   });
 }
 
 function topFunction() {
   window.scrollTo({
-    top:document.body.scrollTop,
-    behavior:'smooth'
+    top: 0,
+    behavior: 'smooth'
   });
 }
 
-//재
-window.addEventListener('scroll', function () {
-  var menu = document.querySelector('div.menu');
-  var footer = document.querySelector('footer');
-  var toTopBtn = document.getElementById('myBtnTop');
-  var toBottomBtn = document.getElementById('myBtnBottom');
-
-  var menuPosition = menu.getBoundingClientRect();
-  var footerPosition = footer.getBoundingClientRect();
-
-  // div.menu가 화면에서 사라졌는지 확인합니다.
-  if (menuPosition.bottom < 0) {
-    toTopBtn.style.display = 'block'; // 버튼 표시
-  } else {
-    toTopBtn.style.display = 'none'; // 버튼 숨김
-  }
-
-  // footer가 화면에 보이는지 확인합니다.
-  if (footerPosition.top < window.innerHeight) {
-    toBottomBtn.style.display = 'none'; // 버튼 숨김
-  } else {
-    toBottomBtn.style.display = 'block'; // 버튼 표시
-  }
-});
-//빈
+// //재
+// window.addEventListener('scroll', function () {
+//   var menu = document.querySelector('div.menu');
+//   var footer = document.querySelector('footer');
+//   var toTopBtn = document.getElementById('myBtnTop');
+//   var toBottomBtn = document.getElementById('myBtnBottom');
+//
+//   var menuPosition = menu.getBoundingClientRect();
+//   var footerPosition = footer.getBoundingClientRect();
+//
+//   // div.menu가 화면에서 사라졌는지 확인합니다.
+//   if (menuPosition.bottom < 0) {
+//     toTopBtn.style.display = 'block'; // 버튼 표시
+//   } else {
+//     toTopBtn.style.display = 'none'; // 버튼 숨김
+//   }
+//
+//   // footer가 화면에 보이는지 확인합니다.
+//   if (footerPosition.top < 0) {
+//     toBottomBtn.style.display = 'none'; // 버튼 숨김
+//   } else {
+//     toBottomBtn.style.display = 'block'; // 버튼 표시
+//   }
+// });
+// //빈
 
 // // 스크롤 시 버튼 디스플레이 로직을 처리하는 함수
 // function scrollFunction() {
@@ -108,13 +107,13 @@ window.addEventListener('scroll', function () {
 // });
 //버튼 끝
 
-// 고객센터 
+// 고객센터
 
-// 지정된 ID의 내용만 보여주는 함수입니다.
 function showContent(contentId) {
-  document.getElementById('noticeContent').style.display = 'none';
-  document.getElementById('inquiryContent').style.display = 'none';
-  document.getElementById('faqContent').style.display = 'none';
+  var allContents = ['noticeContent', 'inquiryContent', 'faqContent'];
+  allContents.forEach(function(id) {
+    document.getElementById(id).style.display = 'none';
+  });
 
   document.getElementById(contentId).style.display = 'block';
 }
@@ -127,67 +126,54 @@ function handleHashChange() {
   } else if (hash === "#faq") {
     showContent('faqContent');
   } else {
+    // 기본적으로 공지사항을 보여줍니다.
     showContent('noticeContent');
   }
-};
+}
 
-document.addEventListener('DOMContentLoaded', handleHashChange);
+function addClickListener(id, contentId) {
+  var element = document.getElementById(id);
+  if (element) {
+    element.addEventListener('click', function(e) {
+      e.preventDefault();
+      showContent(contentId);
+      window.location.hash = contentId.replace('Content', '');
+    });
+  } else {
+    console.log(id + ' 요소를 찾을 수 없습니다.');
+  }
+}
+
+// DOM이 완전히 로드된 후에 실행됩니다.
+document.addEventListener('DOMContentLoaded', function() {
+  handleHashChange(); // 페이지 로드 시 적절한 콘텐츠를 표시합니다.
+  // 각 탭에 대한 클릭 이벤트 리스너를 추가합니다.
+  addClickListener('showNotice', 'noticeContent');
+  addClickListener('showInquiry', 'inquiryContent');
+  addClickListener('showFaq', 'faqContent');
+});
+
+// 해시 변경을 감지하여 적절한 콘텐츠를 표시합니다.
 window.addEventListener('hashchange', handleHashChange);
-
-document.getElementById('showNotice').addEventListener('click', function(e) {
-  e.preventDefault();
-  showContent('noticeContent');
-  window.location.hash = 'notice';
-});
-
-document.getElementById('showInquiry').addEventListener('click', function(e) {
-  e.preventDefault();
-  showContent('inquiryContent');
-  window.location.hash = 'inquiry';
-});
-
-document.getElementById('showFaq').addEventListener('click', function(e) {
-  e.preventDefault();
-  showContent('faqContent');
-  window.location.hash = 'faq';
-});
 
 ////////////////////////////// 1:1 문의 하기/////////////////////
 
-document.addEventListener('DOMContentLoaded', function() {
-  // 문의 등록 이벤트 리스너
-  document.getElementById('comment11_form').addEventListener('submit', function(e) {
-      e.preventDefault(); // 폼 기본 제출을 막습니다.
+document.getElementById('inquiryForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  var userName = document.getElementById('userName').value;
+  var userEmail = document.getElementById('userEmail').value;
+  var userInquiry = document.getElementById('userInquiry').value;
 
-      // 문의 내용 가져오기
-      var inquiryContent = document.getElementById('inquirycomment').value.trim();
-      if (inquiryContent === '') {
-          document.getElementById('inquirycomment_error').style.display = 'block';
-          return;
-      }
+  console.log('이름:', userName);
+  console.log('이메일:', userEmail);
+  console.log('문의 내용:', userInquiry);
 
-      // 문의 내용을 나타낼 새 div 요소 생성
-      var newCommentDiv = document.createElement('div');
-      
-      // 관리자만 볼 수 있는 삭제 버튼 추가
-      var isAdmin = true; // 이 값은 실제 사용자의 역할에 따라 동적으로 결정되어야 합니다.
-      if (isAdmin) {
-          var deleteButton = document.createElement('button');
-          deleteButton.textContent = '삭제';
-          deleteButton.onclick = function() {
-              newCommentDiv.remove();
-          };
-          newCommentDiv.appendChild(deleteButton);
-      }
+  alert('문의가 접수되었습니다. 빠른 시일 내에 답변드리겠습니다.');
 
-      // 문의 내용과 삭제 버튼을 inquirycomment_list에 추가
-      newCommentDiv.appendChild(document.createTextNode(inquiryContent));
-      document.getElementById('inquirycomment_list').appendChild(newCommentDiv);
-
-      // 입력 필드 초기화
-      document.getElementById('inquirycomment').value = '';
-      document.getElementById('inquirycomment_error').style.display = 'none';
-  });
+  // 여기서 서버로 데이터를 보내는 코드를 추가할 수 있습니다.
+  // 예를 들어, AJAX 요청을 사용하여 서버에 데이터를 전송하고,
+  // 서버에서는 이 데이터를 받아 처리한 후 데이터베이스에 저장할 수 있습니다.
+  // 문의하기를 하면 문의 내용이 데이터 베이스로 저장되고 답변은 이메일로 하는 식
 });
 
 //////////////////////////////////////FAQ//////////////////////////////////////
@@ -197,13 +183,8 @@ var hasPermission = true; // 실제 애플리케이션에서는 사용자 권한
 
 window.onload = function() {
   if (hasPermission) {
-    var editButtons = document.querySelectorAll('.edit-btn');
     var deleteButtons = document.querySelectorAll('.delete-btn');
     var createButton = document.querySelector('.create-btn');
-
-    editButtons.forEach(function(button) {
-      button.style.display = 'inline'; // 수정 버튼 보이기
-    });
 
     deleteButtons.forEach(function(button) {
       button.style.display = 'inline'; // 삭제 버튼 보이기
@@ -220,65 +201,50 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // FAQ 생성 함수
-
 function createFAQ(questionText = '질문을 여기에 작성하세요.', answerText = '답변을 여기에 작성하세요.') {
-  var faqDiv = document.querySelector('.faq');
+  var $faqDiv = $('.faq');
 
-  var faqContainer = document.createElement('div'); // FAQ 항목을 담을 컨테이너
-  faqContainer.className = 'faq-container';
-  var faqPairId = 'faq-' + faqId++;
-  faqContainer.id = faqPairId;
+  var faqPairId = 'faq-' + (faqId++);
+  var $faqContainer = $('<div></div>', {
+    'class': 'faq-container',
+    'id': faqPairId
+  });
 
-  var questionDiv = document.createElement('div');
-  questionDiv.className = 'question';
-  questionDiv.contentEditable = true;
-  questionDiv.innerText = questionText;
+  var $questionDiv = $('<div></div>', {
+    'class': 'question',
+    'contenteditable': true,
+    'text': questionText
+  });
 
-  var answerDiv = document.createElement('div');
-  answerDiv.className = 'answer';
-  answerDiv.contentEditable = true;
-  answerDiv.innerText = answerText;
+  var $answerDiv = $('<div></div>', {
+    'class': 'answer',
+    'contenteditable': true,
+    'text': answerText
+  });
 
-  var deleteBtn = document.createElement('button');
-  deleteBtn.className = 'delete-btn';
-  deleteBtn.innerText = '삭제';
-  deleteBtn.onclick = function() { deleteFAQ(faqPairId); };
+  var $deleteBtn = $('<button></button>', {
+    'class': 'delete-btn',
+    'text': '삭제',
+    'click': function() { deleteFAQ(faqPairId); }
+  });
 
-  var editBtn = document.createElement('button');
-  editBtn.className = 'edit-btn';
-  editBtn.innerText = '수정';
-  editBtn.onclick = function() { editFAQ(faqPairId); };
+  $faqContainer.append($questionDiv, $answerDiv, $deleteBtn);
+  $faqDiv.append($faqContainer);
 
-  faqContainer.appendChild(questionDiv);
-  faqContainer.appendChild(answerDiv);
-  faqContainer.appendChild(editBtn);
-  faqContainer.appendChild(deleteBtn);
-  faqDiv.appendChild(faqContainer);
-
-  function deleteFAQ(faqPairId) {
-    var faqContainer = document.getElementById(faqPairId);
-    faqContainer.remove(); // FAQ 컨테이너 및 하위 요소 모두 삭제
-    localStorage.removeItem(faqPairId);
-  }
-
-  questionDiv.addEventListener('focus', function() {
-    if (questionDiv.innerText === '질문을 여기에 작성하세요.') {
-      questionDiv.innerText = '';
+  $questionDiv.focus(function() {
+    if ($questionDiv.text() === '질문을 여기에 작성하세요.') {
+      $questionDiv.text('');
     }
   });
 
-  answerDiv.addEventListener('focus', function() {
-    if (answerDiv.innerText === '답변을 여기에 작성하세요.') {
-      answerDiv.innerText = '';
+  $answerDiv.focus(function() {
+    if ($answerDiv.text() === '답변을 여기에 작성하세요.') {
+      $answerDiv.text('');
     }
   });
 
-  questionDiv.addEventListener('input', function() {
-    saveFAQ(faqPairId, questionDiv.innerText, answerDiv.innerText);
-  });
-
-  answerDiv.addEventListener('input', function() {
-    saveFAQ(faqPairId, questionDiv.innerText, answerDiv.innerText);
+  $questionDiv.add($answerDiv).on('input', function() {
+    saveFAQ(faqPairId, $questionDiv.text(), $answerDiv.text());
   });
 }
 
@@ -293,55 +259,25 @@ function saveFAQ(faqPairId, question, answer) {
 
 // 저장된 FAQ 불러오기
 function loadFAQs() {
-  for (var i = 0; i < localStorage.length; i++) {
-    var key = localStorage.key(i);
+  Object.keys(localStorage).forEach(function(key) {
     if (key.startsWith('faq-')) {
       var faqData = JSON.parse(localStorage.getItem(key));
       createFAQ(faqData.question, faqData.answer);
     }
-  }
+  });
 }
 
 // FAQ 삭제 함수
 function deleteFAQ(faqPairId) {
-  var faqContainer = document.getElementById(faqPairId);
-  faqContainer.remove(); // FAQ 컨테이너 및 하위 요소 모두 삭제
+  $('#' + faqPairId).remove();
   localStorage.removeItem(faqPairId);
-}
-// FAQ 수정 함수
-function editFAQ(faqPairId) {
-  // 해당 FAQ 항목의 질문과 답변 요소를 찾음
-  var questionElement = document.querySelector(`#faq-${faqPairId} .faq-question`);
-  var answerElement = document.querySelector(`#faq-${faqPairId} .faq-answer`);
-
-  // 요소가 편집 가능한 상태인지 확인
-  if (questionElement.isContentEditable) {
-    // 편집 가능한 상태라면, 편집을 종료하고 내용을 저장
-    questionElement.contentEditable = "false";
-    answerElement.contentEditable = "false";
-    questionElement.style.border = "none";
-    answerElement.style.border = "none";
-
-    // 여기에 변경된 내용을 서버에 저장하는 코드를 추가할 수 있습니다.
-    // 예: saveFAQ(faqPairId, questionElement.textContent, answerElement.textContent);
-  } else {
-    // 편집 가능한 상태가 아니라면, 편집을 시작
-    questionElement.contentEditable = "true";
-    answerElement.contentEditable = "true";
-    questionElement.style.border = "1px solid #ccc";
-    answerElement.style.border = "1px solid #ccc";
-    questionElement.focus(); // 사용자가 바로 편집할 수 있도록 질문에 포커스를 줌
-  }
 }
 
 // 사용자 역할 확인 함수
 function checkUserRole() {
-  var userRole = localStorage.getItem('userRole'); // 예시로 'admin' 설정
+  var userRole = localStorage.getItem('userRole');
   if (userRole !== 'admin') {
-    var buttons = document.querySelectorAll('.faq button');
-    buttons.forEach(function(button) {
-      button.style.display = 'none'; // 관리자가 아니면 버튼 숨기기
-    });
+    $('.faq button').hide();
   }
 }
 
@@ -349,16 +285,97 @@ function checkUserRole() {
 var faqId = 0;
 
 // FAQ 추가 버튼 이벤트 리스너
-document.getElementById('add-faq-btn').addEventListener('click', function() {
-  createFAQ(); // 새 FAQ 생성
+$('#add-faq-btn').click(function() {
+  createFAQ();
 });
 
 // 초기 설정
 function init() {
-  // 필요한 초기 설정 로직을 여기에 추가하세요.
-  // 예를 들어, 최초 FAQ ID를 로컬 스토리지에서 가져오거나, 없으면 0부터 시작하도록 설정할 수 있습니다.
   var lastFaqId = localStorage.getItem('lastFaqId');
   faqId = lastFaqId ? parseInt(lastFaqId) : 0;
 }
 
-init(); // 페이지 로드 시 초기 설정 실행
+// 문서가 준비되면 init 함수 호출
+$(document).ready(function() {
+  init();
+});
+
+///////////////////////////////////////////////공지 사항 ////////////////////////////////////
+
+var currentNotice = null;
+
+function showPopup(edit = false) {
+  var title = "", text = "";
+
+  if (edit && currentNotice) {
+    title = currentNotice.title;
+    text = currentNotice.text;
+  }
+
+  var myWindow = window.open("", "a", "width=400, height=300, left=100, top=50");
+
+  myWindow.document.write('<html><head><title>공지사항 작성</title></head><body>');
+  myWindow.document.write('<div id="writeForm">');
+  myWindow.document.write('<h2>공지사항 작성</h2>');
+  myWindow.document.write('<label for="titleText">제목:</label><br>');
+  myWindow.document.write('<input type="text" id="titleText" name="title" style="width: 100%;" value="' + title + '"><br>');
+  myWindow.document.write('<label for="noticeText">내용:</label><br>');
+  myWindow.document.write('<textarea id="noticeText" rows="4" cols="50">' + text + '</textarea><br>');
+  myWindow.document.write('<button id="saveBtn">저장</button>');
+  myWindow.document.write('<button id="cancelBtn">취소</button>');
+  myWindow.document.write('</div>');
+  myWindow.document.write('</body></html>');
+  myWindow.document.close();
+
+  myWindow.onload = function() {
+    myWindow.document.getElementById('saveBtn').onclick = function() {
+      var newTitle = myWindow.document.getElementById('titleText').value;
+      var newText = myWindow.document.getElementById('noticeText').value;
+      if (newTitle.trim() !== "" && newText.trim() !== "") {
+        if (edit && currentNotice && currentNotice.element) {
+          // 기존 공지사항 수정
+          var existingNotice = currentNotice.element;
+          existingNotice.querySelector('.toggleBtn').textContent = newTitle;
+          existingNotice.querySelector('.ntccontent').innerHTML = newText;
+        } else {
+          // 새 공지사항 추가
+          var noticesDiv = document.querySelector('.notices');
+          var newNotice = document.createElement('div');
+          newNotice.innerHTML = `<div style="display: flex; justify-content: space-between; align-items: center;">
+                                   <button class="toggleBtn">${newTitle}</button>
+                                   <button class="editBtn" style="margin-left: 10px;">편집</button>
+                                   <button class="deleteBtn" style="margin-left: 10px; border-radius: 10px;">삭제</button>
+                                 </div>
+                                 <div class="ntccontent" style="display:none;">${newText}</div>`;
+          newNotice.querySelector('.editBtn').addEventListener('click', function() {
+            // 현재 편집할 공지사항으로 설정 (DOM 요소 포함)
+            currentNotice = { title: newTitle, text: newText, element: newNotice };
+            // 편집 모드로 팝업을 열기
+            showPopup(true);
+          });
+          newNotice.querySelector('.toggleBtn').addEventListener('click', function(event) {
+            const content = event.currentTarget.parentElement.nextElementSibling;
+            if (content.style.display === "none") {
+              content.style.display = "block";
+            } else {
+              content.style.display = "none";
+            }
+          });
+          newNotice.querySelector('.deleteBtn').addEventListener('click', function() {
+            // 공지사항 삭제
+            noticesDiv.removeChild(newNotice);
+          });
+
+          noticesDiv.appendChild(newNotice);
+        }
+        myWindow.close();
+      } else {
+        alert('제목과 내용을 모두 입력해주세요.');
+      }
+    };
+
+    myWindow.document.getElementById('cancelBtn').onclick = function() {
+      myWindow.close();
+    };
+  };
+}

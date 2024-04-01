@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "ffont";
-    src: url("../font/기본\ 폰트.ttf") format("truetype");
+    src: url("../font/기본 폰트.ttf") format("truetype");
 }
 
 @font-face {
@@ -48,7 +48,7 @@ hr {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: #555;
+    background-color: #378CE7;
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -194,11 +194,11 @@ aside {
 }
 
 .sub_menu.travel {
-    left: 607px;
+    left: 595px;
 }
 
 .sub_menu.review {
-    left: 360px;
+    left: 354px;
 }
 
 .sub_menu.event {
@@ -206,7 +206,7 @@ aside {
 }
 
 .sub_menu.service-center {
-    right: 150px;
+    right: 141px;
 }
 
 .sub_menu {
@@ -339,20 +339,20 @@ aside {
 #searchBtn:hover {
     background-color: #CAE9FF; /* 녹색으로 변경 */
     color: #000000; /* 텍스트 색상을 흰색으로 변경 */
-  }
-  
-  /* 로그인 버튼 호버 스타일 */
-  #loginBtn:hover {
+}
+
+/* 로그인 버튼 호버 스타일 */
+#loginBtn:hover {
     background-color: #CAE9FF; /* 파란색으로 변경 */
     color: #000000; /* 텍스트 색상을 흰색으로 변경 */
-  }
-  
-  /* 회원가입 버튼 호버 스타일 */
-  #JoinBtn:hover {
+}
+
+/* 회원가입 버튼 호버 스타일 */
+#JoinBtn:hover {
     background-color: #CAE9FF; /* 빨간색으로 변경 */
     color: #000000; /* 텍스트 색상을 흰색으로 변경 */
-  }
-  
+}
+
 /* 여기까지 메뉴바 */
 /* footer 풋터 -----------------------------------------------------------------------------*/
 
@@ -362,10 +362,9 @@ aside {
 }
 
 footer .tit {
+    background-color: #F1F3F4;
     position: relative;
-    width: 1890px;
-    border-left: 1px solid #CAE9FF;
-    border-right: 1px solid #CAE9FF;
+    width: 1892px;
     display: flex; /* inline-block에서 flex로 변경 */
     justify-content: center; /* 가로축 중앙 정렬 */
     align-items: center; /* 세로축 중앙 정렬 */
@@ -376,10 +375,8 @@ footer .tit {
 }
 
 footer .sns_list {
-    border-bottom: 1px solid #CAE9FF;
-    border-left: 1px solid #CAE9FF;
-    border-right: 1px solid #CAE9FF;
-    width: 1890px;
+    background-color: #F1F3F4;
+    width: 1892px;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -480,13 +477,11 @@ footer .sns_list li:hover .icon_instagram {
 /*-----------------------------------------------------*/
 
 .btm_menu {
+    background-color: #EEEEEE;
     margin: 0px;
     padding: 0px;
-    width: 1890px;
+    width: 1892px;
     height: 60px;
-    border-bottom: 1px solid #CAE9FF;
-    border-left: 1px solid #CAE9FF;
-    border-right: 1px solid #CAE9FF;
 }
 
 .btm_menu a {
@@ -511,15 +506,18 @@ a:active {
 }
 
 .badak p {
-    margin-left: 5px;
-    margin-top: 10px;
+    margin-left: 22px;
+    margin-top: 24px;
+}
+
+.cliud_camp a {
+    font-size: 18px;
+    color: #000000;
 }
 
 footer .badak {
-    border-bottom: 1px solid #CAE9FF;
-    border-left: 1px solid #CAE9FF;
-    border-right: 1px solid #CAE9FF;
-    width: 1890px;
+    background-color: #EEEEEE;
+    width: 1892px;
     height: 60px;
     position: relative;
     /* 상대 위치 지정 */
@@ -708,7 +706,7 @@ h2 {
 #datepicker {
     width: 1890px;
     padding-bottom: 50px;
-    }
+}
 
 #datepicker > div:nth-child(1) {
     display: flex !important;
@@ -749,15 +747,31 @@ h2 {
 .ui-datepicker .ui-widget-header {
     /*달력상단색상*/
     position: relative;
-    padding: px 0 36px 0;
+    padding: 0px 0 36px 0;
     border: 0;
     background: #CAE9FF;
-    color: #fff;
+    color: #5a6ec1;
     border-radius: 0;
 }
 
 
 /* 날짜 글씨색 변경 */
+
+.ui-datepicker-title{
+    font-size: 23px;
+    align-content: center;
+    height: 50px !important;
+}
+
+.ui-datepicker-prev {
+    margin-top: 10px;
+    align-content: center;
+}
+
+.ui-datepicker-next{
+    margin-top: 10px;
+    align-content: center;
+}
 
 .ui-datepicker td a {
     color: black !important;
@@ -772,20 +786,20 @@ h2 {
 /* 오늘 날짜 스타일 */
 #datepicker .ui-datepicker-today a {
     background: #CAE9FF !important;
-    border-radius: 50px;
+    border-radius: 5px;
 }
 
 /* hover한 날짜의 배경색 변경 */
 .ui-datepicker td a:hover {
     background: #CAE9FF !important;
-    border-radius: 50px;
+    border-radius: 5px;
 }
 
 /* 클릭한 날짜 배경색 */
 .ui-datepicker td.ui-datepicker-current-day a:not(.ui-datepicker-today a) {
     background: #378CE7 !important;
     border: red solid 1px;
-    border-radius: 50px;
+    border-radius: 5px;
     color: white !important;
 }
 
@@ -811,4 +825,77 @@ h2 {
     border-right: 1px solid #CAE9FF;
 }
 
-/* 캘린더 */
+/*site map*/
+
+#siteMap{
+    width: 1892px;
+    background:#F1F3F4;
+    padding: 10px 0px 10px 0px;
+    text-align:right;
+}
+.selectBox {
+    display:inline-block;
+    position: relative;
+    width: 200px;
+    height: 35px;
+    border-radius: 4px;
+    border: 1px solid #A0E3F2;
+}
+#site-select::-ms-expand{
+    display: none;
+}
+.site-select {
+    width: inherit;
+    height: inherit;
+    background: transparent;
+    border: 0 none;
+    outline: 0 none;
+    padding: 0 5px;
+    position: relative;
+    z-index: 3;
+    appearance: none
+}
+.site-select option {
+    background: #ffffff;
+    color: black;
+    padding: 3px 0;
+    font-size: 16px;
+}
+
+
+/* 옵션에 마우스 오버 시의 스타일은 CSS에서 직접 적용하기 어렵습니다. */
+.siteSelectBtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 40px;
+    height: inherit;
+    border-left: 1px solid #A0E3F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.siteSelectBtn > img{
+    width: 50%;
+    transition: .3s;
+}
+.selectBox .site-select:focus + .siteSelectBtn img {
+    transform: rotate(180deg);
+}
+#goSite1{
+    margin-right:30px;
+}
+#goSite2{
+    margin-right:80px;
+}
+#goSite2, #goSite1{
+    background:#A0E3F2;
+    border-radius:5px;
+    width:60px;
+    height:30px;
+    border:none;
+}
+#goSite1:hover,#goSite2:hover{
+    cursor:pointer;
+}

@@ -19,7 +19,7 @@
 
 <body>
 <button onclick="topFunction()"  id="myBtnTop" title="Go to top">위로</button>
-<button onclick="bottomFunction()" id="myBtnBottom" title="Go to bottom">아래로</button>
+<button onclick="bottomFunction()" id="myBtnBottom" title="Go to bottom">아래</button>
 
 
 <header class="banner">
@@ -28,7 +28,7 @@
         <div class="logobar">
 
             <nav>
-                <a class="logo" href="./mainpage.html">Nadeuli</a>
+                <a class="logo" href="./mainpage.jsp">Nadeuli</a>
             </nav>
 
             <div class="search">
@@ -51,11 +51,11 @@
                     <span></span>
                 </div>
 
-                <li class="a1"><a href="./mainpage.html">홈</a></li>
-                <li class="a2"><a href="./miniproject.html">여행지</a></li>
-                <li class="a3"><a href="./miniproject.html">후기</a></li>
-                <li class="a4"><a href="./miniproject.html">이벤트</a></li>
-                <li class="a5"><a href="./serviceCenter.html">고객센터</a></li>
+                <li class="a1"><a href="./mainpage.jsp">홈</a></li>
+                <li class="a2"><a href="./miniproject.jsp">여행지</a></li>
+                <li class="a3"><a href="./miniproject.jsp">후기</a></li>
+                <li class="a4"><a href="./miniproject.jsp">이벤트</a></li>
+                <li class="a5"><a href="./serviceCenter/serviceCenter.jsp">고객센터</a></li>
             </ul>
         </div>
 
@@ -85,9 +85,9 @@
 
         <div id="고객센터" class="sub_menu service-center">
             <ul>
-                <li><a href="serviceCenter.html#notice">공지사항</a></li>
-                <li><a href="serviceCenter.html#inquiry">1 : 1 문의</a></li>
-                <li><a href="serviceCenter.html#qna" style="margin-left: 20px;">FQA</a></li>
+                <li><a href="serviceCenter.jsp#notice">공지사항</a></li>
+                <li><a href="serviceCenter.jsp#inquiry">1 : 1 문의</a></li>
+                <li><a href="serviceCenter.jsp#qna" style="margin-left: 20px;">FQA</a></li>
             </ul>
         </div>
     </div>
@@ -156,7 +156,7 @@
         <div class="destination-grid">
 
             <div class="destination-card">
-                <a href="miniproject.html">
+                <a href="miniproject.jsp">
                     <img src="./css/image/seoul_cherry_blossom_1.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지1</h3>
@@ -164,7 +164,7 @@
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.html">
+                <a href="miniproject.jsp">
                     <img src="./css/image/seoul_cherry_blossom_2.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지2</h3>
@@ -172,7 +172,7 @@
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.html">
+                <a href="miniproject.jsp">
                     <img src="./css/image/seoul_cherry_blossom_3.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지3</h3>
@@ -180,7 +180,7 @@
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.html">
+                <a href="miniproject.jsp">
                     <img src="./css/image/seoul_cherry_blossom_4.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지4</h3>
@@ -188,7 +188,7 @@
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.html">
+                <a href="miniproject.jsp">
                     <img src="./css/image/seoul_cherry_blossom_13.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지5</h3>
@@ -196,7 +196,7 @@
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.html">
+                <a href="miniproject.jsp">
                     <img src="./css/image/seoul_cherry_blossom_13.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지6</h3>
@@ -204,7 +204,7 @@
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.html">
+                <a href="miniproject.jsp">
                     <img src="./css/image/seoul_cherry_blossom_4.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지7</h3>
@@ -212,7 +212,7 @@
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.html">
+                <a href="miniproject.jsp">
                     <img src="./css/image/seoul_cherry_blossom_1.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지8</h3>
@@ -220,7 +220,7 @@
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.html">
+                <a href="miniproject.jsp">
                     <img src="./css/image/seoul_cherry_blossom_2.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지9</h3>
@@ -228,7 +228,7 @@
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.html">
+                <a href="miniproject.jsp">
                     <img src="./css/image/seoul_cherry_blossom_3.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지10</h3>
@@ -245,6 +245,38 @@
 
 <footer>
 
+
+    <div id="siteMap">
+        <div class="selectBox">
+            <select id="site-select1" class="site-select">
+                <option value="">관광 사이트 선택...</option>
+                <option value="https://www.daum.net">관광정보</option>
+                <option value="https://www.daum.net">가이드북</option>
+                <option value="https://www.daum.net">공공와이파이</option>
+                <option value="https://www.daum.net">템플스테이</option>
+                <option value="https://www.daum.net">TourAPI4.0</option>
+                <option value="https://www.daum.net">한국관광콘텐츠랩</option>
+            </select> <span class="siteSelectBtn"><img
+                src="https://design-science.or.kr/app/dubu_subcontent/docs/imgs/1586411111_arrow.png"></span>
+        </div>
+        <button id="goSite1" onclick="goToSite1()">이동</button>
+
+        <div class="selectBox">
+            <select id="site-select2" class="site-select">
+                <option value="">기관 사이트 선택...</option>
+                <option value="https://www.naver.com">국가mice포털</option>
+                <option value="https://www.naver.com">국립현대미술관</option>
+                <option value="https://www.naver.com">서울관광재단</option>
+                <option value="https://www.naver.com">문화체육관광부</option>
+                <option value="https://www.naver.com">문화가 있는 날</option>
+                <option value="https://www.naver.com">박물관 길위의 인문학</option>
+            </select> <span class="siteSelectBtn"><img
+                src="https://design-science.or.kr/app/dubu_subcontent/docs/imgs/1586411111_arrow.png"></span>
+        </div>
+        <button id="goSite2" onclick="goToSite2()">이동</button>
+    </div>
+
+
     <div id="titcontent">
         <div class="tit">여행 후기를 SNS에 남겨주세요!</div>
         <div class="sns_list">
@@ -253,7 +285,7 @@
                 <li>
                     <a href="http://blog.naver.com" target="_blank" title="새창">
                         <span class="icon icon_blog"></span>
-                        <em class="sns_name">네이버 블로그</em>
+                        <em class="sns_name">네이버<br />블로그</em>
                     </a>
                 </li>
                 <li>
@@ -306,15 +338,14 @@
             <li><a href="" target="_blank" title="새창">저작권정책</a></li>
             <li><a href="" target="_blank" title="새창">고객서비스헌장</a></li>
             <li><a href="" target="_blank" title="새창">전자우편무단수집거부</a></li>
-            <li><a href="serviceCenter.html#qna" onclick="goQA();" title="페이지이동">Q&amp;A</a></li>
+            <li><a href="serviceCenter.jsp#qna" onclick="goQA();" title="페이지이동">Q&amp;A</a></li>
             <li><a href="" target="_blank" title="새창">찾아오시는 길</a></li>
         </ul>
     </div>
 
     <div class="badak">
-        <p>
-            미니프로젝트
-            <a href="https://naver.com">naver_cloud_camp</a>
+        <p class="cliud_camp">
+            <a href="https://naver.com">NCC 미니프로젝트</a>
         </p>
         <div class="TourAPI">
             <a href="https://api.visitkorea.or.kr/#/" id="TourAPI" target="_blank" title="새창"><img
