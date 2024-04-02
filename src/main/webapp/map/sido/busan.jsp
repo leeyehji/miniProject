@@ -110,7 +110,7 @@
                                     window.location.href = "../busan/sahagu.jsp";
                                     break;
                                 case "금정구":
-                                    window.location.href = "busan/geumjeonggu.jsp";
+                                    window.location.href = "../busan/geumjeonggu.jsp";
                                     break;
                                 case "강서구":
                                     window.location.href = "../busan/gangseogu.jsp";
