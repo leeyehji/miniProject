@@ -65,7 +65,7 @@
         <div id="여행지" class="sub_menu travel">
             <ul>
                 <li><a href="#1">테마별 여행지</a></li>
-                <li><a href="#2">여행지 TOP 10</a></li>
+                <li><a href="#2"></a></li>
             </ul>
         </div>
 
@@ -87,7 +87,7 @@
             <ul>
                 <li><a href="serviceCenter.jsp#notice">공지사항</a></li>
                 <li><a href="serviceCenter.jsp#inquiry">1 : 1 문의</a></li>
-                <li><a href="serviceCenter.jsp#qna" style="margin-left: 20px;">FQA</a></li>
+                <li><a href="serviceCenter.jsp#qna" >F&nbsp;A&nbsp;Q</a></li>
             </ul>
         </div>
     </div>
