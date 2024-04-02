@@ -65,8 +65,36 @@
           <div id="faqContent">
             <h2>자주 묻는 질문</h2>
             <h1>F&nbsp; A&nbsp; Q</h1>
-            <br>
-            <div class="faq"></div>
+            <div class="faqItem">
+              <div class="question">Q: 여기에 질문을 입력하세요.</div>
+              <div class="answer">A: 여기에 답변을 입력하세요.</div>
+            </div>
+            <div class="faqItem">
+              <div class="question">Q: 여기에 질문을 입력하세요.</div>
+              <div class="answer">A: 여기에 답변을 입력하세요.</div>
+            </div>
+            <div class="faqItem">
+              <div class="question">Q: 여기에 질문을 입력하세요.</div>
+              <div class="answer">A: 여기에 답변을 입력하세요.</div>
+            </div>
+            <div class="faqItem">
+              <div class="question">Q: 여기에 질문을 입력하세요.</div>
+              <div class="answer">A: 여기에 답변을 입력하세요.</div>
+            </div>
+            <div class="faqItem">
+              <div class="question">Q: 여기에 질문을 입력하세요.</div>
+              <div class="answer">A: 여기에 답변을 입력하세요.</div>
+            </div>
+            <div class="faqItem">
+              <div class="question">Q: 여기에 질문을 입력하세요.</div>
+              <div class="answer">A: 여기에 답변을 입력하세요.</div>
+            </div>
+            <div class="faqItem">
+              <div class="question">Q: 여기에 질문을 입력하세요.</div>
+              <div class="answer">A: 여기에 답변을 입력하세요.</div>
+            </div>
+            <!-- 추가적인 질문과 답변 항목을 이곳에 삽입할 수 있습니다. -->
+          </div>
           </div><!-- faqContent -->
 
         </div><!--container-->
@@ -80,8 +108,8 @@
   </div>
 
   <div id="upDownBtn">
-    <a href="#"><button id="upBtn">위로</button></a>
-    <a href="#bottom"><button id="downBtn">아래</button></a>
+    <button onclick="topFunction()" id="upBtn">위로</button>
+    <button onclick="bottomFunction()" id="downBtn">아래</button>
   </div>
 
   <footer><jsp:include page= "../frame/footer.jsp"></jsp:include></footer>

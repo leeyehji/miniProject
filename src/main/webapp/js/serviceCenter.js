@@ -54,31 +54,31 @@ function topFunction() {
   });
 }
 
-// //재
-// window.addEventListener('scroll', function () {
-//   var menu = document.querySelector('div.menu');
-//   var footer = document.querySelector('footer');
-//   var toTopBtn = document.getElementById('myBtnTop');
-//   var toBottomBtn = document.getElementById('myBtnBottom');
-//
-//   var menuPosition = menu.getBoundingClientRect();
-//   var footerPosition = footer.getBoundingClientRect();
-//
-//   // div.menu가 화면에서 사라졌는지 확인합니다.
-//   if (menuPosition.bottom < 0) {
-//     toTopBtn.style.display = 'block'; // 버튼 표시
-//   } else {
-//     toTopBtn.style.display = 'none'; // 버튼 숨김
-//   }
-//
-//   // footer가 화면에 보이는지 확인합니다.
-//   if (footerPosition.top < 0) {
-//     toBottomBtn.style.display = 'none'; // 버튼 숨김
-//   } else {
-//     toBottomBtn.style.display = 'block'; // 버튼 표시
-//   }
-// });
-// //빈
+//재
+window.addEventListener('scroll', function () {
+  var menu = document.querySelector('div.menu');
+  var footer = document.querySelector('footer');
+  var toTopBtn = document.getElementById('upBtn');
+  var toBottomBtn = document.getElementById('downBtn');
+
+  var menuPosition = menu.getBoundingClientRect();
+  var footerPosition = footer.getBoundingClientRect();
+
+  // div.menu가 화면에서 사라졌는지 확인합니다.
+  if (menuPosition.bottom < 0) {
+    upBtn.style.display = 'block'; // 버튼 표시
+  } else {
+    upBtn.style.display = 'none'; // 버튼 숨김
+  }
+
+  // footer가 화면에 보이는지 확인합니다.
+  if (footerPosition.top < 0) {
+    downBtn.style.display = 'none'; // 버튼 숨김
+  } else {
+    downBtn.style.display = 'block'; // 버튼 표시
+  }
+});
+//빈
 
 // // 스크롤 시 버튼 디스플레이 로직을 처리하는 함수
 // function scrollFunction() {
@@ -176,129 +176,6 @@ document.getElementById('inquiryForm').addEventListener('submit', function(event
   // 문의하기를 하면 문의 내용이 데이터 베이스로 저장되고 답변은 이메일로 하는 식
 });
 
-//////////////////////////////////////FAQ//////////////////////////////////////
-
-// 가정: 특정 사용자만 버튼을 볼 수 있음
-var hasPermission = true; // 실제 애플리케이션에서는 사용자 권한 검사 로직으로 대체
-
-window.onload = function() {
-  if (hasPermission) {
-    var deleteButtons = document.querySelectorAll('.delete-btn');
-    var createButton = document.querySelector('.create-btn');
-
-    deleteButtons.forEach(function(button) {
-      button.style.display = 'inline'; // 삭제 버튼 보이기
-    });
-
-    createButton.style.display = 'block'; // 작성 버튼 보이기
-  }
-};
-
-// 페이지 로드 시 저장된 FAQ 불러오기 및 사용자 역할 확인
-document.addEventListener('DOMContentLoaded', function() {
-  loadFAQs();
-  checkUserRole();
-});
-
-// FAQ 생성 함수
-function createFAQ(questionText = '질문을 여기에 작성하세요.', answerText = '답변을 여기에 작성하세요.') {
-  var $faqDiv = $('.faq');
-
-  var faqPairId = 'faq-' + (faqId++);
-  var $faqContainer = $('<div></div>', {
-    'class': 'faq-container',
-    'id': faqPairId
-  });
-
-  var $questionDiv = $('<div></div>', {
-    'class': 'question',
-    'contenteditable': true,
-    'text': questionText
-  });
-
-  var $answerDiv = $('<div></div>', {
-    'class': 'answer',
-    'contenteditable': true,
-    'text': answerText
-  });
-
-  var $deleteBtn = $('<button></button>', {
-    'class': 'delete-btn',
-    'text': '삭제',
-    'click': function() { deleteFAQ(faqPairId); }
-  });
-
-  $faqContainer.append($questionDiv, $answerDiv, $deleteBtn);
-  $faqDiv.append($faqContainer);
-
-  $questionDiv.focus(function() {
-    if ($questionDiv.text() === '질문을 여기에 작성하세요.') {
-      $questionDiv.text('');
-    }
-  });
-
-  $answerDiv.focus(function() {
-    if ($answerDiv.text() === '답변을 여기에 작성하세요.') {
-      $answerDiv.text('');
-    }
-  });
-
-  $questionDiv.add($answerDiv).on('input', function() {
-    saveFAQ(faqPairId, $questionDiv.text(), $answerDiv.text());
-  });
-}
-
-// FAQ 저장 함수
-function saveFAQ(faqPairId, question, answer) {
-  var faqData = {
-    question: question,
-    answer: answer
-  };
-  localStorage.setItem(faqPairId, JSON.stringify(faqData));
-}
-
-// 저장된 FAQ 불러오기
-function loadFAQs() {
-  Object.keys(localStorage).forEach(function(key) {
-    if (key.startsWith('faq-')) {
-      var faqData = JSON.parse(localStorage.getItem(key));
-      createFAQ(faqData.question, faqData.answer);
-    }
-  });
-}
-
-// FAQ 삭제 함수
-function deleteFAQ(faqPairId) {
-  $('#' + faqPairId).remove();
-  localStorage.removeItem(faqPairId);
-}
-
-// 사용자 역할 확인 함수
-function checkUserRole() {
-  var userRole = localStorage.getItem('userRole');
-  if (userRole !== 'admin') {
-    $('.faq button').hide();
-  }
-}
-
-// FAQ ID를 위한 글로벌 변수 설정
-var faqId = 0;
-
-// FAQ 추가 버튼 이벤트 리스너
-$('#add-faq-btn').click(function() {
-  createFAQ();
-});
-
-// 초기 설정
-function init() {
-  var lastFaqId = localStorage.getItem('lastFaqId');
-  faqId = lastFaqId ? parseInt(lastFaqId) : 0;
-}
-
-// 문서가 준비되면 init 함수 호출
-$(document).ready(function() {
-  init();
-});
 
 ///////////////////////////////////////////////공지 사항 ////////////////////////////////////
 
@@ -317,6 +194,8 @@ function showPopup(edit = false) {
   myWindow.document.write('<html><head><title>공지사항 작성</title></head><body>');
   myWindow.document.write('<div id="writeForm">');
   myWindow.document.write('<h2>공지사항 작성</h2>');
+  myWindow.document.write('<label for="dateText">날짜:</label><br>');
+  myWindow.document.write('<input type="date" id="dateText" name="date" style="width: 100%; color: #000000"><br>');
   myWindow.document.write('<label for="titleText">제목:</label><br>');
   myWindow.document.write('<input type="text" id="titleText" name="title" style="width: 100%;" value="' + title + '"><br>');
   myWindow.document.write('<label for="noticeText">내용:</label><br>');
@@ -331,18 +210,23 @@ function showPopup(edit = false) {
     myWindow.document.getElementById('saveBtn').onclick = function() {
       var newTitle = myWindow.document.getElementById('titleText').value;
       var newText = myWindow.document.getElementById('noticeText').value;
-      if (newTitle.trim() !== "" && newText.trim() !== "") {
+      var newDate = myWindow.document.getElementById('dateText').value; // 날짜 정보 가져오기
+
+      if (newTitle.trim() !== "" && newText.trim() !== "" && newDate.trim() !== "") {
         if (edit && currentNotice && currentNotice.element) {
           // 기존 공지사항 수정
           var existingNotice = currentNotice.element;
           existingNotice.querySelector('.toggleBtn').textContent = newTitle;
           existingNotice.querySelector('.ntccontent').innerHTML = newText;
+          existingNotice.querySelector('.date').textContent = "날짜: " + newDate; // 날짜 정보 업데이트
         } else {
+
           // 새 공지사항 추가
           var noticesDiv = document.querySelector('.notices');
           var newNotice = document.createElement('div');
           newNotice.innerHTML = `<div style="display: flex; justify-content: space-between; align-items: center;">
                                    <button class="toggleBtn">${newTitle}</button>
+                                   <div class="date">날짜: ${newDate}</div> <!-- 날짜 정보 추가 -->
                                    <button class="editBtn" style="margin-left: 10px;">편집</button>
                                    <button class="deleteBtn" style="margin-left: 10px; border-radius: 10px;">삭제</button>
                                  </div>
