@@ -5,6 +5,7 @@
 	<div id="title">테마여행 소개</div>
 	
 	<div id="themaTags">
+		<button class="themaTag">#전체보기</button>
 		<button class="themaTag">#태그1</button>
 		<button class="themaTag">#태그2</button>
 		<button class="themaTag">#태그3</button>

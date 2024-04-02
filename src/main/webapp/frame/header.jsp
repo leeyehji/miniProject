@@ -9,7 +9,7 @@
     <div class="logobar">
 
       <nav>
-        <a class="logo" href="./mainpage.jsp">Nadeuli</a>
+        <a class="logo" href="miniProject/mainpage.jsp">Nadeuli</a>
       </nav>
 
       <div class="search">
@@ -32,11 +32,11 @@
           <span></span>
         </div>
 
-        <li class="a1"><a href="./mainpage.jsp">홈</a></li>
-        <li class="a2"><a href="./miniproject.jsp">여행지</a></li>
-        <li class="a3"><a href="./miniproject.jsp">후기</a></li>
-        <li class="a4"><a href="./miniproject.jsp">이벤트</a></li>
-        <li class="a5"><a href="./serviceCenter/serviceCenter.jsp">고객센터</a></li>
+        <li class="a1"><a href="/miniProject/mainpage.jsp">홈</a></li>
+        <li class="a2"><a href="/miniProject/map/map.jsp">여행지</a></li>
+        <li class="a3"><a href="/miniProject/review/review.jsp">후기</a></li>
+        <li class="a4"><a href="/miniProject/miniproject.jsp">이벤트</a></li>
+        <li class="a5"><a href="/miniProject/serviceCenter/serviceCenter.jsp">고객센터</a></li>
       </ul>
     </div>
 
@@ -45,15 +45,15 @@
   <div class="nav_section">
     <div id="여행지" class="sub_menu travel">
       <ul>
-        <li><a href="#1">테마별 여행지</a></li>
-        <li><a href="#2">여행지 TOP 10</a></li>
+        <li><a href="/miniProject/map/map.jsp">지도로 보는 여행지</a></li>
+        <li><a href="/miniProject/thema/themaBoardList.jsp">테마별 여행지</a></li>
       </ul>
     </div>
 
     <div id="후기" class="sub_menu review">
       <ul>
-        <li><a href="#3">여행 후기</a></li>
-        <li><a href="#4">블로그 후기</a></li>
+        <li><a href="/miniProject/review/reviewList.jsp">후기 목록</a></li>
+        <li><a href="/miniProject/review/reviewWrite.jsp">후기 작성</a></li>
       </ul>
     </div>
 

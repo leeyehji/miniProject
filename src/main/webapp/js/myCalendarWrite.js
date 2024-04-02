@@ -1,6 +1,6 @@
 $(function(){
 	
-	
+	/* 캘린더 기본 세팅 */
 	$("#datepickerStart").datepicker({
 		changeMonth:true,
 		changeYear: true,
@@ -42,5 +42,20 @@ $(function(){
 		maxDate: "+120D"/* 현재날짜로부터 120일 후까지만 선택 가능. */
 		
 	}); //endDay
+	
+	/* 후기 글 주소 입력 */
+	$('#selectReview').click(function(){
+		//작성자의 글 목록 제목만 출력
+		//var seq= ;
+		
+		//input text 이므로 기본적으로는 우리 사이트 글만 링크 저장되나 타 사이트 주소도 업로드는 가능함.
+		//$('#reviewSeq').html('<a href="/miniProject/review/review.jsp?seq="'+seq+'">'+seq+'</a>"');
+	});//#selectReview.click
+	
+	/* form 제출 */
+	$('#myCalendarWriteFormBtn').click(function(){
+		
+		
+	});//#myCalendarWriteFormBtn.click
 	
 });

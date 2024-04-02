@@ -137,7 +137,7 @@ nav .logo {
 
 .show {
     display: flex;
-    top: 128px;
+    top: 135px;
     position: absolute;
     width: 1890px;
     height: 200px;
@@ -213,11 +213,11 @@ aside {
 }
 
 .sub_menu.travel {
-    left: 597px;
+    left: 595px;
 }
 
 .sub_menu.review {
-    left: 355px;
+    left: 354px;
 }
 
 .sub_menu.event {
@@ -225,7 +225,7 @@ aside {
 }
 
 .sub_menu.service-center {
-    right: 137px;
+    right: 141px;
 }
 
 .sub_menu {
@@ -489,7 +489,7 @@ footer{
 }
 /*site map*/
 #siteMap{
-    width: 1890px;
+    width: 1892px;
     background:#F1F3F4;
     padding: 10px 0px 10px 0px;
     text-align:right;
@@ -546,7 +546,7 @@ footer{
     margin-right:30px;
 }
 #goSite2{
-    margin-right:110px;
+    margin-right:80px;
 }
 #goSite2, #goSite1{
     background:#A0E3F2;
@@ -566,7 +566,7 @@ footer{
 
 footer .tit {
     background-color: #F1F3F4;
-    width: 1890px;
+    width: 1892px;
     display: flex; /* inline-block에서 flex로 변경 */
     justify-content: center; /* 가로축 중앙 정렬 */
     align-items: center; /* 세로축 중앙 정렬 */
@@ -578,7 +578,7 @@ footer .tit {
 
 footer .sns_list {
     background-color: #F1F3F4;
-    width: 1890px;
+    width: 1892px;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -679,7 +679,7 @@ footer .sns_list li:hover .icon_instagram {
 .btm_menu {
     margin: 0px;
     padding: 0px;
-    width: 1890px;
+    width: 1892px;
     height: 60px;
 }
 
@@ -715,17 +715,18 @@ a:active {
 }
 
 footer .badak {
-    width: 1890px;
+   	background-color: #EEEEEE;
+    width: 1892px;
     height: 60px;
+    position: relative;
     /* 상대 위치 지정 */
     display: flex;
 }
 
 .TourAPI {
     padding-top: 5px;
+    position: absolute;
     /* 절대 위치 지정 */
     right: 110px;
-    position: absolute;
-    left: 1660px;
 }
 /*-----------------------------------------------------*/

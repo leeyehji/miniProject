@@ -9,7 +9,7 @@
 		<div id="profileSet">
 			<div class="profile"></div>
 			<br>
-			<button type="button" id="ChangeprofileImg">프사변경</button>
+			<button type="button" id="changeProfileImg">프사변경</button>
 		</div>
 
 		<div id="userIntro">
@@ -22,11 +22,9 @@
 				<div class="btnRight">
 					<input type="button" onclick="location.href='/miniProject/mypage/memberUpdate.jsp'" value="회원정보 수정" class="mypageChangeBtn">		
 				</div>
-			
 			</div>
-			
-			
 		</div>
+		
 	</div>
 
 	<div id="boxes">
@@ -35,20 +33,15 @@
 				<div id="box1ContentImg"></div>
 				<strong>나의 대표 글</strong><br> <br>
 				<div id="box1Content">
-
-
 					<div id="box1Img"></div>
 					<div id="box1Txt">
 						대표글 변경 버튼 누르지 마세요. 
-						
 					</div>
-					
 				</div>
-				
 			</div>
 			<div class="btnRight">
-						<input type="button" onclick="location.href='/miniProject/mypage/myBoard.jsp'" value="대표글 변경" class="mypageChangeBtn">		
-					</div>
+				<input type="button" onclick="location.href='/miniProject/mypage/myBoard.jsp'" value="대표글 변경" class="mypageChangeBtn">		
+			</div>
 		</div>
 		
 		<div style="height: 30px; background-color: white;"></div>
@@ -59,17 +52,16 @@
 					<div id="myCalendarImg">
 						<div id="datepicker"></div>
 						<div class="vertical-container">
-						<div id="selectDate">
-						선택한 날짜:
-						</div><br>
-						<div id="myCalendarTxt">
-							홍길동님의 가장 가까운 일정은 <br><b>2024년 03월 13일 목요일</b>에
-							예정되어있습니다.<br>예정된 행사는 <b>벚꽃놀이</b>입니다.<br> 즐거운 일정 되시길 바랍니다.
-						</div>
+							<div id="selectDate">
+							선택한 날짜:
+							</div><br>
+							<div id="myCalendarTxt">
+								홍길동님의 가장 가까운 일정은 <br><b>2024년 03월 13일 목요일</b>에
+								예정되어있습니다.<br>예정된 행사는 <b>벚꽃놀이</b>입니다.<br> 즐거운 일정 되시길 바랍니다.
+							</div>
 						</div>
 					</div>
 					<!--캘린더 끝-->
-					<div id="mycalendarTxt"></div>
 					
 					<div class="btnRight">
 						<input type="button" onclick="location.href='/miniProject/mypage/memberCalendar.jsp'" value="캘린더 수정" class="mypageChangeBtn">		
