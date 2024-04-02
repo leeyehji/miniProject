@@ -26,20 +26,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     var mymap = L.map("mapid",{
-        center: [35.2100, 129.0689],
-        zoom: 10,
+        center: [36.7378, 127.8305],
+        zoom: 9,
         zoomControl: false,
         dragging: false
     });
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "© OpenStreetMap contributors",
-        maxZoom: 10,
-        minZoom: 10,
+        maxZoom: 9,
+        minZoom: 9,
     }).addTo(mymap);
 
     $(document).ready(function () {
-        $.getJSON("./gyeonggi.json", function (data) {
+        $.getJSON("./chungbuk.json", function (data) {
             var geojson = L.geoJSON(data, {
                 onEachFeature: function (feature, layer) {
                     layer.on({
@@ -48,7 +48,7 @@
 
                             // 보색으로 색 변경
                             layer.setStyle({
-                                fillColor: "#f5b041", // 예시 색상
+                                fillColor: "#af7ac5", // 예시 색상
                                 fillOpacity: 1,
                             });
 
@@ -79,8 +79,47 @@
                         click: function (e) {
                             // 클릭 이벤트 추가
                             switch (feature.properties.SIG_KOR_NM) {
-                                case "중구":
-                                    window.location.href = "../busan/junggu.jsp";
+                                case "청주시 상당구":
+                                    window.location.href = "../chungbuk/cheongju_sangdanggu.jsp";
+                                    break;
+                                case "청주시 서원구":
+                                    window.location.href = "../chungbuk/cheongju_seowongu.jsp";
+                                    break;
+                                case "청주시 흥덕구":
+                                    window.location.href = "../chungbuk/cheongju_heungdeokgu.jsp";
+                                    break;
+                                case "청주시 청원구":
+                                    window.location.href = "../chungbuk/cheongju_cheongwongu.jsp";
+                                    break;
+                                case "충주시":
+                                    window.location.href = "../chungbuk/chungjusi.jsp";
+                                    break;
+                                case "제천시":
+                                    window.location.href = "../chungbuk/jecheonsi.jsp";
+                                    break;
+                                case "보은군":
+                                    window.location.href = "../chungbuk/boeunogun.jsp";
+                                    break;
+                                case "옥천군":
+                                    window.location.href = "../chungbuk/okcheongun.jsp";
+                                    break;
+                                case "영동군":
+                                    window.location.href = "../chungbuk/yeongdonggung.jsp";
+                                    break;
+                                case "증평군":
+                                    window.location.href = "../chungbuk/jeungpyeonggun.jsp";
+                                    break;
+                                case "진천군":
+                                    window.location.href = "../chungbuk/jincheongun.jsp";
+                                    break;
+                                case "괴산군":
+                                    window.location.href = "../chungbuk/goesangun.jsp";
+                                    break;
+                                case "음성군":
+                                    window.location.href = "../chungbuk/eumseonggun.jsp";
+                                    break;
+                                case "단양군":
+                                    window.location.href = "../chungbuk/danyanggun.jsp";
                                     break;
                                 default:
                                     // 선택한 지역이 위의 case에 해당하지 않을 경우의 처리를 여기에 작성할 수 있습니다.
@@ -92,7 +131,7 @@
                 // 초기 스타일 설정
                 style: function (feature) {
                     return {
-                        fillColor: "#f39c12", // 기본 색상
+                        fillColor: "#9b59b6", // 기본 색상
                         weight: 1,
                         opacity: 1,
                         color: "white", // 경계선 색상
