@@ -62,8 +62,8 @@ table {
 
 #inquiryContent {
     width: 600px;
-    margin: 0 auto;
     padding: 20px;
+    margin-left: 140px;
 }
 
 h2 {
@@ -109,9 +109,12 @@ h2 {
 /* ------------------------FAQ-------------------------------------- */
 
 #faqContent {
+    overflow-x: hidden;
+    width: 1200px;
     position: relative;
     left: 70px;
     top: 60px;
+    height: 1020px;
 }
 
 #faqContent h2 {
@@ -127,48 +130,23 @@ h2 {
 .faq-container {
     left: 50px;
     position: relative;
-    width: 1200px;
+    width: 1000px;
 }
 
-.question {
-
-    height: 30px;
-    width: 900px;
-    position: relative;
-    background: #1d76d4;
-    color: #ffffff;
-    padding: 5px;
-    margin: 0;
-    cursor: pointer;
-    user-select: none;
-    /* 사용자가 텍스트를 선택하지 못하게 함 */
-    border-radius: 5px;
+.faqItem {
+    font-size: 50px;
+    margin-left: 200px;
+    margin-bottom: 50px;
 }
 
-.answer {
-    height: 30px;
-    width: 897px;
-    position: relative;
-    padding: 5px;
-    border: 1px solid #ddd;
+.faqItem .question{
+    color: #007bff;
+}
+.faqItem .answer{
     color: #000000;
-    border-top: none;
-    display: block;
 }
 
-.delete-btn,
-.create-btn {
-    margin-bottom: 5px;
-    margin-top: 5px;
-    margin-left: 50px;
-}
-
-.create-btn {
-    position: relative;
-    left: 50px;
-}
-
-/* 공지사항 */
+    /* 공지사항 */
 
 #writeForm {
     display: none;
