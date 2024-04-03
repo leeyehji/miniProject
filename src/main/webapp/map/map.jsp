@@ -204,24 +204,94 @@
                                     break;
                                 case 'gyeonggi':
                                     regionPage = './sido/gyeonggi.jsp';
+                                    fetch("./sido/gyeonggi.json")
+                                        .then(response => response.json())
+                                        .then(gyeonggiData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && gyeonggiData.properties && gyeonggiData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = gyeonggiData.properties.SIG_KOR_NM;
+                                                locationButton.id = gyeonggiData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("경기 데이터 로드 실패:", error));
                                     break;
                                 case 'incheon':
                                     regionPage = './sido/incheon.jsp';
+                                    fetch("./sido/incheon.json")
+                                        .then(response => response.json())
+                                        .then(incheonData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && incheonData.properties && incheonData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = incheonData.properties.SIG_KOR_NM;
+                                                locationButton.id = incheonData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("인천 데이터 로드 실패:", error));
                                     break;
                                 case 'gangwon':
                                     regionPage = './sido/gangwon.jsp';
+                                    fetch("./sido/gangwon.json")
+                                        .then(response => response.json())
+                                        .then(gangwonData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && gangwonData.properties && gangwonData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = gangwonData.properties.SIG_KOR_NM;
+                                                locationButton.id = gangwonData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("강원 데이터 로드 실패:", error));
                                     break;
                                 case 'chungbuk':
                                     regionPage = './sido/chungbuk.jsp';
+                                    fetch("./sido/chungbuk.json")
+                                        .then(response => response.json())
+                                        .then(chungbukData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && chungbukData.properties && chungbukData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = chungbukData.properties.SIG_KOR_NM;
+                                                locationButton.id = chungbukData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("충북 데이터 로드 실패:", error));
                                     break;
                                 case 'chungnam':
                                     regionPage = './sido/chungnam.jsp';
+                                    fetch("./sido/chungnam.json")
+                                        .then(response => response.json())
+                                        .then(chungnamData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && chungnamData.properties && chungnamData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = chungnamData.properties.SIG_KOR_NM;
+                                                locationButton.id = chungnamData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("충남 데이터 로드 실패:", error));
                                     break;
                                 case 'sejong':
                                     regionPage = './sido/sejong.jsp';
+                                    fetch("./sido/sejong.json")
+                                        .then(response => response.json())
+                                        .then(sejongData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && sejongData.properties && sejongData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = sejongData.properties.SIG_KOR_NM;
+                                                locationButton.id = sejongData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("세종 데이터 로드 실패:", error));
                                     break;
                                 case 'daejeon':
                                     regionPage = './sido/daejeon.jsp';
+                                    fetch("./sido/daejeon.json")
+                                        .then(response => response.json())
+                                        .then(daejeonData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && daejeonData.properties && daejeonData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = daejeonData.properties.SIG_KOR_NM;
+                                                locationButton.id = daejeonData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("대전 데이터 로드 실패:", error));
                                     break;
                                 case 'busan':
                                     regionPage = './sido/busan.jsp';
@@ -234,31 +304,111 @@
                                                 locationButton.id = busanData.properties.SIG_KOR_NM;
                                             }
                                         })
-                                        .catch(error => console.error("서울 데이터 로드 실패:", error));
+                                        .catch(error => console.error("부산 데이터 로드 실패:", error));
                                     break;
                                 case 'gwangju':
                                     regionPage = './sido/gwangju.jsp';
+                                    fetch("./sido/gwangju.json")
+                                        .then(response => response.json())
+                                        .then(gwangjuData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && gwangjuData.properties && gwangjuData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = gwangjuData.properties.SIG_KOR_NM;
+                                                locationButton.id = gwangjuData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("광주 데이터 로드 실패:", error));
                                     break;
                                 case 'gyeongbuk':
                                     regionPage = './sido/gyeongbuk.jsp';
+                                    fetch("./sido/gyeongbuk.json")
+                                        .then(response => response.json())
+                                        .then(gyeongbukData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && gyeongbukData.properties && gyeongbukData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = gyeongbukData.properties.SIG_KOR_NM;
+                                                locationButton.id = gyeongbukData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("경북 데이터 로드 실패:", error));
                                     break;
                                 case 'gyeongnam':
                                     regionPage = './sido/gyeongnam.jsp';
+                                    fetch("./sido/gyeongnam.json")
+                                        .then(response => response.json())
+                                        .then(gyeongnamData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && gyeongnamData.properties && gyeongnamData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = gyeongnamData.properties.SIG_KOR_NM;
+                                                locationButton.id = gyeongnamData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("경남 데이터 로드 실패:", error));
                                     break;
                                 case 'jeonbuk':
                                     regionPage = './sido/jeonbuk.jsp';
+                                    fetch("./sido/jeonbuk.json")
+                                        .then(response => response.json())
+                                        .then(jeonbukData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && jeonbukData.properties && jeonbukData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = jeonbukData.properties.SIG_KOR_NM;
+                                                locationButton.id = jeonbukData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("전북 데이터 로드 실패:", error));
                                     break;
                                 case 'jeonnam':
                                     regionPage = './sido/jeonnam.jsp';
+                                    fetch("./sido/jeonnam.json")
+                                        .then(response => response.json())
+                                        .then(jeonnamData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && jeonnamData.properties && jeonnamData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = jeonnamData.properties.SIG_KOR_NM;
+                                                locationButton.id = jeonnamData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("전남 데이터 로드 실패:", error));
                                     break;
                                 case 'daegu':
                                     regionPage = './sido/daegu.jsp';
+                                    fetch("./sido/daegu.json")
+                                        .then(response => response.json())
+                                        .then(daeguData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && daeguData.properties && daeguData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = daeguData.properties.SIG_KOR_NM;
+                                                locationButton.id = daeguData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("대구 데이터 로드 실패:", error));
                                     break;
                                 case 'ulsan':
                                     regionPage = './sido/ulsan.jsp';
+                                    fetch("./sido/ulsan.json")
+                                        .then(response => response.json())
+                                        .then(ulsanData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && ulsanData.properties && ulsanData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = ulsanData.properties.SIG_KOR_NM;
+                                                locationButton.id = ulsanData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("울산 데이터 로드 실패:", error));
                                     break;
                                 case 'jeju':
                                     regionPage = './sido/jeju.jsp';
+                                    fetch("./sido/jeju.json")
+                                        .then(response => response.json())
+                                        .then(jejuData => {
+                                            const locationButton = document.querySelector(".rightmain .location button");
+                                            if (locationButton && jejuData.properties && jejuData.properties.SIG_KOR_NM) { // 여기에서 데이터 검증 추가
+                                                locationButton.textContent = jejuData.properties.SIG_KOR_NM;
+                                                locationButton.id = jejuData.properties.SIG_KOR_NM;
+                                            }
+                                        })
+                                        .catch(error => console.error("제주 데이터 로드 실패:", error));
                                     break;
                                 // 다른 지역에 대한 case 추가
                                 default:
