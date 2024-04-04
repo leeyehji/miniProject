@@ -26,7 +26,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     var mymap = L.map("mapid",{
-        center: [35.2100, 129.0689],
+        center: [33.3846, 126.5535],
         zoom: 10,
         zoomControl: false,
         dragging: false
@@ -39,7 +39,7 @@
     }).addTo(mymap);
 
     $(document).ready(function () {
-        $.getJSON("./gyeonggi.json", function (data) {
+        $.getJSON("./jeju.json", function (data) {
             var geojson = L.geoJSON(data, {
                 onEachFeature: function (feature, layer) {
                     layer.on({
@@ -48,7 +48,7 @@
 
                             // 보색으로 색 변경
                             layer.setStyle({
-                                fillColor: "#f5b041", // 예시 색상
+                                fillColor: "#a3e4d7", // 예시 색상
                                 fillOpacity: 1,
                             });
 
@@ -79,8 +79,11 @@
                         click: function (e) {
                             // 클릭 이벤트 추가
                             switch (feature.properties.SIG_KOR_NM) {
-                                case "중구":
-                                    window.location.href = "../busan/junggu.jsp";
+                                case "제주시":
+                                    window.location.href = "../jeju/jejusi.jsp";
+                                    break;
+                                case "서귀포시":
+                                    window.location.href = "../jeju/seogwiposi.jsp";
                                     break;
                                 default:
                                     // 선택한 지역이 위의 case에 해당하지 않을 경우의 처리를 여기에 작성할 수 있습니다.
@@ -92,7 +95,7 @@
                 // 초기 스타일 설정
                 style: function (feature) {
                     return {
-                        fillColor: "#f39c12", // 기본 색상
+                        fillColor: "#95a5a6", // 기본 색상
                         weight: 1,
                         opacity: 1,
                         color: "white", // 경계선 색상
