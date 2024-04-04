@@ -26,20 +26,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     var mymap = L.map("mapid",{
-        center: [35.2100, 129.0689],
-        zoom: 10,
+        center: [36.6436, 128.7402],
+        zoom: 8,
         zoomControl: false,
         dragging: false
     });
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "© OpenStreetMap contributors",
-        maxZoom: 10,
-        minZoom: 10,
+        maxZoom: 8,
+        minZoom: 8,
     }).addTo(mymap);
 
     $(document).ready(function () {
-        $.getJSON("./gyeonggi.json", function (data) {
+        $.getJSON("./gyeongbuk.json", function (data) {
             var geojson = L.geoJSON(data, {
                 onEachFeature: function (feature, layer) {
                     layer.on({
@@ -48,7 +48,7 @@
 
                             // 보색으로 색 변경
                             layer.setStyle({
-                                fillColor: "#f5b041", // 예시 색상
+                                fillColor: "#95a5a6", // 예시 색상
                                 fillOpacity: 1,
                             });
 
@@ -79,8 +79,77 @@
                         click: function (e) {
                             // 클릭 이벤트 추가
                             switch (feature.properties.SIG_KOR_NM) {
-                                case "중구":
-                                    window.location.href = "../busan/junggu.jsp";
+                                case "포항시 남구":
+                                    window.location.href = "../gyeongbuk/pohangsi_namgu.jsp";
+                                    break;
+                                case "포항시 북구":
+                                    window.location.href = "../gyeongbuk/pohangsi_bukgu.jsp";
+                                    break;
+                                case "경주시":
+                                    window.location.href = "../gyeongbuk/gyeongjusi.jsp";
+                                    break;
+                                case "김천시":
+                                    window.location.href = "../gyeongbuk/gimcheonsi.jsp";
+                                    break;
+                                case "안동시":
+                                    window.location.href = "../gyeongbuk/andongsi.jsp";
+                                    break;
+                                case "구미시":
+                                    window.location.href = "../gyeongbuk/gumisi.jsp";
+                                    break;
+                                case "영주시":
+                                    window.location.href = "../gyeongbuk/yeongjusi.jsp";
+                                    break;
+                                case "영천시":
+                                    window.location.href = "../gyeongbuk/yeongcheonsi.jsp";
+                                    break;
+                                case "상주시":
+                                    window.location.href = "../gyeongbuk/sangjusi.jsp";
+                                    break;
+                                case "문경시":
+                                    window.location.href = "../gyeongbuk/mungyeongsi.jsp";
+                                    break;
+                                case "경산시":
+                                    window.location.href = "../gyeongbuk/gyeongsansi.jsp";
+                                    break;
+                                case "군위군":
+                                    window.location.href = "../gyeongbuk/gunwigun.jsp";
+                                    break;
+                                case "의성군":
+                                    window.location.href = "../gyeongbuk/uiseonggun.jsp";
+                                    break;
+                                case "청송군":
+                                    window.location.href = "../gyeongbuk/cheongsonggun.jsp";
+                                    break;
+                                case "영양군":
+                                    window.location.href = "../gyeongbuk/yeongyanggun.jsp";
+                                    break;
+                                case "영덕군":
+                                    window.location.href = "../gyeongbuk/yeongdeokgun.jsp";
+                                    break;
+                                case "청도군":
+                                    window.location.href = "../gyeongbuk/cheongdogun.jsp";
+                                    break;
+                                case "고령군":
+                                    window.location.href = "../gyeongbuk/goryeonggun.jsp";
+                                    break;
+                                case "성주군":
+                                    window.location.href = "../gyeongbuk/seongjugun.jsp";
+                                    break;
+                                case "칠곡군":
+                                    window.location.href = "../gyeongbuk/chilgokgun.jsp";
+                                    break;
+                                case "예천군":
+                                    window.location.href = "../gyeongbuk/yecheongun.jsp";
+                                    break;
+                                case "봉화군":
+                                    window.location.href = "../gyeongbuk/bonghwagun.jsp";
+                                    break;
+                                case "울진군":
+                                    window.location.href = "../gyeongbuk/uljingun.jsp";
+                                    break;
+                                case "울릉군":
+                                    window.location.href = "../gyeongbuk/ulleunggun.jsp";
                                     break;
                                 default:
                                     // 선택한 지역이 위의 case에 해당하지 않을 경우의 처리를 여기에 작성할 수 있습니다.
@@ -92,7 +161,7 @@
                 // 초기 스타일 설정
                 style: function (feature) {
                     return {
-                        fillColor: "#f39c12", // 기본 색상
+                        fillColor: "#7f8c8d", // 기본 색상
                         weight: 1,
                         opacity: 1,
                         color: "white", // 경계선 색상
