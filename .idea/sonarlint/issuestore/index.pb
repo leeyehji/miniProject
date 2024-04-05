@@ -22,3 +22,9 @@ m
 =src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml,d\3\d3e54629b9a71e7b6b2949fb63e8fbc3314079cf
 Z
 *src/main/webapp/WEB-INF/views/mainpage.jsp,f\a\fa9f2f0b359b453de61572fa9bfcb17891bcf8a4
+L
+src/test/resources/log4j.xml,f\c\fc3efc6f3b664ca966a0322c1d4f1a3ccabced56
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
