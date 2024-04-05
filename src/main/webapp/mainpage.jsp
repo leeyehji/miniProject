@@ -10,10 +10,10 @@
 
     <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
     <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script><!-- 캘린더 -->
-    <script defer src="./js/miniP.js"></script>
+    <script defer src="./resources/js/miniP.js"></script>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/><!-- 캘린더 -->
-    <link rel="stylesheet" href="./css/miniP.css" />
+    <link rel="stylesheet" href="./resources/css/miniP.css" />
 
 </head>
 
@@ -28,7 +28,7 @@
         <div class="logobar">
 
             <nav>
-                <a class="logo" href="miniProject/mainpage.jsp">Nadeuli</a>
+                <a class="logo" href="./mainpage.jsp">Nadeuli</a>
             </nav>
 
             <div class="search">
@@ -52,10 +52,10 @@
                 </div>
 
                 <li class="a1"><a href="./mainpage.jsp">홈</a></li>
-                <li class="a2"><a href="../map/map.jsp">여행지</a></li>
-                <li class="a3"><a href="../review/reviewList.jsp">후기</a></li>
-                <li class="a4"><a href="./miniproject.jsp">이벤트</a></li>
-                <li class="a5"><a href="../serviceCenter/serviceCenter.jsp">고객센터</a></li>
+                <li class="a2"><a href="./views/map/map.jsp">여행지</a></li>
+                <li class="a3"><a href="./views/review/reviewList.jsp">후기</a></li>
+                <li class="a4"><a href="./mainpage.jsp">이벤트</a></li>
+                <li class="a5"><a href="./views/serviceCenter/serviceCenter.jsp">고객센터</a></li>
             </ul>
         </div>
 
@@ -64,15 +64,15 @@
     <div class="nav_section">
         <div id="여행지" class="sub_menu travel">
             <ul>
-                <li><a href="../map/map.jsp">지도로 보는 여행지</a></li>
-                <li><a href="../thema/themaBoardList.jsp">테마별 여행지</a></li>
+                <li><a href="./views/map/map.jsp">지도로 보는 여행지</a></li>
+                <li><a href="./views/thema/themaBoardList.jsp">테마별 여행지</a></li>
             </ul>
         </div>
 
         <div id="후기" class="sub_menu review">
             <ul>
-                <li><a href="../review/reviewList.jsp">후기 목록</a></li>
-                <li><a href="../review/reviewWrite.jsp">후기 작성</a></li>
+                <li><a href="./views/review/reviewList.jsp">후기 목록</a></li>
+                <li><a href="./views/review/reviewWrite.jsp">후기 작성</a></li>
             </ul>
         </div>
 
@@ -85,9 +85,9 @@
 
         <div id="고객센터" class="sub_menu service-center">
             <ul>
-                <li><a href="../serviceCenter/serviceCenter.jsp#notice">공지사항</a></li>
-                <li><a href="../serviceCenter/serviceCenter.jsp#inquiry">1 : 1 문의</a></li>
-                <li><a href="../serviceCenter/serviceCenter.jsp#qna" >F&nbsp;A&nbsp;Q</a></li>
+                <li><a href="./views/serviceCenter/serviceCenter.jsp#notice">공지사항</a></li>
+                <li><a href="./views/serviceCenter/serviceCenter.jsp#inquiry">1 : 1 문의</a></li>
+                <li><a href="./views/serviceCenter/serviceCenter.jsp#qna" >F&nbsp;A&nbsp;Q</a></li>
             </ul>
         </div>
     </div>
@@ -102,19 +102,19 @@
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
             <div class="numbertext"></div>
-            <img src="./css/image/slide1.jpeg">
+            <img src="./resources/css/image/slide1.jpeg">
             <div class="text">내용입력</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext"></div>
-            <img src="./css/image/slide2.jpeg">
+            <img src="./resources/css/image/slide2.jpeg">
             <div class="text">내용입력</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext"></div>
-            <img src="./css/image/slide3.jpeg">
+            <img src="./resources/css/image/slide3.jpeg">
             <div class="text">내용입력</div>
         </div>
 
@@ -156,80 +156,80 @@
         <div class="destination-grid">
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="./css/image/seoul_cherry_blossom_1.jpeg" alt="여행지 이미지">
+                <a href="./mainpage.jsp">
+                    <img src="./resources/css/image/seoul_cherry_blossom_1.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지1</h3>
                 <p>여행지1에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="./css/image/seoul_cherry_blossom_2.jpeg" alt="여행지 이미지">
+                <a href="./mainpage.jsp">
+                    <img src="./resources/css/image/seoul_cherry_blossom_2.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지2</h3>
                 <p>여행지2에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="./css/image/seoul_cherry_blossom_3.jpeg" alt="여행지 이미지">
+                <a href="./mainpage.jsp">
+                    <img src="./resources/css/image/seoul_cherry_blossom_3.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지3</h3>
                 <p>여행지3에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="./css/image/seoul_cherry_blossom_4.jpeg" alt="여행지 이미지">
+                <a href="./mainpage.jsp">
+                    <img src="./resources/css/image/seoul_cherry_blossom_4.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지4</h3>
                 <p>여행지4에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="./css/image/seoul_cherry_blossom_13.jpeg" alt="여행지 이미지">
+                <a href="./mainpage.jsp">
+                    <img src="./resources/css/image/seoul_cherry_blossom_13.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지5</h3>
                 <p>여행지5에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="./css/image/seoul_cherry_blossom_13.jpeg" alt="여행지 이미지">
+                <a href="./mainpage.jsp">
+                    <img src="./resources/css/image/seoul_cherry_blossom_13.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지6</h3>
                 <p>여행지6에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="./css/image/seoul_cherry_blossom_4.jpeg" alt="여행지 이미지">
+                <a href="./mainpage.jsp">
+                    <img src="./resources/css/image/seoul_cherry_blossom_4.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지7</h3>
                 <p>여행지7에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="./css/image/seoul_cherry_blossom_1.jpeg" alt="여행지 이미지">
+                <a href="./mainpage.jsp">
+                    <img src="./resources/css/image/seoul_cherry_blossom_1.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지8</h3>
                 <p>여행지8에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="./css/image/seoul_cherry_blossom_2.jpeg" alt="여행지 이미지">
+                <a href="./mainpage.jsp">
+                    <img src="./resources/css/image/seoul_cherry_blossom_2.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지9</h3>
                 <p>여행지9에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="./css/image/seoul_cherry_blossom_3.jpeg" alt="여행지 이미지">
+                <a href="./mainpage.jsp">
+                    <img src="./resources/css/image/seoul_cherry_blossom_3.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지10</h3>
                 <p>여행지10에 대한 설명</p>
@@ -338,7 +338,7 @@
             <li><a href="" target="_blank" title="새창">저작권정책</a></li>
             <li><a href="" target="_blank" title="새창">고객서비스헌장</a></li>
             <li><a href="" target="_blank" title="새창">전자우편무단수집거부</a></li>
-            <li><a href="serviceCenter.jsp#qna" onclick="goQA();" title="페이지이동">Q&amp;A</a></li>
+            <li><a href="./views/serviceCenter/serviceCenter.jsp#qna" onclick="goQA();" title="페이지이동">Q&amp;A</a></li>
             <li><a href="" target="_blank" title="새창">찾아오시는 길</a></li>
         </ul>
     </div>
@@ -349,7 +349,7 @@
         </p>
         <div class="TourAPI">
             <a href="https://api.visitkorea.or.kr/#/" id="TourAPI" target="_blank" title="새창"><img
-                    src="./css/image/Tour_api.png" alt="TourAPI 4.0"></a>
+                    src="./resources/css/image/Tour_api.png" alt="TourAPI 4.0"></a>
         </div>
     </div>
 </footer>
