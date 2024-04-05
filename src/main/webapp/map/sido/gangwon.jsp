@@ -26,20 +26,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     var mymap = L.map("mapid",{
-        center: [35.2100, 129.0689],
-        zoom: 10,
+        center: [37.7250, 128.3010],
+        zoom: 8,
         zoomControl: false,
         dragging: false
     });
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "© OpenStreetMap contributors",
-        maxZoom: 10,
-        minZoom: 10,
+        maxZoom: 8,
+        minZoom: 8,
     }).addTo(mymap);
 
     $(document).ready(function () {
-        $.getJSON("./gyeonggi.json", function (data) {
+        $.getJSON("./gangwon.json", function (data) {
             var geojson = L.geoJSON(data, {
                 onEachFeature: function (feature, layer) {
                     layer.on({
@@ -48,7 +48,7 @@
 
                             // 보색으로 색 변경
                             layer.setStyle({
-                                fillColor: "#f5b041", // 예시 색상
+                                fillColor: "#58d68d", // 예시 색상
                                 fillOpacity: 1,
                             });
 
@@ -79,8 +79,59 @@
                         click: function (e) {
                             // 클릭 이벤트 추가
                             switch (feature.properties.SIG_KOR_NM) {
-                                case "중구":
-                                    window.location.href = "../busan/junggu.jsp";
+                                case "춘천시":
+                                    window.location.href = "../gangwon/chuncheonsi.jsp";
+                                    break;
+                                case "원주시":
+                                    window.location.href = "../gangwon/wonjusi.jsp";
+                                    break;
+                                case "강릉시":
+                                    window.location.href = "../gangwon/gangneungsi.jsp";
+                                    break;
+                                case "동해시":
+                                    window.location.href = "../gangwon/donghaesi.jsp";
+                                    break;
+                                case "태백시":
+                                    window.location.href = "../gangwon/taebaeksi.jsp";
+                                    break;
+                                case "속초시":
+                                    window.location.href = "../gangwon/sokchosi.jsp";
+                                    break;
+                                case "삼척시":
+                                    window.location.href = "../gangwon/samcheoksi.jsp";
+                                    break;
+                                case "홍천군":
+                                    window.location.href = "../gangwon/hongcheongun.jsp";
+                                    break;
+                                case "횡성군":
+                                    window.location.href = "../gangwon/hoengseonggun.jsp";
+                                    break;
+                                case "영월군":
+                                    window.location.href = "../gangwon/yeongwolgun.jsp";
+                                    break;
+                                case "평창군":
+                                    window.location.href = "../gangwon/pyeongchanggun.jsp";
+                                    break;
+                                case "정선군":
+                                    window.location.href = "../gangwon/jeongseongun.jsp";
+                                    break;
+                                case "철원군":
+                                    window.location.href = "../gangwon/cheorwongun.jsp";
+                                    break;
+                                case "화천군":
+                                    window.location.href = "../gangwon/hwacheongun.jsp";
+                                    break;
+                                case "양구군":
+                                    window.location.href = "../gangwon/yanggugun.jsp";
+                                    break;
+                                case "인제군":
+                                    window.location.href = "../gangwon/injegun.jsp";
+                                    break;
+                                case "고성군":
+                                    window.location.href = "../gangwon/goseonggun.jsp";
+                                    break;
+                                case "양양군":
+                                    window.location.href = "../gangwon/yangyanggun.jsp";
                                     break;
                                 default:
                                     // 선택한 지역이 위의 case에 해당하지 않을 경우의 처리를 여기에 작성할 수 있습니다.
@@ -92,7 +143,7 @@
                 // 초기 스타일 설정
                 style: function (feature) {
                     return {
-                        fillColor: "#f39c12", // 기본 색상
+                        fillColor: "#2ecc71", // 기본 색상
                         weight: 1,
                         opacity: 1,
                         color: "white", // 경계선 색상
