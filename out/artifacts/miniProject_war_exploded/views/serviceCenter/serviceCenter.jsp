@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="icon" href="data:,">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
@@ -33,7 +34,15 @@
             <div id="noticeContent">
               <h2>공지사항</h2>
               <div class="notices">
-
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <button class="toggleBtn">공지사항</button>
+                    <div style="color: #000000" class="date">날짜: 2024-04-09</div> <!-- 날짜 정보 추가 -->
+                    <button class="editBtn" style="margin-left: 10px;">편집</button>
+                    <button class="deleteBtn" style="margin-left: 10px; border-radius: 10px;">삭제</button>
+                  </div>
+                  <div class="ntccontent" style="display: block;">안녕하세요 공지입니다.</div>
+                </div>
               </div>
               <button id="createBtn" onclick="showPopup();">작성</button>
             </div>

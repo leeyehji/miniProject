@@ -495,7 +495,7 @@ footer{
 }
 /*site map*/
 #siteMap{
-    width: 1892px;
+    width: 1890px;
     background:#F1F3F4;
     padding: 10px 0px 10px 0px;
     text-align:right;
@@ -572,7 +572,7 @@ footer{
 
 footer .tit {
     background-color: #F1F3F4;
-    width: 1892px;
+    width: 1890px;
     display: flex; /* inline-block에서 flex로 변경 */
     justify-content: center; /* 가로축 중앙 정렬 */
     align-items: center; /* 세로축 중앙 정렬 */
@@ -584,7 +584,7 @@ footer .tit {
 
 footer .sns_list {
     background-color: #F1F3F4;
-    width: 1892px;
+    width: 1890px;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -685,7 +685,7 @@ footer .sns_list li:hover .icon_instagram {
 .btm_menu {
     margin: 0px;
     padding: 0px;
-    width: 1892px;
+    width: 1890px;
     height: 60px;
 }
 
@@ -722,7 +722,7 @@ a:active {
 
 footer .badak {
    	background-color: #EEEEEE;
-    width: 1892px;
+    width: 1890px;
     height: 60px;
     position: relative;
     /* 상대 위치 지정 */

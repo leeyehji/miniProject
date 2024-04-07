@@ -37,11 +37,11 @@ table {
 }
 
 #wrap {
-    border-right: solid 3px #CAE9FF;
+    border-right: solid 2px #CAE9FF;
     height: 1080px;
     float: left;
     background-color: #ffffff;
-    width: 1584px;
+    width: 1585px;
     margin: 0 auto;
 }
 
@@ -110,15 +110,16 @@ h2 {
 
 #faqContent {
     overflow-x: hidden;
-    width: 1200px;
+    width: 1515px;
     position: relative;
     left: 70px;
-    top: 60px;
+    top: 1px;
     height: 1020px;
 }
 
 #faqContent h2 {
     margin-left: 400px;
+    margin-top: 90px;
 }
 
 #faqContent h1 {
@@ -154,7 +155,7 @@ h2 {
 
 #noticeContent {
 
-    max-width: 1000px;
+    max-width: 1500px;
     margin: 20px;
     padding: 20px;
 
@@ -192,12 +193,12 @@ h2 {
     /* 공지사항 제목 */
     border-radius: 10px;
     text-align: left;
-    width: 647px;
+    width: 1200px;
     position: relative;
     height: 50px;
     font-size: 18px;
     color: #000000;
-    background-color: #A0E3F2;
+    background-color: #c5c6d0;
     margin-bottom: 5px;
 }
 
@@ -211,9 +212,9 @@ h2 {
     margin-left: 5px;
     padding-left: 5px;
     text-align: left;
-    width: 630px;
+    width: 1180px;
     position: relative;
-    height: 100px;
+    height: 170px;
     font-size: 18px;
     border: 1px solid #000000;
     margin-bottom: 5px;

@@ -145,6 +145,7 @@ function addClickListener(id, contentId) {
 }
 
 // DOM이 완전히 로드된 후에 실행됩니다.
+
 document.addEventListener('DOMContentLoaded', function() {
   handleHashChange(); // 페이지 로드 시 적절한 콘텐츠를 표시합니다.
   // 각 탭에 대한 클릭 이벤트 리스너를 추가합니다.
@@ -158,22 +159,22 @@ window.addEventListener('hashchange', handleHashChange);
 
 ////////////////////////////// 1:1 문의 하기/////////////////////
 
-document.getElementById('inquiryForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  var userName = document.getElementById('userName').value;
-  var userEmail = document.getElementById('userEmail').value;
-  var userInquiry = document.getElementById('userInquiry').value;
+// document.body 대신에 실제로 inquiryForm을 포함할 것으로 예상되는 부모 요소를 사용하세요.
+document.addEventListener('submit', function(event) {
+  if(event.target && event.target.id === 'inquiryForm') {
+    // 여기에 폼 제출 처리 로직을 넣습니다.
+    event.preventDefault();
+    var userName = document.getElementById('userName').value;
+    var userEmail = document.getElementById('userEmail').value;
+    var userInquiry = document.getElementById('userInquiry').value;
 
-  console.log('이름:', userName);
-  console.log('이메일:', userEmail);
-  console.log('문의 내용:', userInquiry);
+    console.log('이름:', userName);
+    console.log('이메일:', userEmail);
+    console.log('문의 내용:', userInquiry);
 
-  alert('문의가 접수되었습니다. 빠른 시일 내에 답변드리겠습니다.');
-
-  // 여기서 서버로 데이터를 보내는 코드를 추가할 수 있습니다.
-  // 예를 들어, AJAX 요청을 사용하여 서버에 데이터를 전송하고,
-  // 서버에서는 이 데이터를 받아 처리한 후 데이터베이스에 저장할 수 있습니다.
-  // 문의하기를 하면 문의 내용이 데이터 베이스로 저장되고 답변은 이메일로 하는 식
+    alert('문의가 접수되었습니다. 빠른 시일 내에 답변드리겠습니다.');
+    // 서버로 데이터 전송 로직 등...
+  }
 });
 
 
