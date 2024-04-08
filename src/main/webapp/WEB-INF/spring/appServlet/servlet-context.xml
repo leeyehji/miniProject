@@ -25,7 +25,8 @@ https://www.springframework.org/schema/mvc/spring-mvc.xsd
 	<resources mapping="/mypage/**/**" location="/resources/mypage/" />
 	<!-- frame js, css-->
 	<resources mapping="/frame/**/**" location="/resources/frame/" />
-	
+	<!-- map js, css -->
+	<resources mapping="/map/**/**" location="/resources/map/" />
 	
 	<!--<resources mapping="/WEB-INF/storage" location="/storage/**" />-->
 
@@ -44,5 +45,7 @@ https://www.springframework.org/schema/mvc/spring-mvc.xsd
 	<context:component-scan base-package="com.nadeuli.mypage.controller" />
 	<!-- frame -->
 	<context:component-scan base-package="com.nadeuli.frame.controller" />
+	<!-- map -->
+	<context:component-scan base-package="com.nadeuli.map.controller" />
 
 </beans:beans>

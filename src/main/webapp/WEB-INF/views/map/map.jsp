@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../../resources/frame/css/frame.css">
-    <link rel="stylesheet" type="text/css" href="../../../resources/map/css/map.css">
+    <link rel="stylesheet" type="text/css" href="/frame/css/frame.css">
+    <link rel="stylesheet" type="text/css" href="/map/css/map.css">
 </head>
 <body>
 <header>
@@ -58,7 +58,7 @@
             <div class="mapmain">
                 <iframe
                         id="mapframe"
-                        src="./korea.jsp"
+                        src="./korea"
                         style="border: 0; width: 100%; height: 100%"
                 >
                 </iframe>
@@ -125,7 +125,7 @@
 <div id="bottom"></div>
 
 </body>
-<script src="../../../resources/frame/js/frame.js"></script>
+<script src="/frame/js/frame.js"></script>
 <%--<script src="../js/mypage.js"></script>--%>
 <script>
     window.addEventListener("message", function(event) {
@@ -187,7 +187,7 @@
                             button.classList.add("active");
 
                             // 버튼의 id를 이용해 해당 지역의 .jsp 파일 경로를 생성하고 iframe의 src 속성 변경
-                            let regionPage = './korea.jsp'; // 기본값
+                            let regionPage = './korea'; // 기본값
                             switch (regionData.properties.CTP_ENG_NM.toLowerCase()) {
                                 case 'seoul':
                                     regionPage = './sido/seoul.jsp';
@@ -425,7 +425,7 @@
     });
     document.getElementById("resetBtn").addEventListener("click", function () {
         // iframe의 src를 기본 지도 페이지로 변경
-        document.getElementById("mapframe").src = "./korea.jsp";
+        document.getElementById("mapframe").src = "./korea";
 
         // 선택된 지역 버튼의 'active' 클래스 제거
         document.querySelectorAll(".location button").forEach((button) =>
