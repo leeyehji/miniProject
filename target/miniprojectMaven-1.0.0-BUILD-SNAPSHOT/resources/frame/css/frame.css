@@ -5,7 +5,7 @@ body {
     padding: 0;
     height: 100vh;
     overflow: auto;
-    min-width: 1890px; /*1920 * 1080 기준 수정*/
+    min-width: 1899px; /*1920 * 1080 기준 수정*/
     min-height: 1080px;
     list-style-type: none;
     font-family:'Dovemayo_gothic';
@@ -89,12 +89,13 @@ hr {
 /* 여기부터 메뉴바 */
 
 .banner {
-    width: 1890px;
+    width: 1899px;
     display: flex;
     flex-direction: column;
 }
 
 .menu {
+    width: 1899px;
     flex-direction: column;
     /* 요소들을 세로로 쌓음 */
     display: flex;
@@ -140,9 +141,9 @@ nav .logo {
 
 .show {
     display: flex;
-    top: 135px;
+    top: 129px;
     position: absolute;
-    width: 1890px;
+    width: 1899px;
     height: 200px;
     opacity: 80%;
 }
@@ -283,7 +284,7 @@ aside {
 /* 버튼 크기 조절 및 이미지 추가 */
 
 .logobar {
-    width: 1890px;
+    width: 1899px;
     display: flex;
 }
 
@@ -386,14 +387,15 @@ aside {
 #frameContent {
     display: flex;
     min-height: 400px;
-    width: 1890px;
+    width: 1899px;
 }
+
 /*nav*/
-#frameNav {
-    height: calc(100% -70px-330px);
-    min-width: 300px; /* nav min width >= nadeuliNav width + padding */
-    border-right: #CAE9FF solid 3px;
-}
+/*#frameNav {*/
+/*    height: calc(100% -70px-330px);*/
+/*    min-width: 300px; !* nav min width >= nadeuliNav width + padding *!*/
+/*    border-right: #CAE9FF solid 2px;*/
+/*}*/
 
 #nadeuliNav {
     margin-top: 50px;
@@ -492,12 +494,12 @@ aside {
 
 /*footer*/
 footer{
-    width: 1890px;
+    width: 1903px;
     background:#EEEEEE;
 }
 /*site map*/
 #siteMap{
-    width: 1892px;
+    width: 1903px;
     background:#F1F3F4;
     padding: 10px 0px 10px 0px;
     text-align:right;
@@ -575,7 +577,7 @@ footer{
 footer .tit {
     background-color: #F1F3F4;
     position: relative;
-    width: 1892px;
+    width: 1903px;
     display: flex; /* inline-block에서 flex로 변경 */
     justify-content: center; /* 가로축 중앙 정렬 */
     align-items: center; /* 세로축 중앙 정렬 */
@@ -587,7 +589,7 @@ footer .tit {
 
 footer .sns_list {
     background-color: #F1F3F4;
-    width: 1892px;
+    width: 1903px;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -691,7 +693,7 @@ footer .sns_list li:hover .icon_instagram {
 	background-color: #EEEEEE;
     margin: 0px;
     padding: 0px;
-    width: 1892px;
+    width: 1903px;
     height: 60px;
 }
 
@@ -728,7 +730,7 @@ a:active {
 
 footer .badak {
    	background-color: #EEEEEE;
-    width: 1892px;
+    width: 1903px;
     height: 60px;
     position: relative;
     /* 상대 위치 지정 */
