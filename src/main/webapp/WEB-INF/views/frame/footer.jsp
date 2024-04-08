@@ -106,7 +106,7 @@
         </p>
         <div class="TourAPI">
             <a href="https://api.visitkorea.or.kr/#/" id="TourAPI" target="_blank" title="새창"><img
-                    src="./css/image/Tour_api.png" alt="TourAPI 4.0"></a>
+                    src="/frame/css/image/Tour_api.png" alt="TourAPI 4.0"></a>
         </div>
     </div>
 </footer>

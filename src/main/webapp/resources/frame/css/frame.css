@@ -28,24 +28,26 @@ ul {
 
 @font-face {
     font-family: "ffont";
-    src: url("../font/기본 폰트.ttf") format("truetype");
+    src: url("../../font/기본 폰트.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "logo";
-    src: url("../font/사이트명.ttf") format("truetype");
+    src: url("../../font/사이트명.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "cld";
-    src: url("../font/캘린더.ttf") format("truetype");
+    src: url("../../font/캘린더.ttf") format("truetype");
 }
 
 
 /*header*/
 /*main menu*/
 /* 배너와 네비게이션 스타일 ---------------------------------------------*/
-
+header{
+	font-family: "ffont";
+}
 hr {
     border-style: solid;
     /* 테두리 스타일 */
@@ -67,7 +69,7 @@ hr {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: #555;
+    background-color: #378CE7;
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -111,6 +113,7 @@ hr {
 }
 
 nav .logo {
+    color: #203987;
     top: 7px;
     font-family: "logo";
     position: relative;
@@ -232,7 +235,12 @@ aside {
     font-size: 18px;
 }
 
+.sub_menu ul li a{ /* 메뉴바 내부 글자 색상 */
+    color: #000000;
+}
+
 .nav ul li a {
+    color: #000000;
     text-decoration: none;
 }
 
@@ -566,6 +574,7 @@ footer{
 
 footer .tit {
     background-color: #F1F3F4;
+    position: relative;
     width: 1892px;
     display: flex; /* inline-block에서 flex로 변경 */
     justify-content: center; /* 가로축 중앙 정렬 */
@@ -676,7 +685,10 @@ footer .sns_list li:hover .icon_instagram {
     background-image: url(../icon/sns7-2.png);
 }
 
+/*-----------------------------------------------------*/
+
 .btm_menu {
+	background-color: #EEEEEE;
     margin: 0px;
     padding: 0px;
     width: 1892px;
