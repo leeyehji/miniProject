@@ -2,17 +2,17 @@
 
 @font-face {
     font-family: "ffont";
-    src: url("../font/기본 폰트.ttf") format("truetype");
+    src: url("../../font/기본 폰트.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "logo";
-    src: url("../font/사이트명.ttf") format("truetype");
+    src: url("../../font/사이트명.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "cld";
-    src: url("../font/캘린더.ttf") format("truetype");
+    src: url("../../font/캘린더.ttf") format("truetype");
 }
 
 body {
@@ -425,59 +425,59 @@ footer .sns_list ul {
 }
 /* sns 아이콘 */
 footer .sns_list .icon_blog {
-    background-image: url(../frame/icon/sns1.png);
+    background-image: url(/icon/sns1.png);
 }
 
 footer .sns_list li:hover .icon_blog {
-    background-image: url(../frame/icon/sns1-2.png);
+    background-image: url(/icon/sns1-2.png);
 }
 
 footer .sns_list .icon_post {
-    background-image: url(../frame/icon/sns2.png);
+    background-image: url(/icon/sns2.png);
 }
 
 footer .sns_list li:hover .icon_post {
-    background-image: url(../frame/icon/sns2-2.png);
+    background-image: url(/icon/sns2-2.png);
 }
 
 footer .sns_list .icon_band {
-    background-image: url(../frame/icon/sns3.png);
+    background-image: url(/icon/sns3.png);
 }
 
 footer .sns_list li:hover .icon_band {
-    background-image: url(../frame/icon/sns3-2.png);
+    background-image: url(/icon/sns3-2.png);
 }
 
 footer .sns_list .icon_facebook {
-    background-image: url(../frame/icon/sns4.png);
+    background-image: url(/icon/sns4.png);
 }
 
 footer .sns_list li:hover .icon_facebook {
-    background-image: url(../frame/icon/sns4-2.png);
+    background-image: url(/icon/sns4-2.png);
 }
 
 footer .sns_list .icon_twitter {
-    background-image: url(../frame/icon/sns5.png);
+    background-image: url(/icon/sns5.png);
 }
 
 footer .sns_list li:hover .icon_twitter {
-    background-image: url(../frame/icon/sns5-2.png);
+    background-image: url(/icon/sns5-2.png);
 }
 
 footer .sns_list .icon_kakaostory {
-    background-image: url(../frame/icon/sns6.png);
+    background-image: url(/icon/sns6.png);
 }
 
 footer .sns_list li:hover .icon_kakaostory {
-    background-image: url(../frame/icon/sns6-2.png);
+    background-image: url(/icon/sns6-2.png);
 }
 
 footer .sns_list .icon_instagram {
-    background-image: url(../frame/icon/sns7.png);
+    background-image: url(/icon/sns7.png);
 }
 
 footer .sns_list li:hover .icon_instagram {
-    background-image: url(../frame/icon/sns7-2.png);
+    background-image: url(/icon/sns7-2.png);
 }
 
 /*-----------------------------------------------------*/

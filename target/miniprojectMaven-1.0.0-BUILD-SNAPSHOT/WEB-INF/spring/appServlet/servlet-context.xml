@@ -18,7 +18,7 @@ https://www.springframework.org/schema/mvc/spring-mvc.xsd
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/js/**" location="/resources/mainpage/js/" />
-	<resources mapping="/icon/**" location="/resources/mainpage/icon/" />
+	<resources mapping="/icon/**" location="/resources/icon/" />
 	<resources mapping="/font/**" location="/resources/font/" />
 	<resources mapping="/css/**" location="/resources/mainpage/css/" /><!-- css내부 image 폴더까지 자동처리 -->
 
