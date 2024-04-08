@@ -21,7 +21,12 @@ https://www.springframework.org/schema/mvc/spring-mvc.xsd
 	<resources mapping="/icon/**" location="/resources/mainpage/icon/" />
 	<resources mapping="/font/**" location="/resources/font/" />
 	<resources mapping="/css/**" location="/resources/mainpage/css/" /><!-- css내부 image 폴더까지 자동처리 -->
-
+	<!-- mypage js, css -->
+	<resources mapping="/mypage/**/**" location="/resources/mypage/" />
+	<!-- frame js, css-->
+	<resources mapping="/frame/**/**" location="/resources/frame/" />
+	
+	
 	<!--<resources mapping="/WEB-INF/storage" location="/storage/**" />-->
 
 
@@ -35,6 +40,9 @@ https://www.springframework.org/schema/mvc/spring-mvc.xsd
 	<!-- mainpage용 컨트롤러 -->
 	<context:component-scan base-package="com.Spring.miniprojectMaven" />
 	<context:component-scan base-package="com.nadeuli"/>
-
+	<!-- mypage -->
+	<context:component-scan base-package="com.nadeuli.mypage.controller" />
+	<!-- frame -->
+	<context:component-scan base-package="com.nadeuli.frame.controller" />
 
 </beans:beans>
