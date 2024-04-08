@@ -45,7 +45,9 @@ ul {
 /*header*/
 /*main menu*/
 /* 배너와 네비게이션 스타일 ---------------------------------------------*/
-
+header{
+	font-family: "ffont";
+}
 hr {
     border-style: solid;
     /* 테두리 스타일 */
@@ -67,7 +69,7 @@ hr {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: #555;
+    background-color: #378CE7;
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -138,7 +140,7 @@ nav .logo {
 
 .show {
     display: flex;
-    top: 129px;
+    top: 135px;
     position: absolute;
     width: 1890px;
     height: 200px;
@@ -237,9 +239,9 @@ aside {
     color: #000000;
 }
 
-.nav ul li a { /*메뉴바 글자 색상 */
-    text-decoration: none;
+.nav ul li a {
     color: #000000;
+    text-decoration: none;
 }
 
 .nav .menu-icon {
@@ -572,6 +574,7 @@ footer{
 
 footer .tit {
     background-color: #F1F3F4;
+    position: relative;
     width: 1892px;
     display: flex; /* inline-block에서 flex로 변경 */
     justify-content: center; /* 가로축 중앙 정렬 */
@@ -682,7 +685,10 @@ footer .sns_list li:hover .icon_instagram {
     background-image: url(../icon/sns7-2.png);
 }
 
+/*-----------------------------------------------------*/
+
 .btm_menu {
+	background-color: #EEEEEE;
     margin: 0px;
     padding: 0px;
     width: 1892px;
