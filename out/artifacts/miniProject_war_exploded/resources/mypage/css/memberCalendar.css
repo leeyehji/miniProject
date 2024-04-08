@@ -1,0 +1,132 @@
+
+
+/*calendar*/
+#myCalendar {
+  display: flex;
+  align-items: center; /* 세로 중앙 정렬 */
+}
+
+#calendarPageTitle{
+	font-size:50px;
+	text-align:center;
+	margin-bottom:160px;
+}
+#selectDate{
+	font-size:80px;
+	text-align: center;
+	color:#378CE7;
+	margin-bottom:70px;
+	font-weight:bold;
+}
+#selectWeek{
+	margin-bottom:70px; 
+	font-size:30px;
+}
+#todoList{
+	margin-top:50px;
+	padding:10px;
+}
+#schedule{
+	font-weight:bold;
+	font-size:50px;
+	color:#5c5c5c;
+	margin-bottom:30px;
+}
+#todoListTitle{
+	font-size:30px;
+	margin: 10px auto 30px auto;
+	border-bottom: #378CE7 dashed 3px;
+}
+#todoListContent{
+	font-size:20px;
+}
+#returnToday{
+	text-align:right;
+	margin: 30px 0;
+}
+#returnTodayBtn{
+	background:rgb(160, 227, 242);
+	font-size:15px;
+	font-weight:bold;
+	cursor:pointer;
+	border:none;
+	border-radius:5px;
+	width:100px;
+	height:50px;
+}
+
+/*캘린더 datepicker*/
+#datepicker {
+  margin: 10px; 
+/*height:900px;*/
+}
+.vertical-container {
+  margin: 15px 30px; 
+}
+.ui-datepicker { /*datepicker 크기*/
+	width: 1100px;
+	/*height:900px*/
+	
+	padding: 0; 
+	display: none; 
+	border: none; 
+	margin-top: 10px;
+}
+
+.ui-widget.ui-widget-content{ 
+	border: none !important; 
+	border-radius: 5px; 
+	overflow: hidden; 
+	background: #fff; 
+	
+}
+a.ui-state-default{/*달력 1칸*/
+    padding: 0 !important;
+    font-size: 15px;
+    height:130px;
+    color:#378CE7;
+}
+
+
+.ui-datepicker .ui-widget-header { /*달력 상단 색상*/
+	position: relative; 
+	background: white;
+	color: #378CE7; 
+	border-radius: 0;
+	font-size:40px; 
+	padding: 0 !important;
+	border: none !important; 
+}
+.ui-datepicker-calendar thead{
+	background: rgb(160, 227, 242); 
+	border:rgb(160, 227, 242) solid;
+	height: 60px;
+	font-size:	18px;
+}
+.ui-datepicker-week-end:first-of-type span{color:red;}
+.ui-datepicker-week-end span{color:blue;}
+/* 날짜 글씨색 변경 */
+.ui-datepicker td{
+	border: #e4e4e4 solid 1px;
+}
+.ui-datepicker td a {
+    color: #378CE7 !important;
+    background: none !important;
+    border: none !important;
+    margin-top:10px;
+    text-align:center;
+}
+/* 오늘 날짜 스타일 */
+#datepicker .ui-datepicker-today {
+	background: #CAE9FF !important;
+}
+/* hover한 날짜의 배경색 변경 */
+.ui-datepicker td:hover {
+    background: #E4E4E4 !important; 
+    
+}
+/* 클릭한 날짜 배경색 */
+.ui-datepicker td.ui-datepicker-current-day:not(.ui-datepicker-today) {    		
+    background: rgb(160, 227, 242) !important; 
+    color:white !important; 
+}

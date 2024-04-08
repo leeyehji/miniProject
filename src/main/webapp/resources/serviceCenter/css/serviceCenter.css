@@ -1,0 +1,221 @@
+/* ------------------------------------------------------------------고객센터------ */
+
+table {
+    height: 1080px;
+}
+
+#container {
+    position: relative;
+    color: #CAE9FF;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    height: 1080px;
+}
+
+.snb ul {
+    list-style-type: none;
+    margin-left: 11px;
+}
+
+#servicecontent h2 {
+    padding: 24px 0;
+    color: #000000;
+    font-size: 50px;
+
+}
+
+#servicecontent .text {
+    margin-left: 148px;
+
+}
+
+#servicecontent .text p {
+    margin-bottom: 15px;
+
+    line-height: 1.4;
+    /* 글자 사이 여백 */
+}
+
+#wrap {
+    border-right: solid 2px #CAE9FF;
+    height: 1080px;
+    float: left;
+    background-color: #ffffff;
+    width: 1585px;
+    margin: 0 auto;
+}
+
+#noticeContent {
+    display: none;
+}
+
+#inquiryContent {
+    display: none;
+}
+
+#qnaContent {
+    display: none;
+}
+
+
+/* ------------1:1 문의 하기 ---------------------------------------------- */
+
+#inquiryContent {
+    width: 600px;
+    padding: 20px;
+    margin-left: 140px;
+}
+
+h2 {
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#inquiryBtn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#inquiryBtn:hover {
+    background-color: #0056b3;
+}
+
+/* ------------------------FAQ-------------------------------------- */
+
+#faqContent {
+    overflow-x: hidden;
+    width: 1515px;
+    position: relative;
+    left: 70px;
+    top: 1px;
+    height: 1020px;
+}
+
+#faqContent h2 {
+    margin-left: 400px;
+    margin-top: 90px;
+}
+
+#faqContent h1 {
+    color:#007bff;
+    font-size: 50px;
+    margin-left: 398px;
+}
+
+.faq-container {
+    left: 50px;
+    position: relative;
+    width: 1000px;
+}
+
+.faqItem {
+    font-size: 50px;
+    margin-left: 200px;
+    margin-bottom: 50px;
+}
+
+.faqItem .question{
+    color: #007bff;
+}
+.faqItem .answer{
+    color: #000000;
+}
+
+    /* 공지사항 */
+
+#writeForm {
+    display: none;
+}
+
+#noticeContent {
+
+    max-width: 1500px;
+    margin: 20px;
+    padding: 20px;
+
+}
+
+#noticeContent h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.notices {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+    font-size: 16px;
+}
+
+#noticeContent>button {
+    display: inline-block;
+    /* 버튼을 인라인 블록 요소로 만들어 줄 바꿈 없이 나열 */
+    margin-right: 10px;
+    background-color: #ece5e5;
+    color: #000000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#noticeContent>button:hover {
+    background-color: #9ea3a7;
+}
+
+.toggleBtn {
+    /* 공지사항 제목 */
+    border-radius: 10px;
+    text-align: left;
+    width: 1200px;
+    position: relative;
+    height: 50px;
+    font-size: 18px;
+    color: #000000;
+    background-color: #c5c6d0;
+    margin-bottom: 5px;
+}
+
+.ntccontent {
+    /* 공지사항 내용 */
+    overflow-y: scroll;
+    color: #000000;
+    margin-top: -5px;
+    padding-top: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-left: 5px;
+    text-align: left;
+    width: 1180px;
+    position: relative;
+    height: 170px;
+    font-size: 18px;
+    border: 1px solid #000000;
+    margin-bottom: 5px;
+}
