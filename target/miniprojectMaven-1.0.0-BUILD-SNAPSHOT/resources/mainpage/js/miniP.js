@@ -4,7 +4,37 @@ function toggleNavSections() {
   navSection.classList.toggle('show');
 }
 // 메뉴바 끝
+// 위아래 버튼 시작
+// 네비게이션 섹션 토글 기능
+function toggleNavSections() {
+  var navSection = document.querySelector('.nav_section');
+  navSection.classList.toggle('show');
+}
 
+function bottomFunction() {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+}
+
+function topFunction() {
+  window.scrollTo({
+    top: document.body.scrollTop,
+    behavior: 'smooth'
+  });
+}
+
+window.addEventListener('scroll', function () {
+  var menu = document.querySelector('div.menu');
+  var footer = document.querySelector('footer');
+  var toTopBtn = document.getElementById('myBtnTop');
+  var toBottomBtn = document.getElementById('myBtnBottom');
+
+  var menuPosition = menu.getBoundingClientRect();
+  var footerPosition = footer.getBoundingClientRect();
+  
+});
 // //로그인 시작
 // // 로그인 성공을 가정하는 함수입니다.
 
@@ -34,52 +64,7 @@ function toggleNavSections() {
 // };
 // // 로그인 끝
 
-// 위아래 버튼 시작
-// 네비게이션 섹션 토글 기능
-function toggleNavSections() {
-  var navSection = document.querySelector('.nav_section');
-  navSection.classList.toggle('show');
-}
 
-function bottomFunction() {
-  window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior: 'smooth'
-  });
-}
-
-function topFunction() {
-  window.scrollTo({
-    top: document.body.scrollTop,
-    behavior: 'smooth'
-  });
-}
-
-//재
-window.addEventListener('scroll', function () {
-  var menu = document.querySelector('div.menu');
-  var footer = document.querySelector('footer');
-  var toTopBtn = document.getElementById('myBtnTop');
-  var toBottomBtn = document.getElementById('myBtnBottom');
-
-  var menuPosition = menu.getBoundingClientRect();
-  var footerPosition = footer.getBoundingClientRect();
-
-  // div.menu가 화면에서 사라졌는지 확인합니다.
-  if (menuPosition.bottom < 0) {
-    toTopBtn.style.display = 'block'; // 버튼 표시
-  } else {
-    toTopBtn.style.display = 'none'; // 버튼 숨김
-  }
-
-  // footer가 화면에 보이는지 확인합니다.
-  if (footerPosition.top < window.innerHeight) {
-    toBottomBtn.style.display = 'none'; // 버튼 숨김
-  } else {
-    toBottomBtn.style.display = 'block'; // 버튼 표시
-  }
-});
-//빈
 
 // 스크롤 시 버튼 디스플레이 로직을 처리하는 함수
 // function scrollFunction() {

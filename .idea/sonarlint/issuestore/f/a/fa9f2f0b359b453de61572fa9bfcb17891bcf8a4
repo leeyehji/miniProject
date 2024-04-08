@@ -1,10 +1,8 @@
 
-HWeb:TableWithoutCaptionChecka" Add a description to this table.(ÈÄü£
-:	Web:S5256a"%Add "<th>" headers to this "<table>".(ÈÄü£
-GWeb:ImgWithoutAltChecki"%Add an "alt" attribute to this image.(¹Íßç
-GWeb:ImgWithoutAltChecko"%Add an "alt" attribute to this image.(øô£±
-GWeb:ImgWithoutAltChecku"%Add an "alt" attribute to this image.(’´‘–
-OWeb:AvoidCommentedOutCodeCheck”"Remove this commented out code.(Âªß¥úÿÿÿÿ
-HWeb:ImgWithoutAltCheckƒ"%Add an "alt" attribute to this image.(ö¬½ø
-HWeb:ImgWithoutAltCheck‘"%Add an "alt" attribute to this image.(ö¬½ø
-JWeb:AvoidCommentedOutCodeCheckç"Remove this commented out code.(µ•ì
+HWeb:TableWithoutCaptionCheck" Add a description to this table.(ÈÄü£
+:	Web:S5256"%Add "<th>" headers to this "<table>".(ÈÄü£
+LWeb:ImgWithoutAltCheck!"%Add an "alt" attribute to this image.(¥­æùÿÿÿÿ
+FWeb:ImgWithoutAltCheck'"%Add an "alt" attribute to this image.(Ü—ƒs
+GWeb:ImgWithoutAltCheck-"%Add an "alt" attribute to this image.(´ÑçŞ
+NWeb:AvoidCommentedOutCodeCheckK"Remove this commented out code.(Âªß¥úÿÿÿÿ
+JWeb:AvoidCommentedOutCodeCheck²"Remove this commented out code.(µ•ì
