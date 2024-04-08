@@ -28,17 +28,17 @@ ul {
 
 @font-face {
     font-family: "ffont";
-    src: url("../../font/기본 폰트.ttf") format("truetype");
+    src: url("../font/기본 폰트.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "logo";
-    src: url("../../font/사이트명.ttf") format("truetype");
+    src: url("../font/사이트명.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "cld";
-    src: url("../../font/캘린더.ttf") format("truetype");
+    src: url("../font/캘린더.ttf") format("truetype");
 }
 
 
@@ -111,7 +111,6 @@ hr {
 }
 
 nav .logo {
-    color: #203987;
     top: 7px;
     font-family: "logo";
     position: relative;
@@ -138,7 +137,7 @@ nav .logo {
 
 .show {
     display: flex;
-    top: 129px;
+    top: 135px;
     position: absolute;
     width: 1890px;
     height: 200px;
@@ -233,13 +232,8 @@ aside {
     font-size: 18px;
 }
 
-.sub_menu ul li a{ /* 메뉴바 내부 글자 색상 */
-    color: #000000;
-}
-
-.nav ul li a { /*메뉴바 글자 색상 */
+.nav ul li a {
     text-decoration: none;
-    color: #000000;
 }
 
 .nav .menu-icon {
