@@ -30,3 +30,7 @@ S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 `
 0src/main/webapp/resources/mainpage/css/miniP.css,d\2\d2ad051f698c37830e609f20ff139b898664974a
+Å
+Q.idea/sonarlint/securityhotspotstore/d/2/d2ad051f698c37830e609f20ff139b898664974a,a\e\ae9a55816ce948bf193f7c5aa2b4b967822f869f
+w
+G.idea/sonarlint/issuestore/d/2/d2ad051f698c37830e609f20ff139b898664974a,3\7\376f3c32466e6233317b5cf2413df1a2cc3874ac
