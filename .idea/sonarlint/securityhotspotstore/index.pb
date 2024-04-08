@@ -28,3 +28,5 @@ L
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+`
+0src/main/webapp/resources/mainpage/css/miniP.css,d\2\d2ad051f698c37830e609f20ff139b898664974a
