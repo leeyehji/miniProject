@@ -70,12 +70,9 @@ public class MyCalendarController {
         	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
         	//SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
         	Object start=sdf.format(listAll.get(i).getCal_startDate()); 
-        	//System.out.println("start:"+start);
         	
         	Object end=sdf.format(listAll.get(i).getCal_endDate()); 
-        	//System.out.println("end:"+end);
         	Object color = listAll.get(i).getCal_color();
-        	//System.out.println(color);
         	Object id = listAll.get(i).getCal_no();
             hash.put("title", listAll.get(i).getCal_title());
             hash.put("start", start);
@@ -87,14 +84,13 @@ public class MyCalendarController {
             jsonObj = JSONObject.fromObject(hash);;
             jsonArr.add(jsonObj);
         }
-        log.info("jsonArrCheck: {}", jsonArr);
+        //log.info("jsonArrCheck: {}", jsonArr);
         return jsonArr;
 	}
 	
 	@PostMapping("calUpdate")
 	@ResponseBody
 	public void calUpdate(@ModelAttribute CalDTO calDTO)  {
-		//System.out.println(calDTO.getCal_color());
 		mypageService.calUpdate(calDTO);
 	}
 	
