@@ -17,15 +17,15 @@
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <!-- frame css -->
-<link rel="stylesheet" type="text/css" href="/miniprojectMaven/frame/css/frame.css">
+<link rel="stylesheet" type="text/css" href="/frame/css/frame.css">
 
 <!-- myCalendar.js, css	(Update, Delete, List) -->
-<script src="/miniprojectMaven/mypage/js/myCalendar.js"></script>
-<link rel="stylesheet" type="text/css" href="/miniprojectMaven/mypage/css/myCalendar.css">
+<script src="/mypage/js/myCalendar.js"></script>
+<link rel="stylesheet" type="text/css" href="/mypage/css/myCalendar.css">
 
 <!-- myCalendarWrite js, modal css (Write)-->
-<script src="/miniprojectMaven/mypage/js/myCalendarWrite.js"></script>
-<link rel="stylesheet" type="text/css" href="/miniprojectMaven/mypage/css/myCalendarWrite.css">
+<script src="/mypage/js/myCalendarWrite.js"></script>
+<link rel="stylesheet" type="text/css" href="/mypage/css/myCalendarWrite.css">
 
 
 </head>
@@ -122,7 +122,7 @@
         <div id="content">
 		
 	
-			<!-- <input value="작성하기" type="button" onclick="location.href='/miniprojectMaven/user/myCalendarWrite'">
+			<!-- <input value="작성하기" type="button" onclick="location.href='/user/myCalendarWrite'">
 
 			<hr>
 			<p>캘린더</p>-->
@@ -140,6 +140,6 @@
 	<div id="bottom"></div>
 </body>
 
-<script src="/miniprojectMaven/frame/js/frame.js"></script>
+<script src="/frame/js/frame.js"></script>
 
 </html>

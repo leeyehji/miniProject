@@ -76,7 +76,7 @@ $(function(){
 		}else
 			$.ajax({
 				type: 'POST'
-				,url:'/miniprojectMaven/mypage/calWrite'
+				,url:'/mypage/calWrite'
 				/*,data: $('#myCalendarWrite').serialize()*/
 				,data:{'cal_startDate' : startObject
 						,'cal_endDate': endObject
@@ -87,7 +87,7 @@ $(function(){
 				}
 				,success:function(todoList){
 					//alert(todoList);
-					location.href='/miniprojectMaven/mypage/myCalendar';
+					location.href='/mypage/myCalendar';
 				}, error: function(xhr, status, error){
 	    			console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
 	            }

@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 
 		var request = $.ajax({
-							url:'/miniprojectMaven/mypage/calList'
+							url:'/mypage/calList'
 							,dataType: 'json'
 							,method: 'post'
 						});//ajax
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	                    	info.event.remove();
 							$(function deleteData() {
 	                        	$.ajax({
-	                            	url: "/miniprojectMaven/mypage/calDelete",
+	                            	url: "/mypage/calDelete",
 	                                method: 'post',
 	                                dataType: 'json',
 	                                data: JSON.stringify(events),
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
 						/*DB에 넣기*/
 						}else
 							$.ajax({
-	                           	url: "/miniprojectMaven/mypage/calUpdate",
+	                           	url: "/mypage/calUpdate",
 	                            method: 'post',
 	                            data: {
 	                            	'cal_startDate' : startObject
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
 									,'cal_boardNo' : $('#reviewSeqUpdate').val()
 	                            },success:function(todoList){
 									//alert(todoList);
-									location.href='/miniprojectMaven/mypage/myCalendar';
+									location.href='/mypage/myCalendar';
 								}, error: function(xhr, status, error){
 					    			console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
 					            }
