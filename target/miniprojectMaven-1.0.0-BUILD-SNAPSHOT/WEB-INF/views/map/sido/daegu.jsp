@@ -39,7 +39,7 @@
     }).addTo(mymap);
 
     $(document).ready(function () {
-        $.getJSON("./daegu.json", function (data) {
+        $.getJSON("/resources/map/json/daegu.json", function (data) {
             var geojson = L.geoJSON(data, {
                 onEachFeature: function (feature, layer) {
                     layer.on({
@@ -78,38 +78,7 @@
                         },
                         click: function (e) {
                             // 클릭 이벤트 추가
-                            switch (feature.properties.SIG_KOR_NM) {
-                                case "중구":
-                                    window.location.href = "../daegu/junggu.jsp";
-                                    break;
-                                case "동구":
-                                    window.location.href = "../daegu/donggu.jsp";
-                                    break;
-                                case "서구":
-                                    window.location.href = "../daegu/seogu.jsp";
-                                    break;
-                                case "남구":
-                                    window.location.href = "../daegu/namgu.jsp";
-                                    break;
-                                case "북구":
-                                    window.location.href = "../daegu/bukgu.jsp";
-                                    break;
-                                case "수성구":
-                                    window.location.href = "../daegu/suseonggu.jsp";
-                                    break;
-                                case "달서구":
-                                    window.location.href = "../daegu/dalseogu.jsp";
-                                    break;
-                                case "달성군":
-                                    window.location.href = "../daegu/dalseonggun.jsp";
-                                    break;
-                                case "군위군":
-                                    window.location.href = "../daegu/gunwigun.jsp";
-                                    break;
-                                default:
-                                    // 선택한 지역이 위의 case에 해당하지 않을 경우의 처리를 여기에 작성할 수 있습니다.
-                                    break;
-                            }
+                            window.location.href = "/map/daegu/" + feature.properties.SIG_ENG_NM;
                         },
                     });
                 },

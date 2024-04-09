@@ -39,7 +39,7 @@
     }).addTo(mymap);
 
     $(document).ready(function () {
-        $.getJSON("./incheon.json", function (data) {
+        $.getJSON("/resources/map/json/incheon.json", function (data) {
             var geojson = L.geoJSON(data, {
                 onEachFeature: function (feature, layer) {
                     layer.on({
@@ -78,41 +78,7 @@
                         },
                         click: function (e) {
                             // 클릭 이벤트 추가
-                            switch (feature.properties.SIG_KOR_NM) {
-                                case "중구":
-                                    window.location.href = "../incheon/junggu.jsp";
-                                    break;
-                                case "동구":
-                                    window.location.href = "../incheon/donggu.jsp";
-                                    break;
-                                case "미추홀구":
-                                    window.location.href = "../incheon/michuholgu.jsp";
-                                    break;
-                                case "연수구":
-                                    window.location.href = "../incheon/yeonsugu.jsp";
-                                    break;
-                                case "남동구":
-                                    window.location.href = "../incheon/namdonggu.jsp";
-                                    break;
-                                case "부평구":
-                                    window.location.href = "../incheon/bupyeonggu.jsp";
-                                    break;
-                                case "계양구":
-                                    window.location.href = "../incheon/gyeyanggu.jsp";
-                                    break;
-                                case "서구":
-                                    window.location.href = "../incheon/seogu.jsp";
-                                    break;
-                                case "강화군":
-                                    window.location.href = "../incheon/ganghwagun.jsp";
-                                    break;
-                                case "옹진군":
-                                    window.location.href = "../incheon/ongjingun.jsp";
-                                    break;
-                                default:
-                                    // 선택한 지역이 위의 case에 해당하지 않을 경우의 처리를 여기에 작성할 수 있습니다.
-                                    break;
-                            }
+                            window.location.href = "/map/incheon/" + feature.properties.SIG_ENG_NM;
                         },
                     });
                 },
