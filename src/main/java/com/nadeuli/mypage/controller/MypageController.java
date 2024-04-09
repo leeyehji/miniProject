@@ -71,4 +71,9 @@ public class MypageController {
         
         return hash; 
     }
+    
+    @GetMapping(value = "plzLogin")
+    public String plzLogin() {
+    	return "mypage/plzLogin";
+    }
 }

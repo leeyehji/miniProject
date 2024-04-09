@@ -25,6 +25,7 @@ https://www.springframework.org/schema/mvc/spring-mvc.xsd
 	<resources mapping="/mypage/**/**" location="/resources/mypage/" />
 	<!-- frame js, css-->
 	<resources mapping="/frame/**/**" location="/resources/frame/" />
+	<resources mapping="/mainpage/**/**" location="/resources/mainpage/" />
 	<resources mapping="/map/**/**" location="/resources/map/" />
 	<resources mapping="/review/**/**" location="/resources/review/" />
 	<resources mapping="/serviceCenter/**/**" location="/resources/serviceCenter/" />

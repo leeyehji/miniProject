@@ -24,8 +24,8 @@
 		<ul class="nav-content">
 			<li><a href="#">여행 후기</a>
 				<ul>
-					<li><a href="/review/reviewList">후기 목록</a></li>
-					<li><a href="/review/reviewWrite">후기 쓰기</a></li>
+					<li><a href="/review/reviewList?pg=1">후기 목록</a></li>
+					<li><a href="/review/reviewWriteForm">후기 쓰기</a></li>
 				</ul>
 			</li>
 
