@@ -216,7 +216,7 @@
                             //             clickedContent: feature.properties.CTP_Description,
                             //             clickedRegion: feature.properties.CTP_ENG_NM,
                             //         }, "*");
-                            //         window.location.href = "./sido/gwangju.jsp"; // 광주를 클릭하면 gwangju.jsp로 이동
+                            //         window.location.href = "./sido/gwangjusi.jsp"; // 광주를 클릭하면 gwangju.jsp로 이동
                             //         break;
                             //     case "제주":
                             //         parent.postMessage({
