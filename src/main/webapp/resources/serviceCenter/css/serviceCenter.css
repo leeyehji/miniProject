@@ -5,11 +5,11 @@ table {
 }
 
 #container {
+    width: 1550px;
     position: relative;
     color: #CAE9FF;
     margin-top: -1px;
     margin-bottom: -1px;
-    height: 1080px;
 }
 
 .snb ul {
@@ -26,7 +26,7 @@ table {
 
 #servicecontent .text {
     margin-left: 148px;
-
+    width: 1550px;
 }
 
 #servicecontent .text p {
@@ -37,16 +37,11 @@ table {
 }
 
 #wrap {
-    border-right: solid 2px #CAE9FF;
-    height: 1080px;
+
     float: left;
     background-color: #ffffff;
-    width: 1598px;
-    margin: 0 auto;
-}
-
-#noticeContent {
-    display: none;
+    width: 1550px;
+    margin: 20px 20px 100px 20px;
 }
 
 #inquiryContent {
@@ -75,17 +70,33 @@ h2 {
 }
 
 .form-group label {
+    font-size: 28px;
+    color: #000000;
     display: block;
     margin-bottom: 5px;
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group textarea {
-    width: 100%;
+.form-group input[type="text"] {
+    width: 55px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 18px;
+}
+.form-group input[type="email"] {
+    width: 350px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.form-group textarea {
+    width: 750px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 200px;
 }
 
 .form-group input[type="checkbox"] {
@@ -109,12 +120,10 @@ h2 {
 /* ------------------------FAQ-------------------------------------- */
 
 #faqContent {
-    overflow-x: hidden;
     width: 1515px;
     position: relative;
     left: 70px;
     top: 1px;
-    height: 1020px;
 }
 
 #faqContent h2 {
@@ -154,9 +163,9 @@ h2 {
 }
 
 #noticeContent {
-
+    display: none;
     max-width: 1500px;
-    margin: 20px;
+
     padding: 20px;
 
 }

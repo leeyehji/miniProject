@@ -51,15 +51,15 @@
               <h2>1 : 1 문의</h2>
               <form id="inquiryForm">
                 <div class="form-group">
-                  <label for="userName">이름:</label>
+                  <label for="userName">이름</label>
                   <input type="text" id="userName" name="userName" required>
                 </div>
                 <div class="form-group">
-                  <label for="userEmail">이메일:</label>
+                  <label for="userEmail">이메일</label>
                   <input type="email" id="userEmail" name="userEmail" required>
                 </div>
                 <div class="form-group">
-                  <label for="userInquiry">문의 내용:</label>
+                  <label for="userInquiry">문의 내용</label>
                   <textarea id="userInquiry" name="userInquiry" rows="4" required></textarea>
                 </div>
 
