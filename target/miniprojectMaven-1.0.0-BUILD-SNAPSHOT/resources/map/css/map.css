@@ -1,9 +1,8 @@
 #main_map {
-    min-width: 1500px; /*1920*1080기준 px로 수정*/
+    min-width: 1454px; /*1920*1080기준 px로 수정*/
     width: 1500px; /*min w= w*/
     height: 1000px;
     padding: 40px 70px;
-    border-right: #A0E3F2 solid 3px;
 }
 
 #main_map > .leftmain {
