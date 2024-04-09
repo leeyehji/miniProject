@@ -25,4 +25,24 @@
 								,cal_color = #{cal_color}
 							where cal_no = #{cal_no}
 	</update>
+	
+	<update id="memberUpdate" parameterType="com.nadeuli.mypage.dto.MemberDTO">
+		update member set mem_pw=#{mem_pw}
+						  ,mem_name=#{mem_name}
+						  ,mem_phone=#{mem_phone}
+						  ,mem_email=#{mem_email}
+						  ,mem_gender=#{mem_gender}
+					where mem_id=#{mem_id}
+	</update>
+	
+	<select id ="getUser" parameterType="String" resultType="com.nadeuli.mypage.dto.MemberDTO">
+		select * from member where mem_id=#{memId}
+	</select>
+	
+	<select id="getSchedule" parameterType="java.util.Map" resultType="com.nadeuli.mypage.dto.CalDTO">
+    	select * from user_calendar where <![CDATA[ #{selectStart}>=cal_startDate ]]> and <![CDATA[ #{selectEnd}<=cal_endDate ]]>
+	</select>
+
+	
+	
  </mapper>

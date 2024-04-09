@@ -38,8 +38,6 @@ public class MyCalendarController {
     
 	@GetMapping(value = "myCalendar")
 	public String myCalendar() {
-		//DB
-		
 		return "mypage/myCalendar";
 	}
 	@GetMapping(value = "myCalendarWrite")
@@ -101,6 +99,35 @@ public class MyCalendarController {
 			int cal_no=Integer.parseInt((String) param.get(i).get("cal_no"));
 			mypageService.calDelete(cal_no);
 		}
+	}
+	
+	@PostMapping(value = "myCalendarTxt")
+	@ResponseBody
+	public List<Map<String, Object>> myCalendarTxt(@RequestBody Map<String, Object> map){
+		String selectedDate = map.get("selectedDate").toString();
+	    map.put("selectStart", selectedDate+ " 23:59:59");
+	    map.put("selectEnd", selectedDate+ " 00:00:01");
+		List<CalDTO> listAll = mypageService.getSchedule(map);//memId, selectDate
+        
+		JSONObject jsonObj = new JSONObject();
+        JSONArray jsonArr = new JSONArray();
+        
+        HashMap<String, Object> hash = new HashMap<>();
+        System.out.println(listAll.size());
+        for (int i = 0; i < listAll.size(); i++) {
+        	SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 HH:mm");
+        	Object start=sdf.format(listAll.get(i).getCal_startDate()); 
+        	Object end=sdf.format(listAll.get(i).getCal_endDate()); 
+            hash.put("title", listAll.get(i).getCal_title());
+            hash.put("start", start);
+            hash.put("end", end);
+            hash.put("description",listAll.get(i).getCal_memo() );
+
+            jsonObj = JSONObject.fromObject(hash);;
+            jsonArr.add(jsonObj);
+        }
+        log.info("jsonArrCheck: {}", jsonArr);
+        return jsonArr;
 	}
 	
 }
