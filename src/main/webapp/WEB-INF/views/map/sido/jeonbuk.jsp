@@ -39,7 +39,7 @@
     }).addTo(mymap);
 
     $(document).ready(function () {
-        $.getJSON("./jeonbuk.json", function (data) {
+        $.getJSON("/resources/map/json/jeonbuk.json", function (data) {
             var geojson = L.geoJSON(data, {
                 onEachFeature: function (feature, layer) {
                     layer.on({
@@ -78,56 +78,7 @@
                         },
                         click: function (e) {
                             // 클릭 이벤트 추가
-                            switch (feature.properties.SIG_KOR_NM) {
-                                case "전주시 완산구":
-                                    window.location.href = "../jeonbuk/jeonjusi_wansangu.jsp";
-                                    break;
-                                case "전주시 덕진구":
-                                    window.location.href = "../jeonbuk/jeonjusi_deokjingu.jsp";
-                                    break;
-                                case "군산시":
-                                    window.location.href = "../jeonbuk/gunsansi.jsp";
-                                    break;
-                                case "익산시":
-                                    window.location.href = "../jeonbuk/iksansi.jsp";
-                                    break;
-                                case "정읍시":
-                                    window.location.href = "../jeonbuk/jeongeupsi.jsp";
-                                    break;
-                                case "남원시":
-                                    window.location.href = "../jeonbuk/namwonsi.jsp";
-                                    break;
-                                case "김제시":
-                                    window.location.href = "../jeonbuk/gimjesi.jsp";
-                                    break;
-                                case "완주군":
-                                    window.location.href = "../jeonbuk/wanjugun.jsp";
-                                    break;
-                                case "진안군":
-                                    window.location.href = "../jeonbuk/jinangun.jsp";
-                                    break;
-                                case "무주군":
-                                    window.location.href = "../jeonbuk/mujugun.jsp";
-                                    break;
-                                case "장수군":
-                                    window.location.href = "../jeonbuk/jangsugun.jsp";
-                                    break;
-                                case "임실군":
-                                    window.location.href = "../jeonbuk/imsilgun.jsp";
-                                    break;
-                                case "순창군":
-                                    window.location.href = "../jeonbuk/sunchanggun.jsp";
-                                    break;
-                                case "고창군":
-                                    window.location.href = "../jeonbuk/gochanggun.jsp";
-                                    break;
-                                case "부안군":
-                                    window.location.href = "../jeonbuk/buangun.jsp";
-                                    break;
-                                default:
-                                    // 선택한 지역이 위의 case에 해당하지 않을 경우의 처리를 여기에 작성할 수 있습니다.
-                                    break;
-                            }
+                            window.location.href = "/map/jeonbuk/" + feature.properties.SIG_ENG_NM;
                         },
                     });
                 },

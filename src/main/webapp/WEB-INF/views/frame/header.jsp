@@ -33,7 +33,7 @@
         </div>
 
         <li class="a1"><a href="/miniProject/mainpage.jsp">홈</a></li>
-        <li class="a2"><a href="/miniProject/map/map.jsp">여행지</a></li>
+        <li class="a2"><a href="/map/map">여행지</a></li>
         <li class="a3"><a href="/miniProject/review/review.jsp">후기</a></li>
         <li class="a4"><a href="/miniProject/miniproject.jsp">이벤트</a></li>
         <li class="a5"><a href="/miniProject/serviceCenter/serviceCenter.jsp">고객센터</a></li>

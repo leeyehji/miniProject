@@ -39,7 +39,7 @@
     }).addTo(mymap);
 
     $(document).ready(function () {
-        $.getJSON("./busan.json", function (data) {
+        $.getJSON("/resources/map/json/busan.json", function (data) {
             var geojson = L.geoJSON(data, {
                 onEachFeature: function (feature, layer) {
                     layer.on({
@@ -78,59 +78,7 @@
                         },
                         click: function (e) {
                             // 클릭 이벤트 추가
-                            switch (feature.properties.SIG_KOR_NM) {
-                                case "중구":
-                                    window.location.href = "../busan/junggu.jsp";
-                                    break;
-                                case "서구":
-                                    window.location.href = "../busan/seogu.jsp";
-                                    break;
-                                case "동구":
-                                    window.location.href = "../busan/donggu.jsp";
-                                    break;
-                                case "영도구":
-                                    window.location.href = "../busan/yeongdogu.jsp";
-                                    break;
-                                case "부산진구":
-                                    window.location.href = "busan/busanjingu.jsp";
-                                    break;
-                                case "동래구":
-                                    window.location.href = "../busan/dongnaegu.jsp";
-                                    break;
-                                case "남구":
-                                    window.location.href = "../busan/namgu.jsp";
-                                    break;
-                                case "북구":
-                                    window.location.href = "../busan/bukgu.jsp";
-                                    break;
-                                case "해운대구":
-                                    window.location.href = "../busan/haeundaegu.jsp";
-                                    break;
-                                case "사하구":
-                                    window.location.href = "../busan/sahagu.jsp";
-                                    break;
-                                case "금정구":
-                                    window.location.href = "../busan/geumjeonggu.jsp";
-                                    break;
-                                case "강서구":
-                                    window.location.href = "../busan/gangseogu.jsp";
-                                    break;
-                                case "연제구":
-                                    window.location.href = "../busan/yeonjegu.jsp";
-                                    break;
-                                case "수영구":
-                                    window.location.href = "../busan/suyeonggu.jsp";
-                                    break;
-                                case "사상구":
-                                    window.location.href = "../busan/sasanggu.jsp";
-                                    break;
-                                case "기장군":
-                                    window.location.href = "../busan/gijanggun.jsp";
-                                    break;
-                                default:
-                                    // 선택한 지역이 위의 case에 해당하지 않을 경우의 처리를 여기에 작성할 수 있습니다.
-                                    break;
-                            }
+                            window.location.href = "/map/busan/" + feature.properties.SIG_ENG_NM;
                         },
                     });
                 },

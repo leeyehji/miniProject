@@ -1,7 +1,7 @@
 /*전체*/
 body {
     color: #224148;
-    margin: 0;
+    margin: 8px;
     padding: 0;
     height: 100vh;
     overflow: auto;
@@ -485,10 +485,10 @@ aside {
 
 /*page contennt*/
 #content {
-    min-width: 1500px; /*1920*1080기준 px로 수정*/
-    width: 1500px; /*min w= w*/
-    padding: 40px 70px;
-    border-right: #A0E3F2 solid 3px;
+    min-width: 1505px; /*1920*1080기준 px로 수정*/
+    width: 1510px; /*min w= w*/
+    padding: 40px 40px;
+    border-right: #CAE9FF solid 3px;
 }
 
 
