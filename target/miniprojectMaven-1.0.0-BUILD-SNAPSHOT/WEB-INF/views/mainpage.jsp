@@ -11,10 +11,10 @@
 
     <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
     <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script><!-- 캘린더 -->
-    <script defer src="/mainpage/js/miniP.js"></script>
+    <script defer src="../../resources/mainpage/js/miniP.js"></script>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/><!-- 캘린더 -->
-    <link rel="stylesheet" href="/mainpage/css/miniP.css" />
+    <link rel="stylesheet" href="../../resources/mainpage/css/miniP.css" />
     <link rel="stylesheet" type="text/css" href="./frame/css/frame.css">
 
 </head>
@@ -30,19 +30,19 @@
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
             <div class="numbertext"></div>
-            <img src="mainpage/css/image/slide1.jpeg">
+            <img src="../../resources/mainpage/css/image/slide1.jpeg">
             <div class="text">내용입력</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext"></div>
-            <img src="mainpage/css/image/slide2.jpeg">
+            <img src="../../resources/mainpage/css/image/slide2.jpeg">
             <div class="text">내용입력</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext"></div>
-            <img src="mainpage/css/image/slide3.jpeg">
+            <img src="../../resources/mainpage/css/image/slide3.jpeg">
             <div class="text">내용입력</div>
         </div>
 
@@ -83,80 +83,80 @@
         <div class="destination-grid">
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="mainpage/css/image/seoul_cherry_blossom_1.jpeg" alt="여행지 이미지">
+                <a href="/">
+                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_1.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지1</h3>
                 <p>여행지1에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="mainpage/css/image/seoul_cherry_blossom_2.jpeg" alt="여행지 이미지">
+                <a href="/">
+                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_2.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지2</h3>
                 <p>여행지2에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="mainpage/css/image/seoul_cherry_blossom_3.jpeg" alt="여행지 이미지">
+                <a href="/">
+                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_3.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지3</h3>
                 <p>여행지3에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="mainpage/css/image/seoul_cherry_blossom_4.jpeg" alt="여행지 이미지">
+                <a href="/">
+                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_4.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지4</h3>
                 <p>여행지4에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="mainpage/css/image/seoul_cherry_blossom_13.jpeg" alt="여행지 이미지">
+                <a href="/">
+                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_13.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지5</h3>
                 <p>여행지5에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="mainpage/css/image/seoul_cherry_blossom_13.jpeg" alt="여행지 이미지">
+                <a href="/">
+                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_13.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지6</h3>
                 <p>여행지6에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="mainpage/css/image/seoul_cherry_blossom_4.jpeg" alt="여행지 이미지">
+                <a href="/">
+                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_4.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지7</h3>
                 <p>여행지7에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="mainpage/css/image/seoul_cherry_blossom_1.jpeg" alt="여행지 이미지">
+                <a href="/">
+                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_1.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지8</h3>
                 <p>여행지8에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="mainpage/css/image/seoul_cherry_blossom_2.jpeg" alt="여행지 이미지">
+                <a href="/">
+                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_2.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지9</h3>
                 <p>여행지9에 대한 설명</p>
             </div>
 
             <div class="destination-card">
-                <a href="miniproject.jsp">
-                    <img src="mainpage/css/image/seoul_cherry_blossom_3.jpeg" alt="여행지 이미지">
+                <a href="/">
+                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_3.jpeg" alt="여행지 이미지">
                 </a>
                 <h3>여행지10</h3>
                 <p>여행지10에 대한 설명</p>
