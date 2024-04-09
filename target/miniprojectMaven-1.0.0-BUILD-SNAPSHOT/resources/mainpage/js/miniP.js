@@ -33,7 +33,7 @@ window.addEventListener('scroll', function () {
 
   var menuPosition = menu.getBoundingClientRect();
   var footerPosition = footer.getBoundingClientRect();
-  
+
 });
 // //로그인 시작
 // // 로그인 성공을 가정하는 함수입니다.
