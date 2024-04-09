@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
+<head>
+    <link rel="icon" href="data:,">
+</head>
 <footer>
 	<div id="siteMap">
 		<div class="selectBox">
@@ -95,7 +97,7 @@
             <li><a href="" target="_blank" title="새창">저작권정책</a></li>
             <li><a href="" target="_blank" title="새창">고객서비스헌장</a></li>
             <li><a href="" target="_blank" title="새창">전자우편무단수집거부</a></li>
-            <li><a href="serviceCenter.jsp#qna" onclick="goQA();" title="페이지이동">Q&amp;A</a></li>
+            <li><a href="serviceCenter/ServiceCenter#qna" onclick="goQA();" title="페이지이동">Q&amp;A</a></li>
             <li><a href="" target="_blank" title="새창">찾아오시는 길</a></li>
         </ul>
     </div>

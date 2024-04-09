@@ -16,10 +16,9 @@
 }
 
 body {
-    margin: 8px;
     list-style-type: none;
     font-family: "ffont";
-    min-width: 1899px;
+    min-width: 1893px;
     /* 원하는 최소 너비 설정 */
     min-height: 1080px;
     /* 원하는 최소 높이 설정 */
@@ -73,7 +72,7 @@ hr {
 .slideshow-container {
     border-left: 2px solid #CAE9FF;
     border-right: 2px solid #CAE9FF;
-    width: 1899px;
+    width: 1893px;
     position: relative;
     padding-bottom: 100px;
 }
@@ -82,7 +81,7 @@ hr {
 
 .mySlides>img {
     /* 사진 크기 */
-    width: 1899px;
+    width: 1893px;
     height: 500px;
     object-fit: cover;
 }
@@ -178,7 +177,7 @@ hr {
     border-bottom: 2px solid #CAE9FF;
     padding-top: 100px;
     padding-bottom: 100px;
-    width: 1899px;
+    width: 1893px;
     justify-content: center;
     position: relative;
     text-align: center;
@@ -232,13 +231,13 @@ h2 {
 #cln {
     margin: 0px;
     height: 50px;
-    width: 1899px;
+    width: 1893px;
     padding-top: 100px;
     padding-bottom: 20px;
 }
 
 #datepicker {
-    width: 1899px;
+    width: 1893px;
     padding-bottom: 50px;
 }
 
@@ -353,7 +352,7 @@ h2 {
 }
 
 #maincln {
-    width: 1899px;
+    width: 1893px;
     border-top: 2px solid #CAE9FF;
     border-left: 2px solid #CAE9FF;
     border-right: 2px solid #CAE9FF;
@@ -362,7 +361,7 @@ h2 {
 /*site map*/
 
 #siteMap{
-    width: 1899px;
+    width: 1895px;
     background:#F1F3F4;
     padding: 10px 0px 10px 0px;
     text-align:right;
