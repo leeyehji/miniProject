@@ -39,7 +39,7 @@
     }).addTo(mymap);
 
     $(document).ready(function () {
-        $.getJSON("./jeju.json", function (data) {
+        $.getJSON("/resources/map/json/jeju.json", function (data) {
             var geojson = L.geoJSON(data, {
                 onEachFeature: function (feature, layer) {
                     layer.on({
@@ -78,17 +78,7 @@
                         },
                         click: function (e) {
                             // 클릭 이벤트 추가
-                            switch (feature.properties.SIG_KOR_NM) {
-                                case "제주시":
-                                    window.location.href = "../jeju/jejusi.jsp";
-                                    break;
-                                case "서귀포시":
-                                    window.location.href = "../jeju/seogwiposi.jsp";
-                                    break;
-                                default:
-                                    // 선택한 지역이 위의 case에 해당하지 않을 경우의 처리를 여기에 작성할 수 있습니다.
-                                    break;
-                            }
+                            window.location.href = "/map/jeju/" + feature.properties.SIG_ENG_NM;
                         },
                     });
                 },
