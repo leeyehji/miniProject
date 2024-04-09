@@ -23,4 +23,10 @@ public class ReviewServiceImpl implements ReviewService {
     public List<ReviewDTO> getReviewList() {
         return reviewDAO.getReviewList();
     }
+    public ReviewDTO getReviewView(String no) {
+
+        int b_no = Integer.parseInt(no);
+        return reviewDAO.getReviewView(b_no);
+    }
+
 }

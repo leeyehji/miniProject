@@ -10,4 +10,5 @@ public interface ReviewDAO {
     public void reviewWrite(ReviewDTO reviewDTO);
 
     public List<ReviewDTO> getReviewList();
+    public ReviewDTO getReviewView(int bNo);
 }

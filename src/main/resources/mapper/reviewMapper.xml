@@ -10,4 +10,7 @@
     <select id="getReviewList" resultType="com.nadeuli.review.bean.ReviewDTO">
         select * from board
     </select>
+    <select id="getReviewView" parameterType="Integer" resultType="com.nadeuli.review.bean.ReviewDTO">
+        select * from board where B_NO = ${Integer}
+    </select>
 </mapper>
