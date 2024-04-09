@@ -12,19 +12,16 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <!-- CDN 파일 summernote css/js -->
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 <!-- CDN 한글화 -->
-<script
-	src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
 
 
 <!-- CSS -->
-<link rel="stylesheet" href="../css/reviewWrite.css">
-<link rel="stylesheet" type="text/css" href="../css/frame.css">
+<link rel="stylesheet" href="/review/css/reviewWrite.css">
+<link rel="stylesheet" type="text/css" href="/frame/css/frame.css">
 
-	<script src="../js/review.js"></script>
-	<script src="../js/frame.js"></script>
 
 
 </head>
@@ -40,18 +37,18 @@
 			<!-- 글쓰기 시작 -->
 			<div id="reviewWrite" class="reviewWrite">
 					<div id="reviewWriteMain">
-						<form action="#" id=reviewWriteForm>
+						<form action="review/reviewWrite" id=reviewWriteForm method="post">
 							<table>
 								<tr>
-									<td style="text-align: center;"><img
-										src="../icon/camera4.jpg" width="100px" height="100px"></td>
+									<td style="text-align: center;">
+										<img src="review/icon/camera4.jpg" width="100px" height="100px"></td>
 								</tr>
 								<tr>
 									<td id="writeInput" style="text-align: center;"><input
-										type="text" name="title" id="title" placeholder="제목을 입력하세요" /></td>
+										type="text" name="B_TITLE" id="title" placeholder="제목을 입력하세요" /></td>
 								</tr>
 								<tr>
-									<td><textarea id="summernote" name="editordata"></textarea>
+									<td><textarea id="summernote" name="B_CONTENT"></textarea>
 									</td>
 								</tr>
 								<tr>
@@ -74,15 +71,9 @@
 	<footer><jsp:include page="../frame/footer.jsp"></jsp:include></footer>
 	<div id="bottom"></div>
 
-
-
-
-
-
-
-
-	
-
+	<%-- JavaScript --%>
+	<script src="/review/js/reviewWrite.js"></script>
+	<script src="/frame/js/frame.js"></script>
 
 </body>
 
