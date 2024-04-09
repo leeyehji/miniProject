@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 @Setter
 public class ReviewDTO {
     private String MEM_NO;
+    private String B_NO;
     private String B_TITLE;
     private String B_CONTENT;
     private String B_THUMBNAIL;

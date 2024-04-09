@@ -39,7 +39,6 @@ public class ReviewController {
     @PostMapping(value="uploadSummernoteImageFile")
     @ResponseBody
     public String uploadImage(@RequestParam(value="file") MultipartFile file){
-        System.out.println("hi");
         return  objectStorageService.uploadFile(bucketName,"storage/",file);
     }
 
@@ -58,5 +57,18 @@ public class ReviewController {
     }
 
 
+    @GetMapping(value="reviewView")
+    public String reviewView(@RequestParam(value="no") String no,Model model){
+        model.addAttribute("no",no);
+
+        return "review/reviewView";
+    }
+
+    @PostMapping(value="getReviewView")
+    @ResponseBody
+    public ReviewDTO getReviewView(@RequestParam(value="no") String no){
+
+        return reviewService.getReviewView(no);
+    }
 
 }
