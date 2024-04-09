@@ -49,7 +49,7 @@
 	<br>
 	<li>마이페이지
 		<ul class="nav-content">
-			<li><a href="/miniProject/mypage/mypage.jsp">회원정보관리</a>
+			<li><a href="/mypage/mypage.jsp">회원정보관리</a>
 				<ul>
 					<li><a href="/miniProject/mypage/memberUpdate.jsp">회원정보 수정</a></li>
 					<br>
@@ -60,7 +60,7 @@
 				</ul>
 			</li>
 			<br>
-			<li><a href="/miniProject/mypage/memberCalendar.jsp">나의 일정 관리</a>
+			<li><a href="/mypage/myCalendar">나의 일정 관리</a>
 				<ul>
 					<li><a href="#">캘린더 보기</a></li>
 					<br>

@@ -132,12 +132,11 @@
 	</div><!-- frameContent -->
     
     <div id="upDownBtn">
-        <a href="#"><button id="upBtn">위로</button></a>
-        <a href="#bottom"><button id="downBtn">아래</button></a>
+        <button onclick="topFunction()" id="upBtn">위로</button>
+        <button onclick="bottomFunction()" id="downBtn">아래</button>
     </div>
     
     <footer><jsp:include page="../frame/footer.jsp"></jsp:include></footer>
-	<div id="bottom"></div>
 </body>
 
 <script src="/frame/js/frame.js"></script>

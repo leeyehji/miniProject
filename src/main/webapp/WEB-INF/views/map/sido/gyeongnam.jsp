@@ -39,7 +39,7 @@
     }).addTo(mymap);
 
     $(document).ready(function () {
-        $.getJSON("./gyeongnam.json", function (data) {
+        $.getJSON("/resources/map/json/gyeongnam.json", function (data) {
             var geojson = L.geoJSON(data, {
                 onEachFeature: function (feature, layer) {
                     layer.on({
@@ -78,77 +78,7 @@
                         },
                         click: function (e) {
                             // 클릭 이벤트 추가
-                            switch (feature.properties.SIG_KOR_NM) {
-                                case "창원시 의창구":
-                                    window.location.href = "../gyeongnam/changwonsi_uichanggu.jsp";
-                                    break;
-                                case "창원시 성산구":
-                                    window.location.href = "../gyeongnam/changwonsi_seongsangu.jsp";
-                                    break;
-                                case "창원시 마산합포구":
-                                    window.location.href = "../gyeongnam/changwonsi_masanhappogu.jsp";
-                                    break;
-                                case "창원시 마산회원구":
-                                    window.location.href = "../gyeongnam/changwonsi_masanhoeongu.jsp";
-                                    break;
-                                case "창원시 진해구":
-                                    window.location.href = "../gyeongnam/changwonsi_jinhaegu.jsp";
-                                    break;
-                                case "진주시":
-                                    window.location.href = "../gyeongnam/jinjusi.jsp";
-                                    break;
-                                case "통영시":
-                                    window.location.href = "../gyeongnam/tongyeongsi.jsp";
-                                    break;
-                                case "사천시":
-                                    window.location.href = "../gyeongnam/sacheonsi.jsp";
-                                    break;
-                                case "김해시":
-                                    window.location.href = "../gyeongnam/gimhaesi.jsp";
-                                    break;
-                                case "밀양시":
-                                    window.location.href = "../gyeongnam/miryangsi.jsp";
-                                    break;
-                                case "거제시":
-                                    window.location.href = "../gyeongnam/geojesi.jsp";
-                                    break;
-                                case "양산시":
-                                    window.location.href = "../gyeongnam/yangsansi.jsp";
-                                    break;
-                                case "의령군":
-                                    window.location.href = "../gyeongnam/uiryeonggun.jsp";
-                                    break;
-                                case "함안군":
-                                    window.location.href = "../gyeongnam/hamangun.jsp";
-                                    break;
-                                case "창녕군":
-                                    window.location.href = "../gyeongnam/changnyeonggun.jsp";
-                                    break;
-                                case "고성군":
-                                    window.location.href = "../gyeongnam/goseonggun.jsp";
-                                    break;
-                                case "남해군":
-                                    window.location.href = "../gyeongnam/namhaegun.jsp";
-                                    break;
-                                case "하동군":
-                                    window.location.href = "../gyeongnam/hadonggun.jsp";
-                                    break;
-                                case "산청군":
-                                    window.location.href = "../gyeongnam/sancheonggun.jsp";
-                                    break;
-                                case "함양군":
-                                    window.location.href = "../gyeongnam/hamyanggun.jsp";
-                                    break;
-                                case "거창군":
-                                    window.location.href = "../gyeongnam/geochanggun.jsp";
-                                    break;
-                                case "합천군":
-                                    window.location.href = "../gyeongnam/hapcheongun.jsp";
-                                    break;
-                                default:
-                                    // 선택한 지역이 위의 case에 해당하지 않을 경우의 처리를 여기에 작성할 수 있습니다.
-                                    break;
-                            }
+                            window.location.href = "/map/gyeongnam/" + feature.properties.SIG_ENG_NM;
                         },
                     });
                 },

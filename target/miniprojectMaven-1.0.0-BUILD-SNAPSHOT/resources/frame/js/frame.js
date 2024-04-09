@@ -36,6 +36,20 @@ $("#JoinBtn").click(function(){
 
 
 /*footer*/
+function bottomFunction() {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+}
+
+function topFunction() {
+  window.scrollTo({
+    top: document.body.scrollTop,
+    behavior: 'smooth'
+  });
+}
+
 /*site map*/
 function goToSite1() {
 	var selectedSite1 = document.getElementById('site-select1').value;
