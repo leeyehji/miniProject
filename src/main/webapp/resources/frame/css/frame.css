@@ -385,7 +385,7 @@ aside {
 /*content*/
 #frameContent {
     display: flex;
-    min-height: 400px;
+    min-height: 600px;
     width: 1890px;
 }
 /*nav*/

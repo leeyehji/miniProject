@@ -49,9 +49,9 @@
 	<br>
 	<li>마이페이지
 		<ul class="nav-content">
-			<li><a href="/mypage/mypage.jsp">회원정보관리</a>
+			<li><a href="/mypage/mypage">회원정보관리</a>
 				<ul>
-					<li><a href="/miniProject/mypage/memberUpdate.jsp">회원정보 수정</a></li>
+					<li><a href="/mypage/memberUpdate">회원정보 수정</a></li>
 					<br>
 					<li><a href="#">내가 쓴 글</a></li>
 					<br>
@@ -60,16 +60,7 @@
 				</ul>
 			</li>
 			<br>
-			<li><a href="/mypage/myCalendar">나의 일정 관리</a>
-				<ul>
-					<li><a href="#">캘린더 보기</a></li>
-					<br>
-					<li><a href="/miniProject/mypage/myCalendarWrite.jsp">캘린더 작성하기</a></li>
-					<br>
-					<li><a href="#">캘린더 수정하기</a></li>
-					<br>
-				</ul>
-			</li>
+			<li><a href="/mypage/myCalendar">나의 일정 관리</a></li>
 		</ul>
 	</li>
 </ul>

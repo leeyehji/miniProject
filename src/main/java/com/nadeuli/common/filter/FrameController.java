@@ -1,4 +1,4 @@
-package com.nadeuli.frame.controller;
+package com.nadeuli.common.filter;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
