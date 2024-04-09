@@ -192,7 +192,7 @@
                             //         window.location.href = "../gyeonggi/hwaseongsi.jsp";
                             //         break;
                             //     case "광주시":
-                            //         window.location.href = "../gyeonggi/gwangju.jsp";
+                            //         window.location.href = "../gyeonggi/gwangjusi.jsp";
                             //         break;
                             //     case "양주시":
                             //         window.location.href = "../gyeonggi/yangjusi.jsp";

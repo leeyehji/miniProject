@@ -15,7 +15,7 @@
 
 <script>
     var mapOptions = {
-        center: new naver.maps.LatLng(36.7206, 127.4914),
+        center: new naver.maps.LatLng(35.3296, 126.7685),
         zoom: 13
     };
 
