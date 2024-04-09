@@ -14,5 +14,11 @@
 	<mybatis-spring:scan base-package="com.nadeuli.mypage.dao" />
 	<context:component-scan base-package="com.nadeuli.mypage.dto" />
 	<context:component-scan base-package="com.nadeuli.mypage.service" />
-			
+
+	<!-- review -->
+	<mybatis-spring:scan base-package="com.nadeuli.review.dao" />
+	<context:component-scan base-package="com.nadeuli.review.bean" />
+	<context:component-scan base-package="com.nadeuli.review.service" />
+	<!-- ncp Object storage -->
+	<context:component-scan base-package="com.nadeuli.common.object.service"/>
 </beans>
