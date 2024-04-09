@@ -1,8 +1,13 @@
 /*전체*/
+html{
+    margin: 2px;
+    border: 0;
+}
 body {
     color: #224148;
     margin: 8px;
     padding: 0;
+    margin: 2px;
     height: 100vh;
     overflow: auto;
     min-width: 1890px; /*1920 * 1080 기준 수정*/
