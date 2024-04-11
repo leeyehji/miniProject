@@ -93,3 +93,13 @@ l
 <src/main/webapp/WEB-INF/views/serviceCenter/NoticeDetail.jsp,8\8\885eae5c30d9380065855ce834b4883e34626ae1
 j
 :src/main/webapp/resources/serviceCenter/js/noticeDetail.js,b\6\b6bfb950cc4d86be0246d931d66406eba6abb553
+:
+
+.classpath,3\5\354079a72b91a4280407c16a36f47d1986fd85a5
+<
+.springBeans,e\2\e23421922649be895fc59e714212d3ed01edef21
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+8
+.project,f\8\f8b41ce76d7b80d2b47e91b5f92c15f00eccf187
