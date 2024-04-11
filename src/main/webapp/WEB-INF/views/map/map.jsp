@@ -99,12 +99,13 @@
                 <h3>테마</h3>
             </div>
             <div class="theme">
-                <button id="2">#관광</button>
-                <button id="3">#문화</button>
-                <button id="4">#행사</button>
-                <button id="5">#숙박</button>
-                <button id="6">#쇼핑</button>
-                <button id="7">#음식</button>
+                <button id="12">#관광</button>
+                <button id="14">#문화</button>
+                <button id="15">#행사</button>
+                <button id="32">#숙박</button>
+                <button id="38">#쇼핑</button>
+                <button id="39">#음식</button>
+                <button id="28">#레포츠</button>
             </div>
             <!-- 테마 -->
         </div>
@@ -186,6 +187,7 @@
                             // 클릭한 버튼에만 'active' 클래스 추가
                             button.classList.add("active");
 
+
                             // 버튼의 id를 이용해 해당 지역의 .jsp 파일 경로를 생성하고 iframe의 src 속성 변경
                             let regionPage = './korea'; // 기본값
                             let regionName = regionData.properties.CTP_ENG_NM.toLowerCase();
@@ -221,6 +223,24 @@
         // 지역과 지역 설명을 초기 상태로 되돌림
         document.getElementById("clickedsubject").textContent = "해시태그를 클릭해보세요!";
         document.getElementById("clickedcontent").textContent = "지역에 대한 설명이 나옵니다";
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var buttons = document.querySelectorAll('.theme button');
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                // 모든 버튼에서 active 클래스 제거
+                buttons.forEach(btn => btn.classList.remove('active'));
+                // 현재 클릭된 버튼에 active 클래스 추가
+                this.classList.add('active');
+
+                var contentTypeId = this.id; // 클릭된 버튼의 ID 값
+
+                // iframe 내부의 문서에 접근하여 함수 실행
+                var iframeDocument = document.getElementById('mapframe').contentWindow;
+                iframeDocument.postMessage(contentTypeId, '*'); // '*'는 모든 출처를 의미합니다. 실제 배포시에는 보안을 위해 출처를 지정해야 합니다.
+            });
+        });
     });
 
 </script>

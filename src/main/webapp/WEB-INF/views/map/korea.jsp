@@ -29,6 +29,12 @@
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+    window.addEventListener('message', function(e) {
+        var id = e.data; // 부모 페이지로부터 받은 id 값
+        // console.log(id); // 콘솔에 id 값 출력
+        // alert(id); // 알림창에 id 값 출력
+    });
+
     var map = L.map('mapid', {
         center: [36, 128.7],
         zoom: 7,
@@ -89,146 +95,6 @@
                                 clickedRegion: feature.properties.CTP_ENG_NM,
                             }, "*");
                             window.location.href = "/map/sido/" + feature.properties.CTP_ENG_NM.toLowerCase();
-                            // switch(feature.properties.CTP_KOR_NM){
-                            //     case "서울":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "/map/sido/seoul";
-                            //         break;
-                            //     case "경기":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/gyeonggi.jsp"; // 경기를 클릭하면 gyeonggi.jsp로 이동
-                            //         break;
-                            //     case "인천":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/incheon.jsp"; // 인천을 클릭하면 incheon.jsp로 이동
-                            //         break;
-                            //     case "강원":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/gangwon.jsp"; // 강원을 클릭하면 gangwon.jsp로 이동
-                            //         break;
-                            //     case "충북":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/chungbuk.jsp"; // 충북을 클릭하면 chungbuk.jsp로 이동
-                            //         break;
-                            //     case "충남":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/chungnam.jsp"; // 충남을 클릭하면 chungnam.jsp로 이동
-                            //         break;
-                            //     case "대전":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/daejeon.jsp"; // 대전을 클릭하면 daejeon.jsp로 이동
-                            //         break;
-                            //     case "세종":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/sejong.jsp"; // 세종을 클릭하면 sejong.jsp로 이동
-                            //         break;
-                            //     case "경북":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/gyeongbuk.jsp"; // 경북을 클릭하면 gyeongbuk.jsp로 이동
-                            //         break;
-                            //     case "경남":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/gyeongnam.jsp"; // 경남을 클릭하면 gyeongnam.jsp로 이동
-                            //         break;
-                            //     case "대구":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/daegu.jsp"; // 대구를 클릭하면 daegu.jsp로 이동
-                            //         break;
-                            //     case "울산":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/ulsan.jsp"; // 울산을 클릭하면 ulsan.jsp로 이동
-                            //         break;
-                            //     case "부산":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/busan.jsp"; // 부산을 클릭하면 busan.jsp로 이동
-                            //         break;
-                            //     case "전북":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/jeonbuk.jsp"; // 전북을 클릭하면 jeonbuk.jsp로 이동
-                            //         break;
-                            //     case "전남":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/jeonnam.jsp"; // 전남을 클릭하면 jeonnam.jsp로 이동
-                            //         break;
-                            //     case "광주":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/gwangjusi.jsp"; // 광주를 클릭하면 gwangju.jsp로 이동
-                            //         break;
-                            //     case "제주":
-                            //         parent.postMessage({
-                            //             clickedSubject: feature.properties.CTP_KOR_NM,
-                            //             clickedContent: feature.properties.CTP_Description,
-                            //             clickedRegion: feature.properties.CTP_ENG_NM,
-                            //         }, "*");
-                            //         window.location.href = "./sido/jeju.jsp"; // 제주를 클릭하면 jeju.jsp로 이동
-                            //         break;
-                            //     default:
-                            //         break;
-                            // }
                         },
                     });
                 },
