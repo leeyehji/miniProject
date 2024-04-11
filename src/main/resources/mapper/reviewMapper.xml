@@ -5,12 +5,33 @@
 
 <mapper namespace="com.nadeuli.review.dao.ReviewDAO">
     <insert id="reviewWrite" parameterType="com.nadeuli.review.bean.ReviewDTO">
-       insert into board(B_TITLE,B_CONTENT,B_CREATETIME) values(#{B_TITLE},#{B_CONTENT},now())
+       insert into BOARD(B_TITLE,B_CONTENT,B_CREATETIME) values(#{B_TITLE},#{B_CONTENT},now())
     </insert>
-    <select id="getReviewList" resultType="com.nadeuli.review.bean.ReviewDTO">
-        select * from board
+    <select id="getReviewList" parameterType="int" resultType="com.nadeuli.review.bean.ReviewDTO">
+        select * from BOARD limit #{Integer}, 6
     </select>
+    <select id="getTotalA" resultType="int">
+        select count(*) from BOARD
+    </select>
+
     <select id="getReviewView" parameterType="Integer" resultType="com.nadeuli.review.bean.ReviewDTO">
-        select * from board where B_NO = ${Integer}
+        select * from BOARD where B_NO = ${Integer}
+    </select>
+    <update id="boardViewPlus" parameterType="Integer">
+        update BOARD set B_VIEW=B_VIEW+1 where B_NO = #{Integer}
+    </update>
+    <update id="clickLike" parameterType="Integer">
+        update BOARD set B_LIKE=B_LIKE+1 where B_NO = #{Integer}
+    </update>
+
+    <insert id="commentWrite" parameterType="com.nadeuli.review.bean.CommentDTO">
+        insert into COMMENT(B_NO,C_CONTENT) values(#{B_NO},#{C_CONTENT})
+    </insert>
+    <update id="commentCountUp" parameterType="Integer">
+        update BOARD set B_COMMENTCOUNT = B_COMMENTCOUNT +1 where B_NO = #{Integer}
+    </update>
+
+    <select id="getCommentList" parameterType="Integer" resultType="com.nadeuli.review.bean.CommentDTO">
+        select * from COMMENT where B_NO = #{Integer} order by C_NO desc;
     </select>
 </mapper>

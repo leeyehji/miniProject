@@ -8,4 +8,7 @@ public class ServiceCenterController {
 
     @GetMapping(value = "ServiceCenter")
     public String getServiceCenter() {return "serviceCenter/ServiceCenter"; }
+
+    @GetMapping(value = "NoticeDetail")
+    public String getNoticeDetail() {return "serviceCenter/NoticeDetail"; }
 }

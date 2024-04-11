@@ -26,7 +26,7 @@
 			<!-- reviewList -->
 
 			<div id="reviewList" class="reviewList">
-
+				<input type="hidden" id="pg" name="pg" value="${pg}"/>
 				<div id="reviewListMain">
 					<div id="reviewListHeader">
 						<h1>R E V I E W</h1>
@@ -39,12 +39,10 @@
 
 				<div id="reviewListFoot">
 					<div id="reviewListPage">
-						<button>이전</button>
-						<a href="#">1</a> <a href="#">2</a> <a href="#">3</a>
-						<button>다음</button>
+
 					</div>
 					<div id="reviewListWrite">
-						<button id="reviewListWriteBtn">글쓰기</button>
+						<button id="reviewListWriteBtn" onclick="location.href='reviewWriteForm'">글쓰기</button>
 					</div>
 				</div>
 

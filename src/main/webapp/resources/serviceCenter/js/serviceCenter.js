@@ -172,31 +172,26 @@ document.addEventListener('submit', function(event) {
     // 서버로 데이터 전송 로직 등...
   }
 });
-
-
-///////////////////////////////////////////////공지 사항 ////////////////////////////////////
-
-var currentNotice = null;
+///////////////////////////////////////////////////자주 묻는 질문/////////////////////////////////////////
+var currentFaq = null;
 
 function showPopup(edit = false) {
   var title = "", text = "";
 
-  if (edit && currentNotice) {
-    title = currentNotice.title;
-    text = currentNotice.text;
+  if (edit && currentFaq) {
+    title = currentFaq.title;
+    text = currentFaq.text;
   }
 
   var myWindow = window.open("", "a", "width=400, height=300, left=100, top=50");
 
-  myWindow.document.write('<html><head><title>공지사항 작성</title></head><body>');
+  myWindow.document.write('<html><head><title>자주묻는질문 작성</title></head><body>');
   myWindow.document.write('<div id="writeForm">');
-  myWindow.document.write('<h2>공지사항 작성</h2>');
-  myWindow.document.write('<label for="dateText">날짜:</label><br>');
-  myWindow.document.write('<input type="date" id="dateText" name="date" style="width: 100%; color: #000000"><br>');
+  myWindow.document.write('<h2>자주묻는질문 작성</h2>');
   myWindow.document.write('<label for="titleText">제목:</label><br>');
   myWindow.document.write('<input type="text" id="titleText" name="title" style="width: 100%;" value="' + title + '"><br>');
-  myWindow.document.write('<label for="noticeText">내용:</label><br>');
-  myWindow.document.write('<textarea id="noticeText" rows="4" cols="50">' + text + '</textarea><br>');
+  myWindow.document.write('<label for="faqText">내용:</label><br>');
+  myWindow.document.write('<textarea id="faqText" rows="4" cols="50">' + text + '</textarea><br>');  // 오타 수정됨
   myWindow.document.write('<button id="saveBtn">저장</button>');
   myWindow.document.write('<button id="cancelBtn">취소</button>');
   myWindow.document.write('</div>');
@@ -206,35 +201,27 @@ function showPopup(edit = false) {
   myWindow.onload = function() {
     myWindow.document.getElementById('saveBtn').onclick = function() {
       var newTitle = myWindow.document.getElementById('titleText').value;
-      var newText = myWindow.document.getElementById('noticeText').value;
-      var newDate = myWindow.document.getElementById('dateText').value; // 날짜 정보 가져오기
+      var newText = myWindow.document.getElementById('faqText').value;  // 수정됨
 
       if (newTitle.trim() !== "" && newText.trim() !== "" && newDate.trim() !== "") {
-        if (edit && currentNotice && currentNotice.element) {
-          // 기존 공지사항 수정
-          var existingNotice = currentNotice.element;
-          existingNotice.querySelector('.toggleBtn').textContent = newTitle;
-          existingNotice.querySelector('.ntccontent').innerHTML = newText;
-          existingNotice.querySelector('.date').textContent = "날짜: " + newDate; // 날짜 정보 업데이트
+        if (edit && currentFaq && currentFaq.element) {
+          var existingFaq = currentFaq.element;
+          existingFaq.querySelector('.toggleBtn').textContent = newTitle;
+          existingFaq.querySelector('.ntccontent').innerHTML = newText;
         } else {
-
-          // 새 공지사항 추가
-          var noticesDiv = document.querySelector('.notices');
-          var newNotice = document.createElement('div');
-          newNotice.innerHTML = `<div style="display: flex; justify-content: space-between; align-items: center;">
-                                   <button class="toggleBtn">${newTitle}</button>
-                                   <div style="color: #000000" class="date">날짜: ${newDate}</div> <!-- 날짜 정보 추가 -->
-                                   <button class="editBtn" style="margin-left: 10px;">편집</button>
-                                   <button class="deleteBtn" style="margin-left: 10px; border-radius: 10px;">삭제</button>
-                                 </div>
-                                 <div class="ntccontent" style="display:none;">${newText}</div>`;
-          newNotice.querySelector('.editBtn').addEventListener('click', function() {
-            // 현재 편집할 공지사항으로 설정 (DOM 요소 포함)
-            currentNotice = { title: newTitle, text: newText, element: newNotice };
-            // 편집 모드로 팝업을 열기
+          var faqDiv = document.querySelector('.faqs');
+          var newFaq = document.createElement('div');
+          newFaq.innerHTML = `<div style="display: flex; justify-content: space-between; align-items: center;">
+                               <button class="toggleBtn">${newTitle}
+                               <button class="editBtn" style="position: relative; margin-left: 10px; right: 110px;">편집</button>
+                               <button class="deleteBtn" style="margin-left: 10px; border-radius: 10px; position: relative; right: 220px;">삭제</button>
+                             </div>
+                             <div class="ntccontent" style="display:none;">${newText}</div>`;
+          newFaq.querySelector('.editBtn').addEventListener('click', function() {
+            currentFaq = { title: newTitle, text: newText, element: newFaq };
             showPopup(true);
           });
-          newNotice.querySelector('.toggleBtn').addEventListener('click', function(event) {
+          newFaq.querySelector('.toggleBtn').addEventListener('click', function(event) {
             const content = event.currentTarget.parentElement.nextElementSibling;
             if (content.style.display === "none") {
               content.style.display = "block";
@@ -242,12 +229,11 @@ function showPopup(edit = false) {
               content.style.display = "none";
             }
           });
-          newNotice.querySelector('.deleteBtn').addEventListener('click', function() {
-            // 공지사항 삭제
-            noticesDiv.removeChild(newNotice);
+          newFaq.querySelector('.deleteBtn').addEventListener('click', function() {
+            faqDiv.removeChild(newFaq);
           });
 
-          noticesDiv.appendChild(newNotice);
+          faqDiv.appendChild(newFaq);
         }
         myWindow.close();
       } else {
@@ -259,4 +245,139 @@ function showPopup(edit = false) {
       myWindow.close();
     };
   };
+}
+///////////////////////////////////////////////공지 사항 ////////////////////////////////////
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById("writeNoticeBtn").addEventListener("click", function() {
+    document.getElementById("writeModal").style.display = "block";
+  });
+
+  document.getElementById("closeBtn").addEventListener("click", function() {
+    document.getElementById("writeModal").style.display = "none";
+    // 입력 필드 초기화
+    document.getElementById("title").value = "";
+    document.getElementById("content2").value = "";
+  });
+
+  document.getElementById("submitBtn").addEventListener("click", function() {
+    var title = document.getElementById("title").value;
+    var content = document.getElementById("content2").value;
+    var image = document.getElementById("imageUpload").value; // 이미지 파일 경로(또는 이름) 추출
+    var today = new Date().toISOString().slice(0, 10).replace(/-/g, ".");
+
+    // 신규 공지사항 데이터에 이미지 경로 추가
+    notices.push({
+      id: notices.length + 1,
+      author: '작성자',
+      title: title,
+      content: content,
+      date: today,
+      image: image // 이미지 경로 또는 이름
+    });
+
+    document.getElementById("imageUpload").addEventListener("change", function() {
+      var preview = document.getElementById("imagePreview");
+      preview.innerHTML = ''; // 이전 미리보기 초기화
+      var file = this.files[0];
+      if (file) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          var img = document.createElement("img");
+          img.setAttribute("src", e.target.result);
+          img.setAttribute("style", "max-width: 500px; max-height: 500px;");
+          preview.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    document.getElementById("writeModal").style.display = "none";
+    // 작성 후 입력 필드 초기화
+    document.getElementById("title").value = "";
+    document.getElementById("content2").value = "";
+
+    // 새로운 공지사항을 포함하여 목록을 다시 표시
+    displayNotices(currentPage);
+  });
+
+  // 초기 페이지 로딩 시 첫 번째 페이지의 공지사항을 표시합니다.
+  displayNotices(currentPage);
+});
+
+let notices = Array.from({length: 0}, (_, i) => ({id: i + 1, author: '작성자', title: `제목`, date: new Date().toISOString().slice(0, 10).replace(/-/g, ".")}));
+
+let currentPage = 1; // 현재 페이지
+const noticesPerPage = 10; // 페이지당 공지사항 수
+
+function displayNotices(page) {
+  const tbody = document.querySelector(".type1 tbody");
+  tbody.innerHTML = ""; // 기존 목록을 비웁니다.
+
+  // 페이지에 맞는 공지사항 분할
+  const startIndex = (page - 1) * noticesPerPage;
+  const endIndex = startIndex + noticesPerPage;
+  const noticesToDisplay = notices.slice(startIndex, endIndex);
+
+  // 테이블에 공지사항 목록 추가
+  noticesToDisplay.forEach((notice, index) => {
+    const row = tbody.insertRow();
+    const cell1 = row.insertCell(0);
+    const cell2 = row.insertCell(1);
+    const cell3 = row.insertCell(2);
+    const cell4 = row.insertCell(3);
+
+    cell1.innerText = startIndex + index + 1;
+    cell2.innerText = notice.author;
+    // 제목에 클릭 이벤트 리스너 추가
+    const title = document.createElement('a');
+    title.href = 'javascript:void(0);'; // 클릭 시 페이지 리로드 방지
+    title.innerText = notice.title;
+    title.addEventListener('click', function() {
+      // 공지사항 상세 페이지로 이동하는 로직
+      // 예: sessionStorage를 사용하여 공지사항 데이터를 임시 저장
+      sessionStorage.setItem('noticeTitle', notice.title);
+      sessionStorage.setItem('noticeDate', notice.date);
+      sessionStorage.setItem('noticeContent', notice.content);
+      sessionStorage.setItem('noticeImage', notice.image);
+      // 상세 페이지로 이동
+      window.location.href = 'NoticeDetail'; // 상세 페이지의 URL
+    });
+    cell3.appendChild(title);
+    cell4.innerText = notice.date;
+
+    // 생성된 번호와 작성자에 클래스 적용
+    cell1.classList.add("center-align");
+    cell2.classList.add("center-align");
+    cell3.classList.add("left-align");
+    cell4.classList.add("center-align");
+  });
+
+  updatePagination();
+}
+
+function updatePagination() {
+  const pagination = document.querySelector(".paginate span");
+  pagination.innerHTML = ""; // 기존 페이지 번호를 비웁니다.
+
+  const totalPages = Math.ceil(notices.length / noticesPerPage);
+  for (let i = 1; i <= totalPages; i++) {
+    const pageLink = document.createElement("a");
+    pageLink.href = "#";
+    pageLink.innerText = i;
+    pageLink.addEventListener("click", function(e) {
+      e.preventDefault();
+      currentPage = i;
+      displayNotices(currentPage);
+    });
+
+
+    if (i === currentPage) {
+      const strong = document.createElement("strong");
+      strong.innerText = i;
+      pagination.appendChild(strong);
+    } else {
+      pagination.appendChild(pageLink);
+    }
+  }
 }
