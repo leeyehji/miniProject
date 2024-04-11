@@ -40,11 +40,12 @@ public class MyCalendarController {
 	public String myCalendar() {
 		return "mypage/myCalendar";
 	}
+	
 	@GetMapping(value = "myCalendarWrite")
 	public String myCalendarWrite() {
-		//DB
 		return "mypage/myCalendarWrite";
 	}
+	
 	@PostMapping(value = "calWrite")
 	@ResponseBody
 	public void write(@ModelAttribute CalDTO calDTO) {
@@ -54,36 +55,8 @@ public class MyCalendarController {
 	@PostMapping(value = "calList")
 	@ResponseBody
 	public List<Map<String, Object>> calList() {
-		List<CalDTO> listAll = mypageService.calList();
-    	
-		JSONObject jsonObj = new JSONObject();
-        JSONArray jsonArr = new JSONArray();
-		
-        HashMap<String, Object> hash = new HashMap<>();
-        
-        System.out.println("MyCalendarController calList");
-        for (int i = 0; i < listAll.size(); i++) {
-        	//System.out.println("title:"+listAll.get(i).getCal_title());
-        	//2022-02-19T03:05:49.275+00:00 형식이 되도록
-        	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-        	//SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
-        	Object start=sdf.format(listAll.get(i).getCal_startDate()); 
-        	
-        	Object end=sdf.format(listAll.get(i).getCal_endDate()); 
-        	Object color = listAll.get(i).getCal_color();
-        	Object id = listAll.get(i).getCal_no();
-            hash.put("title", listAll.get(i).getCal_title());
-            hash.put("start", start);
-            hash.put("end", end);
-            hash.put("description",listAll.get(i).getCal_memo() );
-            hash.put("color", color);//borderColor, backgroundColor 동일하게
-            hash.put("id", id);
-            //textColor
-            jsonObj = JSONObject.fromObject(hash);;
-            jsonArr.add(jsonObj);
-        }
-        //log.info("jsonArrCheck: {}", jsonArr);
-        return jsonArr;
+		List<Map<String, Object>> listAll = mypageService.calList();   	
+        return listAll;
 	}
 	
 	@PostMapping("calUpdate")
@@ -95,38 +68,14 @@ public class MyCalendarController {
 	@PostMapping("calDelete")
 	@ResponseBody
 	public void calDelete(@RequestBody List<Map<String, Object>> param) throws ParseException {
-		for (int i = 0; i < param.size(); i++) {//배열로 가져오긴 했지만 한번에 하나씩만 삭제 가능하게 할 듯.
-			int cal_no=Integer.parseInt((String) param.get(i).get("cal_no"));
-			mypageService.calDelete(cal_no);
-		}
+		int cal_no=Integer.parseInt((String) param.get(0).get("cal_no"));
+		mypageService.calDelete(cal_no);
 	}
 	
 	@PostMapping(value = "myCalendarTxt")
 	@ResponseBody
 	public List<Map<String, Object>> myCalendarTxt(@RequestBody Map<String, Object> map){
-		String selectedDate = map.get("selectedDate").toString();
-	    map.put("selectStart", selectedDate+ " 23:59:59");
-	    map.put("selectEnd", selectedDate+ " 00:00:01");
-		List<CalDTO> listAll = mypageService.getSchedule(map);//memId, selectDate
-        
-		JSONObject jsonObj = new JSONObject();
-        JSONArray jsonArr = new JSONArray();
-        
-        HashMap<String, Object> hash = new HashMap<>();
-        System.out.println(listAll.size());
-        for (int i = 0; i < listAll.size(); i++) {
-        	SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 HH:mm");
-        	Object start=sdf.format(listAll.get(i).getCal_startDate()); 
-        	Object end=sdf.format(listAll.get(i).getCal_endDate()); 
-            hash.put("title", listAll.get(i).getCal_title());
-            hash.put("start", start);
-            hash.put("end", end);
-            hash.put("description",listAll.get(i).getCal_memo() );
-
-            jsonObj = JSONObject.fromObject(hash);;
-            jsonArr.add(jsonObj);
-        }
-        log.info("jsonArrCheck: {}", jsonArr);
+	    List<Map<String, Object>> jsonArr = mypageService.getSchedule(map);//memId, selectDate
         return jsonArr;
 	}
 	

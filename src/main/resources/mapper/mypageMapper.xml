@@ -43,6 +43,11 @@
     	select * from user_calendar where <![CDATA[ #{selectStart}>=cal_startDate ]]> and <![CDATA[ #{selectEnd}<=cal_endDate ]]>
 	</select>
 
+	<update id="setProfileImg" parameterType="com.nadeuli.mypage.dto.MemberDTO">
+		update member set mem_profileImage = #{mem_profileImage} where mem_id = #{mem_id}
+	</update>
 	
-	
+	<update id="deleteFile" parameterType="com.nadeuli.mypage.dto.MemberDTO">
+		update member set mem_profileImage = null where mem_id = #{mem_id} 
+	</update>
  </mapper>

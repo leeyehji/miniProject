@@ -39,9 +39,9 @@
 		<ul class="nav-content">
 			<li><a href="/serviceCenter/serviceCenter">고객센터</a>
 				<ul>
-					<li><a href="serviceCenter.jsp#notice">공지사항</a></li>
-					<li><a href="serviceCenter.jsp#inquiry">1 : 1 문의</a></li>
-					<li><a href="serviceCenter.jsp#faq">F A Q</a></li>
+					<li><a href="/ServiceCenter">공지사항</a></li>
+					<li><a href="/ServiceCenter#inquiry">1 : 1 문의</a></li>
+					<li><a href="/ServiceCenter#faq">F A Q</a></li>
 				</ul>
 			</li>
 		</ul>

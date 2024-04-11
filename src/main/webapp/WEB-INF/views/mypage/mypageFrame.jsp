@@ -8,8 +8,15 @@
 	<div id="profile_userIntro">
 		<div id="profileSet">
 			<div class="profile"></div>
+			
 			<br>
-			<button type="button" id="changeProfileImg">프사변경</button>
+			<form  id="uploadProfile" name="uploadProfile" enctype="multipart/form-data">
+				<div class="filebox">
+				    <input type="file" id="changeProfileImg" accept="image/*">
+					<label for="changeProfileImg">프로필 변경</label> 
+				</div>
+			</form>
+			<button id="defaultProfile">프로필 삭제</button>
 		</div>
 
 		<div id="userIntro">
