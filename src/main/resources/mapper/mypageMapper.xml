@@ -14,40 +14,40 @@
 	</select>
 	
 	<delete id="calDelete" parameterType="int">
-		delete from User_CALENDAR where cal_no = #{cal_no}
+		delete from USER_CALENDAR where CAL_NO = #{cal_no}
 	</delete>
 	
 	<update id="calUpdate" parameterType="com.nadeuli.mypage.dto.CalDTO">
-		update user_calendar set cal_Title = #{cal_title}
-								,cal_memo = #{cal_memo}
-								,cal_startDate = #{cal_startDate}
-								,cal_endDate = #{cal_endDate}
-								,cal_color = #{cal_color}
-							where cal_no = #{cal_no}
+		update USER_CALENDAR set CAL_TITLE = #{cal_title}
+								,CAL_MEMO = #{cal_memo}
+								,CAL_STARTDATE = #{cal_startDate}
+								,CAL_ENDDATE = #{cal_endDate}
+								,CAL_COLOR = #{cal_color}
+							where CAL_NO = #{cal_no}
 	</update>
 	
 	<update id="memberUpdate" parameterType="com.nadeuli.mypage.dto.MemberDTO">
-		update member set mem_pw=#{mem_pw}
-						  ,mem_name=#{mem_name}
-						  ,mem_phone=#{mem_phone}
-						  ,mem_email=#{mem_email}
-						  ,mem_gender=#{mem_gender}
-					where mem_id=#{mem_id}
+		update MEMBER set MEM_PW=#{mem_pw}
+						  ,MEM_NAME=#{mem_name}
+						  ,MEM_PHONE=#{mem_phone}
+						  ,MEM_EMAIL=#{mem_email}
+						  ,MEM_GENDER=#{mem_gender}
+					where MEM_ID=#{mem_id}
 	</update>
 	
 	<select id ="getUser" parameterType="String" resultType="com.nadeuli.mypage.dto.MemberDTO">
-		select * from member where mem_id=#{memId}
+		select * from MEMBER where MEM_ID=#{memId}
 	</select>
 	
 	<select id="getSchedule" parameterType="java.util.Map" resultType="com.nadeuli.mypage.dto.CalDTO">
-    	select * from user_calendar where <![CDATA[ #{selectStart}>=cal_startDate ]]> and <![CDATA[ #{selectEnd}<=cal_endDate ]]>
+    	select * from USER_CALENDAR where <![CDATA[ #{selectStart}>=CAL_STARTDATE ]]> and <![CDATA[ #{selectEnd}<=CAL_ENDDATE ]]>
 	</select>
 
 	<update id="setProfileImg" parameterType="com.nadeuli.mypage.dto.MemberDTO">
-		update member set mem_profileImage = #{mem_profileImage} where mem_id = #{mem_id}
+		update MEMBER set MEM_PROFILEIMAGE = #{mem_profileImage} where MEM_ID = #{mem_id}
 	</update>
 	
 	<update id="deleteFile" parameterType="com.nadeuli.mypage.dto.MemberDTO">
-		update member set mem_profileImage = null where mem_id = #{mem_id} 
+		update MEMBER set MEM_PROFILEIMAGE = null where MEM_ID = #{mem_id} 
 	</update>
  </mapper>
