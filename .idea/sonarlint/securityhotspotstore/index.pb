@@ -31,8 +31,6 @@ k
 .src/main/webapp/WEB-INF/views/frame/header.jsp,4\6\4691807c405e8aabe852d59da9dbb8274cb0bec3
 [
 +src/main/webapp/WEB-INF/views/frame/nav.jsp,5\2\523f59d0beb7d6ccdb654d5c79d9091b271e9292
-o
-?src/main/java/com/nadeuli/frame/controller/FrameController.java,0\e\0e03274d5c9953ad1ed7d8d9ae15817d559c4aee
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 S
@@ -79,8 +77,6 @@ c
 3src/main/webapp/WEB-INF/views/review/reviewList.jsp,c\8\c87afdb03aeb4505f255a453eaf8a9c834a2d122
 l
 <src/main/webapp/WEB-INF/views/serviceCenter/noticeDetail.jsp,2\0\20ca3caa7f9e5ab2b69699e6934153c3103a4ff3
-f
-6src/main/webapp/resources/serviceCenter/css/detail.css,4\d\4d7ba1e97fdf0a7f78f5510658d1ab302cdeb9f4
 l
 <src/main/webapp/resources/serviceCenter/css/noticeDetail.css,5\c\5ccfd14f8a25c6fc519049184cacbbf77a562d0a
 _
