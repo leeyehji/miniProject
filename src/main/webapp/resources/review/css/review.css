@@ -95,7 +95,7 @@
 	line-height: 1;
 }
 
-.reviewMain #commentWrite button {
+.reviewMain #commentWrite #commentBtn {
 	vertical-align: top;
 	margin-left: 0;
 	width: 167px;

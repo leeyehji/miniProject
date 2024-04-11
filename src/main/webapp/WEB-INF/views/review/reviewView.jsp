@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,10 +61,10 @@
                     </div>
 
                     <div id="delUpdate" style='margin-top: 20px'>
-                        <button>이전글</button>
+                        <button onclick="prevView(B_NO-1)">이전글</button>
                         <button>글 수정</button>
                         <button>글 삭제</button>
-                        <button>다음글</button>
+                        <button onclick="nextView(B_NO+1)">다음글</button>
                     </div>
 
                 </div>
@@ -76,9 +76,9 @@
                 <p>&emsp;&emsp;&emsp;댓글</p>
                 <hr>
                 <div id="commentWrite">
-                    <textarea name="commentText" id="commentText" cols="30" rows="5"
-                              placeholder="로그인 후 글쓰기가 가능합니다. "></textarea>
-                    <button id="commentBtn">로그인</button>
+                    <textarea id="commentText" name="C_CONTENT" cols="30" rows="5"
+                              placeholder="댓글을 작성해 주세요."></textarea>
+                    <input type="button" id="commentBtn" value="댓글 작성">
                 </div>
                 <hr>
                 <div id="commentConsole" >
@@ -88,7 +88,7 @@
                 </div>
             </div>
 
-            <input id="reviewListBtn" type="button" value="목록으로 > " >
+            <input id="reviewListBtn" type="button" value="목록으로 > " onclick="location.href='reviewList'" >
         </div>
     </div>
     <!-- 리뷰 끝 -->
@@ -101,11 +101,27 @@
 <footer><jsp:include page="../frame/footer.jsp"></jsp:include></footer>
 <div id="bottom"></div>
 
-
+<script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
 <script>
     var B_NO = ${no};
+
+    function prevView(no){
+        if(no > 1){
+            location.href="reviewView?no="+no;
+        }else{
+            alert("최신글 입니다.")
+        }
+    }
+    function nextView(no){
+        if(no < ${sessionScope.totalA}){
+            location.href="reviewView?no="+no;
+        }else{
+            alert("마지막 글 입니다.")
+        }
+    }
+
+
 </script>
-<script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
 <script src="/frame/js/frame.js"></script>
 <script src="/review/js/reviewView.js"></script>
 
