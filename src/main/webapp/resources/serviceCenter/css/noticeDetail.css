@@ -1,0 +1,147 @@
+@font-face {
+    font-family: "ffont";
+    src: url("../../font/기본 폰트.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "logo";
+    src: url("../../font/사이트명.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "cld";
+    src: url("../../font/캘린더.ttf") format("truetype");
+}
+
+.notice-detail-container {
+    max-width: 1290px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.notice-detail-container h1 {
+    font-size: 24px;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.notice-detail-container p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.notice-detail-container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.notice-detail-container a {
+    display: inline-block;
+    color: #000000;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#deleteNotice:hover {
+    background-color: #c82333;
+}
+
+#deleteNotice {
+    position: relative;
+    left: 1090px;
+    display: inline-block;
+    background-color: #dc3545;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#editNotice:hover {
+    background-color: #3c3c3c;
+}
+
+#editNotice {
+    position: relative;
+    left: 1090px;
+    display: inline-block;
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 모달(배경) */
+.modal {
+    display: none; /* 기본적으로 숨겨진 상태 */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* 모달 내용 */
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 1200px;
+    height: 500px;
+    position: relative;
+    left: 400px;
+    margin-top: 100px;
+}
+
+/* 닫기 버튼 */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#editTitle {
+    font-size: 18px;
+    width: 500px;
+}
+
+#editDate {
+    font-size: 18px;
+}
+
+#editContent {
+    font-size: 18px;
+    width: 1130px;
+    height: 250px;
+}
+
+#editLabel {
+    position: relative;
+    bottom: 240px;
+}

@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "ffont";
+    src: url("../../font/기본 폰트.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "logo";
+    src: url("../../font/사이트명.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "cld";
+    src: url("../../font/캘린더.ttf") format("truetype");
+}
+
 /* ------------------------------------------------------------------고객센터------ */
 
 table {
@@ -83,6 +98,7 @@ h2 {
     border-radius: 5px;
     font-size: 18px;
 }
+
 .form-group input[type="email"] {
     width: 350px;
     padding: 10px;
@@ -90,6 +106,7 @@ h2 {
     border-radius: 5px;
     font-size: 18px;
 }
+
 .form-group textarea {
     width: 750px;
     padding: 10px;
@@ -119,44 +136,37 @@ h2 {
 
 /* ------------------------FAQ-------------------------------------- */
 
+.toggleBtn {
+    width: 900px;
+    height: 50px;
+    font-size: 28px;
+    text-align: left;
+    border-radius: 10px;
+    background-color: #CAE9FF;
+}
+
+.ntccontent {
+    display: block;
+    width: 889px;
+    height: 100px;
+    font-size: 28px;
+    text-align: left;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid;
+    padding-left: 8px;
+    margin-bottom: 10px;
+}
+
 #faqContent {
-    width: 1515px;
-    position: relative;
-    left: 70px;
-    top: 1px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+    font-size: 16px;
 }
 
-#faqContent h2 {
-    margin-left: 400px;
-    margin-top: 90px;
-}
-
-#faqContent h1 {
-    color:#007bff;
-    font-size: 50px;
-    margin-left: 398px;
-}
-
-.faq-container {
-    left: 50px;
-    position: relative;
-    width: 1000px;
-}
-
-.faqItem {
-    font-size: 50px;
-    margin-left: 200px;
-    margin-bottom: 50px;
-}
-
-.faqItem .question{
-    color: #007bff;
-}
-.faqItem .answer{
-    color: #000000;
-}
-
-    /* 공지사항 */
+/* -----------------------------------공지사항------------------------------------------ */
 
 #writeForm {
     display: none;
@@ -165,14 +175,9 @@ h2 {
 #noticeContent {
     display: none;
     max-width: 1500px;
-
+    color: #000000;
     padding: 20px;
 
-}
-
-#noticeContent h2 {
-    color: #333;
-    margin-bottom: 20px;
 }
 
 .notices {
@@ -182,49 +187,118 @@ h2 {
     font-size: 16px;
 }
 
-#noticeContent>button {
-    display: inline-block;
-    /* 버튼을 인라인 블록 요소로 만들어 줄 바꿈 없이 나열 */
-    margin-right: 10px;
-    background-color: #ece5e5;
-    color: #000000;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
+#container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
 }
 
-#noticeContent>button:hover {
-    background-color: #9ea3a7;
+/* 공지사항 타이틀 스타일링 */
+.tit.big {
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: block; /* 타이틀을 블록 요소로 만듦 */
 }
 
-.toggleBtn {
-    /* 공지사항 제목 */
+/* 검색 필드 스타일링 */
+.search_field {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 요소들 사이의 간격 */
+    margin-bottom: 20px;
+}
+
+.input_keyword {
+    flex-grow: 1; /* 검색 입력 필드가 남은 공간을 모두 차지하도록 */
+    padding: 10px;
+    border: 1px solid #ccc; /* 경계선 스타일 */
+    width: 750px;
+}
+
+.btn.line {
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    cursor: pointer; /* 버튼 위에 마우스를 올렸을 때 커서 모양 변경 */
     border-radius: 10px;
-    text-align: left;
-    width: 1200px;
+    margin-left: 15px;
+}
+
+/* 테이블 스타일링 */
+.type1 {
+    width: 996px;
+    margin-left: 2px;
+    border: 2px solid #CAE9FF;
+    height: auto;
+}
+
+/* 페이지네이션 스타일링 */
+.paginate_wrap {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.paginate span, .paginate a {
+    margin: 0 5px;
+}
+
+.paginate a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: #000;
+}
+
+.paginate a:hover {
+    text-decoration: underline; /* 마우스 오버 시 밑줄 표시 */
+}
+
+.noticeform {
+    width: 1000px;
+}
+
+.noticefieldset {
+    border: 2px solid #CAE9FF !important;
+}
+
+.writeNoticeBtn {
     position: relative;
-    height: 50px;
+    bottom: 20px;
+    right: 185px;
+    float: right;
+}
+
+#writeModal{
     font-size: 18px;
     color: #000000;
-    background-color: #c5c6d0;
-    margin-bottom: 5px;
+    display: block;
+    position: relative;
+    left: 500px;
+    bottom: 50px;
+    width: 1500px;
+    min-height: 700px;
+    height: auto;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid rgb(204, 204, 204);
+    z-index: 100;
 }
 
-.ntccontent {
-    /* 공지사항 내용 */
-    overflow-y: scroll;
-    color: #000000;
-    margin-top: -5px;
-    padding-top: 5px;
-    border-radius: 10px;
-    margin-left: 5px;
-    padding-left: 5px;
-    text-align: left;
-    width: 1180px;
+#contentLabel {
     position: relative;
-    height: 170px;
-    font-size: 18px;
+    bottom: 390px;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.left-align,
+.center-align {
     border: 1px solid #000000;
-    margin-bottom: 5px;
+}
+
+#content2 {
+    width: 1450px;
+    height: 400px;
+    font-size: 18px;
 }
