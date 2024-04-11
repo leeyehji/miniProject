@@ -63,12 +63,16 @@ $(function(){
     $.ajax({
         type : 'POST',
         url : 'getReviewList',
+        data : { "pg" : $('#pg').val() },
         dataType : 'JSON',
         success : function(data) {
-            $.each(data, function (idx, item){
-                console.log(JSON.stringify(item))
+            $.each(data.list, function (idx, item){
                 createItem(item.b_THUMBNAIL,item.mem_NO,item.b_NO,item.b_TITLE,item.b_CREATETIME,item.b_VIEW,item.b_like,item.b_COMMENTCOUNT)
             })
+
+
+            $('#reviewListPage').html(data.reviewPaging.pagingHTML);
+
 
         },
         error : function(e){
@@ -80,3 +84,6 @@ $(function(){
 
 })
 
+function reviewPaging(pg){
+    location.href="reviewList?pg="+pg;
+}

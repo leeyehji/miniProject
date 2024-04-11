@@ -69,3 +69,16 @@
 	margin-top: 30px;
 	text-align: center;
 }
+#currentPaging {
+	border: 1px solid #ccc;
+	margin: 5px;
+	padding: 5px 8px;
+	color: red;
+	cursor: pointer;
+}
+#paging {
+	margin: 5px;
+	padding: 5px;
+	color: black;
+	cursor: pointer;
+}
