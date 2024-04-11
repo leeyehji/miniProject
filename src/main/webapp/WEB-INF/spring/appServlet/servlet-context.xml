@@ -53,5 +53,7 @@ https://www.springframework.org/schema/mvc/spring-mvc.xsd
 	<context:component-scan base-package="com.nadeuli.mypage.controller" />
 	<!-- frame -->
 	<context:component-scan base-package="com.nadeuli.common.filter" />
+	<!-- map -->
+	<context:component-scan base-package="com.nadeuli.map.controller" />
 
 </beans:beans>

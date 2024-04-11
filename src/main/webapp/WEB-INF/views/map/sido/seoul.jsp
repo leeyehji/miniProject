@@ -25,6 +25,10 @@
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+    window.addEventListener('message', function(e) {
+        var id = e.data; // 부모 페이지로부터 받은 id 값
+    });
+
     var mymap = L.map("mapid",{
         center: [37.567, 126.975],
         zoom: 11,
@@ -79,87 +83,6 @@
                         click: function (e) {
                             // 클릭 이벤트 추가
                             window.location.href = "/map/seoul/" + feature.properties.SIG_ENG_NM;
-                            // switch (feature.properties.SIG_KOR_NM) {
-                            //     case "종로구":
-                            //         // window.location.href = "../seoul/jongrogu"; // 종로를 클릭하면 jongrogu.jsp로 이동
-                            //         window.location.href = "/map/seoul/" + feature.properties.SIG_ENG_NM;
-                            //         break;
-                            //     case "중구":
-                            //         window.location.href = "../seoul/junggu";
-                            //         break;
-                            //     case "용산구":
-                            //         window.location.href = "../seoul/yongsangu";
-                            //         break;
-                            //     case "성동구":
-                            //         window.location.href = "../seoul/seongdonggu";
-                            //         break;
-                            //     case "광진구":
-                            //         window.location.href = "../seoul/gwangjingu";
-                            //         break;
-                            //     case "동대문구":
-                            //         window.location.href = "../seoul/dongdaemungu";
-                            //         break;
-                            //     case "중랑구":
-                            //         window.location.href = "../seoul/jungranggu";
-                            //         break;
-                            //     case "성북구":
-                            //         window.location.href = "../seoul/seongbukgu";
-                            //         break;
-                            //     case "강북구":
-                            //         window.location.href = "../seoul/gangbukgu";
-                            //         break;
-                            //     case "도봉구":
-                            //         window.location.href = "../seoul/dobonggu";
-                            //         break;
-                            //     case "노원구":
-                            //         window.location.href = "../seoul/nowongu";
-                            //         break;
-                            //     case "은평구":
-                            //         window.location.href = "../seoul/eunpyeonggu";
-                            //         break;
-                            //     case "서대문구":
-                            //         window.location.href = "../seoul/seodaemungu";
-                            //         break;
-                            //     case "마포구":
-                            //         window.location.href = "../seoul/mapogu";
-                            //         break;
-                            //     case "양천구":
-                            //         window.location.href = "../seoul/yangcheongu";
-                            //         break;
-                            //     case "강서구":
-                            //         window.location.href = "../seoul/gangseogu";
-                            //         break;
-                            //     case "구로구":
-                            //         window.location.href = "../seoul/gurogu";
-                            //         break;
-                            //     case "금천구":
-                            //         window.location.href = "../seoul/geumchungu";
-                            //         break;
-                            //     case "영등포구":
-                            //         window.location.href = "../seoul/yeongdeungpogu";
-                            //         break;
-                            //     case "동작구":
-                            //         window.location.href = "../seoul/dongjakgu";
-                            //         break;
-                            //     case "관악구":
-                            //         window.location.href = "../seoul/gwanakgu";
-                            //         break;
-                            //     case "서초구":
-                            //         window.location.href = "../seoul/seochogu";
-                            //         break;
-                            //     case "강남구":
-                            //         window.location.href = "../seoul/gangnamgu";
-                            //         break;
-                            //     case "송파구":
-                            //         window.location.href = "../seoul/songpagu";
-                            //         break;
-                            //     case "강동구":
-                            //         window.location.href = "../seoul/gangdonggu";
-                            //         break;
-                            //     default:
-                            //         // 선택한 지역이 위의 case에 해당하지 않을 경우의 처리를 여기에 작성할 수 있습니다.
-                            //         break;
-                            // }
                         },
                     });
                 },
