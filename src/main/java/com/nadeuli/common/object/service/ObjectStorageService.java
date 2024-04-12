@@ -12,7 +12,7 @@ public interface ObjectStorageService {
 	public void deleteFile(String bucketName, String objectName);
 
 
-    void moveFile(List<String> imgArray);
+    String moveFile(List<String> imgArray);
 
 	void clearTemp(String mem_id);
 }

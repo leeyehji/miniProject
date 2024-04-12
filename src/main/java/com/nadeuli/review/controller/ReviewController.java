@@ -33,11 +33,16 @@ public class ReviewController {
     @ResponseBody
     public String reviewWrite(@ModelAttribute(value="formData") ReviewDTO reviewDTO,@RequestParam(value="imgArray") List<String> imgArray)  {
 
-        objectStorageService.moveFile(imgArray);
-        try {
-            Thread.sleep(1000);
-        }catch (InterruptedException e){
-            e.printStackTrace();
+
+        if(!imgArray.isEmpty()) {
+
+            String B_THUMBNAIL = objectStorageService.moveFile(imgArray);
+            try {
+                Thread.sleep(1000);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+            reviewDTO.setB_THUMBNAIL(B_THUMBNAIL);
         }
         objectStorageService.clearTemp("admin");
 
@@ -115,7 +120,7 @@ public class ReviewController {
     public void commentWrite(@ModelAttribute CommentDTO commentDTO){
 
        try {
-           //comment Insert
+           //comment Insertw
            reviewService.commentWrite(commentDTO);
            //BOARD commentCount Update
            reviewService.commentCountUp(commentDTO.getB_NO());

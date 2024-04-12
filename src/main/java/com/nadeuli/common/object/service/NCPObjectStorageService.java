@@ -77,9 +77,9 @@ public class NCPObjectStorageService implements ObjectStorageService {
 	}
 
 	@Override
-	public void moveFile(List<String> imgArray) {
+	public String moveFile(List<String> imgArray) {
 		String bucket = "miniproject";
-
+		String B_THUMBNAIL = "";
 		String oldSource;
 		String newSource;
 		for(int i=0 ; i< imgArray.size(); i++){
@@ -96,7 +96,11 @@ public class NCPObjectStorageService implements ObjectStorageService {
 
 			CopyObjectRequest copyObjRequest = new CopyObjectRequest(bucket, oldSource, bucket, newSource);
 			s3.copyObject(copyObjRequest);
+
+			B_THUMBNAIL=imgURL;
+			System.out.println(B_THUMBNAIL);
 		}
+		return B_THUMBNAIL;
 	}
 
 	@Override
