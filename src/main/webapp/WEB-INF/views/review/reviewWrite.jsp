@@ -55,7 +55,9 @@
 									<td><input type="button" value="글쓰기" id="reviewWriteBtn"></td>
 								</tr>
 							</table>
+							<input type="hidden" id="thumbNail" name="B_THUMBNAIL"/>
 						</form>
+
 					</div>
 			</div>
 			<!-- 글쓰기 end -->

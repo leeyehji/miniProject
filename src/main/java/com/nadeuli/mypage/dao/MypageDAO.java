@@ -29,5 +29,4 @@ public interface MypageDAO {
 
 	public void deleteFile(MemberDTO memberDTO);
 
-
 }

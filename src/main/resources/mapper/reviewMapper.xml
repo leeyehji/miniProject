@@ -5,10 +5,10 @@
 
 <mapper namespace="com.nadeuli.review.dao.ReviewDAO">
     <insert id="reviewWrite" parameterType="com.nadeuli.review.bean.ReviewDTO">
-       insert into BOARD(B_TITLE,B_CONTENT,B_CREATETIME) values(#{B_TITLE},#{B_CONTENT},now())
+       insert into BOARD(B_TITLE,B_CONTENT,B_THUMBNAIL,B_CREATETIME) values(#{B_TITLE},#{B_CONTENT},#{B_THUMBNAIL},now())
     </insert>
     <select id="getReviewList" parameterType="int" resultType="com.nadeuli.review.bean.ReviewDTO">
-        select * from BOARD limit #{Integer}, 6
+        select * from BOARD order by B_NO desc limit #{Integer}, 6
     </select>
     <select id="getTotalA" resultType="int">
         select count(*) from BOARD
