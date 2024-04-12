@@ -22,4 +22,6 @@ public interface ReviewService {
  void commentCountUp(int bNo);
 
  List<CommentDTO> getCommentList(String no);
+
+
 }

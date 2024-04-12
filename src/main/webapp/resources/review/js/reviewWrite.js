@@ -53,6 +53,7 @@ $(document).ready(function () {
                     uploadSummernoteImageFile(files[i],
                         this);
                 }
+
             }
         }
     });
@@ -72,8 +73,8 @@ function uploadSummernoteImageFile(file, el) {
         enctype : 'multipart/form-data',
         processData : false,
         success : function(data) {
-            console.log(data);
-            $(el).summernote('insertImage',	"https://kr.object.ncloudstorage.com/miniproject/storage/"+data);
+            const url = "https://kr.object.ncloudstorage.com/miniproject/"+data;
+            $(el).summernote('insertImage',url);
         }
     });
 }
@@ -86,6 +87,7 @@ $('#reviewWriteBtn').click(function(){
     var title = $('#title').val();
     var content = $('#summernote').val();
 
+
     if(title === ""){
         alert("제목을 입력하세요");
         $('#title').focus();
@@ -94,10 +96,16 @@ $('#reviewWriteBtn').click(function(){
         alert("내용을 입력하세요");
         $('#content').focus();
     }else{
+        const imgElement = document.querySelectorAll('.note-editor .note-editable img');
+        const imgArray = Array.from(imgElement).map(img => img.src);
+
         $.ajax({
             type:'POST',
             url : 'reviewWrite',
-            data : $('#reviewWriteForm').serialize(),
+            data : {
+                "formData" : $('#reviewWriteForm').serialize(),
+                "imgArray" : JSON.stringify(imgArray)
+            },
             dataType:'text',
             success : function(data){
 
