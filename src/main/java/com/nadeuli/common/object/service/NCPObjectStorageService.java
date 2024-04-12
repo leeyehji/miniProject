@@ -64,9 +64,8 @@ public class NCPObjectStorageService implements ObjectStorageService {
 
 	@Override
 	public void deleteFile(String bucketName, String objectName) {
-		
 
-	
+
 		// delete object
 		try {
 		    s3.deleteObject(bucketName , objectName);
@@ -99,7 +98,7 @@ public class NCPObjectStorageService implements ObjectStorageService {
 			CopyObjectRequest copyObjRequest = new CopyObjectRequest(bucket, oldSource, bucket, newSource);
 			s3.copyObject(copyObjRequest);
 
-			B_THUMBNAIL=imgURL;
+			B_THUMBNAIL=newSource;
 			System.out.println(B_THUMBNAIL);
 		}
 		return B_THUMBNAIL;
