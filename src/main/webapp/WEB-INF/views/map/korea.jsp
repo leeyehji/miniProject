@@ -89,12 +89,14 @@
                         },
                         click: function (e) {
                             // 클릭 이벤트 추가
+                            var newSrc = "/map/sido/" + feature.properties.CTP_ENG_NM.toLowerCase();
                             parent.postMessage({
                                 clickedSubject: feature.properties.CTP_KOR_NM,
                                 clickedContent: feature.properties.CTP_Description,
                                 clickedRegion: feature.properties.CTP_ENG_NM,
+                                newSrc: newSrc
                             }, "*");
-                            window.location.href = "/map/sido/" + feature.properties.CTP_ENG_NM.toLowerCase();
+                            window.location.href = newSrc;
                         },
                     });
                 },

@@ -9,9 +9,7 @@ import java.util.List;
 
 @Mapper
 public interface MapDAO {
-    @Select("SELECT * FROM TRAVEL WHERE T_CONTENTTYPEID = #{contenttypeId}")
-    List<MapDTO> findByContentTypeId(int contenttypeId);
 
-    @Select("SELECT T_MAPX, T_MAPY FROM TRAVEL WHERE T_CONTENTTYPEID = #{contenttypeId}")
+    @Select("SELECT * FROM TRAVEL WHERE T_CONTENTTYPEID = #{contenttypeId}")
     List<MapDTO> findCoordinatesByContentTypeId(int contenttypeId);
 }

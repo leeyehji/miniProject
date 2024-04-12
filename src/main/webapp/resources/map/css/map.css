@@ -1,3 +1,7 @@
+* {
+    font-family: 'Dovemayo_gothic', serif !important;
+}
+
 #main_map {
     min-width: 1454px; /*1920*1080기준 px로 수정*/
     width: 1500px; /*min w= w*/
@@ -100,12 +104,12 @@
     text-align: center;
 }
 
-#main_map > .rightmain > .reset {
-    width: 70px;
-    margin: 175px auto 5px auto;
+#main_map > .rightmain > .reset1 {
+    width: 100px;
+    margin: 180px auto 5px auto;
 }
 
-#main_map > .rightmain > .reset > #resetBtn{
+#main_map > .rightmain > .reset1 > #resetBtn1{
     text-align: center;
     display: inline-block;
     margin: 10px auto 10px auto;
@@ -116,7 +120,7 @@
 
 #main_map > .rightmain > .locationsub {
     width: 70px;
-    margin: 20px auto 40px auto;
+    margin: 20px auto 20px auto;
     padding-top: 5px;
     font-size: 18px;
     text-align: center;
@@ -137,10 +141,29 @@
     border-radius: 10px;
 }
 
-#main_map > .rightmain > .themesub {
-    width: 70px;
+#main_map > .rightmain > .reset2 {
+    width: 100px;
+    margin: 40px auto 5px auto;
+}
+
+#main_map > .rightmain > .reset2 > #resetBtn2{
+    text-align: center;
+    display: inline-block;
+    margin: 10px auto 10px auto;
     border: 3px solid #bde3ff;
-    margin: 60px auto 40px auto;
+    background-color: #dbf0ff;
+    border-radius: 10px;
+}
+
+#resetBtn1:hover, #resetBtn2:hover{
+    color: #fff; /* hover 시 텍스트 색상 */
+    background-color: #3498db !important; /* hover 시 배경 색상 */
+}
+
+#main_map > .rightmain > .themesub {
+    width: 80px;
+    border: 3px solid #bde3ff;
+    margin: 20px auto 20px auto;
     font-size: 18px;
     padding-top: 5px;
     border-radius: 10px;
@@ -245,7 +268,3 @@ button.active {
 .text-content #content h1 a:active {
     color: darkblue;
 }
-
-/* main_toursite */
-
-/* footer */

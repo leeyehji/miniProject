@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.nadeuli.map.dao.MapDAO">
-    <select id="findbyContentTypeId" resultType="com.nadeuli.map.dto.MapDTO">
-        SELECT T_MAPX AS T_MAPX, T_MAPY AS T_MAPY FROM garbage WHERE T_CONTENTTYPEID = #{T_CONTENTTYPEID}
-    </select>
-</mapper>

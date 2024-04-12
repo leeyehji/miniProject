@@ -10,4 +10,9 @@ import java.io.Serializable;
 public class MapDTO implements Serializable {
     private double t_mapx;
     private double t_mapy;
+    private String t_contentname;
+    private String t_address;
+    private String t_thumb_image;
+    private String t_phone;
+    private String d_url;
 }
