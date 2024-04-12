@@ -271,9 +271,9 @@ h2 {
 }
 
 #writeModal{
+    display: none;
     font-size: 18px;
     color: #000000;
-    display: block;
     position: relative;
     left: 500px;
     bottom: 50px;
@@ -305,4 +305,13 @@ h2 {
     width: 1450px;
     height: 400px;
     font-size: 18px;
+}
+
+.left-align a {
+    color: #000000;
+}
+
+.paginate{
+position: relative;
+right: 50px;
 }
