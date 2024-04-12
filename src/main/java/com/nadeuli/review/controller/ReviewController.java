@@ -23,7 +23,6 @@ public class ReviewController {
 
     @Autowired
     private ObjectStorageService objectStorageService;
-    private String bucketName = "miniproject";
 
     @RequestMapping(value="reviewWriteForm")
     public String reviewWriteForm(){
@@ -32,18 +31,36 @@ public class ReviewController {
 
     @PostMapping(value="reviewWrite")
     @ResponseBody
-    public String reviewWrite(@ModelAttribute ReviewDTO reviewDTO){
+    public String reviewWrite(@ModelAttribute(value="formData") ReviewDTO reviewDTO,@RequestParam(value="imgArray") List<String> imgArray)  {
+
+        objectStorageService.moveFile(imgArray);
+        try {
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        objectStorageService.clearTemp("admin");
 
         reviewService.reviewWrite(reviewDTO);
-
 
         return "쓰기 완료";
     }
 
     @PostMapping(value="uploadSummernoteImageFile")
     @ResponseBody
-    public String uploadImage(@RequestParam(value="file") MultipartFile file){
-        return  objectStorageService.uploadFile(bucketName,"storage/",file);
+    public String uploadImage(@RequestParam(value="file") MultipartFile file,HttpSession session){
+        String mem_id="admin";
+        //        session.getAttribute("mem_id");
+        StringBuilder folderNameBuffer = new StringBuilder();
+        folderNameBuffer.append("storage/review/");
+        folderNameBuffer.append(mem_id);
+        folderNameBuffer.append("/temp/");
+
+        String folderName = folderNameBuffer.toString();
+        String bucketName = "miniproject";
+        String fileName = objectStorageService.uploadFile(bucketName,folderName,file);
+
+        return folderName+fileName;
     }
 
 
