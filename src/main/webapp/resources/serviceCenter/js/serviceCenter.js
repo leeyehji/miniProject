@@ -273,6 +273,13 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById("submitBtn").addEventListener("click", function() {
     var title = document.getElementById("title").value;
     var content = document.getElementById("content2").value;
+
+    // 제목과 내용이 비어있는지 확인
+    if (title === "" || content === "") {
+      alert("제목과 내용을 모두 입력해주세요.");
+      return; // 추가 로직을 실행하지 않고 함수 종료
+    }
+
     var image = document.getElementById("imageUpload").value; // 이미지 파일 경로(또는 이름) 추출
     var today = new Date().toISOString().slice(0, 10).replace(/-/g, ".");
 
@@ -285,7 +292,6 @@ document.addEventListener('DOMContentLoaded', function () {
       date: today,
       image: image // 이미지 경로 또는 이름
     });
-
     document.getElementById("imageUpload").addEventListener("change", function() {
       var preview = document.getElementById("imagePreview");
       preview.innerHTML = ''; // 이전 미리보기 초기화
@@ -369,6 +375,7 @@ function displayNotices(page) {
 function updatePagination() {
   const pagination = document.querySelector(".paginate span");
   const prevButton = document.querySelector(".paginate .prev");
+  const nextButton = document.querySelector(".paginate .next");
 
   pagination.innerHTML = ""; // 기존 페이지 번호를 비웁니다.
 
@@ -376,15 +383,31 @@ function updatePagination() {
 
   if (currentPage > 1) {
     prevButton.style.display = "inline-block"; // 현재 페이지가 1보다 크면 이전 버튼 보이기
-    prevButton.addEventListener("click", function(e) {
-      e.preventDefault();
-      currentPage -= 1; // 현재 페이지를 1 감소
-      displayNotices(currentPage); // 페이지를 다시 로드
-      updatePagination(); // 페이지네이션 업데이트
-    });
   } else {
     prevButton.style.display = "none"; // 현재 페이지가 1이면 이전 버튼 숨기기
   }
+
+  if (currentPage < totalPages) {
+    nextButton.style.display = "inline-block"; // 현재 페이지가 마지막 페이지보다 작으면 다음 버튼 보이기
+  } else {
+    nextButton.style.display = "none"; // 현재 페이지가 마지막 페이지이면 다음 버튼 숨기기
+  }
+
+  // 이전 버튼 클릭 이벤트
+  prevButton.addEventListener("click", function(e) {
+    e.preventDefault();
+    currentPage -= 1; // 현재 페이지를 1 감소
+    displayNotices(currentPage); // 페이지를 다시 로드
+    updatePagination(); // 페이지네이션 업데이트
+  });
+
+  // 다음 버튼 클릭 이벤트
+  nextButton.addEventListener("click", function(e) {
+    e.preventDefault();
+    currentPage += 1; // 현재 페이지를 1 증가
+    displayNotices(currentPage); // 페이지를 다시 로드
+    updatePagination(); // 페이지네이션 업데이트
+  });
 
   for (let i = 1; i <= totalPages; i++) {
     const pageLink = document.createElement("a");
@@ -394,8 +417,8 @@ function updatePagination() {
       e.preventDefault();
       currentPage = i;
       displayNotices(currentPage);
+      updatePagination(); // 페이지네이션 업데이트
     });
-
 
     if (i === currentPage) {
       const strong = document.createElement("strong");
