@@ -79,8 +79,6 @@ l
 <src/main/webapp/WEB-INF/views/serviceCenter/noticeDetail.jsp,2\0\20ca3caa7f9e5ab2b69699e6934153c3103a4ff3
 l
 <src/main/webapp/resources/serviceCenter/css/noticeDetail.css,5\c\5ccfd14f8a25c6fc519049184cacbbf77a562d0a
-_
-/src/main/webapp/WEB-INF/views/review/review.jsp,8\1\815c565d8395b4ff3a40c7927ea835309ef41667
 e
 5src/main/webapp/WEB-INF/views/review/reviewUpdate.jsp,e\9\e918e05579d8273d0093f286e4487840d6184d5f
 d
@@ -103,3 +101,5 @@ j
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 8
 .project,f\8\f8b41ce76d7b80d2b47e91b5f92c15f00eccf187
+c
+3src/main/webapp/resources/mypage/js/memberUpdate.js,5\a\5a76feed0411a157b827253dd7f6c0d67b5a7192

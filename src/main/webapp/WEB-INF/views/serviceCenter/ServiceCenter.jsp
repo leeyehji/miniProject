@@ -101,14 +101,12 @@
                                     </div>
                                     <div class="paginate_wrap">
                                         <div class="paginate">
-                                            <div><a href="#none" class="direction prevend" style="display: none;">처음</a>
                                                 <a href="#none" class="direction prev" style="display: none;">이전</a>
                                                 <span><strong>1</strong><a href="#none">2</a><a href="#none">3</a><a
                                                         href="#none">4</a><a href="#none">5</a><a href="#none">6</a><a
                                                         href="#none">7</a><a href="#none">8</a><a href="#none">9</a><a
                                                         href="#none">10</a></span>
                                                 <a href="#none" class="direction next" style="">다음</a>
-                                                <a href="#none" class="direction nextend" style="">끝</a>
                                             </div>
                                         </div>
                                     </div>
@@ -118,13 +116,13 @@
                         </div>
                     </div>
 
-                    <div id="writeModal" style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:20px; border:1px solid #ccc; z-index:100;">
+                    <div id="writeModal">
                         <h2>공지사항 작성</h2>
                         <label for="title">제목:</label>
                         <input type="text" id="title" name="title" style="width: 700px;font-size: 18px;"><br><br>
                         <label for="content" id="contentLabel">내용:</label>
                         <label>
-                            <textarea id="content2" name="content" style="width:1000px; height:100px;"></textarea>
+                            <textarea id="content2" name="content"></textarea>
                         </label><br><br>
                         <!-- 이미지 추가 필드 -->
                         <label for="imageUpload">이미지 추가:</label>

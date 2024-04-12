@@ -158,18 +158,27 @@ window.addEventListener('hashchange', handleHashChange);
 // document.body 대신에 실제로 inquiryForm을 포함할 것으로 예상되는 부모 요소를 사용하세요.
 document.addEventListener('submit', function(event) {
   if(event.target && event.target.id === 'inquiryForm') {
-    // 여기에 폼 제출 처리 로직을 넣습니다.
-    event.preventDefault();
+    event.preventDefault(); // 폼의 기본 제출 동작을 막습니다.
+
     var userName = document.getElementById('userName').value;
     var userEmail = document.getElementById('userEmail').value;
     var userInquiry = document.getElementById('userInquiry').value;
+
+    // 이메일 형식을 검사하는 정규 표현식
+    const expEmailText = /^[A-Za-z0-9\.\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z0-9\.\-]+$/;
+
+    // userEmail이 이메일 형식에 맞는지 검사
+    if (!expEmailText.test(userEmail)) {
+      alert('올바른 이메일 주소를 입력해주세요.');
+      return; // 이메일 형식이 맞지 않으면 함수를 여기서 종료합니다.
+    }
 
     console.log('이름:', userName);
     console.log('이메일:', userEmail);
     console.log('문의 내용:', userInquiry);
 
     alert('문의가 접수되었습니다. 빠른 시일 내에 답변드리겠습니다.');
-    // 서버로 데이터 전송 로직 등...
+    // 여기서 서버로 데이터 전송 로직을 추가
   }
 });
 ///////////////////////////////////////////////////자주 묻는 질문/////////////////////////////////////////
@@ -359,9 +368,24 @@ function displayNotices(page) {
 
 function updatePagination() {
   const pagination = document.querySelector(".paginate span");
+  const prevButton = document.querySelector(".paginate .prev");
+
   pagination.innerHTML = ""; // 기존 페이지 번호를 비웁니다.
 
   const totalPages = Math.ceil(notices.length / noticesPerPage);
+
+  if (currentPage > 1) {
+    prevButton.style.display = "inline-block"; // 현재 페이지가 1보다 크면 이전 버튼 보이기
+    prevButton.addEventListener("click", function(e) {
+      e.preventDefault();
+      currentPage -= 1; // 현재 페이지를 1 감소
+      displayNotices(currentPage); // 페이지를 다시 로드
+      updatePagination(); // 페이지네이션 업데이트
+    });
+  } else {
+    prevButton.style.display = "none"; // 현재 페이지가 1이면 이전 버튼 숨기기
+  }
+
   for (let i = 1; i <= totalPages; i++) {
     const pageLink = document.createElement("a");
     pageLink.href = "#";
