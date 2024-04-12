@@ -4,27 +4,6 @@
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
  <mapper namespace="com.nadeuli.mypage.dao.MypageDAO">
- 	<insert id="calWrite" parameterType="com.nadeuli.mypage.dto.CalDTO">
-		insert into USER_CALENDAR (CAL_STARTDATE, CAL_ENDDATE,CAL_TITLE, CAL_MEMO, CAL_COLOR, CAL_BOARDNO) 
-						values(#{cal_startDate}, #{cal_endDate}, #{cal_title}, #{cal_memo}, #{cal_color}, #{cal_boardNo})
-	</insert>
-	
-	<select id="calList" resultType="com.nadeuli.mypage.dto.CalDTO">
-		select * from USER_CALENDAR
-	</select>
-	
-	<delete id="calDelete" parameterType="int">
-		delete from USER_CALENDAR where CAL_NO = #{cal_no}
-	</delete>
-	
-	<update id="calUpdate" parameterType="com.nadeuli.mypage.dto.CalDTO">
-		update USER_CALENDAR set CAL_TITLE = #{cal_title}
-								,CAL_MEMO = #{cal_memo}
-								,CAL_STARTDATE = #{cal_startDate}
-								,CAL_ENDDATE = #{cal_endDate}
-								,CAL_COLOR = #{cal_color}
-							where CAL_NO = #{cal_no}
-	</update>
 	
 	<update id="memberUpdate" parameterType="com.nadeuli.mypage.dto.MemberDTO">
 		update MEMBER set MEM_PW=#{mem_pw}

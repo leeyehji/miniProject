@@ -13,14 +13,6 @@ import com.nadeuli.mypage.dto.MemberDTO;
 
 public interface MypageService {
 
-	public void calWrite(CalDTO calDTO);
-
-	public List<Map<String, Object>> calList();
-
-	public void calDelete(int calDTO);
-
-	public void calUpdate(CalDTO calDTO);
-
 	public void update(MemberDTO memberDTO);
 
 	public HashMap<String, Object> getUser(String memId);

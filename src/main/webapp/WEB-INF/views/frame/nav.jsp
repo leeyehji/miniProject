@@ -52,11 +52,8 @@
 			<li><a href="/mypage/mypage">회원정보관리</a>
 				<ul>
 					<li><a href="/mypage/memberUpdate">회원정보 수정</a></li>
-					<br>
 					<li><a href="#">내가 쓴 글</a></li>
-					<br>
-					<li><a href="#">내가 좋아요한 글</a></li>
-					<br>
+					<li><a href="#">내가 좋아요한 글</a></li>		
 				</ul>
 			</li>
 			<br>

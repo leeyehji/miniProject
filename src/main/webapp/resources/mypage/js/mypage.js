@@ -104,7 +104,7 @@ $(function(){
 	//$('#box1Txt').html();//대표글 요약문
 	
 	
-	/* 캘린더 출력만. */
+	/* 미니 캘린더 한글화. */
 	$.datepicker.setDefaults({
 	        dateFormat: 'yy년 mm월 dd일',
 	        monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
@@ -127,8 +127,21 @@ $(function(){
 	    }
 	}
 
+	var dateList=$.ajax({
+							type:'post'
+							,url:'/mypage/calList'
+							,dataType:'json'
+						});
+		dateList.done(function(data){
+			//이번달만 나오도록.
+			console.log(data);
+			console.log(data[0].start);//yyyy-MM-dd T HH:MM:SS.sss +09:00
+			console.log(data[28].end);
+			//console.log(data[data.size].end);
+		});
 	/* 캘린더 선택 */
 	$("#datepicker").datepicker({
+	
        	onSelect: function(dateText) {///yyyy년 MM월 dd일
            	$("#selectDate").text("선택한 날짜: " + dateText);
            	
@@ -166,8 +179,8 @@ $(function(){
 	    		}
            	});//ajax
      
-       	}
-    });//datepicker #selectDate
+       	}//#selectDate
+    });//datepicker 
     
     
 });//function()

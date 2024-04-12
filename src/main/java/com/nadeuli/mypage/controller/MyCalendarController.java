@@ -8,8 +8,6 @@ import java.util.TimeZone;
 
 import javax.annotation.PostConstruct;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,13 +18,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.nadeuli.mypage.dto.CalDTO;
-import com.nadeuli.mypage.service.MypageService;
+import com.nadeuli.mypage.service.MyCalendarService;
 
 @Controller
 @RequestMapping(value = "mypage")
 public class MyCalendarController {
 	@Autowired
-	private MypageService mypageService;
+	private MyCalendarService myCalendarService;
 
     @PostConstruct
     public void started() {
@@ -48,34 +46,28 @@ public class MyCalendarController {
 	@PostMapping(value = "calWrite")
 	@ResponseBody
 	public void write(@ModelAttribute CalDTO calDTO) {
-		mypageService.calWrite(calDTO);
+		myCalendarService.calWrite(calDTO);
 	}
 	
 	@PostMapping(value = "calList")
 	@ResponseBody
 	public List<Map<String, Object>> calList() {
-		List<Map<String, Object>> listAll = mypageService.calList();   	
+		List<Map<String, Object>> listAll = myCalendarService.calList();   	
         return listAll;
 	}
 	
 	@PostMapping("calUpdate")
 	@ResponseBody
 	public void calUpdate(@ModelAttribute CalDTO calDTO)  {
-		mypageService.calUpdate(calDTO);
+		myCalendarService.calUpdate(calDTO);
 	}
 	
 	@PostMapping("calDelete")
 	@ResponseBody
 	public void calDelete(@RequestBody List<Map<String, Object>> param) throws ParseException {
 		int cal_no=Integer.parseInt((String) param.get(0).get("cal_no"));
-		mypageService.calDelete(cal_no);
+		myCalendarService.calDelete(cal_no);
 	}
 	
-	@PostMapping(value = "myCalendarTxt")
-	@ResponseBody
-	public List<Map<String, Object>> myCalendarTxt(@RequestBody Map<String, Object> map){
-	    List<Map<String, Object>> jsonArr = mypageService.getSchedule(map);//memId, selectDate
-        return jsonArr;
-	}
 	
 }
