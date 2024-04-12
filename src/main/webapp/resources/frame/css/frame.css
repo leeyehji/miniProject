@@ -752,3 +752,15 @@ footer .badak {
     right: 110px;
 }
 /*-----------------------------------------------------*/
+
+/* 검색 기능 */
+.ui-autocomplete {
+    max-height: 300px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+}
+
+.ui-autocomplete {
+    height: 300px;
+}

@@ -6,6 +6,7 @@
 </head>
 
 <header class="banner">
+
   <div class="menu">
 
     <div class="logobar">
@@ -74,5 +75,5 @@
       </ul>
     </div>
   </div>
-
+  <script src="/frame/js/headerSearch.js"></script>
 </header>
