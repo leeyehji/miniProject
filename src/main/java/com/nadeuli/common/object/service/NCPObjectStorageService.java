@@ -85,7 +85,11 @@ public class NCPObjectStorageService implements ObjectStorageService {
 		String newSource;
 		for(int i=0 ; i< imgArray.size(); i++){
 			String imgURL=imgArray.get(i);
-			if(i==0){
+			if(imgArray.size()==1){
+				imgURL=imgURL.replace("[","");
+				imgURL=imgURL.replace("]","");
+			}
+			else if(i==0){
 				imgURL=imgURL.replace("[","");
 			}else if(i == imgArray.size()-1){
 				imgURL=imgURL.replace("]","");
@@ -95,7 +99,7 @@ public class NCPObjectStorageService implements ObjectStorageService {
 			oldSource=imgURL.replace("https://kr.object.ncloudstorage.com/miniproject/","");
 			newSource=oldSource.replace("temp","success");
 
-			CopyObjectRequest copyObjRequest = new CopyObjectRequest(bucket, oldSource, bucket, newSource);
+			CopyObjectRequest copyObjRequest = new CopyObjectRequest(bucket, oldSource, bucket, newSource).withCannedAccessControlList(CannedAccessControlList.PublicRead);
 			s3.copyObject(copyObjRequest);
 
 			B_THUMBNAIL=newSource;
