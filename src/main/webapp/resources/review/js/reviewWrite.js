@@ -96,28 +96,44 @@ $('#reviewWriteBtn').click(function(){
         alert("내용을 입력하세요");
         $('#content').focus();
     }else{
+
         const imgElement = document.querySelectorAll('.note-editor .note-editable img');
         const imgArray = Array.from(imgElement).map(img => img.src);
 
         $.ajax({
             type:'POST',
-            url : 'reviewWrite',
+            url : 'reviewImageUpload',
             data : {
-                "formData" : $('#reviewWriteForm').serialize(),
                 "imgArray" : JSON.stringify(imgArray)
             },
             dataType:'text',
             success : function(data){
+                alert("이미지 저장 성공");
+                $("#thumbNail").val(data);
+                console.log(data);
 
-                alert(data);
+                $.ajax({
+                    type:'POST',
+                    url : 'reviewWrite',
+                    data : $('#reviewWriteForm').serialize(),
+                    dataType:'text',
+                    success : function(data){
 
-                location.href='reviewList?pg=1';
+                        alert(data);
 
+                        location.href='reviewList?pg=1';
+
+                    },
+                    error:function(e){
+                        console.log(e);
+                    }
+                })
             },
             error:function(e){
                 console.log(e);
             }
-        })
+        });
+
 
 
 

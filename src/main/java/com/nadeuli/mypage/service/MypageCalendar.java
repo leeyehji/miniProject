@@ -2,6 +2,7 @@ package com.nadeuli.mypage.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
@@ -128,7 +129,7 @@ public class MypageCalendar implements MypageService {
         HashMap<String, Object> hash = new HashMap<>();
         //System.out.println(listAll.size());
         for (int i = 0; i < listAll.size(); i++) {
-        	SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 HH:mm");
+        	SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 HH:mm:ss");
         	Object start=sdf.format(listAll.get(i).getCal_startDate()); 
         	Object end=sdf.format(listAll.get(i).getCal_endDate()); 
             hash.put("title", listAll.get(i).getCal_title());
@@ -153,7 +154,8 @@ public class MypageCalendar implements MypageService {
     	System.out.println("실제폴더 = " + filePath);
     	
     	//ncp에 업로드. UUID 저장.
-    	String imageFileName= objectStorageService.uploadFile(bucketName, "storage/profile/", img );
+    	String imageFileName = null;
+    	imageFileName = objectStorageService.uploadFile(bucketName, "storage/profile/", img );
     	memberDTO.setMem_profileImage(imageFileName);	
     	
     	File file = new File(filePath, imageFileName);

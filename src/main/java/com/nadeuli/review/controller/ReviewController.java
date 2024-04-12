@@ -31,19 +31,30 @@ public class ReviewController {
 
     @PostMapping(value="reviewWrite")
     @ResponseBody
-    public String reviewWrite(@ModelAttribute(value="formData") ReviewDTO reviewDTO,@RequestParam(value="imgArray") List<String> imgArray)  {
-
-        objectStorageService.moveFile(imgArray);
-        try {
-            Thread.sleep(1000);
-        }catch (InterruptedException e){
-            e.printStackTrace();
-        }
-        objectStorageService.clearTemp("admin");
+    public String reviewWrite(@ModelAttribute ReviewDTO reviewDTO)  {
 
         reviewService.reviewWrite(reviewDTO);
 
         return "쓰기 완료";
+    }
+    @PostMapping(value="reviewImageUpload")
+    @ResponseBody
+    public String reviewImageUpload(@RequestParam(value="imgArray") List<String> imgArray){
+        String B_THUMBNAIL = "";
+        if(imgArray.get(0).equals("[]")) {
+
+            System.out.println("없음");
+
+        }else{
+            B_THUMBNAIL = objectStorageService.moveFile(imgArray);
+            try {
+                Thread.sleep(1000);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+        }
+        objectStorageService.clearTemp("admin");
+        return B_THUMBNAIL;
     }
 
     @PostMapping(value="uploadSummernoteImageFile")
@@ -115,7 +126,7 @@ public class ReviewController {
     public void commentWrite(@ModelAttribute CommentDTO commentDTO){
 
        try {
-           //comment Insert
+           //comment Insertw
            reviewService.commentWrite(commentDTO);
            //BOARD commentCount Update
            reviewService.commentCountUp(commentDTO.getB_NO());

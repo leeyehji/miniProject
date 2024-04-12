@@ -1,8 +1,11 @@
 package com.nadeuli.mypage.controller;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +28,12 @@ public class MypageController {
 	@Autowired
 	private MypageService mypageService;
 
+	@PostConstruct
+    public void started() {
+    	//GMT -> KST
+        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
+        System.out.println(new Date());
+    }
 	
 	@GetMapping(value = "mypage")
     public String mypage() {
@@ -68,12 +77,10 @@ public class MypageController {
     						,@RequestParam MultipartFile img){
     	
     	MemberDTO memberDTO = mypageService.getUserDTO(memId);
-    	
     	//기존 프로필 사진 ncp에서 삭제
     	mypageService.deleteProfile(memberDTO);
-    	
     	//파일 용량 제한
-
+    	
     	//DB에는 파일 이름만 저장.
     	mypageService.setProfileImg(memberDTO, httpSession, img);
     }

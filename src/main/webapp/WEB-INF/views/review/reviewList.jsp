@@ -8,8 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>여행 후기 게시판</title>
 
+<script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <link rel="stylesheet" type="text/css" href="/frame/css/frame.css">
 <link rel="stylesheet" type="text/css" href="/review/css/reviewlist.css">
+
+
 <style>
 </style>
 </head>
@@ -58,9 +64,10 @@
 
 	<div id="bottom"></div>
 
-	<script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+
 	<script src="/frame/js/frame.js"></script>
 	<script src="/review/js/reviewList.js"></script>
+
 	
 
 </body>

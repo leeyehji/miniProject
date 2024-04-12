@@ -1,5 +1,11 @@
 /* 회원정보 수정 */
 $(function(){
+	//로그인이 안되어 있다면
+	//console.log($('#memId').text());
+	/*if( $('#memId').text() === '' ){
+        location.href='/mypage/plzLogin';
+    }*/
+    
 	console.log($('#updateId').val());
 
 	$.ajax({

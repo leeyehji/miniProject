@@ -1,5 +1,11 @@
 
 $(function(){
+	//로그인이 안되어 있다면
+	//console.log($('#memId').text());
+	/*if( $('#memId').text() === '' ){
+        location.href='/mypage/plzLogin';
+    }*/
+    
 	/* 프로필 사진 출력 - id를 보고 프로필 사진 출력. 만약 null 이면 이미지 태그 삭제. imageFileName은 id와 동일한 것으로 사용자가 넣는 것이 아님. service에서 넣어버림.*/
 	$.ajax({
 		type:'post'
