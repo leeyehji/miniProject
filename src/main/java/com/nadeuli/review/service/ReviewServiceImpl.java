@@ -1,5 +1,6 @@
 package com.nadeuli.review.service;
 
+import com.nadeuli.common.object.service.NCPObjectStorageService;
 import com.nadeuli.review.bean.CommentDTO;
 import com.nadeuli.review.bean.ReviewDTO;
 import com.nadeuli.review.bean.ReviewPagingDTO;
@@ -19,11 +20,11 @@ public class ReviewServiceImpl implements ReviewService {
     @Autowired
     private ReviewPagingDTO reviewPagingDTO;
 
+
     @Override
     public void reviewWrite(ReviewDTO reviewDTO) {
 
         reviewDAO.reviewWrite(reviewDTO);
-
     }
 
     @Override
@@ -80,5 +81,7 @@ public class ReviewServiceImpl implements ReviewService {
         int b_no =Integer.parseInt(no);
         return reviewDAO.getCommentList(b_no);
     }
+
+
 
 }

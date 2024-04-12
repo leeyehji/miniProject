@@ -6,10 +6,7 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.amazonaws.services.s3.model.AmazonS3Exception;
-import com.amazonaws.services.s3.model.CannedAccessControlList;
-import com.amazonaws.services.s3.model.ObjectMetadata;
-import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import spring.conf.NaverConfiguration;
@@ -66,12 +63,12 @@ public class NCPObjectStorageService implements ObjectStorageService {
 	@Override
 	public void deleteFile(String bucketName, String objectName) {
 		
-		String realName = "storage/"+objectName;
+
 	
 		// delete object
 		try {
-		    s3.deleteObject(bucketName , realName);
-		    System.out.format("Object %s has been deleted.\n", realName);
+		    s3.deleteObject(bucketName , objectName);
+		    System.out.format("Object %s has been deleted.\n", objectName);
 		} catch (AmazonS3Exception e) {
 		    e.printStackTrace();
 		} catch(SdkClientException e) {
@@ -79,33 +76,49 @@ public class NCPObjectStorageService implements ObjectStorageService {
 		}
 	}
 
-	
-	
 	@Override
-	public void deleteFileSUB(String bucketName, String folder, String imageFileName) {
-		
-		s3.deleteObject(bucketName,folder+imageFileName);
-		
+	public void moveFile(List<String> imgArray) {
+		String bucket = "miniproject";
+
+		String oldSource;
+		String newSource;
+		for(int i=0 ; i< imgArray.size(); i++){
+			String imgURL=imgArray.get(i);
+			if(i==0){
+				imgURL=imgURL.replace("[","");
+			}else if(i == imgArray.size()-1){
+				imgURL=imgURL.replace("]","");
+			}
+
+			imgURL=imgURL.replace("\"","");
+			oldSource=imgURL.replace("https://kr.object.ncloudstorage.com/miniproject/","");
+			newSource=oldSource.replace("temp","success");
+
+			CopyObjectRequest copyObjRequest = new CopyObjectRequest(bucket, oldSource, bucket, newSource);
+			s3.copyObject(copyObjRequest);
+		}
 	}
 
 	@Override
-	public void deleteFile(String bucketName, List<String> list) {
-		
-		for(String imageFile : list) {
-			String realName = "storage/"+imageFile;
-			
-			// delete object
-			try {
-			    s3.deleteObject(bucketName , realName);
-			    System.out.format("Object %s has been deleted.\n", realName);
-			} catch (AmazonS3Exception e) {
-			    e.printStackTrace();
-			} catch(SdkClientException e) {
-			    e.printStackTrace();
+	public void clearTemp(String mem_id) {
+		String bucketName = "miniproject";
+		String path = "storage/review/"+mem_id+"/temp/";
+
+		try {
+
+			ObjectListing objectListing = s3.listObjects(bucketName,path);
+
+			System.out.println("File List:");
+			for (S3ObjectSummary objectSummary : objectListing.getObjectSummaries()) {
+				deleteFile(bucketName,objectSummary.getKey());
 			}
-			
+		} catch (AmazonS3Exception e) {
+			e.printStackTrace();
+		} catch(SdkClientException e) {
+			e.printStackTrace();
 		}
-		
+
 	}
+
 
 }
