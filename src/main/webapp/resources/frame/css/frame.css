@@ -412,6 +412,7 @@ input::placeholder {
     position: fixed;
     z-index: 99;
     background-color: #ffffff;
+    color: #496B73 !importan;
 }
 
 #nadeuliNav>li:first-of-type {
@@ -429,8 +430,11 @@ input::placeholder {
     display: inline-block;
     cursor: pointer;
     margin-left: 10px;
+    color: #496B73 !important;
 }
-
+#nadeuliNav>li>a{
+	color: #496B73 !important;
+}
 #nadeuliNav>li>.nav-content {
     padding: 0;
 }

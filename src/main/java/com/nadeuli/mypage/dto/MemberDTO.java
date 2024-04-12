@@ -16,4 +16,5 @@ public class MemberDTO {	//임시 memberDTO.
 	private String mem_email;
 	private int mem_gender;	
 	private Date mem_joinDate;
+	private String mem_profileImage;
 }

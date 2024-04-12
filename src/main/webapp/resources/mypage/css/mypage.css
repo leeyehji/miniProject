@@ -25,20 +25,56 @@ display: inline-block;
     display: inline-block;
     width: 150px;
     height: 150px;
-    background-image: url('./img/user5.png');
     background-size: cover;
     margin-bottom: 15px;
 }
-#changeProfileImg{
-    margin-left: 42px;/* =(.profile의 width - width)/2*/
-    width: 66px;
-    height: 25px;
-    font-size: 0.8em;
+#profileSet input[type="file"] {/*브라우저에 있는 기존 디자인 삭제*/
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+.filebox .upload-name {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 78%;
+    color: #999999;
+}
+.filebox label{
+	display: inline-block;
+    margin-left: 40px;/* =(.profile의 width - width)/2 - 2*/
+    width: 74px;
+    height: 20px;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    text-align: center;
     background-color: #378CE7;
     border: none;
     border-radius: 5px;
     color: white;
     cursor:pointer;
+    line-height: 20px; /* 텍스트의 높이를 요소의 높이와 동일하게 설정 */
+}
+#defaultProfile{
+	display: inline-block;
+    margin:10px 0 0 40px;
+	width: 74px;
+    height: 31.97px;
+    padding: 7px 0 5px 0;
+    text-align: center;
+    background-color: #378CE7;
+    border: none;
+    border-radius: 5px;
+    font-size:16px;
+    color: white;
+    cursor:pointer;
+    font-family:'Dovemayo_gothic';
+    line-height: 20px; /* 텍스트의 높이를 요소의 높이와 동일하게 설정 */
 }
 #userIntro {
     margin: 0;
@@ -108,7 +144,7 @@ p{
     padding-left: 0px;
  }
 #box1Img{/*코드로 이미지 크기 잡아 둘 건데 그 wh 동일하게 잡아 둘 것*/
-    background-image: url('./image/seoul_cherry_blossom_3.jpeg');
+    /*background-image: url('./image/seoul_cherry_blossom_3.jpeg');*/
     background-size: cover;
     width: 280px;
     height:204px;

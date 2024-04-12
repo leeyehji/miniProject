@@ -25,4 +25,9 @@ public interface MypageDAO {
 
 	public List<CalDTO> getSchedule(Map<String, Object> map);
 
+	public void setProfileImg(MemberDTO memberDTO);
+
+	public void deleteFile(MemberDTO memberDTO);
+
+
 }

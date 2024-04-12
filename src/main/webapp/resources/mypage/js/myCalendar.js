@@ -199,9 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					    			console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
 					            }
 	                            
-	                        });//ajax
-	                    
-	                        
+	                        });//ajax                    
 	                    
 					});//click.updateBtn
 				}//clickEvent
@@ -213,17 +211,6 @@ document.addEventListener('DOMContentLoaded', function() {
 						});
 					}
 				}
-				/*,eventDrop: function(info){	//이벤트 start, end 수정.
-					console.log(info.event);
-					alert(info.event.title + " end is now " + info.event.end.toISOString());
-
-				    if (!confirm("날짜를 변경하시겠습니까?")) {
-				      info.revert();
-				    }else{
-				    
-				    }
-				}*/
-				
 				
 				,events:data
 				

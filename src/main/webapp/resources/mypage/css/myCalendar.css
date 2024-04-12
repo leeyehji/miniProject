@@ -52,10 +52,14 @@
             display: none;
             z-index: 1000;
 	}
-	#calModalCon, #calModalConUpdate{
-	 		margin: 50px auto;
+#calModalCon, #calModalConUpdate{
+	 		margin: 30px auto;
 	 		min-width:530px;
             width: 50%;
-            height: 70%;
+            min-height: 670px;
             background-color: white;
-     }
+}
+#calModalCon h1, #calModalConUpdate h1{
+	margin-left:20px;
+	padding-top:10px;
+}

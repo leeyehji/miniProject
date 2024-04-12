@@ -1,16 +1,78 @@
 
 $(function(){
-	/* 프로필 사진 출력 */
-	//$('#changeProfileImg').css();
-	/* 프로필 사진 변경 */
-	$('#changeProfileImg').click(function(){
-		//사진 선택 - DB저장 - 페이지 새로고침
-		//DB저장
+	/* 프로필 사진 출력 - id를 보고 프로필 사진 출력. 만약 null 이면 이미지 태그 삭제. imageFileName은 id와 동일한 것으로 사용자가 넣는 것이 아님. service에서 넣어버림.*/
+	$.ajax({
+		type:'post'
+		,url:'/mypage/getProfile'
+		,data:{'memId':$('#memId').text()}
+		,dataType:'json'
+		,success: function(data){
+			console.log(JSON.stringify(data));	//profileUUID:null
+			
+		if(data.mem_profileImage !== "" && data.mem_profileImage !== null){
+				console.log(data.mem_profileImage);
+				//NCP storage에 접근하여 이미지를 가져옴.
+				var profileImg = "https://kr.object.ncloudstorage.com/miniproject/storage/profile/" + data.mem_profileImage;
+				$('.profile').css('background-image', 'url(' + profileImg + ')');
+			
+			}else{
+				var defaultProfileImg = "https://kr.object.ncloudstorage.com/miniproject/storage/profile/defaultProfileImage.png";
+				$('.profile').css('background-image', 'url(' + defaultProfileImg + ')');
+			}
+			
+		},error: function(e){
+			console.log(e);
+		}
+	});
+	
+	/* 프로필 사진 업로드 */
+	$('#changeProfileImg').change(function(img){
+		console.log("프사 업로드");
 		
-		//페이지 새로고침
-		location.href='/mypage/mypage';
+		var formData = new FormData();
+	    formData.append('img', img.target.files[0]); // 'img'는 서버에서 요구하는 키 값입니다.
+	    formData.append('memId', $('#memId').text()); // 사용자 ID 등 필요한 추가 데이터
+		
+		var maxSize=10 * 1024 * 1024 //10MB 제한
+		if(img.target.files[0].size >= maxSize){
+			alert("파일 크기는 10MB 이하여야 합니다.");
+		}else{
+			//DB저장
+			$.ajax({
+				type: 'post'
+				,url: '/mypage/uploadProfile'
+				,processData: false
+	       		,contentType: false
+				,data: formData
+				,success: function(){
+					console.log("업로드 성공");
+					
+					window.location.reload();
+				},error: function(e){
+					console.log("업로드 실패"+e);
+				}
+			});//ajax
+		}//용량제한 else
 	});//changeProfileImg.click
-		
+	
+	/*프로필 사진 삭제*/
+	$('#defaultProfile').click(function(){
+		$.ajax({
+			type: 'post'
+			,url: '/mypage/deleteProfile'
+			,data: {'memId':$('#memId').text()}
+			,success: function(){
+				console.log("삭제 성공");
+				var defaultProfileImg = "https://kr.object.ncloudstorage.com/miniproject/storage/profile/defaultProfileImage.png";
+					$('.profile').css('background-image', 'url(' + defaultProfileImg + ')');
+					
+				window.location.reload();
+			},error: function(e){
+				console.log("업로드 실패"+e);
+			}
+			});//ajax
+	});//defaultProfileImg.click
+	
 	/* 유저 정보 불러오기 */
 	$.ajax({
 		type:'post'
@@ -67,7 +129,7 @@ $(function(){
            	//선택한 날짜의 일정 출력
            	$('#myCalTable').html('');
            	const selectedDate = convertDateFormat(dateText);// yyyy-MM-dd 형식으로 변환
-           	console.log(selectedDate);
+           	//console.log(selectedDate);
            	$.ajax({
            		type:'post'
            		,url:'/mypage/myCalendarTxt'
