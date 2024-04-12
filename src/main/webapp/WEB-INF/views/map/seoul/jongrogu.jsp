@@ -11,6 +11,7 @@
     <title>간단한 지도 표시하기</title>
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4vs3zbhm8b"></script>
 </head>
+<link >
 <body>
 <div id="map" style="width:100%;height:680px;"></div>
 

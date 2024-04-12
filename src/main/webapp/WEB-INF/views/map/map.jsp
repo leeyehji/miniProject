@@ -68,8 +68,8 @@
         <!-- middlemain -->
 
         <div class="rightmain">
-            <div class="reset">
-                <button id="resetBtn">초기화</button>
+            <div class="reset1">
+                <button id="resetBtn1">시/도 선택</button>
             </div>
             <div class="locationsub">
                 <h3>지역</h3>
@@ -95,6 +95,9 @@
             </div>
             <!-- 지역 -->
 
+            <div class="reset2">
+                <button id="resetBtn2">시/군/구 선택</button>
+            </div>
             <div class="themesub">
                 <h3>테마</h3>
             </div>
@@ -140,6 +143,10 @@
         var clickedSubject = data.clickedSubject;
         var clickedContent = data.clickedContent;
         var clickedRegion = data.clickedRegion;
+        var iframe = document.getElementById('mapframe');
+        if (data.newSrc) {
+            iframe.src = data.newSrc;
+        }
 
         // 정보를 웹 페이지에 표시
         document.getElementById("clickedsubject").innerHTML = clickedSubject;
@@ -211,7 +218,7 @@
                 console.error("Error:", error);
             });
     });
-    document.getElementById("resetBtn").addEventListener("click", function () {
+    document.getElementById("resetBtn1").addEventListener("click", function () {
         // iframe의 src를 기본 지도 페이지로 변경
         document.getElementById("mapframe").src = "./korea";
 
@@ -219,10 +226,29 @@
         document.querySelectorAll(".location button").forEach((button) =>
             button.classList.remove("active")
         );
+        // 모든 테마 버튼의 'active' 클래스 제거
+        document.querySelectorAll(".theme button").forEach((button) =>
+            button.classList.remove("active")
+        );
 
-        // 지역과 지역 설명을 초기 상태로 되돌림
+        // 테마 초기화
         document.getElementById("clickedsubject").textContent = "해시태그를 클릭해보세요!";
         document.getElementById("clickedcontent").textContent = "지역에 대한 설명이 나옵니다";
+    });
+
+    document.getElementById("resetBtn2").addEventListener("click", function () {
+        // 모든 테마 버튼의 'active' 클래스 제거
+        document.querySelectorAll(".theme button").forEach((button) =>
+            button.classList.remove("active")
+        );
+
+        var iframe = document.getElementById("mapframe");
+        if (iframe.src === "http://223.130.130.226:8090/map/korea") {
+            alert("먼저 시/도를 선택해주세요.");
+        } else {
+            // 현재 iframe 새로고침
+            iframe.src = iframe.src;
+        }
     });
 
     document.addEventListener('DOMContentLoaded', function() {
