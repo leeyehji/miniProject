@@ -23,6 +23,16 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public void reviewWrite(ReviewDTO reviewDTO) {
+        String newCONTENT = reviewDTO.getB_CONTENT();
+        String oldCONTENT = reviewDTO.getB_CONTENT();
+        String mem_id = "admin";
+
+        if(oldCONTENT.contains("https://kr.object.ncloudstorage.com/miniproject/storage/review/")){
+            newCONTENT = oldCONTENT.replace("/storage/review/"+mem_id+"/temp","/storage/review/"+mem_id+"/success");
+            reviewDTO.setB_CONTENT(newCONTENT);
+        }
+        System.out.println("old = " +oldCONTENT);
+        System.out.println("new = " +newCONTENT);
 
         reviewDAO.reviewWrite(reviewDTO);
     }
@@ -30,7 +40,7 @@ public class ReviewServiceImpl implements ReviewService {
     @Override
     public Map<String, Object> getReviewList(String pg) {
         //1페이지당 3개씩 - MySQL
-        int startNum = Integer.parseInt(pg) * 3 - 3; //시작위치는 0부터
+        int startNum = Integer.parseInt(pg) * 6 - 6; //시작위치는 0부터
 
         //List객체가 JSON으로 자동 변환된다. - pom.xml <dependency>에 추가해야 함
         List<ReviewDTO> list = reviewDAO.getReviewList(startNum);

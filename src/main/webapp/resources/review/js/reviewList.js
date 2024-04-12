@@ -7,7 +7,7 @@ function createItem(b_THUMBNAIL,mem_NO,b_NO,b_TITLE,b_CREATETIME,b_VIEW,b_like,b
     var tr1 = `<tr>
                             <td colSpan="4">
                                 <span id="reviewListImg">
-                                    <img src="`
+                                    <img src="https://kr.object.ncloudstorage.com/miniproject/`
                                     +b_THUMBNAIL
                                     +`"/>
                                 </span>

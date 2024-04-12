@@ -31,24 +31,30 @@ public class ReviewController {
 
     @PostMapping(value="reviewWrite")
     @ResponseBody
-    public String reviewWrite(@ModelAttribute(value="formData") ReviewDTO reviewDTO,@RequestParam(value="imgArray") List<String> imgArray)  {
+    public String reviewWrite(@ModelAttribute ReviewDTO reviewDTO)  {
 
+        reviewService.reviewWrite(reviewDTO);
 
-        if(!imgArray.isEmpty()) {
+        return "쓰기 완료";
+    }
+    @PostMapping(value="reviewImageUpload")
+    @ResponseBody
+    public String reviewImageUpload(@RequestParam(value="imgArray") List<String> imgArray){
+        String B_THUMBNAIL = "";
+        if(imgArray.get(0).equals("[]")) {
 
-            String B_THUMBNAIL = objectStorageService.moveFile(imgArray);
+            System.out.println("없음");
+
+        }else{
+            B_THUMBNAIL = objectStorageService.moveFile(imgArray);
             try {
                 Thread.sleep(1000);
             }catch (InterruptedException e){
                 e.printStackTrace();
             }
-            reviewDTO.setB_THUMBNAIL(B_THUMBNAIL);
         }
         objectStorageService.clearTemp("admin");
-
-        reviewService.reviewWrite(reviewDTO);
-
-        return "쓰기 완료";
+        return B_THUMBNAIL;
     }
 
     @PostMapping(value="uploadSummernoteImageFile")
