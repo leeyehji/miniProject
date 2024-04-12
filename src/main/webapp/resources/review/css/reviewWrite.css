@@ -56,3 +56,7 @@
 #reviewWriteMain tr:last-child td:nth-child(1) {
 	text-align: center;
 }
+
+#reviewContent p{
+	display: block;
+}

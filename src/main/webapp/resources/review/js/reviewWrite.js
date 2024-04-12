@@ -121,7 +121,7 @@ $('#reviewWriteBtn').click(function(){
 
                         alert(data);
 
-                        // location.href='reviewList?pg=1';
+                        location.href='reviewList?pg=1';
 
                     },
                     error:function(e){
