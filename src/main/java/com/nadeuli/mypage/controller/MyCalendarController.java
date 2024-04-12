@@ -43,6 +43,7 @@ public class MyCalendarController {
     public void started() {
     	//GMT -> KST
         TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
+        System.out.println(new Date());
     }
     
 	@GetMapping(value = "myCalendar")
