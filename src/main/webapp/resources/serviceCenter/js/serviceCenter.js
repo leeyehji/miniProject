@@ -203,7 +203,8 @@ function showPopup(edit = false) {
       var newTitle = myWindow.document.getElementById('titleText').value;
       var newText = myWindow.document.getElementById('faqText').value;  // 수정됨
 
-      if (newTitle.trim() !== "" && newText.trim() !== "" && newDate.trim() !== "") {
+
+      if (newTitle.trim() !== "" && newText.trim() !== "") {
         if (edit && currentFaq && currentFaq.element) {
           var existingFaq = currentFaq.element;
           existingFaq.querySelector('.toggleBtn').textContent = newTitle;
