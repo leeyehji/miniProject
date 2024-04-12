@@ -17,8 +17,8 @@ import java.util.UUID;
 
 @Service
 public class NCPObjectStorageService implements ObjectStorageService {
-	final AmazonS3 s3;
-
+	final AmazonS3 s3;		
+			
 	public NCPObjectStorageService(NaverConfiguration naverConfiguration) {
 		s3 = AmazonS3ClientBuilder.standard()
 				.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(naverConfiguration.getEndPoint(),
@@ -30,6 +30,9 @@ public class NCPObjectStorageService implements ObjectStorageService {
 
 	@Override
 	public String uploadFile(String bucketName, String folder, MultipartFile img) {
+		//기존 파일 업로드 시 파일 용량 및 JAXBException 경고문구 뜸.
+		//JAXBException = WARN : com.amazonaws.util.Base64 - JAXB is unavailable. Will fallback to SDK implementation which may be less performant.If you are using Java 9+, you will need to include javax.xml.bind:jaxb-api as a dependency.
+		//용량 = WARN : com.amazonaws.services.s3.AmazonS3Client - No content length specified for stream data.  Stream contents will be buffered in memory and could result in out of memory errors.
 		if(img.isEmpty()) return null;
 			
 		try (InputStream fileIn = img.getInputStream()){
@@ -38,6 +41,8 @@ public class NCPObjectStorageService implements ObjectStorageService {
 			imageFileName += originalFileName.substring(originalFileName.lastIndexOf("."));
 			
 			ObjectMetadata objectMetadata = new ObjectMetadata();
+			//파일의 길이를 지정: 
+			objectMetadata.setContentLength(img.getSize());
 			objectMetadata.setContentType(img.getContentType());
 			
 			PutObjectRequest putObjectRequest = 
@@ -54,9 +59,6 @@ public class NCPObjectStorageService implements ObjectStorageService {
 			//e.printStackTrace(); //return 타입이 String이기 때문에 에러발생
 			
 		}
-		
-		
-		
 		
 	}
 
@@ -123,6 +125,7 @@ public class NCPObjectStorageService implements ObjectStorageService {
 		}
 
 	}
+
 
 
 }

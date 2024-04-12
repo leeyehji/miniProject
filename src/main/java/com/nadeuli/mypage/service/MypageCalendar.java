@@ -2,6 +2,7 @@ package com.nadeuli.mypage.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
@@ -153,7 +154,8 @@ public class MypageCalendar implements MypageService {
     	System.out.println("실제폴더 = " + filePath);
     	
     	//ncp에 업로드. UUID 저장.
-    	String imageFileName= objectStorageService.uploadFile(bucketName, "storage/profile/", img );
+    	String imageFileName = null;
+    	imageFileName = objectStorageService.uploadFile(bucketName, "storage/profile/", img );
     	memberDTO.setMem_profileImage(imageFileName);	
     	
     	File file = new File(filePath, imageFileName);
