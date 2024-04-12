@@ -3,12 +3,16 @@ package com.nadeuli.mypage.controller;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
+
+import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,6 +39,11 @@ public class MyCalendarController {
 	private MypageService mypageService;
     private static final Logger log = LoggerFactory.getLogger(MyCalendarController.class);
 
+    @PostConstruct
+    public void started() {
+    	//GMT -> KST
+        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
+    }
     
 	@GetMapping(value = "myCalendar")
 	public String myCalendar() {

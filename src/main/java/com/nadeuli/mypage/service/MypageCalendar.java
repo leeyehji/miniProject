@@ -128,7 +128,7 @@ public class MypageCalendar implements MypageService {
         HashMap<String, Object> hash = new HashMap<>();
         //System.out.println(listAll.size());
         for (int i = 0; i < listAll.size(); i++) {
-        	SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 HH:mm");
+        	SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 HH:mm:ss");
         	Object start=sdf.format(listAll.get(i).getCal_startDate()); 
         	Object end=sdf.format(listAll.get(i).getCal_endDate()); 
             hash.put("title", listAll.get(i).getCal_title());
