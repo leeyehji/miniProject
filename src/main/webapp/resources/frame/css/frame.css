@@ -412,7 +412,7 @@ input::placeholder {
     position: fixed;
     z-index: 99;
     background-color: #ffffff;
-    color: #496B73 !importan;
+    color: #496B73 !important;
 }
 
 #nadeuliNav>li:first-of-type {
@@ -698,11 +698,13 @@ footer .sns_list li:hover .icon_instagram {
 /*-----------------------------------------------------*/
 
 .btm_menu {
-	background-color: #EEEEEE;
+    background-color: #EEEEEE;
     margin: 0px;
     padding: 0px;
     width: 1897px;
     height: 60px;
+    position: relative;
+    text-align: center;
 }
 
 .btm_menu a {
@@ -727,7 +729,7 @@ a:active {
 }
 
 .badak p {
-    margin-left: 22px;
+    margin-left: 270px;
     margin-top: 24px;
 }
 

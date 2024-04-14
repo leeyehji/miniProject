@@ -358,6 +358,12 @@ function displayNotices(page) {
       sessionStorage.setItem('noticeImage', notice.image);
       // 상세 페이지로 이동
       window.location.href = 'NoticeDetail'; // 상세 페이지의 URL
+
+      var noticeContentElement = document.createElement('div');
+      noticeContentElement.classList.add('notice-content');
+      noticeContentElement.innerText = notice.content; // 공지사항 내용을 설정
+      // 상세 페이지의 적절한 위치에 noticeContentElement를 추가하는 코드가 필요합니다.
+
     });
     cell3.appendChild(title);
     cell4.innerText = notice.date;
