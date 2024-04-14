@@ -14,11 +14,15 @@
 }
 
 .notice-detail-container {
+    left: 70px;
+    top: 40px;
+    position: relative;
     max-width: 1290px;
-    margin: 20px auto;
+    margin: 20px 60px 60px 60px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+
 }
 
 .notice-detail-container h1 {
@@ -57,7 +61,8 @@
 
 #deleteNotice {
     position: relative;
-    left: 1090px;
+    left: 800px;
+    bottom: 10px;
     display: inline-block;
     background-color: #dc3545;
     color: #fff;
@@ -74,7 +79,8 @@
 
 #editNotice {
     position: relative;
-    left: 1090px;
+    left: 660px;
+    bottom: 10px;
     display: inline-block;
     background-color: #000000;
     color: #fff;

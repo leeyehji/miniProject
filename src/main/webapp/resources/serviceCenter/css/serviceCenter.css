@@ -177,11 +177,12 @@ h2 {
 }
 
 #noticeContent {
+    position: relative;
     display: none;
     max-width: 1500px;
     color: #000000;
     padding: 20px;
-
+    right: 110px;
 }
 
 .notices {
