@@ -8,7 +8,29 @@
         SELECT
         T_CONTENTNO
         ,T_CONTENTNAME
+        ,T_CONTENTTYPEID
         FROM TRAVEL
         WHERE T_CONTENTNAME LIKE CONCAT('%', #{value}, '%')
+    </select>
+    <select id="searchResult" parameterType="java.util.HashMap" resultType="com.nadeuli.common.search.bean.SearchDTO">
+        SELECT
+        T_THUMB_IMAGE,
+        T_CONTENTNAME,
+        T_INFORMATION,
+        T_ADDRESS,
+        T_SIDO,
+        T_CAT1,
+        T_CAT2,
+        T_CAT3,
+        T_CONTENTTYPEID,
+        T_CONTENTNO
+        FROM TRAVEL
+        WHERE T_CONTENTNAME LIKE CONCAT('%', #{keyword}, '%')
+        OR T_INFORMATION LIKE CONCAT('%', #{keyword}, '%')
+        ORDER BY (T_CONTENTNAME LIKE CONCAT('%', #{keyword}, '%')) DESC,
+        (T_CONTENTNAME LIKE CONCAT('%', #{keyword}, '%')
+        AND T_INFORMATION LIKE CONCAT('%', #{keyword}, '%')) DESC,
+        (T_INFORMATION LIKE CONCAT('%', #{keyword}, '%')) DESC
+        limit #{startNum},20
     </select>
 </mapper>

@@ -1,0 +1,108 @@
+.bold{
+    font-weight: bold;
+}
+a{
+    text-decoration-line : none;
+    color: black;
+    cursor : pointer;
+
+}
+#themaBoardContent {
+    display: flex;
+    display: inline-block;
+}
+
+#title{
+    font-weight:bold;
+    font-size:20px;
+    margin-bottom: 20px;
+}
+
+#themaTags button {
+    background: #A0E3F2;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#themaTags button:hover {
+    cursor: pointer;
+}
+
+.contentBox:first-of-type {
+    height: 300px; /* 원하는 높이로 수정 */
+}
+
+.boxContent {
+    /*border: 3px white dotted;*/
+    height: 190px;
+    padding: 10px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+.themaBoard {
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+.themaBoardImg {
+    border: #A0E3F2 solid 2px;
+    width : 280px;
+    height: 204px;
+    margin: 10px;
+    width: 280px; /* 요소들 사이의 간격을 조정 */
+}
+.themaBoardImg img{
+    width:280px;
+    height:204px;
+}
+
+.vertical-container {
+    margin: 15px 30px; /* 요소들 사이의 간격을 조정 */
+}
+.themaTitle{
+
+    font-size:20px;
+}
+.themaText {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* 두 줄로 제한 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2em; /* 라인 높이 설정 */
+    max-height: 2.4em; /* 최대 높이 설정 (라인 높이 x 줄 수) */
+    width: 250px; /* 적절한 너비 설정 */
+}
+#themaHashTags button {
+    background: #A0E3F2;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+#observer {
+    text-align: left;
+    margin-top: 50px;
+}
+/*이전 이후 button*/
+#boardButtons {
+    display: flex;
+    text-align: center;
+    align-items: center; /* 세로 중앙 정렬 */
+
+}
+#boardButtons button:first-of-type {
+
+    margin-left:200px;
+}
+#boardButtons button {
+    background: #A0E3F2;
+    border: none;
+    border-radius: 5px;
+    margin: 50px 10px 30px 10px;
+}
+
+#boardButtons button:hover {
+    cursor: pointer;
+}
