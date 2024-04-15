@@ -197,7 +197,7 @@ button.active {
 /* main_map */
 
 .main_toursite {
-    margin: 0px auto 0px auto;
+    margin: 0 auto 0 auto;
     border-radius: 0;
     height: 450px;
     background-color: #ffeadb;
