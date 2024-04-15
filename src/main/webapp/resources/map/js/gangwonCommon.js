@@ -40,7 +40,7 @@ window.addEventListener('message', function(e) {
                             ${data.t_thumb_image ? `<img src="${data.t_thumb_image}" alt="${data.t_contentname}" class="thumb" style="width: 120px; height: 80px;" />` : ''}
                             ${data.t_address ? `<p>${data.t_address}</p>` : ''}
                             ${data.t_phone ? `<p>${data.t_phone}</p>` : ''}
-                            ${data.d_url ? `<a href="${data.d_url}" target="_blank">더 많은 정보는 이곳으로</a>` : ''}
+                            ${data.t_contentno ? `<a href="http://223.130.130.226:8090/thema/themaDetailPage?contentNo=${data.t_contentno}&typdId=${data.t_contenttypeid}">더 많은 정보는 이곳으로</a>` : ''}
                         </div>
                     `;
 
