@@ -21,5 +21,6 @@
 
     var map = new naver.maps.Map('map', mapOptions);
 </script>
+<script src="/map/js/jeonbukCommon.js"></script>
 </body>
 </html>

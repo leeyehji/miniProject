@@ -21,6 +21,7 @@
 
     var map = new naver.maps.Map('map', mapOptions);
 </script>
+<script src="/map/js/sejongCommon.js"></script>
 </body>
 </html>
 
