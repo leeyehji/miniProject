@@ -43,7 +43,7 @@ function reviewViewInput(B_TITLE,MEM_NO,B_CREATETIME,B_VIEW,B_CONTENT,B_like){
 
 //좋아요 버튼 클릭시
 $('#reviewlike button').click(function(){
-	var like = Number($('.reviewLike').text());
+	const like = Number($('.reviewLike').text());
 	$.ajax({
 		type : "POST",
 		url : "clickLike",

@@ -16,7 +16,7 @@
       </nav>
 
       <div class="search">
-        <input type="text" placeholder="여행을 가고싶다면 어디로.." title="검색" id="inp_search" name="inp_search" autocomplete="off" />
+        <input type="text" placeholder="여행을 가고싶다면 어디로.." title="검색" id="inp_search" name="inp_search" autocomplete="off" oninput="" />
         <input type="button" id="searchBtn" value="검색하기" />
       </div>
 

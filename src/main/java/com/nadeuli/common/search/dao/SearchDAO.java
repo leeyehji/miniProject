@@ -9,5 +9,5 @@ import java.util.Map;
 @Mapper
 public interface SearchDAO {
     List<Map<String, Object>> autocomplete(Map<String, Object> paramMap) throws Exception;
-
+    List<SearchDTO> searchResult(Map<String,Object> searchMap);
 }

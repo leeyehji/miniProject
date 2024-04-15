@@ -50,12 +50,12 @@
 	border-collapse: collapse;
 }
 
-#datailInfo table td {
+#detailInfo table td {
 	padding: 10px;
 	height: 40px;
 	border-bottom: 1px solid rgba(0, 0, 0, .3);
 }
-#datailInfo table #icon img{
+#detailInfo table #icon img{
 	padding:10px;
 	border-radius:20px;
 	border: 1px solid black;
