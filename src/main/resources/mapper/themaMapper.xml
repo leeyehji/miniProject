@@ -104,19 +104,19 @@
     </resultMap>
 
     <select id="getCommonItem" parameterType="Integer" resultType="com.nadeuli.thema.bean.CommonDTO">
-        select * from travel where T_CONTENTNO = #{Integer}
+        select * from TRAVEL where T_CONTENTNO = #{Integer}
     </select>
 
     <select id="getThemaItem" resultMap="themaResultMap">
-        select travel.T_CONTENTNO,T_CONTENTTYPEID,T_CONTENTNAME,T_MAIN_IMAGE,T_THUMB_IMAGE,T_ADDRESS,T_PHONE,T_INFORMATION
+        select TRAVEL.T_CONTENTNO,T_CONTENTTYPEID,T_CONTENTNAME,T_MAIN_IMAGE,T_THUMB_IMAGE,T_ADDRESS,T_PHONE,T_INFORMATION
               ,T_HOMEPAGE,T_INFORMATION,T_VIEW,T_LIKE,${table}.*
         from travel join ${table} using(T_CONTENTNO) where T_CONTENTNO = #{T_CONTENTNO};
     </select>
     <update id="themaViewUp" parameterType="Integer">
-        update travel set T_VIEW = T_VIEW +1 where T_CONTENTNO = #{T_CONTENTNO}
+        update TRAVEL set T_VIEW = T_VIEW +1 where T_CONTENTNO = #{T_CONTENTNO}
     </update>
     <update id="themaLikeUp" parameterType="Integer">
-        update travel set T_LIKE = T_LIKE +1 where T_CONTENTNO = #{T_CONTENTNO}
+        update TRAVEL set T_LIKE = T_LIKE +1 where T_CONTENTNO = #{T_CONTENTNO}
     </update>
     <select id="getThemaBoardList" parameterType="java.util.HashMap" resultType="com.nadeuli.common.search.bean.SearchDTO">
         SELECT
