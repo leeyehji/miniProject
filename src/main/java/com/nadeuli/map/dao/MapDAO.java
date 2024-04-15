@@ -13,7 +13,7 @@ public interface MapDAO {
 //    @Select("SELECT * FROM TRAVEL WHERE T_CONTENTTYPEID = #{contenttypeId}")
 //    List<MapDTO> findCoordinatesByContentTypeId(int contenttypeId);
 
-    @Select("SELECT * FROM TRAVEL WHERE T_CONTENTTYPEID = #{contentTypeId} AND T_SIDO = '서울'")
+    @Select("SELECT * FROM TRAVEL WHERE T_CONTENTTYPEID = #{contentTypeId} AND T_SIDO = '서울' limit 1000")
     List<MapDTO> findCoordinatesByContentTypeIdOfSeoul(int contentTypeId);
 
     @Select("SELECT * FROM TRAVEL WHERE T_CONTENTTYPEID = #{contentTypeId} AND T_SIDO = '경기'")
