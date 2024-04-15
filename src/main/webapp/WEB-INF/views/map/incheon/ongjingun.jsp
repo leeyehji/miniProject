@@ -21,5 +21,6 @@
 
     var map = new naver.maps.Map('map', mapOptions);
 </script>
+<script src="/map/js/incheonCommon.js"></script>
 </body>
 </html>
