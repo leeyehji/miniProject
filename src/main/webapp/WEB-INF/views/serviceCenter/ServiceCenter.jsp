@@ -48,8 +48,11 @@
                                                                     <span class="arrow"></span>
                                                             </div>
                                                         </div>
-                                                        <ul class="selectbox items" role="menu" id="sbdd764319774" aria-hidden="true" style="max-height: 655px; position: absolute; visibility: visible; width: 141px; display: none; left: 0px; top: 36px;">
-                                                            <li id="sbo621475285" role="option" class="selected first" aria-disabled="">
+                                                        <ul class="selectbox items" role="menu" id="sbdd764319774"
+                                                            aria-hidden="true"
+                                                            style="max-height: 655px; position: absolute; visibility: visible; width: 141px; display: none; left: 0px; top: 36px;">
+                                                            <li id="sbo621475285" role="option" class="selected first"
+                                                                aria-disabled="">
                                                                 <div class="item">
                                                                     <div class="text">제목</div>
                                                                 </div>
@@ -59,7 +62,8 @@
                                                                     <div class="text">내용</div>
                                                                 </div>
                                                             </li>
-                                                            <li id="sbo267706705" role="option" aria-disabled="" class="last">
+                                                            <li id="sbo267706705" role="option" aria-disabled=""
+                                                                class="last">
                                                                 <div class="item">
                                                                     <div class="text">제목+내용</div>
                                                                 </div>
@@ -71,13 +75,14 @@
                                                         <option value="CTN">내용</option>
                                                         <option value="TCN">제목+내용</option>
                                                     </select>
-                                <input type="text" id="input_keyword" value="" name="" title="검색어" placeholder="검색어를 입력해 주세요." class="input_keyword">
+                                <input type="text" id="input_keyword" value="" name="" title="검색어"
+                                       placeholder="검색어를 입력해 주세요." class="input_keyword">
                                 <button type="submit" class="btn line">검색</button>
                                 </fieldset>
                                 </form>
                             </div>
                             </span>
-                        </div>
+                                </div>
                                 <div>
                                     <div class="tbl">
                                         <table class="type1">
@@ -101,81 +106,41 @@
                                     </div>
                                     <div class="paginate_wrap">
                                         <div class="paginate">
-                                                <a href="#none" class="direction prev" style="display: none;">이전</a>
-                                                <span><strong>1</strong><a href="#none">2</a><a href="#none">3</a><a
-                                                        href="#none">4</a><a href="#none">5</a><a href="#none">6</a><a
-                                                        href="#none">7</a><a href="#none">8</a><a href="#none">9</a><a
-                                                        href="#none">10</a></span>
-                                                <a href="#none" class="direction next" style="">다음</a>
-                                            </div>
+                                            <a href="#none" class="direction prev" style="display: none;">이전</a>
+                                            <span><strong>1</strong><a href="#none">2</a><a href="#none">3</a><a
+                                                    href="#none">4</a><a href="#none">5</a><a href="#none">6</a><a
+                                                    href="#none">7</a><a href="#none">8</a><a href="#none">9</a><a
+                                                    href="#none">10</a></span>
+                                            <a href="#none" class="direction next" style="">다음</a>
                                         </div>
                                     </div>
-                                    <button id="writeNoticeBtn">작성하기</button>
                                 </div>
+                                <button id="writeNoticeBtn">작성하기</button>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div id="writeModal">
-                        <h2>공지사항 작성</h2>
-                        <label for="title">제목:</label>
-                        <input type="text" id="title" name="title" style="width: 700px;font-size: 18px;"><br><br>
-                        <label for="content" id="contentLabel">내용:</label>
-                        <label>
-                            <textarea id="content2" name="content"></textarea>
-                        </label><br><br>
-                        <!-- 이미지 추가 필드 -->
-                        <label for="imageUpload">이미지 추가:</label>
-                        <input type="file" id="imageUpload" name="image" accept="image/*"><br><br>
-                        <!-- 이미지 미리보기 -->
-                        <div id="imagePreview" style="margin-bottom: 20px;"></div>
-                        <button id="submitBtn">작성 완료</button>
-                        <button id="closeBtn">닫기</button>
-                    </div>
-                    <!------------------------------------------------------------------>
-
-                    <div id="inquiryContent">
-                        <h2>1 : 1 문의</h2>
-                        <form id="inquiryForm">
-                            <div class="form-group">
-                                <label for="userName">이름</label>
-                                <input type="text" id="userName" name="userName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="userEmail">이메일</label>
-                                <input type="email" id="userEmail" name="userEmail" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="userInquiry">문의 내용</label>
-                                <textarea id="userInquiry" name="userInquiry" rows="4" required></textarea>
-                            </div>
-
-                            <button type="submit" id="inquiryBtn">문의하기</button>
-                        </form>
-                    </div><!-- inquiryContent -->
-
-                </div><!-- content -->
-
-
-                <div id="faqContent">
-                    <h2>자주 묻는 질문</h2>
-                    <br><br>
-                    <div class="faqs">
-
-                    </div>
-                    <button id="createBtn" onclick="showPopup();">작성</button>
-                    <!-- 추가적인 질문과 답변 항목을 이곳에 삽입할 수 있습니다. -->
-
-                </div><!-- faqContent -->
-
-            </div><!--container-->
-
-        </div> <!-- wrap -->
-
-
-    </div>
-
-</div>
+                <div id="writeModal">
+                    <h2>공지사항 작성</h2>
+                    <label for="title">제목:</label>
+                    <input type="text" id="title" name="title" style="width: 700px;font-size: 18px;"><br><br>
+                    <label for="content" id="contentLabel">내용:</label>
+                    <label>
+                        <textarea id="content2" name="content"></textarea>
+                    </label><br><br>
+                    <!-- 이미지 추가 필드 -->
+                    <label for="imageUpload">이미지 추가:</label>
+                    <input type="file" id="imageUpload" name="image" accept="image/*"><br><br>
+                    <!-- 이미지 미리보기 -->
+                    <div id="imagePreview" style="margin-bottom: 20px;"></div>
+                    <button id="submitBtn">작성 완료</button>
+                    <button id="closeBtn">닫기</button>
+                </div>
+            </div><!-- container -->
+        </div><!--wrap-->
+    </div> <!-- content -->
+</div><%--frameContent--%>
 
 <div id="upDownBtn">
     <button onclick="topFunction()" id="upBtn">위로</button>
