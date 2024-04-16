@@ -409,10 +409,11 @@ input::placeholder {
     margin-left: 30px;
     padding: 10px;
     font-weight: bolder;
-    position: fixed;
+    position: absolute;
     z-index: 99;
     background-color: #ffffff;
     color: #496B73 !important;
+    transition : 0.5s ease-out;
 }
 
 #nadeuliNav>li:first-of-type {
