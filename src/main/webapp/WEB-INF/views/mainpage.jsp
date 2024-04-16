@@ -87,35 +87,35 @@
                     <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
                 <h3></h3>
-                <p>여행지</p>
+                <p></p>
             </div>
             <div class="destination-card">
                 <a>
                     <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
                 <h3></h3>
-                <p>여행지</p>
+                <p></p>
             </div>
             <div class="destination-card">
                 <a>
                     <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
                 <h3></h3>
-                <p>여행지</p>
+                <p></p>
             </div>
             <div class="destination-card">
                 <a>
                     <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
                 <h3></h3>
-                <p>여행지</p>
+                <p></p>
             </div>
             <div class="destination-card">
                 <a>
                     <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
                 <h3></h3>
-                <p>여행지</p>
+                <p></p>
             </div>
         </div>
     </section>
@@ -153,6 +153,35 @@
                         "alt": data.t_contentname
                     });
                     card.find("h3").text(data.t_contentname);
+
+                    // data.t_contenttypeid 값에 따라 다른 텍스트를 설정합니다.
+                    var typeText;
+                    switch (data.t_contenttypeid) {
+                        case '12':
+                            typeText = "관광";
+                            break;
+                        case '14':
+                            typeText = "문화";
+                            break;
+                        case '15':
+                            typeText = "행사";
+                            break;
+                        case '28':
+                            typeText = "레포츠";
+                            break;
+                        case '32':
+                            typeText = "숙박";
+                            break;
+                        case '38':
+                            typeText = "쇼핑";
+                            break;
+                        case '39':
+                            typeText = "음식점";
+                            break;
+                        default:
+                            typeText = "기타";
+                    }
+                    card.find("p").text(typeText);
                 });
             },
             error: function (jqXHR, textStatus, errorThrown) {
