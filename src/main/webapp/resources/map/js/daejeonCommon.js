@@ -10,13 +10,14 @@ var infowindow = new naver.maps.InfoWindow({
 
 window.addEventListener('message', function(e) {
     var id = e.data; // 부모 페이지로부터 받은 id 값
+    console.log(id);
 
     // 기존 마커를 지도에서 제거하고 배열 비우기
     markers.forEach(marker => marker.setMap(null));
     markers = [];
 
     // API 호출하여 좌표 가져오기
-    fetch('/map/coordinates/' + id)
+    fetch('/map/daejeon/coordinates/' + id)
         .then(response => response.json())
         .then(coordinates => {
             // 네이버 지도에 마커 생성
@@ -39,7 +40,7 @@ window.addEventListener('message', function(e) {
                             ${data.t_thumb_image ? `<img src="${data.t_thumb_image}" alt="${data.t_contentname}" class="thumb" style="width: 120px; height: 80px;" />` : ''}
                             ${data.t_address ? `<p>${data.t_address}</p>` : ''}
                             ${data.t_phone ? `<p>${data.t_phone}</p>` : ''}
-                            ${data.d_url ? `<a href="${data.d_url}" target="_blank">더 많은 정보는 이곳으로</a>` : ''}
+                            ${data.t_contentno ? `<a target="_blank" href="http://223.130.130.226:8090/thema/themaDetailPage?contentNo=${data.t_contentno}&typeId=${data.t_contenttypeid}">더 많은 정보는 이곳으로</a>` : ''}
                         </div>
                     `;
 

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="com.nadeuli.thema.dao.ThemaDAO">
+
+    <resultMap id="themaResultMap" type="com.nadeuli.thema.bean.ThemaDTO">
+        <result property="T_CONTENTNO" column="T_CONTENTNO"/>
+        <result property="T_CONTENTTYPEID" column="T_CONTENTTYPEID"/>
+        <result property="T_CONTENTNAME" column="T_CONTENTNAME"/>
+        <result property="T_MAIN_IMAGE" column="T_MAIN_IMAGE"/>
+        <result property="T_THUMB_IMAGE" column="T_THUMB_IMAGE"/>
+        <result property="T_ADDRESS" column="T_ADDRESS"/>
+        <result property="T_PHONE" column="T_PHONE"/>
+        <result property="T_INFORMATION" column="T_INFORMATION"/>
+        <result property="T_HOMEPAGE" column="T_HOMEPAGE"/>
+        <result property="T_VIEW" column="T_VIEW"/>
+        <result property="T_LIKE" column="T_LIKE"/>
+        <result property="A_NO" column="A_NO"/>
+        <association property="typeTwelve" javaType="com.nadeuli.thema.bean.TypeTwelve">
+            <result property="A_chkbabycarriage" column="A_chkbabycarriage"/>
+            <result property="A_chkpet" column="A_chkpet"/>
+            <result property="A_chkcreditcard" column="A_chkcreditcard"/>
+            <result property="A_infocenter" column="A_infocenter"/>
+            <result property="A_parking" column="A_parking"/>
+            <result property="A_restdate" column="A_restdate"/>
+            <result property="A_usetime" column="A_usetime"/>
+        </association>
+        <association property="typeFourteen" javaType="com.nadeuli.thema.bean.TypeFourteen">
+            <result property="A_chkbabycarriageculture" column="A_chkbabycarriageculture"/>
+            <result property="A_chkcreditcardculture" column="A_chkcreditcardculture"/>
+            <result property="A_chkpetculture" column="A_chkpetculture"/>
+            <result property="A_infocenterculture" column="A_infocenterculture"/>
+            <result property="A_parkingculture" column="A_parkingculture"/>
+            <result property="A_parkingfee" column="A_parkingfee"/>
+            <result property="A_restdateculture" column="A_restdateculture"/>
+            <result property="A_usefee" column="A_usefee"/>
+            <result property="A_usetimeculture" column="A_usetimeculture"/>
+        </association>
+        <association property="typeFifteen" javaType="com.nadeuli.thema.bean.TypeFifteen">
+            <result property="F_SUBJECT" column="F_SUBJECT"/>
+            <result property="F_CONTENT" column="F_CONTENT"/>
+            <result property="A_eventstartdate" column="A_eventstartdate"/>
+            <result property="A_eventenddate" column="A_eventenddate"/>
+            <result property="A_eventplace" column="A_eventplace"/>
+            <result property="A_playtime" column="A_playtime"/>
+        </association>
+        <association property="typeTwoEight" javaType="com.nadeuli.thema.bean.TypeTwoEight">
+            <result property="A_chkbabycarriageleports" column="A_chkbabycarriageleports"/>
+            <result property="A_chkcreditcardleports" column="A_chkcreditcardleports"/>
+            <result property="A_chkpetleports" column="A_chkpetleports"/>
+            <result property="A_infocenterleports" column="A_infocenterleports"/>
+            <result property="A_parkingleports" column="A_parkingleports"/>
+            <result property="A_reservation" column="A_reservation"/>
+            <result property="A_restdateleports" column="A_restdateleports"/>
+            <result property="A_usetimeleports" column="A_usetimeleports"/>
+        </association>
+        <association property="typeThirtyTwo" javaType="com.nadeuli.thema.bean.TypeThirtyTwo">
+            <result property="A_infocenterlodging" column="A_infocenterlodging"/>
+            <result property="A_checkintime" column="A_checkintime"/>
+            <result property="A_checkouttime" column="A_checkouttime"/>
+            <result property="A_parkinglodging" column="A_parkinglodging"/>
+            <result property="A_roomcount" column="A_roomcount"/>
+            <result property="A_roomtype" column="A_roomtype"/>
+            <result property="A_foodplace" column="A_foodplace"/>
+            <result property="A_reservationlodging" column="A_reservationlodging"/>
+            <result property="A_reservationurl" column="A_reservationurl"/>
+            <result property="A_subfacility" column="A_subfacility"/>
+        </association>
+        <association property="typeThirtyEight" javaType="com.nadeuli.thema.bean.TypeThirtyEight">
+            <result property="A_infocentershopping" column="A_infocentershopping"/>
+            <result property="A_chkbabycarriageshopping" column="A_chkbabycarriageshopping"/>
+            <result property="A_chkcreditcardshopping" column="A_chkcreditcardshopping"/>
+            <result property="A_chkpetshopping" column="A_chkpetshopping"/>
+            <result property="A_fairday" column="A_fairday"/>
+            <result property="A_opendateshopping" column="A_opendateshopping"/>
+            <result property="A_opentime" column="A_opentime"/>
+            <result property="A_parkingshopping" column="A_parkingshopping"/>
+            <result property="A_restdateshopping" column="A_restdateshopping"/>
+            <result property="A_saleitem" column="A_saleitem"/>
+            <result property="A_shopguide" column="A_shopguide"/>
+        </association>
+        <association property="typeThirtyNine" javaType="com.nadeuli.thema.bean.TypeThirtyNine">
+            <result property="seat" column="seat"/>
+            <result property="kidsfacility" column="kidsfacility"/>
+            <result property="firstmenu" column="firstmenu"/>
+            <result property="treatmenu" column="treatmenu"/>
+            <result property="smoking" column="smoking"/>
+            <result property="packing" column="packing"/>
+            <result property="infocenterfood" column="infocenterfood"/>
+            <result property="scalefood" column="scalefood"/>
+            <result property="parkingfood" column="parkingfood"/>
+            <result property="opendatefood" column="opendatefood"/>
+            <result property="opentimefood" column="opentimefood"/>
+            <result property="restdatefood" column="restdatefood"/>
+            <result property="discountinfofood" column="discountinfofood"/>
+            <result property="chkcreditcardfood" column="chkcreditcardfood"/>
+            <result property="reservationfood" column="reservationfood"/>
+            <result property="lcnsno" column="lcnsno"/>
+        </association>
+    </resultMap>
+
+    <select id="getCommonItem" parameterType="Integer" resultType="com.nadeuli.thema.bean.CommonDTO">
+        select * from TRAVEL where T_CONTENTNO = #{Integer}
+    </select>
+
+    <select id="getThemaItem" resultMap="themaResultMap">
+        select TRAVEL.T_CONTENTNO,T_CONTENTTYPEID,T_CONTENTNAME,T_MAIN_IMAGE,T_THUMB_IMAGE,T_ADDRESS,T_PHONE,T_INFORMATION
+              ,T_HOMEPAGE,T_INFORMATION,T_VIEW,T_LIKE,${table}.*
+        from travel join ${table} using(T_CONTENTNO) where T_CONTENTNO = #{T_CONTENTNO};
+    </select>
+    <update id="themaViewUp" parameterType="Integer">
+        update TRAVEL set T_VIEW = T_VIEW +1 where T_CONTENTNO = #{T_CONTENTNO}
+    </update>
+    <update id="themaLikeUp" parameterType="Integer">
+        update TRAVEL set T_LIKE = T_LIKE +1 where T_CONTENTNO = #{T_CONTENTNO}
+    </update>
+    <select id="getThemaBoardList" parameterType="java.util.HashMap" resultType="com.nadeuli.common.search.bean.SearchDTO">
+        SELECT
+        T_THUMB_IMAGE,
+        T_CONTENTNAME,
+        T_INFORMATION,
+        T_ADDRESS,
+        T_SIDO,
+        T_CAT1,
+        T_CAT2,
+        T_CAT3,
+        T_CONTENTTYPEID,
+        T_CONTENTNO
+        FROM TRAVEL
+        WHERE T_CONTENTTYPEID LIKE CONCAT('%', #{contentTypeId}, '%')
+        AND T_CAT1 LIKE CONCAT('%', #{cat1}, '%')
+        AND T_CAT2 LIKE CONCAT('%', #{cat2}, '%')
+        AND T_CAT3 LIKE CONCAT('%', #{cat3}, '%')
+        ORDER BY T_THUMB_IMAGE desc
+        limit 0,20
+    </select>
+</mapper>

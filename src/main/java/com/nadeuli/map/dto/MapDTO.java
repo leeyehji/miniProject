@@ -14,5 +14,6 @@ public class MapDTO implements Serializable {
     private String t_address;
     private String t_thumb_image;
     private String t_phone;
-    private String d_url;
+    private String t_contenttypeid;
+    private String t_contentno;
 }

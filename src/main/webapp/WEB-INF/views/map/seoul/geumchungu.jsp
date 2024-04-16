@@ -21,6 +21,6 @@
 
     var map = new naver.maps.Map('map', mapOptions);
 </script>
-</body>
+<script src="/map/js/seoulCommon.js"></script></body>
 </html>
 
