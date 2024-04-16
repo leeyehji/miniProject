@@ -87,35 +87,35 @@
                     <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
                 <h3></h3>
-                <p>여행지</p>
+                <p></p>
             </div>
             <div class="destination-card">
                 <a>
                     <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
                 <h3></h3>
-                <p>여행지</p>
+                <p></p>
             </div>
             <div class="destination-card">
                 <a>
                     <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
                 <h3></h3>
-                <p>여행지</p>
+                <p></p>
             </div>
             <div class="destination-card">
                 <a>
                     <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
                 <h3></h3>
-                <p>여행지</p>
+                <p></p>
             </div>
             <div class="destination-card">
                 <a>
                     <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
                 <h3></h3>
-                <p>여행지</p>
+                <p></p>
             </div>
         </div>
     </section>
@@ -135,31 +135,5 @@
 
 <!-- <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script> -->
 <script src="../../resources/frame/js/frame.js"></script>
-<script>
-    $(document).ready(function () {
-        $.ajax({
-            url: '/getTop5Destinations',
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                console.log(data);
 
-                $.each(data, function (index, data) {
-                    // 각 .destination-card div의 내용을 업데이트합니다.
-                    var card = $(".destination-card").eq(index);
-                    card.find("a").attr("href", "http://223.130.130.226:8090/thema/themaDetailPage?contentNo=" + data.t_contentno + "&typeId=" + data.t_contenttypeid);
-                    card.find("img").attr({
-                        "src": data.t_thumb_image,
-                        "alt": data.t_contentname
-                    });
-                    card.find("h3").text(data.t_contentname);
-                });
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log('AJAX call failed.');
-                console.log(textStatus + ': ' + errorThrown);
-            }
-        });
-    });
-</script>
 </html>
