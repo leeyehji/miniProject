@@ -62,7 +62,7 @@
 #deleteNotice {
     position: relative;
     left: 800px;
-    bottom: 10px;
+    bottom: -5px;
     display: inline-block;
     background-color: #dc3545;
     color: #fff;
@@ -80,7 +80,7 @@
 #editNotice {
     position: relative;
     left: 660px;
-    bottom: 10px;
+    bottom: -5px;
     display: inline-block;
     background-color: #000000;
     color: #fff;

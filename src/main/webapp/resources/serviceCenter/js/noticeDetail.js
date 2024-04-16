@@ -269,7 +269,7 @@ function displayNotices(page) {
         title.innerText = notice.title;
         title.addEventListener('click', function() {
             // 공지사항 상세 페이지로 이동하는 로직
-            // 예: sessionStorage를 사용하여 공지사항 데이터를 임시 저장
+            // 예: sessionStorage를 사용하여 공지사항 데이터를 임시 저장  (서버로 가는 코드 작성)
             sessionStorage.setItem('noticeTitle', notice.title);
             sessionStorage.setItem('noticeDate', notice.date);
             sessionStorage.setItem('noticeContent', notice.content);

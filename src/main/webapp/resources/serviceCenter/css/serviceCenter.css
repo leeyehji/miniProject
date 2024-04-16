@@ -59,13 +59,6 @@ table {
     margin: 20px 20px 100px 20px;
 }
 
-#inquiryContent {
-    display: none;
-}
-
-#qnaContent {
-    display: none;
-}
 
 
 /* ------------1:1 문의 하기 ---------------------------------------------- */
@@ -172,13 +165,8 @@ h2 {
 
 /* -----------------------------------공지사항------------------------------------------ */
 
-#writeForm {
-    display: none;
-}
-
 #noticeContent {
     position: relative;
-    display: none;
     max-width: 1500px;
     color: #000000;
     padding: 20px;

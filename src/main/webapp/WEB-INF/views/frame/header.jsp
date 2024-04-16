@@ -69,9 +69,9 @@
 
     <div id="고객센터" class="sub_menu service-center">
       <ul>
-        <li><a href="/ServiceCenter#notice">공지사항</a></li>
-        <li><a href="/ServiceCenter#inquiry">1 : 1 문의</a></li>
-        <li><a href="/ServiceCenter#faq" style="margin-left: 20px;">FQA</a></li>
+        <li><a href="ServiceCenter">공지사항</a></li>
+        <li><a href="Inquiry">1 : 1 문의</a></li>
+        <li><a href="Faq">F A Q</a></li>
       </ul>
     </div>
   </div>

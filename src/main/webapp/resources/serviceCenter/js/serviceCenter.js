@@ -106,183 +106,27 @@ window.addEventListener('scroll', function () {
 //버튼 끝
 
 // 고객센터
-
-function showContent(contentId) {
-  var allContents = ['noticeContent', 'inquiryContent', 'faqContent'];
-  allContents.forEach(function(id) {
-    document.getElementById(id).style.display = 'none';
-  });
-
-  document.getElementById(contentId).style.display = 'block';
-}
-
-function handleHashChange() {
-  var hash = window.location.hash;
-
-  if (hash === "#inquiry") {
-    showContent('inquiryContent');
-  } else if (hash === "#faq") {
-    showContent('faqContent');
-  } else {
-    // 기본적으로 공지사항을 보여줍니다.
-    showContent('noticeContent');
-  }
-}
-
-function addClickListener(id, contentId) {
-  var element = document.getElementById(id);
-  if (element) {
-    element.addEventListener('click', function(e) {
-      e.preventDefault();
-      showContent(contentId);
-      window.location.hash = contentId.replace('Content', '');
-    });
-  }
-}
-
-// DOM이 완전히 로드된 후에 실행됩니다.
-
-document.addEventListener('DOMContentLoaded', function() {
-  handleHashChange(); // 페이지 로드 시 적절한 콘텐츠를 표시합니다.
-  // 각 탭에 대한 클릭 이벤트 리스너를 추가합니다.
-  addClickListener('showNotice', 'noticeContent');
-  addClickListener('showInquiry', 'inquiryContent');
-  addClickListener('showFaq', 'faqContent');
-});
-
-// 해시 변경을 감지하여 적절한 콘텐츠를 표시합니다.
-window.addEventListener('hashchange', handleHashChange);
-
-////////////////////////////// 1:1 문의 하기/////////////////////
-
-// document.body 대신에 실제로 inquiryForm을 포함할 것으로 예상되는 부모 요소를 사용하세요.
-document.addEventListener('submit', function(event) {
-  if(event.target && event.target.id === 'inquiryForm') {
-    event.preventDefault(); // 폼의 기본 제출 동작을 막습니다.
-
-    var userName = document.getElementById('userName').value;
-    var userEmail = document.getElementById('userEmail').value;
-    var userInquiry = document.getElementById('userInquiry').value;
-
-    // 이메일 형식을 검사하는 정규 표현식
-    const expEmailText = /^[A-Za-z0-9\.\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z0-9\.\-]+$/;
-
-    // userEmail이 이메일 형식에 맞는지 검사
-    if (!expEmailText.test(userEmail)) {
-      alert('올바른 이메일 주소를 입력해주세요.');
-      return; // 이메일 형식이 맞지 않으면 함수를 여기서 종료합니다.
-    }
-
-    console.log('이름:', userName);
-    console.log('이메일:', userEmail);
-    console.log('문의 내용:', userInquiry);
-
-    alert('문의가 접수되었습니다. 빠른 시일 내에 답변드리겠습니다.');
-    // 여기서 서버로 데이터 전송 로직을 추가
-  }
-});
-///////////////////////////////////////////////////자주 묻는 질문/////////////////////////////////////////
-var currentFaq = null;
-
-function showPopup(edit = false) {
-  var title = "", text = "";
-
-  if (edit && currentFaq) {
-    title = currentFaq.title;
-    text = currentFaq.text;
-  }
-
-  var myWindow = window.open("", "a", "width=400, height=300, left=100, top=50");
-
-  myWindow.document.write('<html><head><title>자주묻는질문 작성</title></head><body>');
-  myWindow.document.write('<div id="writeForm">');
-  myWindow.document.write('<h2>자주묻는질문 작성</h2>');
-  myWindow.document.write('<label for="titleText">제목:</label><br>');
-  myWindow.document.write('<input type="text" id="titleText" name="title" style="width: 100%;" value="' + title + '"><br>');
-  myWindow.document.write('<label for="faqText">내용:</label><br>');
-  myWindow.document.write('<textarea id="faqText" rows="4" cols="50">' + text + '</textarea><br>');  // 오타 수정됨
-  myWindow.document.write('<button id="saveBtn">저장</button>');
-  myWindow.document.write('<button id="cancelBtn">취소</button>');
-  myWindow.document.write('</div>');
-  myWindow.document.write('</body></html>');
-  myWindow.document.close();
-
-  myWindow.onload = function() {
-    myWindow.document.getElementById('saveBtn').onclick = function() {
-      var newTitle = myWindow.document.getElementById('titleText').value;
-      var newText = myWindow.document.getElementById('faqText').value;  // 수정됨
-
-
-      if (newTitle.trim() !== "" && newText.trim() !== "") {
-        if (edit && currentFaq && currentFaq.element) {
-          var existingFaq = currentFaq.element;
-          existingFaq.querySelector('.toggleBtn').textContent = newTitle;
-          existingFaq.querySelector('.ntccontent').innerHTML = newText;
-        } else {
-          var faqDiv = document.querySelector('.faqs');
-          var newFaq = document.createElement('div');
-          newFaq.innerHTML = `<div style="display: flex; justify-content: space-between; align-items: center;">
-                               <button class="toggleBtn">${newTitle}
-                               <button class="editBtn" style="position: relative; margin-left: 10px; right: 110px;">편집</button>
-                               <button class="deleteBtn" style="margin-left: 10px; border-radius: 10px; position: relative; right: 220px;">삭제</button>
-                             </div>
-                             <div class="ntccontent" style="display:none;">${newText}</div>`;
-          newFaq.querySelector('.editBtn').addEventListener('click', function() {
-            currentFaq = { title: newTitle, text: newText, element: newFaq };
-            showPopup(true);
-          });
-          newFaq.querySelector('.toggleBtn').addEventListener('click', function(event) {
-            const content = event.currentTarget.parentElement.nextElementSibling;
-            if (content.style.display === "none") {
-              content.style.display = "block";
-            } else {
-              content.style.display = "none";
-            }
-          });
-          newFaq.querySelector('.deleteBtn').addEventListener('click', function() {
-            faqDiv.removeChild(newFaq);
-          });
-
-          faqDiv.appendChild(newFaq);
-        }
-        myWindow.close();
-      } else {
-        alert('제목과 내용을 모두 입력해주세요.');
-      }
-    };
-
-    myWindow.document.getElementById('cancelBtn').onclick = function() {
-      myWindow.close();
-    };
-  };
-}
 ///////////////////////////////////////////////공지 사항 ////////////////////////////////////
 
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById("writeNoticeBtn").addEventListener("click", function() {
     document.getElementById("writeModal").style.display = "block";
   });
-
   document.getElementById("closeBtn").addEventListener("click", function() {
     document.getElementById("writeModal").style.display = "none";
     // 입력 필드 초기화
     document.getElementById("title").value = "";
-    document.getElementById("content2").value = "";
-  });
-
+    document.getElementById("content2").value = "";});
   document.getElementById("submitBtn").addEventListener("click", function() {
     var title = document.getElementById("title").value;
     var content = document.getElementById("content2").value;
-
     // 제목과 내용이 비어있는지 확인
     if (title === "" || content === "") {
       alert("제목과 내용을 모두 입력해주세요.");
       return; // 추가 로직을 실행하지 않고 함수 종료
     }
-
     var image = document.getElementById("imageUpload").value; // 이미지 파일 경로(또는 이름) 추출
     var today = new Date().toISOString().slice(0, 10).replace(/-/g, ".");
-
     // 신규 공지사항 데이터에 이미지 경로 추가
     notices.push({
       id: notices.length + 1,
@@ -290,8 +134,29 @@ document.addEventListener('DOMContentLoaded', function () {
       title: title,
       content: content,
       date: today,
-      image: image // 이미지 경로 또는 이름
+      image: image
+    }); // 이미지 경로 또는 이름 추가하는 부분 닫는 괄호가 누락되었습니다.
+
+    // Ajax 요청을 추가합니다.
+    $.ajax({
+      type: "POST",
+      url: "/getNoticeDetail", // 서버의 공지사항 추가 처리 URL
+      data: JSON.stringify({
+        nSubject: title,
+        nContent: content,
+        nWriter: '작성자', // 실제 사용 시에는 현재 사용자를 나타내는 데이터를 사용해야 합니다.
+        nCreateTime: today // 서버에서 LocalDateTime으로 파싱이 가능한 형식이어야 합니다.
+      }),
+      contentType: "json; charset=utf-8",
+      dataType: "json",
+      success: function(response) {
+        console.log("공지사항이 성공적으로 추가되었습니다.", response);
+      },
+      error: function(xhr, status, error) {
+        console.error("공지사항 추가 실패:", error);
+      }
     });
+
     document.getElementById("imageUpload").addEventListener("change", function() {
       var preview = document.getElementById("imagePreview");
       preview.innerHTML = ''; // 이전 미리보기 초기화
@@ -312,7 +177,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // 작성 후 입력 필드 초기화
     document.getElementById("title").value = "";
     document.getElementById("content2").value = "";
-
     // 새로운 공지사항을 포함하여 목록을 다시 표시
     displayNotices(currentPage);
   });
@@ -322,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 let notices = Array.from({length: 0}, (_, i) => ({id: i + 1, author: '작성자', title: `제목`, date: new Date().toISOString().slice(0, 10).replace(/-/g, ".")}));
-
 let currentPage = 1; // 현재 페이지
 const noticesPerPage = 10; // 페이지당 공지사항 수
 
