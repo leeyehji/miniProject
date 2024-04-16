@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nadeuli.member.repository.MailRepository">
+
+    <insert id="authMailSave">
+        INSERT INTO member (email, auth_code, expire_at)
+        VALUES (#{email}, #{authstr}, DATE_ADD(NOW(), INTERVAL 3 MINUTE))
+        ON DUPLICATE KEY UPDATE
+        auth_code = VALUES(auth_code),
+        expire_at = VALUES(expire_at)
+    </insert>
+</mapper>

@@ -48,11 +48,11 @@ $(function() {
 
 /*로그인 페이지 */
 $("#loginBtn").click(function(){
-	window.location.href="/miniProject/member/login.jsp";
+	window.location.href="/member/loginForm";
 } );
 /*회원가입페이지 */
 $("#JoinBtn").click(function(){
-	window.location.href="/miniProject/member/memberJoin.jsp";
+	window.location.href="/member/memberJoinForm";
 } );
 /*page content*/
 
