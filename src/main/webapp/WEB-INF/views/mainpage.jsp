@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <link rel="icon" href="data:,">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>miniproject</title>
 
     <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
@@ -14,13 +14,15 @@
     <script defer src="../../resources/mainpage/js/miniP.js"></script>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/><!-- 캘린더 -->
-    <link rel="stylesheet" href="../../resources/mainpage/css/miniP.css" />
+    <link rel="stylesheet" href="../../resources/mainpage/css/miniP.css"/>
     <link rel="stylesheet" type="text/css" href="./frame/css/frame.css">
 
 </head>
 
 <body>
-<header><jsp:include page="./frame/header.jsp"></jsp:include></header>
+<header>
+    <jsp:include page="./frame/header.jsp"></jsp:include>
+</header>
 
 <table id="main">
     <thead>
@@ -60,12 +62,10 @@
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
-
+        </ul>
     </div>
 
     </thead>
-
-
 
 
     <tbody>
@@ -80,86 +80,42 @@
     <tfoot>
     <section class="hot">
         <h2>추천 여행지</h2>
+        <!-- 미리 .destination-card div를 생성합니다. -->
         <div class="destination-grid">
-
             <div class="destination-card">
-                <a href="/">
-                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_1.jpeg" alt="여행지 이미지">
+                <a>
+                    <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
-                <h3>여행지1</h3>
-                <p>여행지1에 대한 설명</p>
+                <h3></h3>
+                <p>여행지</p>
             </div>
-
             <div class="destination-card">
-                <a href="/">
-                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_2.jpeg" alt="여행지 이미지">
+                <a>
+                    <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
-                <h3>여행지2</h3>
-                <p>여행지2에 대한 설명</p>
+                <h3></h3>
+                <p>여행지</p>
             </div>
-
             <div class="destination-card">
-                <a href="/">
-                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_3.jpeg" alt="여행지 이미지">
+                <a>
+                    <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
-                <h3>여행지3</h3>
-                <p>여행지3에 대한 설명</p>
+                <h3></h3>
+                <p>여행지</p>
             </div>
-
             <div class="destination-card">
-                <a href="/">
-                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_4.jpeg" alt="여행지 이미지">
+                <a>
+                    <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
-                <h3>여행지4</h3>
-                <p>여행지4에 대한 설명</p>
+                <h3></h3>
+                <p>여행지</p>
             </div>
-
             <div class="destination-card">
-                <a href="/">
-                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_13.jpeg" alt="여행지 이미지">
+                <a>
+                    <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
                 </a>
-                <h3>여행지5</h3>
-                <p>여행지5에 대한 설명</p>
-            </div>
-
-            <div class="destination-card">
-                <a href="/">
-                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_13.jpeg" alt="여행지 이미지">
-                </a>
-                <h3>여행지6</h3>
-                <p>여행지6에 대한 설명</p>
-            </div>
-
-            <div class="destination-card">
-                <a href="/">
-                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_4.jpeg" alt="여행지 이미지">
-                </a>
-                <h3>여행지7</h3>
-                <p>여행지7에 대한 설명</p>
-            </div>
-
-            <div class="destination-card">
-                <a href="/">
-                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_1.jpeg" alt="여행지 이미지">
-                </a>
-                <h3>여행지8</h3>
-                <p>여행지8에 대한 설명</p>
-            </div>
-
-            <div class="destination-card">
-                <a href="/">
-                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_2.jpeg" alt="여행지 이미지">
-                </a>
-                <h3>여행지9</h3>
-                <p>여행지9에 대한 설명</p>
-            </div>
-
-            <div class="destination-card">
-                <a href="/">
-                    <img src="../../resources/mainpage/css/image/seoul_cherry_blossom_3.jpeg" alt="여행지 이미지">
-                </a>
-                <h3>여행지10</h3>
-                <p>여행지10에 대한 설명</p>
+                <h3></h3>
+                <p>여행지</p>
             </div>
         </div>
     </section>
@@ -168,13 +124,42 @@
 
 </table>
 <div id="upDownBtn">
-    <button onclick="topFunction()"  id="upBtn" title="Go to top">위로</button>
+    <button onclick="topFunction()" id="upBtn" title="Go to top">위로</button>
     <button onclick="bottomFunction()" id="downBtn" title="Go to bottom">아래</button>
 
 </div>
-<footer><jsp:include page= "./frame/footer.jsp"></jsp:include></footer>
+<footer>
+    <jsp:include page="./frame/footer.jsp"></jsp:include>
+</footer>
 </body>
 
 <!-- <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script> -->
 <script src="../../resources/frame/js/frame.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: '/getTop5Destinations',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+
+                $.each(data, function (index, data) {
+                    // 각 .destination-card div의 내용을 업데이트합니다.
+                    var card = $(".destination-card").eq(index);
+                    card.find("a").attr("href", "http://223.130.130.226:8090/thema/themaDetailPage?contentNo=" + data.t_contentno + "&typeId=" + data.t_contenttypeid);
+                    card.find("img").attr({
+                        "src": data.t_thumb_image,
+                        "alt": data.t_contentname
+                    });
+                    card.find("h3").text(data.t_contentname);
+                });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log('AJAX call failed.');
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        });
+    });
+</script>
 </html>
