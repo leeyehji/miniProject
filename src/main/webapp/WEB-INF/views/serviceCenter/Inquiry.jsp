@@ -10,6 +10,8 @@
 
 
     <script src="https://code.jQuery.com/jquery-3.7.1.min.js"></script>
+    <script defer src="../../../resources/serviceCenter/js/inquiry.js"></script>
+    <script defer src="../../../resources/frame/js/frame.js"></script>
     <link rel="stylesheet" href="../../../resources/serviceCenter/css/serviceCenter.css"/>
     <link rel="stylesheet" type="text/css" href="../../../resources/frame/css/frame.css">
 </head>
@@ -38,16 +40,16 @@
                         <h2>1 : 1 문의</h2>
                         <form id="inquiryForm">
                             <div class="form-group">
-                                <label for="userName">이름</label>
-                                <input type="text" id="userName" name="userName" required>
+                                <label for="MEM_NAME">이름</label>
+                                <input type="text" id="MEM_NAME" name="userName" required>
                             </div>
                             <div class="form-group">
-                                <label for="userEmail">이메일</label>
-                                <input type="email" id="userEmail" name="userEmail" required>
+                                <label for="MEM_EMAIL">이메일</label>
+                                <input type="email" id="MEM_EMAIL" name="userEmail" required>
                             </div>
                             <div class="form-group">
-                                <label for="userInquiry">문의 내용</label>
-                                <textarea id="userInquiry" name="userInquiry" rows="4" required></textarea>
+                                <label for="qContent">문의 내용</label>
+                                <textarea id="qContent" name="userInquiry" rows="4" required></textarea>
                             </div>
 
                             <button type="submit" id="inquiryBtn">문의하기</button>
@@ -73,8 +75,7 @@
 <footer>
     <jsp:include page="../frame/footer.jsp"></jsp:include>
 </footer>
-<script src="../../../resources/serviceCenter/js/inquiry.js"></script>
-<script src="../../../resources/frame/js/frame.js"></script>
+
 <div id="bottom"></div>
 
 </body>

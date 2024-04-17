@@ -109,51 +109,35 @@ window.addEventListener('scroll', function () {
 
 ////////////////////////////// 1:1 문의 하기/////////////////////
 
+
 // document.body 대신에 실제로 inquiryForm을 포함할 것으로 예상되는 부모 요소를 사용하세요.
-document.addEventListener('submit', function(event) {
-    if(event.target && event.target.id === 'inquiryForm') {
-        event.preventDefault(); // 폼의 기본 제출 동작을 막습니다.
+document.getElementById('inquiryForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // 폼의 기본 제출 동작을 막습니다.
 
-        var userName = document.getElementById('userName').value;
-        var userEmail = document.getElementById('userEmail').value;
-        var userInquiry = document.getElementById('userInquiry').value;
+    var userName = document.getElementById('MEM_NAME').value;
+    var userEmail = document.getElementById('MEM_EMAIL').value;
+    var userInquiry = document.getElementById('qContent').value;
 
-        // 이메일 형식을 검사하는 정규 표현식
-        const expEmailText = /^[A-Za-z0-9\.\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z0-9\.\-]+$/;
+    alert(userEmail)
 
-        // userEmail이 이메일 형식에 맞는지 검사
-        if (!expEmailText.test(userEmail)) {
-            alert('올바른 이메일 주소를 입력해주세요.');
-            return; // 이메일 형식이 맞지 않으면 함수를 여기서 종료합니다.
-        }
 
-        console.log('이름:', userName);
-        console.log('이메일:', userEmail);
-        console.log('문의 내용:', userInquiry);
-
-        // 여기서 서버로 데이터 전송 로직을 추가
-        $.ajax({
-            type: "POST",
-            url: "/QNA",
-            contentType: "application/json",
-            data: JSON.stringify({
-                qSubject: userName, // InquiryDTO의 qSubject 필드에 userName을 매핑합니다.
-                qContent: userInquiry, // InquiryDTO의 qContent 필드에 userInquiry를 매핑합니다.
-                // memNo, qNo, qIsAnswered, qCreateTime 필드는 서버 측에서 처리하거나 다른 방식으로 값을 설정해야 할 수 있습니다.
-                // 예를 들어, memNo는 현재 로그인한 사용자의 식별자, qCreateTime은 서버에서 현재 시간으로 설정 등
-            }),
-            success: function(response) {
-                // 서버로부터의 응답 처리
-                console.log('문의 전송 성공:', response);
-                alert('문의가 성공적으로 접수되었습니다. 빠른 시일 내에 답변드리겠습니다.');
-            },
-            error: function(xhr, status, error) {
-                // 오류 처리
-                console.error('문의 전송 실패:', error);
-                alert('문의 전송 중 문제가 발생했습니다. 다시 시도해주세요.');
-            }
-        });
-
-        alert('문의가 접수되었습니다. 빠른 시일 내에 답변드리겠습니다.'); // 이 부분은 실제 서버 응답에 따라 위치를 조정할 수 있습니다.
+    const data ={
+        MEM_EMAIL: userEmail,
+        MEM_NAME: userName,
+        qContent: userInquiry
     }
+
+    // 이메일 전송을 위한 서버의 API 주소로 변경
+    $.ajax({
+        type: "POST",
+        url: "/sendEmail", // 이메일 전송 API 주소로 수정
+        contentType: "application/json",
+        data: JSON.stringify(data),
+        success: function(response) {
+            alert('문의가 성공적으로 접수되었습니다. 빠른 시일 내에 답변드리겠습니다.');
+        },
+        error: function(xhr, status, error) {
+            alert('문의 전송 중 문제가 발생했습니다. 다시 시도해주세요.');
+        }
+    });
 });

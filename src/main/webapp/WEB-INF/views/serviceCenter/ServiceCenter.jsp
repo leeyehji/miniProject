@@ -83,7 +83,7 @@
                             </div>
                             </span>
                                 </div>
-                                <div>
+                                <div id="contentArea">
                                     <div class="tbl">
                                         <table class="type1">
                                             <colgroup>
