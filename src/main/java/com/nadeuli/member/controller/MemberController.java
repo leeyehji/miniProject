@@ -78,8 +78,9 @@ public class MemberController {
 
     @ResponseBody
     @PostMapping("/memberJoin")
-    public String memberJoin(@RequestBody MemberRequestDTO memberRequestDTO) {
+    public String memberJoin(@ModelAttribute MemberRequestDTO memberRequestDTO) {
         boolean memberJoinResult = memberService.memberJoin(memberRequestDTO);
+        System.out.println("memberRequestDTO = " + memberRequestDTO);
         System.out.println("memberJoinResult = " + memberJoinResult);
         if (memberJoinResult) {
             return "가입성공";
@@ -87,14 +88,6 @@ public class MemberController {
             return "가입실패";
         }
     }
-
-
-
-
-
-
-
-
 
     /*로그인 로직 */
     /*로그인 폼으로 가기*/
