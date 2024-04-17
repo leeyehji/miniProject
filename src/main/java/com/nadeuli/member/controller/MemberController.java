@@ -33,13 +33,14 @@ public class MemberController {
      */
     @ResponseBody
     @PostMapping("/checkId")
-    public Map<String, String> checkId(@RequestBody Map<String, Object> map) {
+    public Map<String, String> checkId(@RequestBody Map<String, String> requestData) {
+        String MEM_ID = requestData.get("MEM_ID");
+        System.out.println("MemberController.checkId");
+        System.out.println("MEM_ID = " + MEM_ID);
 
-        String MEM_ID = (String) map.get("MEM_ID");
         Map<String, String> response = new HashMap<>();
-        System.out.println(MEM_ID);
         boolean checkIdResult = memberService.checkId(MEM_ID);
-        System.out.println(checkIdResult);
+
         if (checkIdResult) {
             response.put("status", "exist");
         } else {
@@ -55,10 +56,12 @@ public class MemberController {
     @PostMapping("/emailCheck")
     public Map<String, String> chekcEmail(@RequestBody Map<String, Object> map) {
 
+
+
         String MEM_EMAIL = (String) map.get("MEM_EMAIL");
         Map<String, String> EmailResult = new HashMap<>();
         boolean ChekcEmailResult = memberService.checkEmail(MEM_EMAIL);
-        System.out.println("map = " + map);
+
         if (ChekcEmailResult) {
             EmailResult.put("status", "true");
         } else {
@@ -70,11 +73,12 @@ public class MemberController {
     /**
      * 회원가입
      */
+
+
+
     @ResponseBody
     @PostMapping("/memberJoin")
-    public String memberJoin(@ModelAttribute MemberRequestDTO memberRequestDTO) {
-
-        System.out.println("memberRequestDTO = " + memberRequestDTO);
+    public String memberJoin(@RequestBody MemberRequestDTO memberRequestDTO) {
         boolean memberJoinResult = memberService.memberJoin(memberRequestDTO);
         System.out.println("memberJoinResult = " + memberJoinResult);
         if (memberJoinResult) {
@@ -83,6 +87,13 @@ public class MemberController {
             return "가입실패";
         }
     }
+
+
+
+
+
+
+
 
 
     /*로그인 로직 */
