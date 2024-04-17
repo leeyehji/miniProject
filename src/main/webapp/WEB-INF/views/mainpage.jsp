@@ -69,12 +69,12 @@
 
 
     <tbody>
-    <div id="maincln">
-        <h2 id="cln">캘린더</h2>
-        <div id="datepicker"></div>
-        <!-- <input type="text" id="datepicker" /> -->
-        <div id="cldout"></div>
-    </div>
+<%--    <div id="maincln">--%>
+<%--        <h2 id="cln">캘린더</h2>--%>
+<%--        <div id="datepicker"></div>--%>
+<%--        <!-- <input type="text" id="datepicker" /> -->--%>
+<%--        <div id="cldout"></div>--%>
+<%--    </div>--%>
     </tbody>
 
     <tfoot>
