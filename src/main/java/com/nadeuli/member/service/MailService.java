@@ -8,5 +8,6 @@ public interface MailService {
 
     void sendSimpleEmail(String to, String subject, String text);
 
-//    String Emailcheck(String memEmail, String authCode, String authok);
+
+    String sendPwdEmail(String MEM_EMAIL);
 }

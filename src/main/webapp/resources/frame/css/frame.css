@@ -1,15 +1,16 @@
-/*전체*/
-html{
-    margin: 2px;
-    border: 0;
+html {
+    margin-left: -2px;
 }
+
+/*전체*/
+
 body {
     color: #224148;
     padding: 0;
     margin: 2px;
     height: 100vh;
     overflow: auto;
-    width: 1893px; /*1920 * 1080 기준 수정*/
+    width: 1903px; /*1920 * 1080 기준 수정*/
     min-height: 1080px;
     list-style-type: none;
     font-family:'Dovemayo_gothic';
@@ -98,13 +99,13 @@ hr {
 }
 
 .menu {
-    width: 1893px;
+    height: 160px;
+    width: 1903px;
     flex-direction: column;
     /* 요소들을 세로로 쌓음 */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 2px solid #CAE9FF;
 }
 
 
@@ -135,8 +136,7 @@ nav .logo {
 }
 
 .nav_section div ul li {
-    /* margin-left: 200%; */
-    width: 300px;
+    width: 130px;
     padding: 20px;
     /* 내부 여백 */
 
@@ -144,10 +144,10 @@ nav .logo {
 
 .show {
     display: flex;
-    top: 133px;
+    top: 162px;
     position: absolute;
-    width: 1893px;
-    height: 200px;
+    width: 1903px;
+    height: 250px;
     opacity: 80%;
 }
 
@@ -214,25 +214,30 @@ aside {
 
 .sub_menu.travel,
 .sub_menu.review,
-.sub_menu.event,
 .sub_menu.service-center {
     position: relative;
 }
 
 .sub_menu.travel {
     left: 595px;
+    height: 250px;
+    width: 100px;
+    display: inline-block;
 }
 
 .sub_menu.review {
-    left: 354px;
-}
-
-.sub_menu.event {
-    left: 90px;
+    left: 677px;
+    height: 250px;
+    width: 100px;
+    display: inline-block;
 }
 
 .sub_menu.service-center {
-    right: 141px;
+    height: 250px;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    left: 720px;
 }
 
 .sub_menu {
@@ -287,7 +292,9 @@ aside {
 /* 버튼 크기 조절 및 이미지 추가 */
 
 .logobar {
-    width: 1893px;
+    position: relative;
+    top: 10px;
+    width: 1903px;
     display: flex;
 }
 
@@ -504,12 +511,12 @@ input::placeholder {
 
 /*footer*/
 footer{
-    width: 1897px;
+    width: 1903px;
     background:#EEEEEE;
 }
 /*site map*/
 #siteMap{
-    width: 1897px;
+    width: 1903px;
     background:#F1F3F4;
     padding: 10px 0px 10px 0px;
     text-align:right;
@@ -585,7 +592,7 @@ footer{
 footer .tit {
     background-color: #F1F3F4;
     position: relative;
-    width: 1897px;
+    width: 1903px;
     display: flex; /* inline-block에서 flex로 변경 */
     justify-content: center; /* 가로축 중앙 정렬 */
     align-items: center; /* 세로축 중앙 정렬 */
@@ -597,7 +604,7 @@ footer .tit {
 
 footer .sns_list {
     background-color: #F1F3F4;
-    width: 1897px;
+    width: 1903px;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -701,7 +708,7 @@ footer .sns_list li:hover .icon_instagram {
     background-color: #EEEEEE;
     margin: 0px;
     padding: 0px;
-    width: 1897px;
+    width: 1903px;
     height: 60px;
     position: relative;
     text-align: center;
@@ -729,7 +736,7 @@ a:active {
 }
 
 .badak p {
-    margin-left: 270px;
+    margin-left: 20px;
     margin-top: 24px;
 }
 
@@ -740,7 +747,7 @@ a:active {
 
 footer .badak {
    	background-color: #EEEEEE;
-    width: 1897px;
+    width: 1903px;
     height: 60px;
     position: relative;
     /* 상대 위치 지정 */

@@ -23,8 +23,8 @@
             <p><input type="text" name="MEM_ID" id="MEM_ID"  placeholder="아이디 입력" onblur="checkId()"></p>
             <span id="id-dup-result"></span>
 
-            <p><input type="password" name="MEM_PWD" id="MEM_PWD" placeholder="비밀번호"></p>
-            <p><input type="password" name="MEM_PWD_CH" id="MEM_PWD_CH" placeholder="비밀번호 확인"></p>
+            <p><input type="password" name="MEM_PW" id="MEM_PW" placeholder="비밀번호"></p>
+            <p><input type="password" name="MEM_PW_CH" id="MEM_PW_CH" placeholder="비밀번호 확인"></p>
 
             <p><input type="text" name="MEM_NAME" id="MEM_NAME" placeholder="이름 입력"></p>
 

@@ -4,7 +4,7 @@
 <head>
   <link rel="icon" href="data:,">
 </head>
-
+<input type="hidden" id="isLogin" value="${sessionScope.MEM_ID}">
 <header class="banner">
 
   <div class="menu">
@@ -38,8 +38,7 @@
         <li class="a1"><a href="/">홈</a></li>
         <li class="a2"><a href="/map/map">여행지</a></li>
         <li class="a3"><a href="/review/review">후기</a></li>
-        <li class="a4"><a href="/">이벤트</a></li>
-        <li class="a5"><a href="/ServiceCenter">고객센터</a></li>
+        <li class="a5"><a href="/serviceCenter/ServiceCenter">고객센터</a></li>
       </ul>
     </div>
 
@@ -60,18 +59,11 @@
       </ul>
     </div>
 
-    <div id="이벤트" class="sub_menu event">
-      <ul>
-        <li><a href="#5">진행중인 이벤트</a></li>
-        <li><a href="#6">종료된 이벤트</a></li>
-      </ul>
-    </div>
-
     <div id="고객센터" class="sub_menu service-center">
       <ul>
-        <li><a href="ServiceCenter">공지사항</a></li>
-        <li><a href="Inquiry">1 : 1 문의</a></li>
-        <li><a href="Faq">F A Q</a></li>
+        <li><a href="/serviceCenter/ServiceCenter">공지사항</a></li>
+        <li><a href="/serviceCenter/Inquiry">1 : 1 문의</a></li>
+        <li><a href="/serviceCenter/Faq">F A Q</a></li>
       </ul>
     </div>
   </div>

@@ -1,13 +1,12 @@
 function checkId() {
     var MEM_ID = $("#MEM_ID").val(); // 아이디 입력 필드에서 값을 가져옴
-    var checkResult = $("#id-dup-result"); // 결과를 표시할 요소 선택
+    // var checkResult = $("#id-dup-result"); // 결과를 표시할 요소 선택
 
     // AJAX 요청 시작
     $.ajax({
         type: 'POST', // 요청 방식
         url: '/member/checkId', // 요청을 보낼 URL
-        contentType: 'application/json', // 전송할 데이터의 MIME 타입
-        data: JSON.stringify({MEM_ID: MEM_ID}), // 전송할 데이터
+        data: ({"MEM_ID": MEM_ID}), // 전송할 데이터
         success: function (response) {
             console.log(response.status)
             if (response.status === "exist") {

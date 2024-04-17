@@ -7,7 +7,7 @@
     <!--회원가입-->
     <insert id="memberJoin" parameterType="com.nadeuli.member.dto.MemberRequestDTO">
         INSERT INTO MEMBER (MEM_ID, MEM_PW, MEM_NAME, MEM_PHONE, MEM_EMAIL, MEM_GENDER)
-        VALUES (#{MEM_ID}, #{MEM_PWD}, #{MEM_NAME}, #{MEM_PHONE}, #{MEM_EMAIL}, #{MEM_GENDER})
+        VALUES (#{MEM_ID}, #{MEM_PW}, #{MEM_NAME}, #{MEM_PHONE}, #{MEM_EMAIL}, #{MEM_GENDER})
     </insert>
     <!--유효성 검사-->
     <select id="checkId" resultType="com.nadeuli.member.dto.MemberRequestDTO" parameterType="String" >
@@ -18,7 +18,7 @@
         SELECT *
         FROM MEMBER
         WHERE MEM_ID = #{MEM_ID}
-        AND MEM_PW = #{MEM_PWD}
+        AND MEM_PW = #{MEM_PW}
     </select>
 
     <select id="chekcEmail" resultType="com.nadeuli.member.dto.MemberRequestDTO">

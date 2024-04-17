@@ -1,3 +1,7 @@
+html {
+    margin-left: -2px;
+}
+
 /* 폰트 -----------------------------------------------------------------------*/
 
 @font-face {
@@ -18,7 +22,7 @@
 body {
     list-style-type: none;
     font-family: "ffont";
-    min-width: 1893px;
+    min-width: 1903px;
     /* 원하는 최소 너비 설정 */
     min-height: 1080px;
     /* 원하는 최소 높이 설정 */
@@ -70,9 +74,9 @@ hr {
 
 /* Slideshow container */
 .slideshow-container {
-    border-left: 2px solid #CAE9FF;
-    border-right: 2px solid #CAE9FF;
-    width: 1893px;
+    border-top: 2px solid #CAE9FF;
+    border-bottom: 2px solid #CAE9FF;
+    width: 1903px;
     position: relative;
     padding-bottom: 100px;
 }
@@ -81,7 +85,7 @@ hr {
 
 .mySlides>img {
     /* 사진 크기 */
-    width: 1893px;
+    width: 1903px;
     height: 500px;
     object-fit: cover;
 }
@@ -172,12 +176,10 @@ hr {
 
 .hot {
     border-top: 2px solid #CAE9FF;
-    border-left: 2px solid #CAE9FF;
-    border-right: 2px solid #CAE9FF;
     border-bottom: 2px solid #CAE9FF;
     padding-top: 100px;
     padding-bottom: 100px;
-    width: 1893px;
+    width: 1903px;
     justify-content: center;
     position: relative;
     text-align: center;
@@ -231,13 +233,13 @@ h2 {
 #cln {
     margin: 0px;
     height: 50px;
-    width: 1893px;
+    width: 1903px;
     padding-top: 100px;
     padding-bottom: 20px;
 }
 
 #datepicker {
-    width: 1893px;
+    width: 1903px;
     padding-bottom: 50px;
 }
 
@@ -352,16 +354,14 @@ h2 {
 }
 
 #maincln {
-    width: 1893px;
+    width: 1903px;
     border-top: 2px solid #CAE9FF;
-    border-left: 2px solid #CAE9FF;
-    border-right: 2px solid #CAE9FF;
 }
 
 /*site map*/
 
 #siteMap{
-    width: 1895px;
+    width: 1903px;
     background:#F1F3F4;
     padding: 10px 0px 10px 0px;
     text-align:right;

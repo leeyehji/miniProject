@@ -17,7 +17,7 @@ import java.util.Map;
 @Controller
 @RequestMapping(value = "/member")
 public class MemberController {
-@Autowired
+    @Autowired
     private MemberService memberService;
 
     /**
@@ -28,7 +28,6 @@ public class MemberController {
         return "member/memberJoin";
     }
 
-
     /**
      * 아이디 유효성 검사
      */
@@ -36,10 +35,10 @@ public class MemberController {
     @PostMapping("/checkId")
     public Map<String, String> checkId(@RequestBody Map<String, Object> map) {
 
-        String mem_id = (String) map.get("mem_id");
+        String MEM_ID = (String) map.get("MEM_ID");
         Map<String, String> response = new HashMap<>();
-        System.out.println(mem_id);
-        boolean checkIdResult = memberService.checkId(mem_id);
+        System.out.println(MEM_ID);
+        boolean checkIdResult = memberService.checkId(MEM_ID);
         System.out.println(checkIdResult);
         if (checkIdResult) {
             response.put("status", "exist");
@@ -56,9 +55,9 @@ public class MemberController {
     @PostMapping("/emailCheck")
     public Map<String, String> chekcEmail(@RequestBody Map<String, Object> map) {
 
-        String mem_Email = (String) map.get("mem_email");
+        String MEM_EMAIL = (String) map.get("MEM_EMAIL");
         Map<String, String> EmailResult = new HashMap<>();
-        boolean ChekcEmailResult = memberService.checkEmail(mem_Email);
+        boolean ChekcEmailResult = memberService.checkEmail(MEM_EMAIL);
         System.out.println("map = " + map);
         if (ChekcEmailResult) {
             EmailResult.put("status", "true");
@@ -67,30 +66,13 @@ public class MemberController {
         }
         return EmailResult;
     }
-    /**
-     * 이메일 유효성 검사
-     * */
-//    @PostMapping("/checkEmail")
-//    public String checkEmail(Model model, @RequestParam("mem_Email") String mem_email) {
-//        int checkEmailResult = memberService.checkEmail(mem_email);
-//
-//        // 이메일 중복 결과를 모델에 추가
-//        if (checkEmailResult <= 3) {
-//            model.addAttribute("emailCheckResult", 0); // 중복 이메일 없음
-//        } else {
-//            model.addAttribute("emailCheckResult", 1); // 중복 이메일 있음
-//        }
-//
-//        // 이메일 중복 확인 결과를 보여줄 뷰 이름 반환
-//        return "checkEmailResult"; // 해당 뷰 파일명으로 변경 필요
-//    }
 
     /**
      * 회원가입
      */
     @ResponseBody
     @PostMapping("/memberJoin")
-    public String memberJoin(@RequestBody MemberRequestDTO memberRequestDTO) {
+    public String memberJoin(@ModelAttribute MemberRequestDTO memberRequestDTO) {
 
         System.out.println("memberRequestDTO = " + memberRequestDTO);
         boolean memberJoinResult = memberService.memberJoin(memberRequestDTO);
@@ -113,10 +95,9 @@ public class MemberController {
     /**
      * 로그인 기능
      */
-
     @ResponseBody
     @PostMapping("/login")
-    public Map<String, Object> login(@RequestBody MemberRequestDTO memberRequestDTO,
+    public Map<String, Object> login(@ModelAttribute MemberRequestDTO memberRequestDTO,
                                      HttpSession session) {
         System.out.println(memberRequestDTO + " member login");
         session.removeAttribute("MEM_ID");
@@ -138,9 +119,11 @@ public class MemberController {
         // 로그인 실패 시, 세션에 사용자 ID를 저장하지 않음
         return responseMap;
     }
+
     /**
-// * 로그아웃 세션 없애기
-// * */
+     * // * 로그아웃 세션 없애기
+     * // *
+     */
     @GetMapping("/logout")
     public String logout(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
@@ -150,7 +133,7 @@ public class MemberController {
         return "redirect:/index";
     }
 
-/**
+    /**
      * 아이디 찾기 로직
      */
     @GetMapping("/findId")
@@ -158,22 +141,27 @@ public class MemberController {
         return "member/findId";
     }
 
-
+    /**
+     * 아이디 찾기
+     */
 
     @PostMapping("/lostId")
     @ResponseBody
-    public String lostId(@RequestBody MemberRequestDTO memberRequestDTO, Model model) {
-
-        //이름 이메일을 갖고가서  아이디 찾고
-        String lostId = memberService.findmemberid(memberRequestDTO);
-        if (lostId != null){
-            return "당신의 아이디는"+ lostId+"입니다.";
-        } else {
-            return "당신의 아이디는 없습니다.";
-        }
-        //찾은 아이디를 갖고와서 저장해주고 보여주기
-
+    public String lostId(@RequestBody MemberRequestDTO memberRequestDTO) {
+        // 이름과 이메일을 사용하여 아이디 찾기
+        String result = memberService.lostId(memberRequestDTO);
+        return result;
     }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -191,6 +179,17 @@ public class MemberController {
     public String findPwdForm() {
         return "member/findPwd";
     }
+
+
+
+
+
+
+    @GetMapping("/mailWindow")
+    public String mailWidowForm(){
+        return "/member/mailWindow";
+    }
+
 }
 
 
