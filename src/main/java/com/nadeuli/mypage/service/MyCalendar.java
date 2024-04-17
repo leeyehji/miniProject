@@ -51,7 +51,7 @@ public class MyCalendar implements MyCalendarService {
             hash.put("color", color);//borderColor, backgroundColor 동일하게
             hash.put("id", id);
             //textColor
-            jsonObj = JSONObject.fromObject(hash);;
+            jsonObj = JSONObject.fromObject(hash);
             jsonArr.add(jsonObj);
         }
         //log.info("jsonArrCheck: {}", jsonArr);
