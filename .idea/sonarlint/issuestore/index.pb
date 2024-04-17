@@ -2,11 +2,11 @@
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 Z
-*src/main/webapp/WEB-INF/views/mainpage.jsp,f\a\fa9f2f0b359b453de61572fa9bfcb17891bcf8a4
+*src/main/webapp/WEB-INF/views/mainpage.jsp,f/a/fa9f2f0b359b453de61572fa9bfcb17891bcf8a4
 m
-=src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml,d\3\d3e54629b9a71e7b6b2949fb63e8fbc3314079cf
+=src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml,d/3/d3e54629b9a71e7b6b2949fb63e8fbc3314079cf
 O
-src/main/webapp/WEB-INF/web.xml,2\e\2e22b6edd746fa3dc40ad7276c87c8d87d72a392
+src/main/webapp/WEB-INF/web.xml,2/e/2e22b6edd746fa3dc40ad7276c87c8d87d72a392
 c
 3src/main/webapp/resources/mypage/css/myCalendar.css,8\0\8076b09d936abafacf0bb07af0d4ff2b06e16cb0
 h
@@ -163,8 +163,6 @@ b
 2src/main/webapp/resources/review/js/reviewWrite.js,6\6\66d02fcd3e7244f23f9c3b95594566560ba21df5
 a
 1src/main/webapp/resources/review/js/reviewView.js,8\d\8d9d0b52160e963b22ecd67121c21bad8df502cb
-_
-/src/main/webapp/WEB-INF/spring/mail-context.xml,1\9\197b21bf928ffa2392d8d8cad9e3c86d2e2649c1
 }
 Msrc/main/java/com/nadeuli/serviceCenter/service/ServiceCenterServiceImpl.java,f/e/fe113de39f1ed1677da960526fa55546e0537845
 y
@@ -223,3 +221,13 @@ e
 5src/main/java/com/nadeuli/member/dto/MailAuthDTO.java,d/1/d1f565a5158e15bb60abe4c761321d39849a5d9a
 k
 ;src/main/java/com/nadeuli/member/dto/MemberResponseDTO.java,3/d/3d5126a68711cb9a4d9d88c480fe4bf85102be02
+i
+9src/main/java/com/nadeuli/member/service/MailService.java,7/8/7887aece3c2384b0e9a5ee00857e7876cce65816
+h
+8src/main/java/com/nadeuli/member/dto/NaverMemberDTO.java,f/8/f8d2c6c6d789a6f778f718127a6f5977fa9bec1c
+o
+?src/main/java/com/nadeuli/member/repository/MailRepository.java,0/9/09d77f1d2e91370061813197d1fb32ae1a757d09
+q
+Asrc/main/java/com/nadeuli/member/repository/MemberRepository.java,6/7/679b5843803cbd9f00b398f0abfecf79879768cc
+m
+=src/main/java/com/nadeuli/member/service/MailServiceImpl.java,9/7/974ca2f9b4081866e82b3f735105b021cfcf30c0
