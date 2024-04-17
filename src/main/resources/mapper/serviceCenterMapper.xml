@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="com.nadeuli.serviceCenter.dao.ServiceCenterDAO">
+
+<!--공지사항-->
+
+        <!-- 공지사항 등록 -->
+        <insert id="insertNotice" parameterType="com.nadeuli.serviceCenter.bean.NoticeDTO">
+            INSERT INTO NOTICE (MEM_no, N_Subject, N_Content, N_Writer, N_CreateTime)
+            VALUES (#{mem_No}, #{n_Subject}, #{n_Content}, #{n_Writer}, #{n_CreateTime})
+        </insert>
+
+        <!-- ID로 공지사항 찾기 -->
+        <select id="findNoticeById" parameterType="long" resultType="com.nadeuli.serviceCenter.bean.NoticeDTO">
+            SELECT * FROM NOTICE WHERE N_No = #{n_No}
+        </select>
+
+        <!-- 모든 공지사항 조회 -->
+        <select id="findAllNotices" resultType="com.nadeuli.serviceCenter.bean.NoticeDTO">
+            SELECT * FROM NOTICE
+        </select>
+
+        <!-- 공지사항 수정 -->
+        <update id="updateNotice" parameterType="com.nadeuli.serviceCenter.bean.NoticeDTO">
+            UPDATE NOTICE
+            SET N_Subject = #{n_Subject}, N_Content = #{n_Content}, N_Writer = #{n_Writer}
+            WHERE N_No = #{n_No}
+        </update>
+
+        <!-- 공지사항 삭제 -->
+        <delete id="deleteNotice" parameterType="long">
+            DELETE FROM NOTICE WHERE N_No = #{n_No}
+        </delete>
+
+<!--  문의하기  -->
+    <!-- 문의 등록 -->
+    <insert id="insertInquiry" parameterType="com.nadeuli.serviceCenter.bean.InquiryDTO">
+        INSERT INTO QNA (MEM_No, Q_Subject, Q_Content, Q_CreateTime, Q_IsAnswered)
+        VALUES (#{mem_No}, #{q_Subject}, #{q_Content}, #{q_CreateTime}, #{q_IsAnswered})
+    </insert>
+
+    <!-- ID로 문의 찾기 -->
+    <select id="findInquiryById" parameterType="integer" resultType="com.nadeuli.serviceCenter.bean.InquiryDTO">
+        SELECT * FROM QNA WHERE Q_No = #{q_No}
+    </select>
+
+    <!-- 모든 문의 조회 -->
+    <select id="findAllInquiries" resultType="com.nadeuli.serviceCenter.bean.InquiryDTO">
+        SELECT * FROM QNA
+    </select>
+
+    <!-- 답변된 문의 조회 -->
+    <select id="findInquiriesByAnswered" parameterType="integer" resultType="com.nadeuli.serviceCenter.bean.InquiryDTO">
+        SELECT * FROM QNA WHERE Q_IsAnswered = #{q_IsAnswered}
+    </select>
+
+    <!-- 문의 수정 -->
+    <update id="updateInquiry" parameterType="com.nadeuli.serviceCenter.bean.InquiryDTO">
+        UPDATE QNA
+        SET Q_Subject = #{Q_Subject}, Q_Content = #{q_Content}, q_IsAnswered = #{q_IsAnswered}
+        WHERE Q_No = #{q_No}
+    </update>
+
+    <!-- 문의 삭제 -->
+    <delete id="deleteInquiry" parameterType="integer">
+        DELETE FROM QNA WHERE Q_No = #{q_No}
+    </delete>
+
+<!--Faq-->
+    <!-- FAQ 등록 -->
+    <insert id="insertFaq" parameterType="com.nadeuli.serviceCenter.bean.FaqDTO">
+        INSERT INTO FAQ (MEM_No, FAQ_Subject, FAQ_Content, FAQ_CreateTime)
+        VALUES (#{mem_No}, #{faq_Subject}, #{faq_Content}, #{faq_CreateTime})
+    </insert>
+
+    <!-- FAQ 번호로 찾기 -->
+    <select id="findFaqByNo" parameterType="integer" resultType="com.nadeuli.serviceCenter.bean.FaqDTO">
+        SELECT * FROM FAQ WHERE FAQ_No = #{faqNo}
+    </select>
+
+    <!-- 모든 FAQ 조회 -->
+    <select id="findAllFaqs" resultType="com.nadeuli.serviceCenter.bean.FaqDTO">
+        SELECT * FROM FAQ
+    </select>
+
+    <!-- FAQ 수정 -->
+    <update id="updateFaq" parameterType="com.nadeuli.serviceCenter.bean.FaqDTO">
+        UPDATE FAQ
+        SET faqSubject = #{FAQ_Subject}, FAQ_Content = #{faq_Content}
+        WHERE FAQ_No = #{fap_No}
+    </update>
+
+    <!-- FAQ 삭제 -->
+    <delete id="deleteFaq" parameterType="integer">
+        DELETE FROM FAQ WHERE FAQ_No = #{fap_No}
+    </delete>
+
+</mapper>
