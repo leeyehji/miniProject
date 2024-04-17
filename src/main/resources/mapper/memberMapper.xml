@@ -6,8 +6,8 @@
 
     <!--회원가입-->
     <insert id="memberJoin" parameterType="com.nadeuli.member.dto.MemberRequestDTO">
-        INSERT INTO MEMBER (MEM_ID, MEM_PW, MEM_NAME, MEM_PHONE, MEM_EMAIL, MEM_GENDER)
-        VALUES (#{MEM_ID}, #{MEM_PW}, #{MEM_NAME}, #{MEM_PHONE}, #{MEM_EMAIL}, #{MEM_GENDER})
+        INSERT INTO MEMBER (MEM_ID, MEM_PW, MEM_NAME, MEM_PHONE, MEM_EMAIL, MEM_GENDER,MEM_JOINWAY)
+        VALUES (#{MEM_ID}, #{MEM_PW}, #{MEM_NAME}, #{MEM_PHONE}, #{MEM_EMAIL}, #{MEM_GENDER} ,'D')
     </insert>
     <!--유효성 검사-->
     <select id="checkId" resultType="com.nadeuli.member.dto.MemberRequestDTO" parameterType="String" >
