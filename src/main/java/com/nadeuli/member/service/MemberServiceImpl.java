@@ -60,6 +60,7 @@ public class MemberServiceImpl implements MemberService {
             return false;
         }
     }
+
     @Override
     public MemberRequestDTO processOAuthUser(String MEM_EMAIL, String MEM_ID) {
         return null;
