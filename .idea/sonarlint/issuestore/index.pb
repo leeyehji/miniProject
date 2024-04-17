@@ -233,3 +233,7 @@ m
 =src/main/java/com/nadeuli/member/service/MailServiceImpl.java,9/7/974ca2f9b4081866e82b3f735105b021cfcf30c0
 _
 /src/main/webapp/WEB-INF/spring/mail-context.xml,1/9/197b21bf928ffa2392d8d8cad9e3c86d2e2649c1
+o
+?src/main/java/com/nadeuli/member/service/NaverLoginService.java,f/2/f2b9911c50582039ecd94acfd11d8fa3aa2fff88
+k
+;src/main/java/com/nadeuli/member/service/NaverLoginApi.java,0/c/0c9cc75dde5e74e40db5eccb9a6af76cc4221586

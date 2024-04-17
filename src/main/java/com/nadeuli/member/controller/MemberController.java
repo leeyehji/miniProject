@@ -121,6 +121,7 @@ public class MemberController {
             responseMap.put("MEM_ID", memberRequestDTO.getMEM_ID());
         }
         // 로그인 실패 시, 세션에 사용자 ID를 저장하지 않음
+        System.out.println(session);
         return responseMap;
     }
 

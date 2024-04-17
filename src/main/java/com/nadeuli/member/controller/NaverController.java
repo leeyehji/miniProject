@@ -73,13 +73,11 @@ public class NaverController {
             }else{
                 memberDTO.setMEM_GENDER(0);
             }
-            System.out.println(memberDTO);
-            System.out.println("memberDTO = " + memberDTO);
-             
-             
+
 
             MemberRequestDTO memberRequestDTO = naverLoginService.processOAuthUser(memberDTO);
-             session.setAttribute("member", memberRequestDTO);
+             session.setAttribute("MEM_ID", memberRequestDTO.getMEM_ID());
+            System.out.println("memberRequestDTO = " + memberRequestDTO.getMEM_ID());
 //            mav.addObject("memberEmail", mem_email);
             mav.setViewName("redirect:/"); // 로그인 후 리다이렉트할 페이지 설정
         } catch (Exception e) {
