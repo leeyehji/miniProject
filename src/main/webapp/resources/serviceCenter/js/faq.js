@@ -140,7 +140,7 @@ function showPopup(edit = false) {
             if (newTitle.trim() !== "" && newText.trim() !== "") {
                 // Ajax 요청을 여기에 추가
                 $.ajax({
-                    url: "/getFaq",
+                    url: "/Faq",
                     type: "POST",
                     contentType: "application/json",
                     data: JSON.stringify({

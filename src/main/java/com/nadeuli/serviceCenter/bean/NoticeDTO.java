@@ -17,5 +17,4 @@ public class NoticeDTO {
         private String nContent;
         private String nWriter;
         private LocalDateTime nCreateTime;
-
 }
