@@ -22,7 +22,7 @@ public class ServiceCenterController {
         this.serviceCenterService = serviceCenterService;
     }
 
-    @GetMapping(value = "/ServiceCenter")
+    @GetMapping(value = "/serviceCenter/ServiceCenter")
     public String getServiceCenter(Model model) {
         model.addAttribute("notices", serviceCenterService.findAllNotices());
         model.addAttribute("inquiries", serviceCenterService.findAllInquiries());
@@ -36,13 +36,13 @@ public class ServiceCenterController {
         return "serviceCenter/NoticeDetail";
     }
 
-    @GetMapping(value = "/Inquiry")
+    @GetMapping(value = "/serviceCenter/Inquiry")
     public String getInquiry(Model model) {
         model.addAttribute("inquiries", serviceCenterService.findAllInquiries());
         return "serviceCenter/Inquiry";
     }
 
-    @GetMapping(value = "/Faq")
+    @GetMapping(value = "/serviceCenter/Faq")
     public String getFaq(Model model) {
         model.addAttribute("faqs", serviceCenterService.findAllFaqs());
         return "serviceCenter/Faq";
