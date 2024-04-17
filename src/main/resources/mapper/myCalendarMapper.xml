@@ -5,12 +5,12 @@
  
  <mapper namespace="com.nadeuli.mypage.dao.MyCalendarDAO">
  	<insert id="calWrite" parameterType="com.nadeuli.mypage.dto.CalDTO">
-		insert into USER_CALENDAR (CAL_STARTDATE, CAL_ENDDATE,CAL_TITLE, CAL_MEMO, CAL_COLOR, CAL_BOARDNO) 
-						values(#{cal_startDate}, #{cal_endDate}, #{cal_title}, #{cal_memo}, #{cal_color}, #{cal_boardNo})
+		insert into USER_CALENDAR (MEM_NO, CAL_STARTDATE, CAL_ENDDATE,CAL_TITLE, CAL_MEMO, CAL_COLOR, CAL_BOARDNO) 
+						values((select MEM_NO from MEMBER where MEM_ID = #{mem_id}), #{cal_startDate}, #{cal_endDate}, #{cal_title}, #{cal_memo}, #{cal_color}, #{cal_boardNo})
 	</insert>
 	
-	<select id="calList" resultType="com.nadeuli.mypage.dto.CalDTO">
-		select * from USER_CALENDAR
+	<select id="calList"  parameterType="String" resultType="com.nadeuli.mypage.dto.CalDTO">
+		select * from USER_CALENDAR where MEM_NO = (select MEM_NO from MEMBER where MEM_ID = #{memId})
 	</select>
 	
 	<delete id="calDelete" parameterType="int">

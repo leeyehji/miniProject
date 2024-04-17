@@ -1,10 +1,19 @@
 
 $(function(){
 	//로그인이 안되어 있다면
-	//console.log($('#memId').text());
-	/*if( $('#memId').text() === '' ){
-        location.href='/mypage/plzLogin';
-    }*/
+	$.ajax({
+		type:'post'
+		,url:'/mypage/getMemId'
+		,success: function(data){
+			if(data == '' || data == null){
+				//alert("로그인을 해 주세요.");
+				location.href='/mypage/plzLogin';
+			}else{
+				$('#memId').text(data);
+				console.log("id = "+data);
+			}
+		}
+	});
     
 	/* 프로필 사진 출력 - id를 보고 프로필 사진 출력. 만약 null 이면 이미지 태그 삭제. imageFileName은 id와 동일한 것으로 사용자가 넣는 것이 아님. service에서 넣어버림.*/
 	$.ajax({
@@ -135,8 +144,8 @@ $(function(){
 		dateList.done(function(data){
 			//이번달만 나오도록.
 			console.log(data);
-			console.log(data[0].start);//yyyy-MM-dd T HH:MM:SS.sss +09:00
-			console.log(data[28].end);
+			//console.log(data[0].start);//yyyy-MM-dd T HH:MM:SS.sss +09:00
+			//console.log(data[28].end);
 			//console.log(data[data.size].end);
 		});
 	/* 캘린더 선택 */
@@ -182,5 +191,14 @@ $(function(){
        	}//#selectDate
     });//datepicker 
     
+    $('#myBoard').click(function(){
+    	$.ajax({
+           		type:'post'
+           		,url:'/mypage/getMyBoardList'
+           		,success:function(data){
+           			console.log(data);
+           		}
+        });//ajax
+    });//click.myBoard
     
 });//function()

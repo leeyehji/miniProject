@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.TimeZone;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -45,14 +46,17 @@ public class MyCalendarController {
 	
 	@PostMapping(value = "calWrite")
 	@ResponseBody
-	public void write(@ModelAttribute CalDTO calDTO) {
+	public void write(@ModelAttribute CalDTO calDTO, HttpSession session) {
+		String memId = (String) session.getAttribute("MEM_ID");
+		calDTO.setMem_id(memId);
 		myCalendarService.calWrite(calDTO);
 	}
 	
 	@PostMapping(value = "calList")
 	@ResponseBody
-	public List<Map<String, Object>> calList() {
-		List<Map<String, Object>> listAll = myCalendarService.calList();   	
+	public List<Map<String, Object>> calList(HttpSession session) {
+		String memId = (String) session.getAttribute("MEM_ID");
+		List<Map<String, Object>> listAll = myCalendarService.calList(memId);   	
         return listAll;
 	}
 	

@@ -19,7 +19,7 @@
 	</select>
 	
 	<select id="getSchedule" parameterType="java.util.Map" resultType="com.nadeuli.mypage.dto.CalDTO">
-    	select * from USER_CALENDAR where <![CDATA[ #{selectStart}>=CAL_STARTDATE ]]> and <![CDATA[ #{selectEnd}<=CAL_ENDDATE ]]>
+    	select * from USER_CALENDAR where MEM_NO = (SELECT MEM_NO FROM MEMBER WHERE MEM_ID = #{memId}) AND <![CDATA[ #{selectStart}>=CAL_STARTDATE ]]> and <![CDATA[ #{selectEnd}<=CAL_ENDDATE ]]>
 	</select>
 
 	<update id="setProfileImg" parameterType="com.nadeuli.mypage.dto.MemberDTO">
@@ -29,4 +29,13 @@
 	<update id="deleteFile" parameterType="com.nadeuli.mypage.dto.MemberDTO">
 		update MEMBER set MEM_PROFILEIMAGE = null where MEM_ID = #{mem_id} 
 	</update>
+	
+	<select id="getMyBoardList" parameterType="java.util.Map" resultType="com.nadeuli.review.bean.ReviewDTO">
+        select * from BOARD order by B_NO desc limit #{startNum}, 6 where MEM_NO = (select MEM_NO from MEMBER where MEM_ID = #{mem_id})
+    </select>
+    
+    <select id="getTotalA" parameterType="String" resultType="int">
+        select count(*) from BOARD where MEM_NO = (select MEM_NO from MEMBER where MEM_ID = #{mem_id})
+    </select>
+    
  </mapper>

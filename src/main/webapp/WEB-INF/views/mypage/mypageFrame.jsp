@@ -24,36 +24,10 @@
 		<div id="userIntro">
 			<div id="userIntroContent">
 				
-				<!-- <table>
-					<tr>
-						<th>아이디</th>
-						<td><p id="memId">hong</p></td>
-					</tr>
-					<tr>
-						<th>이름</th>
-						<td><p id="memName"></p></td>
-					</tr>
-					<tr>
-						<th>전화번호</th>
-						<td><p id="memPhone"></p></td>
-					</tr>
-					<tr>
-						<th>이메일</th>
-						<td><p id="memEmail"></p></td>
-					</tr>
-					<tr>
-						<th>성별</th>
-						<td><p id="memGender"></p></td>
-					</tr>
-					<tr>
-						<th>가입일</th>
-						<td><p id="memJoinDate"></p></td>
-					</tr>
-				</table> -->
 				<div class="horizonBox">
 					<div class="verticalBox">
 						<div>&#9812; 아이디</div>
-						<div><p id="memId">hong</p></div>
+						<div><p id="memId"></p></div>
 					</div>
 					
 					<div class="verticalBox">
@@ -111,7 +85,7 @@
 			</div>
 		</div>
 		<div class="btnRight">
-				<input type="button" onclick="location.href='/mypage/myBoard'" value="대표글 변경" class="mypageChangeBtn">		
+				<input type="button" id="goMyBoard" onclick="location.href='/mypage/myBoard'" value="대표글 변경" class="mypageChangeBtn">		
 		</div>
 			
 		

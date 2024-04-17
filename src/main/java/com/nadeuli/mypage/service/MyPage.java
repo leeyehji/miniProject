@@ -19,6 +19,8 @@ import com.nadeuli.mypage.dao.MyCalendarDAO;
 import com.nadeuli.mypage.dao.MypageDAO;
 import com.nadeuli.mypage.dto.CalDTO;
 import com.nadeuli.mypage.dto.MemberDTO;
+import com.nadeuli.review.bean.ReviewDTO;
+import com.nadeuli.review.bean.ReviewPagingDTO;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -27,6 +29,8 @@ import net.sf.json.JSONObject;
 public class MyPage implements MypageService {
 	@Autowired
 	private MypageDAO mypageDAO;
+	@Autowired
+    private ReviewPagingDTO reviewPagingDTO;
 	
 	@Autowired
 	private ObjectStorageService objectStorageService;
@@ -74,7 +78,7 @@ public class MyPage implements MypageService {
 	@Override
 	public List<Map<String, Object>> getSchedule(Map<String, Object> map) {
 		String selectedDate = map.get("selectedDate").toString();
-	    map.put("selectStart", selectedDate+ " 23:59:59");
+		map.put("selectStart", selectedDate+ " 23:59:59");
 	    map.put("selectEnd", selectedDate+ " 00:00:01");
 		List<CalDTO> listAll = mypageDAO.getSchedule(map);
 		
@@ -135,6 +139,34 @@ public class MyPage implements MypageService {
 		
 		//MySQL 삭제
 		mypageDAO.deleteFile(memberDTO);
+	}
+	
+	@Override
+	public Map<String, Object> getMyBoardList(String pg, String id) {
+		//1페이지당 3개씩 - MySQL
+        int startNum = Integer.parseInt(pg) * 6 - 6; //시작위치는 0부터
+        
+        Map<String, Object> tempMap = new HashMap<String, Object>();
+        tempMap.put("startNum", startNum);
+        tempMap.put("mem_id", id);
+        //List객체가 JSON으로 자동 변환된다. - pom.xml <dependency>에 추가해야 함
+        List<ReviewDTO> list = mypageDAO.getMyBoardList(tempMap);
+
+        //페이징 처리
+        int totalA = mypageDAO.getTotalA(id); //총글수
+
+        reviewPagingDTO.setCurrentPage(Integer.parseInt(pg));
+        reviewPagingDTO.setPageBlock(5);
+        reviewPagingDTO.setPageSize(6);
+        reviewPagingDTO.setTotalA(totalA);
+        reviewPagingDTO.makePaingHTML();
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("list", list);
+        map.put("reviewPaging", reviewPagingDTO);
+        map.put("totalA", totalA);
+
+        return map;
 	}
 	
 }

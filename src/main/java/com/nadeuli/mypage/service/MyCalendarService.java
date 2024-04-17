@@ -9,7 +9,7 @@ public interface MyCalendarService {
 	
 	public void calWrite(CalDTO calDTO);
 
-	public List<Map<String, Object>> calList();
+	public List<Map<String, Object>> calList(String memId);
 
 	public void calDelete(int calDTO);
 

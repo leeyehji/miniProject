@@ -11,7 +11,7 @@ public interface MyCalendarDAO {
 	
 	public void calWrite(CalDTO calDTO);
 
-	public List<CalDTO> calList();
+	public List<CalDTO> calList(String memId);
 
 	public void calDelete(int cal_no);
 

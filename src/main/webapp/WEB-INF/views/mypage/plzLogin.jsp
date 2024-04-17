@@ -8,8 +8,7 @@
 
 <!-- css -->
 <link rel="stylesheet" type="text/css" href="/frame/css/frame.css">
-<link rel="stylesheet" type="text/css" href="/mypage/css/plzLogin.css">
-    
+<!-- <link rel="stylesheet" type="text/css" href="/mypage/css/plzLogin.css">-->    
     
 </head>
 <body> <header><jsp:include page="../frame/header.jsp"></jsp:include></header>
@@ -30,5 +29,6 @@
 	
 </body>
 <!-- js -->
+<script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
 <script src="/frame/js/frame.js"></script>
 </html>

@@ -1,9 +1,4 @@
 $(function(){
-	//로그인이 안되어 있다면
-	//console.log($('#memId').text());
-	/*if( $('#memId').text() === '' ){
-        location.href='/mypage/plzLogin';
-    }*/
     
 	/* 캘린더 기본 세팅 */
 	$("#startDate").datepicker({

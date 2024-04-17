@@ -5,10 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	$(function(){
 		//로그인이 안되어 있다면
-		//console.log($('#memId').text());
-		/*if( $('#memId').text() === '' ){
-        	location.href='/mypage/plzLogin';
-    	}*/
+		$.ajax({
+		type:'post'
+		,url:'/mypage/getMemId'
+		,success: function(data){
+			if(data == '' || data == null){
+				//alert("로그인을 해 주세요.");
+				location.href='/mypage/plzLogin';
+			}else
+				console.log("id = "+data);
+		}
+	});
 		
 		$("#startDateUpdate").datepicker({
 			changeMonth:true,

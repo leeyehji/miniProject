@@ -1,10 +1,19 @@
 /* 회원정보 수정 */
 $(function(){
-	//로그인이 안되어 있다면
-	//console.log($('#memId').text());
-	/*if( $('#memId').text() === '' ){
-        location.href='/mypage/plzLogin';
-    }*/
+	var memId;
+	$.ajax({
+		type:'post'
+		,url:'/mypage/getMemId'
+		,success: function(data){
+			if(data == '' || data == null){
+				//alert("로그인을 해 주세요.");
+				location.href='/mypage/plzLogin';
+			}else{
+				memId = data;
+				console.log("id = "+data);
+			}
+		}
+	});
     
 	console.log($('#updateId').val());
 

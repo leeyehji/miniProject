@@ -15,4 +15,5 @@ public class CalDTO {
 	private String cal_color;
 	private String cal_boardNo;
 	private int cal_no;
+	private String mem_id;
 }

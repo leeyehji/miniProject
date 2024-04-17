@@ -27,5 +27,7 @@ public interface MypageService {
 
 	MemberDTO getUserDTO(String memId);
 
+	public Map<String, Object> getMyBoardList(String pg, String id);
+
 
 }
