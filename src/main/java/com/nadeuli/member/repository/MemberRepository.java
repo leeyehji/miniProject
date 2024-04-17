@@ -12,7 +12,7 @@ public interface MemberRepository {
 
      MemberRequestDTO login(MemberRequestDTO memberRequestDTO);
 
-    int memberJoin(MemberRequestDTO memberRequestDTO);
+    void memberJoin(MemberRequestDTO memberRequestDTO);
 
     MemberRequestDTO checkId(String MEM_ID);
 

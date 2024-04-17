@@ -45,7 +45,9 @@ public class MemberServiceImpl implements MemberService {
     회원가입*/
     @Override
     public boolean memberJoin(MemberRequestDTO memberRequestDTO) {
+
         if(memberRequestDTO .getMEM_PW()!= null){
+            memberRepository.memberJoin(memberRequestDTO);
             return true;
         }
         return false;

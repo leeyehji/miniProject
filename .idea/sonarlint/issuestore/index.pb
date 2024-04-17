@@ -231,3 +231,5 @@ q
 Asrc/main/java/com/nadeuli/member/repository/MemberRepository.java,6/7/679b5843803cbd9f00b398f0abfecf79879768cc
 m
 =src/main/java/com/nadeuli/member/service/MailServiceImpl.java,9/7/974ca2f9b4081866e82b3f735105b021cfcf30c0
+_
+/src/main/webapp/WEB-INF/spring/mail-context.xml,1/9/197b21bf928ffa2392d8d8cad9e3c86d2e2649c1

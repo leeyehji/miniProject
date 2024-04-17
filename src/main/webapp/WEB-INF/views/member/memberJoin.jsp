@@ -36,8 +36,8 @@
 
 
             <p class="MEM_GENDER">
-                <label for="male">남자 <input type="radio" name="mem_gender[]" id="male" value="male"></label>
-                <label for="female">여자 <input type="radio" name="mem_gender[]" id="female" value="female"></label>
+                <label for="male">남자 <input type="radio" name="MEM_GENDER" id="male" value="male"></label>
+                <label for="female">여자 <input type="radio" name="mem_gender" id="female" value="female"></label>
             </p>
             <p><input type="button" value="회원가입" class="signup_btn" onclick="memberJoin()"></p>
             <p class="pre_btn">
