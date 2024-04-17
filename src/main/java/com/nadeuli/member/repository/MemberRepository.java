@@ -25,5 +25,11 @@ public interface MemberRepository {
 
 
 
-    MemberRequestDTO findmemberid(String MEM_NAME, String MEM_EMAIL);
+    //아이디 찾기
+    String findMemberIdByNameAndEmail(@Param("MEM_NAME") String MEM_NAME,@Param("MEM_EMAIL") String MEM_EMAIL);
+    boolean existsByMEM_NAME(String memName);
+    //아이디 찾기
+    boolean existsByMEM_EMAIL(String memEmail);
+
+
 }

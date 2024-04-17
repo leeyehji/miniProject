@@ -5,10 +5,7 @@ import com.nadeuli.member.service.MailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/member")
@@ -28,6 +25,17 @@ public class MailController {
             return "이메일 전송에 실패하였습니다.";
         }
     }
+
+    @PostMapping("findPwd")
+    public String findPwd(@RequestParam String MEM_EMAIL){
+        String findPWdCod = mailService.sendPwdEmail(MEM_EMAIL);
+        if(findPWdCod != null){
+            return findPWdCod;
+        }return "email 전송 실패 ";
+    }
+
+
+
 
 //단순 이메일 발송
     @PostMapping("/sendSimpleEmail")

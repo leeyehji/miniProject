@@ -98,9 +98,6 @@ public class NaverLoginServiceImpl implements NaverLoginService {
     @Override
     public MemberRequestDTO processOAuthUser(MemberRequestDTO memberDTO) {
 
-
-
-
         MemberRequestDTO existingMember = memberRepository.findByEmailAndMemId(memberDTO.getMEM_ID(), memberDTO.getMEM_EMAIL());
 
         if (existingMember != null) {

@@ -2,6 +2,7 @@ package com.nadeuli.member.repository;
 
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 
@@ -11,5 +12,7 @@ import org.springframework.stereotype.Repository;
 public interface MailRepository {
 
 
-    void authMailSave(String MEM_EMAIL, String authstr);
+    void authMailSave(@Param(value="email") String MEM_EMAIL,@Param(value="authstr") String authstr);
+
+    void findpwdemail(@Param(value = "email")String MEM_Email, @Param(value="pwdemail") String pwdemail);
 }
