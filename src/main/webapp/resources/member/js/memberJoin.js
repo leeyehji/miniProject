@@ -7,8 +7,8 @@ function memberJoin() {
     // HTML 폼에서 사용자 입력 데이터 가져오기
     var formData = {
         MEM_ID: $("#MEM_ID").val(),
-        MEM_PWD: $("#MEM_PWD").val(),
-        MEM_PWD_CH: $("#MEM_PWD_CH").val(), // 비밀번호 확인 값 추가
+        MEM_PW: $("#MEM_PW").val(),
+        MEM_PW_CH: $("#MEM_PW_CH").val(), // 비밀번호 확인 값 추가
         MEM_NAME: $("#MEM_NAME").val(),
         MEM_PHONE: $("#MEM_PHONE").val(),
         MEM_EMAIL: $("#MEM_EMAIL").val(),
@@ -26,12 +26,12 @@ function memberJoin() {
         return;
     }
 
-    if (formData.MEM_PWD.length < 6 || formData.MEM_PWD.length > 20) {
+    if (formData.MEM_PW.length < 6 || formData.MEM_PW.length > 20) {
         alert("비밀번호는 6자 이상 20자 이하로 입력해주세요.");
         return;
     }
 
-    if (formData.MEM_PWD !== formData.MEM_PWD_CH) { // 비밀번호와 비밀번호 확인 값이 다른 경우
+    if (formData.MEM_PW !== formData.MEM_PW_CH) { // 비밀번호와 비밀번호 확인 값이 다른 경우
         alert("비밀번호가 일치하지 않습니다.");
         return;
     }
@@ -40,8 +40,7 @@ function memberJoin() {
     $.ajax({
         type: "POST",
         url: "/member/memberJoin",
-        contentType: "application/json",
-        data: JSON.stringify(formData),
+        data: (formData),
         success: function(response) {
             alert("가입이 완료되었습니다.");
         },

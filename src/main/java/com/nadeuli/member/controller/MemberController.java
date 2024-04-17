@@ -35,10 +35,10 @@ public class MemberController {
     @PostMapping("/checkId")
     public Map<String, String> checkId(@RequestBody Map<String, Object> map) {
 
-        String mem_id = (String) map.get("mem_id");
+        String MEM_ID = (String) map.get("MEM_ID");
         Map<String, String> response = new HashMap<>();
-        System.out.println(mem_id);
-        boolean checkIdResult = memberService.checkId(mem_id);
+        System.out.println(MEM_ID);
+        boolean checkIdResult = memberService.checkId(MEM_ID);
         System.out.println(checkIdResult);
         if (checkIdResult) {
             response.put("status", "exist");
@@ -55,9 +55,9 @@ public class MemberController {
     @PostMapping("/emailCheck")
     public Map<String, String> chekcEmail(@RequestBody Map<String, Object> map) {
 
-        String mem_Email = (String) map.get("mem_email");
+        String MEM_EMAIL = (String) map.get("MEM_EMAIL");
         Map<String, String> EmailResult = new HashMap<>();
-        boolean ChekcEmailResult = memberService.checkEmail(mem_Email);
+        boolean ChekcEmailResult = memberService.checkEmail(MEM_EMAIL);
         System.out.println("map = " + map);
         if (ChekcEmailResult) {
             EmailResult.put("status", "true");
@@ -72,7 +72,7 @@ public class MemberController {
      */
     @ResponseBody
     @PostMapping("/memberJoin")
-    public String memberJoin(@RequestBody MemberRequestDTO memberRequestDTO) {
+    public String memberJoin(@ModelAttribute MemberRequestDTO memberRequestDTO) {
 
         System.out.println("memberRequestDTO = " + memberRequestDTO);
         boolean memberJoinResult = memberService.memberJoin(memberRequestDTO);
