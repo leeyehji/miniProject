@@ -7,15 +7,22 @@ a{
 	cursor : pointer;
 
 }
+
+
 #themaBoardContentConsole {
 	display: flex;
 	display: inline-block;
+	margin-top: 10px;
 }
 
 #title{
 	font-weight:bold;
 	font-size:20px;
 	margin-bottom: 20px;
+	margin-left: 20px;
+}
+#themaDataList{
+	margin-left: 20px;
 }
 
 #themaTags button {

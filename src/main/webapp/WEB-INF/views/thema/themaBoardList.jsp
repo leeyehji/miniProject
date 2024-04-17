@@ -48,14 +48,14 @@
                         <option>소분류 선택</option>
                     </select>
                 </div>
-                <div id="themaTags">
-                    <button class="themaTag">#전체보기</button>
-                    <button class="themaTag">#태그1</button>
-                    <button class="themaTag">#태그2</button>
-                    <button class="themaTag">#태그3</button>
-                    <button class="themaTag">#태그4</button>
-                    <button class="themaTag">#태그5</button>
-                </div>
+<%--                <div id="themaTags">--%>
+<%--                    <button class="themaTag">#전체보기</button>--%>
+<%--                    <button class="themaTag">#태그1</button>--%>
+<%--                    <button class="themaTag">#태그2</button>--%>
+<%--                    <button class="themaTag">#태그3</button>--%>
+<%--                    <button class="themaTag">#태그4</button>--%>
+<%--                    <button class="themaTag">#태그5</button>--%>
+<%--                </div>--%>
 
                 <div id="themaBoardContentConsole">
 
