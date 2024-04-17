@@ -32,20 +32,26 @@
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
             <div class="numbertext"></div>
-            <img src="../../resources/mainpage/css/image/slide1.jpeg">
-            <div class="text">내용입력</div>
+            <a href="http://223.130.130.226:8090/thema/themaDetailPage?contentNo=129&typeId=12">
+                <img src="../../resources/mainpage/image/경복궁.jpeg" alt="경복궁" >
+            </a>
+            <div class="text">경복궁</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext"></div>
-            <img src="../../resources/mainpage/css/image/slide2.jpeg">
-            <div class="text">내용입력</div>
+            <a href="http://223.130.130.226:8090/thema/themaDetailPage?contentNo=3507&typeId=14">
+                <img src="../../resources/mainpage/image/코엑스.jpeg" alt="코엑스" >
+            </a>
+            <div class="text">코엑스</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext"></div>
-            <img src="../../resources/mainpage/css/image/slide3.jpeg">
-            <div class="text">내용입력</div>
+            <a href="http://223.130.130.226:8090/thema/themaDetailPage?contentNo=1628&typeId=28">
+                <img src="../../resources/mainpage/image/서울숲클라이밍.jpeg" alt="서울숲클라이밍" >
+            </a>
+            <div class="text">서울숲클라이밍</div>
         </div>
 
         <!-- Next and previous buttons -->
@@ -69,12 +75,12 @@
 
 
     <tbody>
-<%--    <div id="maincln">--%>
-<%--        <h2 id="cln">캘린더</h2>--%>
-<%--        <div id="datepicker"></div>--%>
-<%--        <!-- <input type="text" id="datepicker" /> -->--%>
-<%--        <div id="cldout"></div>--%>
-<%--    </div>--%>
+    <%--    <div id="maincln">--%>
+    <%--        <h2 id="cln">캘린더</h2>--%>
+    <%--        <div id="datepicker"></div>--%>
+    <%--        <!-- <input type="text" id="datepicker" /> -->--%>
+    <%--        <div id="cldout"></div>--%>
+    <%--    </div>--%>
     </tbody>
 
     <tfoot>
@@ -84,38 +90,38 @@
         <div class="destination-grid">
             <div class="destination-card">
                 <a>
-                    <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
+                    <p></p>
+                    <img src="" alt="" class="thumb"/>
+                    <h3></h3>
                 </a>
-                <h3></h3>
-                <p></p>
             </div>
             <div class="destination-card">
                 <a>
-                    <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
+                    <p></p>
+                    <img src="" alt="" class="thumb"/>
+                    <h3></h3>
                 </a>
-                <h3></h3>
-                <p></p>
             </div>
             <div class="destination-card">
                 <a>
-                    <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
+                    <p></p>
+                    <img src="" alt="" class="thumb"/>
+                    <h3></h3>
                 </a>
-                <h3></h3>
-                <p></p>
             </div>
             <div class="destination-card">
                 <a>
-                    <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
+                    <p></p>
+                    <img src="" alt="" class="thumb"/>
+                    <h3></h3>
                 </a>
-                <h3></h3>
-                <p></p>
             </div>
             <div class="destination-card">
                 <a>
-                    <img src="" alt="" class="thumb" style="width: 120px; height: 80px;"/>
+                    <p></p>
+                    <img src="" alt="" class="thumb"/>
+                    <h3></h3>
                 </a>
-                <h3></h3>
-                <p></p>
             </div>
         </div>
     </section>
