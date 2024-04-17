@@ -83,7 +83,7 @@ hr {
 
 /* Hide the images by default */
 
-.mySlides>img {
+.mySlides a img {
     /* 사진 크기 */
     width: 1903px;
     height: 500px;
@@ -195,36 +195,47 @@ h2 {
 .destination-grid {
     display: grid;
     gap: 1px;
+    height: 260px;
     grid-template-columns: repeat(5, 1fr);
     /* 두 개의 열을 동일한 너비로 설정 */
 }
 
 .destination-card {
-    border: 1px solid #ddd;
+    position: relative; /* Add this line */
+    border: 1px solid #CAE9FF;
     border-radius: 10px;
     width: 370px;
 }
-
 .destination-card img {
-    margin-bottom: -5px;
-    width: 370px;
+    width: 300px;
     height: 200px;
     object-fit: cover;
-    border-radius: 10px;
-    padding-bottom: -5px;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: -6px;
 }
 
 .destination-card h3 {
     margin: 0;
     padding: 10px;
-    background-color: #333;
+    background-color: lightskyblue;
     color: white;
     font-size: 18px;
+    position: relative;
+    z-index: 1;
+    border-radius: 0 0 10px 10px;
 }
 
 .destination-card p {
+    margin: 0;
     padding: 10px;
-    font-size: 16px;
+    background-color: lightskyblue;
+    color: white;
+    font-size: 18px;
+    position: inherit;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
 }
 
 /* 추천여행지 */
