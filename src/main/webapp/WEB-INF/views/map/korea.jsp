@@ -20,11 +20,8 @@
         }
     </style>
 </head>
-<script type="text/javascript">
-    window.history.forward();
-    function noBack(){window.history.forward();}
-</script>
-<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
+
+<body>
 <div id="loading" style="align-content: center">
     <img src="../../../resources/map/js/image/loading.gif" alt="loading" width="614.5px" height="614.5px"/>
 </div>
