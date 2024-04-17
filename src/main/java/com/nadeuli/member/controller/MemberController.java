@@ -34,13 +34,20 @@ public class MemberController {
     @ResponseBody
     @PostMapping("/checkId")
     public Map<String, String> checkId(@RequestBody Map<String, String> requestData) {
-        String MEM_ID = requestData.get("MEM_ID");
-        System.out.println("MemberController.checkId");
-        System.out.println("MEM_ID = " + MEM_ID);
 
+
+        String MEM_ID = requestData.get("MEM_ID");
         Map<String, String> response = new HashMap<>();
         boolean checkIdResult = memberService.checkId(MEM_ID);
 
+        if (MEM_ID.length() < 6) {
+            response.put("status", "invalid_length");
+            return response;
+        }
+        if (!MEM_ID.matches("[a-zA-Z0-9]+")) {
+            response.put("status", "invalid_characters");
+            return response;
+        }
         if (checkIdResult) {
             response.put("status", "exist");
         } else {

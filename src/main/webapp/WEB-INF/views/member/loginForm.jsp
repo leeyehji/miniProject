@@ -20,11 +20,15 @@
 			<!-- 아이디 입력란 -->
 			<input type="text" name="MEM_ID" id="MEM_ID" autocomplete="off" required>
 			<label for="MEM_ID">아이디</label>
+			<div id="idWarning" class="warning"></div>
+
 		</div>
 		<div class="int-area">
 			<!-- 비밀번호 입력란 -->
 			<input type="password" name="MEM_PW" id="MEM_PW" autocomplete="off" required>
 			<label for="MEM_PW">비밀번호</label>
+			<div id="pwWarning" class="warning"></div>
+
 		</div>
 		<div class="btn-area">
 
@@ -33,9 +37,10 @@
 	</form>
 
 	<div class="caption">
-		<a href="/member/findPassword">비밀번호 찾기</a>/
-		<a href="/member/findId">아이디 찾기</a>/
-		<a href="/member/memberJoinForm">회원가입</a>
+		<a href="/member/findPassword">비밀번호 찾기</a> /
+		<a href="/member/findId">아이디 찾기</a> /
+		<a href="/member/memberJoinForm">회원가입</a> /
+		<a href="/"> HOME  </a>
 	</div>
 </section>
 <div class="api-login">

@@ -1,6 +1,30 @@
+$(document).ready(function() {
+    // 엔터 키 이벤트 리스너
+    $("#MEM_ID, #MEM_PW").keyup(function(event) {
+        if (event.keyCode === 13) {
+            login();
+        }
+    });
+});
+
 function login() {
     var MEM_ID = $("#MEM_ID").val(); // 아이디 입력 필드에서 값을 가져옴
     var MEM_PW = $("#MEM_PW").val(); // 비밀번호 입력 필드에서 값을 가져옴
+
+    if (!MEM_ID) {
+        $("#idWarning").text("아이디를 입력하세요.");
+        return;
+    } else {
+        $("#idWarning").text(""); // 경고 메시지 제거
+    }
+
+    if (!MEM_PW) {
+        $("#pwWarning").text("비밀번호를 입력하세요.");
+        return;
+    } else {
+        $("#pwWarning").text(""); // 경고 메시지 제거
+    }
+
 
     // 서버로 전송할 데이터 객체 생성
     var loginData = {
