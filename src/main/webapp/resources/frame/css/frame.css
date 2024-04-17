@@ -98,13 +98,13 @@ hr {
 }
 
 .menu {
+    height: 160px;
     width: 1893px;
     flex-direction: column;
     /* 요소들을 세로로 쌓음 */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 2px solid #CAE9FF;
 }
 
 
@@ -144,7 +144,7 @@ nav .logo {
 
 .show {
     display: flex;
-    top: 133px;
+    top: 162px;
     position: absolute;
     width: 1893px;
     height: 200px;
@@ -214,7 +214,6 @@ aside {
 
 .sub_menu.travel,
 .sub_menu.review,
-.sub_menu.event,
 .sub_menu.service-center {
     position: relative;
 }
@@ -224,15 +223,11 @@ aside {
 }
 
 .sub_menu.review {
-    left: 354px;
-}
-
-.sub_menu.event {
-    left: 90px;
+    left: 240px;
 }
 
 .sub_menu.service-center {
-    right: 141px;
+    right: 100px;
 }
 
 .sub_menu {
@@ -729,7 +724,7 @@ a:active {
 }
 
 .badak p {
-    margin-left: 270px;
+    margin-left: 20px;
     margin-top: 24px;
 }
 

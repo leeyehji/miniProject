@@ -134,7 +134,7 @@ document.addEventListener('submit', function(event) {
         // 여기서 서버로 데이터 전송 로직을 추가
         $.ajax({
             type: "POST",
-            url: "/Inquiry",
+            url: "/QNA",
             contentType: "application/json",
             data: JSON.stringify({
                 qSubject: userName, // InquiryDTO의 qSubject 필드에 userName을 매핑합니다.

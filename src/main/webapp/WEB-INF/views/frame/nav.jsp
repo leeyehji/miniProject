@@ -39,9 +39,9 @@
 		<ul class="nav-content">
 			<li>
 				<ul>
-					<li><a href="ServiceCenter">공지사항</a></li>
-					<li><a href="Inquiry">1 : 1 문의</a></li>
-					<li><a href="Faq">F A Q</a></li>
+					<li><a href="/serviceCenter/ServiceCenter">공지사항</a></li>
+					<li><a href="/serviceCenter/Inquiry">1 : 1 문의</a></li>
+					<li><a href="/serviceCenter/Faq">F A Q</a></li>
 				</ul>
 			</li>
 		</ul>

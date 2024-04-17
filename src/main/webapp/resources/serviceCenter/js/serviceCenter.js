@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Ajax 요청을 추가합니다.
     $.ajax({
       type: "POST",
-      url: "/notices", // 서버의 공지사항 추가 처리 URL
+      url: "/NOTICES", // 서버의 공지사항 추가 처리 URL
       data: JSON.stringify({
         nSubject: title,
         nContent: content,
