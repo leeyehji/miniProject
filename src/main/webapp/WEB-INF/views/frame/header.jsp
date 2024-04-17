@@ -4,7 +4,7 @@
 <head>
   <link rel="icon" href="data:,">
 </head>
-
+<input type="hidden" id="isLogin" value="${sessionScope.MEM_ID}">
 <header class="banner">
 
   <div class="menu">

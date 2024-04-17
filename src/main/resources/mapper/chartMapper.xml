@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.nadeuli.mypage.dao.ChartDAO">
+ 	<select id="chartList" resultType="com.nadeuli.mypage.dto.TreeMap">
+ 		SELECT SUM(T_VIEW) as "dataValue", T_SIGUNGU FROM TRAVEL WHERE T_SIDO = '서울'  GROUP BY T_SIGUNGU ORDER BY "dataValue" DESC limit 6
+ 	</select>
+ </mapper>
+ 

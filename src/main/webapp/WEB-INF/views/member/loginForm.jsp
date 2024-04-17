@@ -23,8 +23,8 @@
 		</div>
 		<div class="int-area">
 			<!-- 비밀번호 입력란 -->
-			<input type="password" name="MEM_PWD" id="MEM_PWD" autocomplete="off" required>
-			<label for="MEM_PWD">비밀번호</label>
+			<input type="password" name="MEM_PW" id="MEM_PW" autocomplete="off" required>
+			<label for="MEM_PW">비밀번호</label>
 		</div>
 		<div class="btn-area">
 
