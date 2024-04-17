@@ -12,6 +12,12 @@ function toggleNavSections() {
 window.addEventListener('scroll', function() {
 	var nav = document.getElementById('nadeuliNav');
 	var frameNav = document.getElementById('frameNav');
+
+	// nav 또는 frameNav가 null인 경우 함수를 종료합니다.
+	if (!nav || !frameNav) {
+		return;
+	}
+
 	var scrollPosition = window.pageYOffset;
 	var navHeight = nav.offsetHeight;
 	var frameNavHeight = frameNav.offsetHeight;
@@ -48,11 +54,11 @@ $(function() {
 
 /*로그인 페이지 */
 $("#loginBtn").click(function(){
-	window.location.href="/miniProject/member/login.jsp";
+	window.location.href="/member/loginForm";
 } );
 /*회원가입페이지 */
 $("#JoinBtn").click(function(){
-	window.location.href="/miniProject/member/memberJoin.jsp";
+	window.location.href="/member/memberJoinForm";
 } );
 /*page content*/
 

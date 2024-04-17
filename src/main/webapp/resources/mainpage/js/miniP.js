@@ -242,3 +242,59 @@ $(function () {
 });
 
 //캘린더
+
+//추천 여행지
+$(document).ready(function () {
+  $.ajax({
+    url: '/getTop5Destinations',
+    type: 'GET',
+    dataType: 'json',
+    success: function (data) {
+      console.log(data);
+
+      $.each(data, function (index, data) {
+        // 각 .destination-card div의 내용을 업데이트합니다.
+        var card = $(".destination-card").eq(index);
+        card.find("a").attr("href", "http://223.130.130.226:8090/thema/themaDetailPage?contentNo=" + data.t_contentno + "&typeId=" + data.t_contenttypeid);
+        card.find("img").attr({
+          "src": data.t_thumb_image,
+          "alt": data.t_contentname
+        });
+        card.find("h3").text(data.t_contentname);
+
+        // data.t_contenttypeid 값에 따라 다른 텍스트를 설정합니다.
+        var typeText;
+        switch (data.t_contenttypeid) {
+          case '12':
+            typeText = "관광";
+            break;
+          case '14':
+            typeText = "문화";
+            break;
+          case '15':
+            typeText = "행사";
+            break;
+          case '28':
+            typeText = "레포츠";
+            break;
+          case '32':
+            typeText = "숙박";
+            break;
+          case '38':
+            typeText = "쇼핑";
+            break;
+          case '39':
+            typeText = "음식점";
+            break;
+          default:
+            typeText = "기타";
+        }
+        card.find("p").text(typeText);
+      });
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.log('AJAX call failed.');
+      console.log(textStatus + ': ' + errorThrown);
+    }
+  });
+});

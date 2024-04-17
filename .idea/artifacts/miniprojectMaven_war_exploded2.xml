@@ -27,6 +27,7 @@
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.15" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:2.1.2" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.json:json:20240303" />
           <element id="library" level="project" name="Maven: net.sf.json-lib:json-lib:jdk15:2.4" />
           <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.8.0" />
           <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.1" />
@@ -56,6 +57,21 @@
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.6.6" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.15" />
           <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
+          <element id="library" level="project" name="Maven: javax.mail:mail:1.4.7" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: com.github.scribejava:scribejava-core:2.8.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:5.3.23" />
+          <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz-jobs:2.3.0" />
+          <element id="library" level="project" name="Maven: org.sonatype.sisu:sisu-guice:4.2.0" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:18.0" />
+          <element id="library" level="project" name="Maven: org.graalvm.nativeimage:svm:22.3.3" />
+          <element id="library" level="project" name="Maven: org.graalvm.sdk:graal-sdk:22.3.3" />
+          <element id="library" level="project" name="Maven: org.graalvm.nativeimage:objectfile:22.3.3" />
+          <element id="library" level="project" name="Maven: org.graalvm.nativeimage:pointsto:22.3.3" />
+          <element id="library" level="project" name="Maven: org.graalvm.compiler:compiler:22.3.3" />
+          <element id="library" level="project" name="Maven: org.graalvm.truffle:truffle-api:22.3.3" />
+          <element id="library" level="project" name="Maven: org.graalvm.nativeimage:native-image-base:22.3.3" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="miniprojectMaven/web/Web" />

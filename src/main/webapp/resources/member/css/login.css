@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'noto Sans KR', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background:url(/member/img/logintest.jpg);
+  background-size: cover;
+}
+
+/*body::before {*/
+/*  content: "";*/
+/*  position: absolute;*/
+/*  z-index: 1;*/
+/*  top: 0;*/
+/*  right: 0;*/
+/*  bottom: 0;*/
+/*  left: 0;*/
+/*  background-color: rgba(188, 235, 227, 0.6);*/
+/*}*/
+
+.login-form {
+  position: relative;
+  z-index: 2;
+}
+
+.login-form h1 {
+  font-size: 40px;
+  color: #f2f4ef;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.int-area {
+  width: 400px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.int-area:first-child {
+  margin-top: 0;
+}
+
+.int-area input {
+  width: 100%;
+  padding: 20px 10px 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #203987;
+  font-size: 18px;
+  color: #303404;
+  outline: none;
+}
+
+.int-area label {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  font-size: 18px;
+  color: #000000;
+  transition: all 0.5s ease;
+}
+
+.int-area label.warning {
+  color: red !important;
+  animation: warning 0.3s ease;
+  animation-iteration-count: 3;
+}
+
+@keyframes warning {
+  0% {
+    transform: translateX(-7px);
+  }
+  25% {
+    transform: translateX(-7px);
+  }
+  50% {
+    transform: translateX(-7px);
+  }
+  75% {
+    transform: translateX(-7px);
+  }
+}
+
+.int-area input:focus + label,
+.int-area input:valid + label {
+  top: -2px;
+  font-size: 13px;
+  color: #000000;
+}
+
+/* 버튼에 포커스가 갈 때 변하지 않도록 속성 제거 */
+.btn-area button:focus {
+  outline: none;
+}
+
+.btn-area {
+  margin-top: 30px;
+}
+
+.btn-area button {
+  width: 400px;
+  height: 45px;
+  background: #08bcf3;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.caption {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.caption a {
+  font-size: 15px;
+  color:  #000000;
+  text-decoration: none;
+  margin-left: 4px;
+}
+.api-login a{
+  display:inline-block;
+  margin: 65px;
+  width: 0px;
+  height: 0px;
+  margin-left: 30px;
+  margin-top: 25px;
+}
+.api-login img{
+  margin-top: 30px;
+  width: 50px;
+  margin-left: 50px;
+  
+}
+#google{
+  background-color: white;
+  border-radius:5px;
+  
+}

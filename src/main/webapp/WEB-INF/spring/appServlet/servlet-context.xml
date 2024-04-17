@@ -30,7 +30,7 @@ https://www.springframework.org/schema/mvc/spring-mvc.xsd
 	<resources mapping="/review/**/**" location="/resources/review/" />
 	<resources mapping="/serviceCenter/**/**" location="/resources/serviceCenter/" />
 	<resources mapping="/thema/**/**" location="/resources/thema/" />
-	
+	<resources mapping="/member/**/**" location="/resources/member/"/>
 	<!--<resources mapping="/WEB-INF/storage" location="/storage/**" />-->
 
 
@@ -59,4 +59,6 @@ https://www.springframework.org/schema/mvc/spring-mvc.xsd
 	<context:component-scan base-package="com.nadeuli.common.search"/>
 	<!-- thema -->
 	<context:component-scan base-package="com.nadeuli.thema.controller"/>
+	<!-- member -->
+	<context:component-scan base-package="com.nadeuli.member.controller"/>
 </beans:beans>
