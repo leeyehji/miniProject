@@ -165,6 +165,12 @@ h2 {
 
 /* -----------------------------------공지사항------------------------------------------ */
 
+#contentArea {
+    border: 2px solid #CAE9FF;
+    width: 998px;
+    height: 340px;
+}
+
 #noticeContent {
     position: relative;
     max-width: 1500px;
@@ -219,9 +225,8 @@ h2 {
 
 /* 테이블 스타일링 */
 .type1 {
-    width: 996px;
-    margin-left: 2px;
-    border: 2px solid #CAE9FF;
+    border-bottom: 2px solid #CAE9FF;
+    width: 1000px;
     height: auto;
 }
 
@@ -257,6 +262,11 @@ h2 {
     bottom: 20px;
     right: 185px;
     float: right;
+}
+
+#writeNoticeBtn {
+    position: relative;
+    top: 10px;
 }
 
 #writeModal{
