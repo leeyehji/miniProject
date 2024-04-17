@@ -69,6 +69,7 @@
     height: 98%;
     border-radius: 10px;
     background-color: #dbf0ff;
+
 }
 
 .middlemain > .clickthemap {
@@ -88,12 +89,56 @@
     background-size: 100% 100%;
     background-position: center;
 }
-
-#main_map > .rightmain {
+#main_map > .mapinfo{
+    display: none;
     float: left;
     margin-top: 0.5%;
     margin-bottom: 0.5%;
     margin-right: 0.5%;
+    width: 300px;
+    height: 98%;
+    background-color: #dbf0ff;
+    border-radius: 10px;
+    text-align: center;
+}
+.mapinfo > h2.info1{
+    margin:400px auto 20px auto;
+    font-size: 20px;
+}
+.mapinfo > h2.info2{
+    margin: 196px auto 20px auto;
+    font-size: 20px;
+}
+.mapinfo > h2.info3{
+    margin: 120px auto 20px auto;
+    font-size: 20px;
+}
+.mapinfo > h2.info4{
+    margin: 100px auto 20px auto;
+    font-size: 20px;
+}
+#main_map > #loading {
+    position: fixed; /* 화면에 고정 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    left: 0;
+    top: 0;
+    width: 614.5px; /* 화면 전체 너비 */
+    height: 680px; /* 화면 전체 높이 */
+    background: rgba(255, 255, 255, 0.8); /* 흰색 반투명 배경 */
+    display: flex; /* flexbox 레이아웃 시작 */
+    justify-content: center; /* 가로축 중앙 정렬 */
+    align-items: center; /* 세로축 중앙 정렬 */
+    margin: 0 auto;
+}
+#loading img{
+    width: 614.5px;
+    height: 680px;
+    margin: 0 auto;
+}
+
+#main_map > .rightmain {
+    float: left;
+    margin : 0.5% 0.1% 0.5% 0;
     width: 200px;
     height: 98%;
     background-color: #dbf0ff;
@@ -103,7 +148,7 @@
 
 #main_map > .rightmain > .reset1 {
     width: 100px;
-    margin: 180px auto 5px auto;
+    margin: 84px auto 5px auto;
 }
 
 #main_map > .rightmain > .reset1 > #resetBtn1{
@@ -175,11 +220,13 @@
     border-radius: 10px;
     margin: auto;
 }
-
+#main_map > .rightmain > .mapInfoBtn{
+    margin: 50px auto 0 auto;
+}
 .theme > button {
     text-align: center;
     display: inline-block;
-    margin: 10px auto 10px auto;
+    margin: 0 auto 20px auto;
     border: 3px solid #bde3ff;
     background-color: #dbf0ff;
     border-radius: 10px;
@@ -189,12 +236,37 @@
     color: #fff; /* hover 시 텍스트 색상 */
     background-color: #3498db; /* hover 시 배경 색상 */
 }
-
-button.active {
+.location button.active{
+    background-color: #3498db; /* 선택된 버튼의 배경 색상 */
+}
+.theme button:hover{
+    color: #fff; /* hover 시 텍스트 색상 */
+    background-color: #3498db; /* hover 시 배경 색상 */
+}
+.theme button.active{
     background-color: #3498db; /* 선택된 버튼의 배경 색상 */
 }
 
-/* main_map */
+#main_map > .rightmain > .mapInfoBtn {
+}
+.mapInfoBtn > button {
+    text-align: center;
+    display: inline-block;
+    margin: 10px auto 10px auto;
+    border: 3px solid #bde3ff;
+    background-color: #dbf0ff;
+    border-radius: 10px;
+}
+
+.mapInfoBtn > button:hover {
+    color: #fff; /* hover 시 텍스트 색상 */
+    background-color: #3498db; /* hover 시 배경 색상 */
+}
+.mapInfoBtn > button.active {
+    background-color: #3498db; /* 선택된 버튼의 배경 색상 */
+}
+
+    /* main_map */
 
 .main_toursite {
     margin: 0 auto 0 auto;

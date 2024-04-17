@@ -68,6 +68,9 @@
         <!-- middlemain -->
 
         <div class="rightmain">
+            <div class = "mapInfoBtn">
+                <button id="mapInfoBtn">지도 사용법</button>
+            </div>
             <div class="reset1">
                 <button id="resetBtn1">시/도 선택</button>
             </div>
@@ -113,6 +116,15 @@
             <!-- 테마 -->
         </div>
         <!-- rightmain -->
+
+        <div class="mapinfo">
+            <h2 class="info1">1. 시/도를 선택해주세요</h2>
+            <h2 class="info2">2. 시/군/구를 선택해주세요</h2>
+            <h2 class="info3">3. 테마를 선택해주세요</h2>
+            <h2 class="info4">4. 생성된 마커를 통해 <br>상세정보를 확인할 수 있습니다</h2>
+<%--            <img src="../img/mapinfo.png" alt="지도 사용법">--%>
+        </div>
+        <!-- mapinfo -->
     </div>
 </div>
 <div id="upDownBtn">
@@ -130,6 +142,6 @@
 
 </body>
 <script src="/frame/js/frame.js"></script>
-<script src="../js/mypage.js"></script>
+<%--<script src="../js/mypage.js"></script>--%>
 <script src="/map/js/map.js"></script>
 </html>

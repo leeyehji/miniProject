@@ -134,3 +134,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.getElementById("mapInfoBtn").addEventListener("click", function () {
+    var mapInfoBtn = this;
+    var mapInfoDiv = document.querySelector(".mapinfo");
+    if (mapInfoDiv.style.display === "none" || mapInfoDiv.style.display === "") {
+        mapInfoDiv.style.display = "block";
+        mapInfoBtn.style.backgroundColor = "#3498db"; // Set the background color to #3498db when the button is clicked
+    } else {
+        mapInfoDiv.style.display = "none";
+        mapInfoBtn.style.backgroundColor = ""; // Reset the background color when the button is clicked again
+    }
+});

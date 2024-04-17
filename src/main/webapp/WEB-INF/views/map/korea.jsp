@@ -15,7 +15,7 @@
             href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     />
     <style>
-        #mapid {
+        #mapid, #loading {
             height: 680px;
         }
     </style>
@@ -25,6 +25,9 @@
     function noBack(){window.history.forward();}
 </script>
 <body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
+<div id="loading" style="align-content: center">
+    <img src="../../../resources/map/js/image/loading.gif" alt="loading" width="614.5px" height="614.5px"/>
+</div>
 <div id="mapid"></div>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
