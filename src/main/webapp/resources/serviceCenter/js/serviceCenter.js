@@ -140,14 +140,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Ajax 요청을 추가합니다.
     $.ajax({
       type: "POST",
-      url: "/getNoticeDetail", // 서버의 공지사항 추가 처리 URL
+      url: "/notices", // 서버의 공지사항 추가 처리 URL
       data: JSON.stringify({
         nSubject: title,
         nContent: content,
         nWriter: '작성자', // 실제 사용 시에는 현재 사용자를 나타내는 데이터를 사용해야 합니다.
         nCreateTime: today // 서버에서 LocalDateTime으로 파싱이 가능한 형식이어야 합니다.
       }),
-      contentType: "json; charset=utf-8",
+      contentType: "application/json; charset=utf-8",
       dataType: "json",
       success: function(response) {
         console.log("공지사항이 성공적으로 추가되었습니다.", response);

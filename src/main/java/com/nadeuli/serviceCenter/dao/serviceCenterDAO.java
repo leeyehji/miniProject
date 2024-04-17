@@ -5,11 +5,14 @@ import com.nadeuli.serviceCenter.bean.FaqDTO;
 import com.nadeuli.serviceCenter.bean.InquiryDTO;
 import com.nadeuli.serviceCenter.bean.NoticeDTO;
 import org.apache.ibatis.annotations.Mapper;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
+import java.util.Optional;
 
 @Mapper
-public interface serviceCenterDAO {
+public interface ServiceCenterDAO {
 
     // 공지사항 추가
     void insertNotice(NoticeDTO notice);
@@ -38,12 +41,6 @@ public interface serviceCenterDAO {
     // 답변 여부에 따른 문의사항 조회
     List<InquiryDTO> findInquiriesByAnswered(Integer qIsAnswered);
 
-    // 문의사항 업데이트
-    void updateInquiry(InquiryDTO inquiry);
-
-    // 문의사항 삭제
-    void deleteInquiry(Integer qNo);
-
     // FAQ 추가
     void insertFaq(FaqDTO faq);
 
@@ -59,8 +56,25 @@ public interface serviceCenterDAO {
     // FAQ 삭제
     void deleteFaq(Integer faqNo);
 
+    List<NoticeDTO> findAll();
 
+    void saveInquiry(InquiryDTO notice);
 
+    Optional<Object> findById(Integer qNo);
 
+    List<InquiryDTO> findByAnswered(Integer qIsAnswered);
 
+    void deleteById(Integer qNo);
+
+    void saveNotice(NoticeDTO notice);
+
+    void saveFaq(FaqDTO faq);
+
+    void updateInquiry(InquiryDTO inquiry);
+
+    @Configuration
+    @MapperScan(basePackages = "com.nadeuli.serviceCenter.dao")
+    public class MyBatisConfig {
+    }
 }
+

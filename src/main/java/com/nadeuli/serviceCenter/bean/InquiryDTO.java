@@ -16,4 +16,5 @@ public class InquiryDTO {
         private String qSubject;
         private String qContent;
         private LocalDateTime qCreateTime;
+
 }
