@@ -136,6 +136,6 @@
         AND T_CAT2 LIKE CONCAT('%', #{cat2}, '%')
         AND T_CAT3 LIKE CONCAT('%', #{cat3}, '%')
         ORDER BY T_THUMB_IMAGE desc
-        limit 0,20
+        limit 0,15
     </select>
 </mapper>
