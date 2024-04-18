@@ -296,7 +296,7 @@ a.ui-state-default{
     color: black !important;
     background: #fff !important;
     border: none !important;
-    text-align:center;
+    text-align:center !important;
 }
 /* 오늘 날짜 스타일 */
 #datepicker .ui-datepicker-today a {

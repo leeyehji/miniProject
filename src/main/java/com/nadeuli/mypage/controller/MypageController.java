@@ -74,6 +74,7 @@ public class MypageController {
     	System.out.println(mem_id + ", "+pg);
         Map<String,Object> myBoardListMap =mypageService.getMyBoardList(pg, mem_id);
         session.setAttribute("totalA",myBoardListMap.get("totalA"));
+        
         return myBoardListMap;
     }
     

@@ -152,7 +152,8 @@ public class MyPage implements MypageService {
         //List객체가 JSON으로 자동 변환된다. - pom.xml <dependency>에 추가해야 함
         System.out.println(tempMap.get("mem_id")+", "+tempMap.get("startNum"));
         List<ReviewDTO> list = mypageDAO.getMyBoardList(tempMap);
-
+        for(int i=0; i<list.size(); i++)
+        	list.get(i).setMEM_ID(id);
         //페이징 처리
         int totalA = mypageDAO.getTotalA(id); //총글수
 

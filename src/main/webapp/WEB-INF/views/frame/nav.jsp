@@ -22,14 +22,8 @@
 	
 	<li>후기
 		<ul class="nav-content">
-			<li><a href="#">여행 후기</a>
-				<ul>
-					<li><a href="/review/reviewList?pg=1">후기 목록</a></li>
-					<li><a href="/review/reviewWriteForm">후기 쓰기</a></li>
-				</ul>
-			</li>
-
-
+				<li><a href="/review/reviewList?pg=1">후기 목록</a></li>
+				<li><a href="/review/reviewWriteForm">후기 쓰기</a></li>
 		</ul>
 	</li>
 	<br>
@@ -52,8 +46,7 @@
 			<li><a href="/mypage/mypage">회원정보관리</a>
 				<ul>
 					<li><a href="/mypage/memberUpdate">회원정보 수정</a></li>
-					<li><a href="/mypage/myBoard">내가 쓴 글</a></li>
-					<li><a href="#">내가 좋아요한 글</a></li>		
+					<li><a href="/mypageRead/myBoard">내가 쓴 글</a></li>
 				</ul>
 			</li>
 			<br>
