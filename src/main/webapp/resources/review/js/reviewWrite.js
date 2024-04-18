@@ -83,9 +83,9 @@ function uploadSummernoteImageFile(file, el) {
 
 
 $('#reviewWriteBtn').click(function(){
-
-    var title = $('#title').val();
-    var content = $('#summernote').val();
+    let thisPage = $('')
+    let title = $('#title').val();
+    let content = $('#summernote').val();
 
 
     if(title === ""){
@@ -110,7 +110,6 @@ $('#reviewWriteBtn').click(function(){
             success : function(data){
                 alert("이미지 저장 성공");
                 $("#thumbNail").val(data);
-                console.log(data);
 
                 $.ajax({
                     type:'POST',

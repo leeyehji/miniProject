@@ -20,17 +20,16 @@
 
 
 <!-- CSS -->
-<link rel="stylesheet" href="../css/reviewWrite.css">
-<link rel="stylesheet" type="text/css" href="../css/frame.css">
+<link rel="stylesheet" href="/reivew/css/reviewWrite.css">
+<link rel="stylesheet" type="text/css" href="/review/css/frame.css">
 
-	<script src="../js/review.js"></script>
-	<script src="../js/frame.js"></script>
+
 
 
 </head>
 
 <body>
-
+    <input type="hidden" id="whereAreYou" value="update">
 	<header><jsp:include page="../frame/header.jsp"></jsp:include></header>
 
 	<div id="frameContent">
@@ -76,15 +75,8 @@
 	<footer><jsp:include page="../frame/footer.jsp"></jsp:include></footer>
 	<div id="bottom"></div>
 
-
-
-
-
-
-
-
-	
-
+	<script src="/review/js/reviewWrite.js"></script>
+	<script src="/frame/js/frame.js"></script>
 
 </body>
 

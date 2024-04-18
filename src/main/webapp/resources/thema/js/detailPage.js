@@ -46,6 +46,7 @@ function inputData(themaDTO) {
     if (themaDTO.t_CONTENTTYPEID === 38){
         themaThirtyEight(themaDTO.typeThirtyEight)
     }
+
     if (themaDTO.t_CONTENTTYPEID === 39){
         themaThirtyNine(themaDTO.typeThirtyNine)
     }
@@ -259,13 +260,13 @@ function themaThirtyEight(themaTypeData){
 
 }
 function themaThirtyNine(themaTypeData){
-    console.log(themaTypeData);
-    $('#stoller').removeClass("noAllow");
-    $('#pet').removeClass("noAllow");
+
+    // $('#stoller').removeClass("noAllow");
+    // $('#pet').removeClass("noAllow");
 
     if (themaTypeData.parkingfood !== null && themaTypeData.parkingfood !== "없음" && themaTypeData.parkingfood !== "") {
         $('#parking').removeClass("noAllow")
-            .attr("title", themaTypeData.a_parkingshopping);
+            .attr("title", themaTypeData.parkingfood);
     }
     if ($('#detailInfo #phone').text() === "") {
         $('#detailInfo #phone').html(themaTypeData.infocenterfood);
@@ -278,9 +279,6 @@ function themaThirtyNine(themaTypeData){
 									<td>`
         + themaTypeData.restdatefood + `</td>`;
 
-    if(themaTypeData.kidsfacility === "0"){
-        themaTypeData.kidsfacility = "없음"
-    }
 
     let resultFoodTd2 =
                                     `<td>*카드 가능 여부</td>
@@ -288,29 +286,36 @@ function themaThirtyNine(themaTypeData){
         + themaTypeData.chkcreditcardfood +  `</td>
                                     <td>*흡연 가능 여부</td>
                                     <td>`
-        + themaTypeData.smoking + `</td>
-                                    <td>*어린이 시설</td>
-                                    <td>`
-        + themaTypeData.kidsfacility + `</td>`
+        + themaTypeData.smoking + `</td>`
+
+    if(themaTypeData.kidsfacility === "0"){
+        themaTypeData.kidsfacility = "없음"
+    }
 
     let resultFoodTd3 =
                                    `<td>*좌석</td>
                                     <td>`
-        + themaTypeData.seat +  `</td>
-                                    <td>*할인</td>
+        + themaTypeData.seat +  `</td><td>*키즈 시설</td>
                                     <td>`
+        + themaTypeData.kidsfacility + `</td>`
+
+
+    let resultFoodTd4 =  `<td>*할인</td>
+    <td>`
         + themaTypeData.discountinfofood + `</td>
-                                    </td>
-                                    <td>*포장</td>
-                                    <td>`
+</td>
+    <td>*포장</td>
+    <td>`
         + themaTypeData.packing + `</td>`
 
-    let resultFoodTd4 =
-        `<td>*메인 메뉴</td>
-                                    <td>`
-        + themaTypeData.treatmenu +  `</td>
-                                    <td colspan="2">*취급 메뉴</td>
-                                    <td>`
+
+    let resultFoodTd5 =
+        `<td colspan="2">*메인 메뉴</td>
+                                    <td colspan="2">`
+        + themaTypeData.treatmenu +  `</td>`
+        let resultFoodTd6 =
+                                   ` <td colspan="2">*취급 메뉴</td>
+                                    <td colspan="2">`
         + themaTypeData.treatmenu + `</td>`
 
 
@@ -319,6 +324,8 @@ function themaThirtyNine(themaTypeData){
     $('#themaData2').append(resultFoodTd2);
     $('#themaData3').append(resultFoodTd3);
     $('#themaData4').append(resultFoodTd4);
+    $('#themaData5').append(resultFoodTd5);
+    $('#themaData6').append(resultFoodTd6);
 
 }
 

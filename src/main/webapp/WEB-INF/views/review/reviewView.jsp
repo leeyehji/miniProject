@@ -62,14 +62,14 @@
 
                     <div id="delUpdate" style='margin-top: 20px'>
                         <button class="prevView" onclick="">이전글</button>
-                        <button class="myArticle">글 수정</button>
-                        <button class="myArticle">글 삭제</button>
+                        <button class="myArticle" id="reviewViewUpdateBtn">글 수정</button>
+                        <button class="myArticle" id="reviewViewDeleteBtn">글 삭제</button>
                         <button class="nextView" onclick="">다음글</button>
                     </div>
 
                 </div>
             </div>
- f
+
 
             <div id="reviewComment" style="background-color: white;">
 

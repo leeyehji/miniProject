@@ -39,6 +39,11 @@ public class ReviewController {
         reviewService.reviewWrite(reviewDTO);
         return "쓰기 완료";
     }
+    @RequestMapping(value="reviewUpdateForm")
+    public String reviewUpdateForm(@RequestParam(value="no", required = true) String no,Model model){
+        model.addAttribute("no",no);
+        return "review/reviewUpdate";
+    }
     @PostMapping(value="reviewImageUpload")
     @ResponseBody
     public String reviewImageUpload(@RequestParam(value="imgArray") List<String> imgArray,HttpSession session){
