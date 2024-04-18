@@ -66,6 +66,12 @@
 						<tr id="themaData">
 
 						</tr>
+						<tr id="themaData2">
+
+						</tr>
+						<tr id="themaData3">
+
+						</tr>
 						<tr>
 						  <td colSpan="4" id="icon">
 							<img src="/thema/icon/pet.png" id="pet" class="noAllow"/>
@@ -81,7 +87,8 @@
 				<div id="detailFoot" style="text-align: center;">
 					<button id="view">조회수 &emsp; <span></span></button>
 					<button id="like">좋아요    <span></span></button>
-					<button class="btn-open-modal" onclick="">일정 추가</button>
+
+<%--					<button class="btn-open-modal" onclick="">일정 추가</button>--%>
 
 				</div>
 
