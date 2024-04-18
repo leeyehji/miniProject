@@ -110,7 +110,7 @@
     <select id="getThemaItem" resultMap="themaResultMap">
         select TRAVEL.T_CONTENTNO,T_CONTENTTYPEID,T_CONTENTNAME,T_MAIN_IMAGE,T_THUMB_IMAGE,T_ADDRESS,T_PHONE,T_INFORMATION
               ,T_HOMEPAGE,T_INFORMATION,T_VIEW,T_LIKE,${table}.*
-        from travel join ${table} using(T_CONTENTNO) where T_CONTENTNO = #{T_CONTENTNO};
+        from TRAVEL join ${table} using(T_CONTENTNO) where T_CONTENTNO = #{T_CONTENTNO};
     </select>
     <update id="themaViewUp" parameterType="Integer">
         update TRAVEL set T_VIEW = T_VIEW +1 where T_CONTENTNO = #{T_CONTENTNO}

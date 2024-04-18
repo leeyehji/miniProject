@@ -3,7 +3,7 @@
 //review ,comment 동적생성
 $(function(){
 
-	const commentImageURL = '/review/icon/like.png';
+
 
 	$.ajax({
 		type : 'post',
@@ -11,15 +11,32 @@ $(function(){
 		data : {"no" : B_NO},
 		dataType : 'JSON',
 		success : function(data) {
+			console.log(JSON.stringify(data))
+
+			$(".prevView").attr("onclick","prevView("+data.prevViewNo+")")
+			$(".nextView").attr("onclick","nextView("+data.nextViewNo+")")
+
+
 			const dto = data.reviewDTO;
-			reviewViewInput(dto.b_TITLE, dto.mem_NO, dto.b_CREATETIME, dto.b_VIEW, dto.b_CONTENT, dto.b_like);
+			reviewViewInput(dto.b_TITLE, dto.mem_ID, dto.b_CREATETIME, dto.b_VIEW, dto.b_CONTENT, dto.b_LIKE);
+			if(data.isLogin === "false"){
+				$('.myArticle').hide();
+				$('#commentBtn').attr("value","로그인");
+			}else if(data.isLogin !== dto.mem_ID){
+				$('.myArticle').hide();
+			}else if(data.isLogin === dto.mem_ID){
+				$('.myArticle').show();
+			}
 			const commentList = data.commentList;
 			if(commentList.length === 0) {
 				$('#commentConsole').text("댓글이 없습니다.")
 			}else{
+				let commentImageURL = "https://kr.object.ncloudstorage.com/miniproject/storage/profile/defaultProfileImage.png";
 				$.each(commentList, function (idx, item) {
-
-					createComment(commentImageURL, 'userId', item.c_CONTENT, item.c_CREATETIME);
+					if(item.mem_PROFILEIMAGE !== null){
+						commentImageURL = item.mem_PROFILEIMAGE;
+					}
+					createComment(commentImageURL, item.mem_ID, item.c_CONTENT, item.c_CREATETIME);
 
 				})
 			}
@@ -31,13 +48,13 @@ $(function(){
 	})
 })
 
-function reviewViewInput(B_TITLE,MEM_NO,B_CREATETIME,B_VIEW,B_CONTENT,B_like){
+function reviewViewInput(B_TITLE,MEM_ID,B_CREATETIME,B_VIEW,B_CONTENT,B_LIKE){
 	$('#reviewTitle').text(B_TITLE);
-	$('#reviewInfo #userId').text(MEM_NO);
+	$('#reviewInfo #userId').text(MEM_ID);
 	$('#reviewInfo #date').text(B_CREATETIME);
 	$('#reviewInfo #view').text(B_VIEW);
 	$('#reviewContent').html(B_CONTENT);
-	$('.reviewLike').text(B_like);
+	$('.reviewLike').text(B_LIKE);
 }
 //
 
@@ -49,8 +66,13 @@ $('#reviewlike button').click(function(){
 		url : "clickLike",
 		data : { "no" : B_NO },
 		success:function(data){
-			console.log("성공");
-			$('.reviewLike').text(like+1);
+
+			if(data === "firstClick") {
+				$('.reviewLike').text(like + 1);
+			}
+			else{
+				alert("좋아요는 1일 1회 클릭 가능합니다.")
+			}
 		},
 		error : function(e){
 			console.log("실패");
@@ -105,9 +127,15 @@ function createComment(imageURL, USERID, commentContent, commentDate) {
 
 //댓글 insert
 $("#commentBtn").click(function() {
+	const commentBtnVal = $('#commentBtn').val();
 
 	const comment = $("#commentText").val();
-	if (comment === "") {
+	if(commentBtnVal === "로그인"){
+		if(confirm("로그인 하시겠습니까?")){
+			location.href="/member/loginForm";
+		}
+	}
+	else if (comment === "") {
 		alert("댓글을 입력해주세요");
 		return false;
 	} else {
@@ -120,6 +148,7 @@ $("#commentBtn").click(function() {
 				'C_CONTENT': comment
 			},
 			success: function (data) {
+
 				location.reload();
 			},
 			error: function (e) {

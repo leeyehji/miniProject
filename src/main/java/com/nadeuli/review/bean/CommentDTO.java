@@ -11,6 +11,8 @@ import java.util.Date;
 @Setter
 public class CommentDTO {
     private int MEM_NO;
+    private String MEM_PROFILEIMAGE;
+    private String MEM_ID;
     private int B_NO;
     private int C_NO;
     private String C_CONTENT;

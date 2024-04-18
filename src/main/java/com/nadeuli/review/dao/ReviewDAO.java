@@ -3,6 +3,7 @@ package com.nadeuli.review.dao;
 import com.nadeuli.review.bean.CommentDTO;
 import com.nadeuli.review.bean.ReviewDTO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,4 +21,8 @@ public interface ReviewDAO {
     public void commentCountUp(int bNo);
 
     List<CommentDTO> getCommentList(int bNo);
+
+    int getPrevView(@Param(value="B_NO") int bNo);
+
+    int getNextView(@Param(value="B_NO") int bNo);
 }
