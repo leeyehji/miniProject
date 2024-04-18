@@ -161,16 +161,32 @@ p{
     padding-left: 0px;
  }
 #box1Img{/*코드로 이미지 크기 잡아 둘 건데 그 wh 동일하게 잡아 둘 것*/
-    /*background-image: url('./image/seoul_cherry_blossom_3.jpeg');*/
     background-size: cover;
     width: 280px;
     height:204px;
-    margin-right: 30px;
-    margin-left: 10px;
+    margin: 20px 50px 30px 50px;
     border-radius: 10px;
+    
 }
-#box1Txt{
-	width:420px;
+#box1Title{
+	margin: 20px 0 10px 0;
+	font-size:20px;
+	white-space: pre-wrap;
+	overflow: hidden;
+  	text-overflow: ellipsis;
+  	display:block;
+}
+#box1Txt {
+  width: 950px;
+  height: 175px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 18px; 
+  display: block;
+}
+#box1TxtOver{
+  	bottom: -10px;  	
 }
 #box1Content {
     font-weight: lighter;
@@ -190,6 +206,13 @@ p{
 	border-right: #cfd5da solid 1px;
 	display:inline-block;
 }
+/*.w15{
+	display: inline-block;
+	width : 115px;
+}
+.verticalBox180{
+	width : 180px;
+} */
 #lastVerticalBox{
 	border:none;
 }
@@ -205,7 +228,11 @@ p{
 	display: flex; /* Flexbox를 활성화합니다. */
     /* align-items: flex-start; */ /* 자식 요소들을 상단으로 정렬합니다. */	
 }
-
+.horizonBoxL{
+	justify-content: left;
+	display: flex; /* Flexbox를 활성화합니다. */
+    /* align-items: flex-start; */ /* 자식 요소들을 상단으로 정렬합니다. */	
+}
 #mycalendarTxt{
     margin-top: 20px;
 }
@@ -287,3 +314,18 @@ a.ui-state-default{
         border-radius: 8px;   
 }
 
+#selectDate{
+	font-size:25px;
+}
+#myCalendarTxt{
+	font-size:20px;
+}
+.calTitle{
+	margin-top:10px;
+}
+.calDate{
+	display:inline-block;
+}
+.schedule{
+	padding-top:10px;
+}
