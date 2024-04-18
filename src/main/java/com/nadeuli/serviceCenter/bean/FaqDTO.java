@@ -10,10 +10,10 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class FaqDTO {
-    private Long memNo;
-    private Integer fapNo;
-    private String faqSubject;
-    private String faqContent;
-    private LocalDateTime faqCreateTime;
+    private Long mem_No;
+    private Integer fap_No;
+    private String faq_Subject;
+    private String faq_Content;
+    private LocalDateTime faq_CreateTime;
 
 }

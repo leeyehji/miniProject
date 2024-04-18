@@ -1,7 +1,5 @@
 package com.nadeuli.serviceCenter.controller;
 
-import com.nadeuli.member.dto.MemberRequestDTO;
-import com.nadeuli.serviceCenter.bean.CSRequestDTO;
 import com.nadeuli.serviceCenter.service.ServiceCenterMailService;
 import com.nadeuli.serviceCenter.service.ServiceCenterService;
 import com.nadeuli.serviceCenter.bean.NoticeDTO;
@@ -148,7 +146,7 @@ public class ServiceCenterController {
     public ResponseEntity<String> sendEmail(@RequestBody Map<String,String> request) {
         // inquiryDTO 내부에 MemberRequestDTO 정보가 포함되어 있다고 가정
 
-        boolean isSent = mailService.sendInquiryEmail(request.get("MEM_EMAIL"),request.get("MEM_NAME"),request.get("qContent"));
+        boolean isSent = mailService.sendInquiryEmail(request.get("MEM_EMAIL"),request.get("MEM_NAME"),request.get("q_Content"));
         if(isSent) {
             return ResponseEntity.ok().body("이메일이 성공적으로 전송되었습니다.");
         } else {

@@ -11,10 +11,10 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class NoticeDTO {
-        private Long memNo;
-        private Long nNo;
-        private String nSubject;
-        private String nContent;
-        private String nWriter;
-        private LocalDateTime nCreateTime;
+        private Long mem_No;
+        private Long n_No;
+        private String n_Subject;
+        private String n_Content;
+        private String n_Writer;
+        private LocalDateTime n_CreateTime;
 }

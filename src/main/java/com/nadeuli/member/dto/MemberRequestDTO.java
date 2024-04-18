@@ -1,14 +1,13 @@
 package com.nadeuli.member.dto;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
 @ToString
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class MemberRequestDTO {
 
     private String MEM_NAME;

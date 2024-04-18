@@ -15,12 +15,12 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class InquiryDTO {
-        private Long memNo;
-        private Integer qNo;
-        private Integer qIsAnswered;
-        private String qSubject;
-        private String qContent;
-        private LocalDateTime qCreateTime;
+        private Long mem_No;
+        private Integer q_No;
+        private Integer q_IsAnswered;
+        private String q_Subject;
+        private String q_Content;
+        private LocalDateTime q_CreateTime;
 
-        private MemberRequestDTO memberRequest; // MemberRequestDTO 타입의 필드 추가
+        private MemberRequestDTO member_Request; // MemberRequestDTO 타입의 필드 추가
 }
