@@ -6,6 +6,8 @@ function themaBoardListDivForm(imageUrl,title,text,address,sido,cat1,cat2,cat3,c
 
     let boxContent = $('<div></div>').addClass("boxContent");
 
+    let titleA = $('<a></a>').attr("href","/thema/themaDetailPage?contentNo="+contentNo+"&typeId="+contentTypeId);
+
     let themaBoard = $('<div></div>').addClass("themaBoard");
 
     let themaBoardImg = $('<div></div>').addClass("themaBoardImg");
@@ -15,9 +17,7 @@ function themaBoardListDivForm(imageUrl,title,text,address,sido,cat1,cat2,cat3,c
     let verticalContainer = $('<div></div>').addClass("vertical-container");
 
     let themaTitle = $('<div></div>').addClass("themaTitle");
-    let titleA = $('<a></a>').attr("href","/thema/themaDetailPage?contentNo="+contentNo+"&typeId="+contentTypeId);
-    titleA.html(title);
-    themaTitle.append(titleA);
+    themaTitle.html(title);
 
     let themaText = $('<div></div>').addClass("themaText");
     themaText.html(text);
@@ -63,7 +63,9 @@ function themaBoardListDivForm(imageUrl,title,text,address,sido,cat1,cat2,cat3,c
 
     themaBoard.append(themaBoardImg).append(verticalContainer);
 
-    boxContent.append(themaBoard);
+    titleA.append(themaBoard);
+
+    boxContent.append(titleA);
 
     $('#themaBoardContentConsole').append(boxContent);
 }
