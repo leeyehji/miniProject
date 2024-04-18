@@ -5,18 +5,12 @@ $(function(){
 		type:'post'
 		,url:'/mypage/getMemId'
 		,success: function(data){
-			if(data != '' && data != null){
-				//<input type="button" id="loginBtn" value="로그인" />	->마이페이지
-        		//<input type="button" id="JoinBtn" value="회원가입" />	-> 로그아웃
-				// 마이페이지 버튼 생성
-				var userBtn = `<input type="button" id="logoutBtn" value="로그아웃" />`
-								+`<input type="button" id="mypageBtn" onclick="window.location.href='/mypage/mypage'" value="마이페이지" />`;			
-				
-				$('.login').append(userBtn);
+			if(data != '' && data != null){//로그인이 안되어 있으면
+				$('#imUser').hide();
+				$('#imNotUser').show();
 			}else{
-				var notUserBtn = `<input type="button" id="loginBtn" value="로그인" />`
-        					+`<input type="button" id="JoinBtn" value="회원가입" />`;
-        		$('.login').append(notUserBtn);
+				$('#imNotUser').hide();
+				$('#imUser').show();
 			}
 		}
 	});
@@ -82,18 +76,36 @@ $("#loginBtn").click(function(){
 } );
 /*로그아웃*/
 $("#logoutBtn").click(function(){
+	alert("로그아웃 버튼 누름.");
+	
 	$.ajax({
 		type:'get'
 		,url:'/member/logout'
 		,success: function(){
-			alert("로그아웃 되셨습니다.");
+			//alert("로그아웃 되셨습니다.");
+			window.location.href = '/mainpage';
+		},error:function(xhr, status, error){
+			console.error("Status: " + status + "\nError: " + error + "\nResponse: " + xhr.responseText);
+	    }
+	});//ajax
+});//logoutBtn.click
+/* 마이페이지 */
+$("#mypageBtn").click(function(){
+	alert("마이페이지버튼 누름");
+	$.ajax({
+		type:'get'
+		,url:'/mypage/mypage'
+		,success: function(){
+			alert("마이페이지 이동 되셨습니다.");
+			window.location.href='/mypage/mypage';
 		},error:function(xhr, status, error){
 			console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
 	    }
 	});//ajax
-});//logoutBtn.click
+});//mypageBtn.click
 /*회원가입페이지 */
 $("#JoinBtn").click(function(){
+	alert("회원가입");
 	window.location.href="/member/memberJoinForm";
 } );
 /*page content*/

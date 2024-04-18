@@ -36,6 +36,11 @@ public class HomeController {
 	public String home(Model model) {
 		return "mainpage";
 	}
+	
+	@RequestMapping(value = "/mainpage")
+	public String home() {
+		return "mainpage";
+	}
 
 	@GetMapping(value = "/getTop5Destinations")
 	@ResponseBody

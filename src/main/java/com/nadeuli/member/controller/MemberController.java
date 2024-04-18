@@ -132,12 +132,14 @@ public class MemberController {
       * 로그아웃 세션 없애기
      */
     @GetMapping("/logout")
-    public String logout(HttpServletRequest request) {
+    @ResponseBody
+    public void logout(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if (session != null) {
             session.invalidate(); // 세션 제거
         }
-        return "/";
+        System.out.println("로그아웃 성공");
+        //return "/";
     }
 
     /**

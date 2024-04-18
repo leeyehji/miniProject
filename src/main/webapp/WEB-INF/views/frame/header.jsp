@@ -21,8 +21,14 @@
       </div>
 
       <div class="login">
-        <!--<input type="button" id="loginBtn" value="로그인" />
-        <input type="button" id="JoinBtn" value="회원가입" />-->
+      	<div id="imUser">
+	      	<input type="button" id="loginBtn" value="로그인" />
+	        <input type="button" id="JoinBtn" value="회원가입" />
+      	</div>
+      	<div id="imNotUser">
+      		<input type="button" id="mypageBtn" value="마이페이지" />
+	        <input type="button" id="logoutBtn" value="로그아웃" />
+      	</div>
       </div>
 
     </div>
