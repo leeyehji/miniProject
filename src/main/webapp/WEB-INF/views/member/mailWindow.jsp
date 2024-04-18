@@ -10,21 +10,20 @@
     <link rel="stylesheet" href="/member/css/memberJoin.css">
 
     <script defer  src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script defer src="/member/js/checkId.js"></script>
+    <script defer src="/member/js/mailWindow.js"></script>
 
 
 </head>
 <body>
-<h1> 회원정보 인증 </h1>
+<P><h1> 회원정보 인증 </h1></P>
 <table>
     <h1> 회원정보 인증 </h1>
-    <table>
-        <tr>
-            <th>인증번호는 </th>
-            <td><input type="text" placeholder=""></td>
-            <td><input type="button" onclick="Email_send_step2"></td>
-        </tr>
-    </table>
+
+    <p>인증번호는 </p>
+    <input type="hidden" id="MEM_EMAIL" value="${MEM_EMAIL}">
+    <p><input type="text" placeholder="인증번호 입력" name="verification" id="verification"></p>
+    <p><input type="button" onclick="mailWindow()" style=""></p>
+
 
 </table>
 

@@ -22,5 +22,5 @@ public interface MemberService {
     String lostId(MemberRequestDTO memberRequestDTO);
 
 
-
+    String lostPwd (MemberRequestDTO memberRequestDTO);
 }

@@ -1,6 +1,7 @@
 package com.nadeuli.member.service;
 
 
+import java.util.Map;
 
 public interface MailService {
 
@@ -10,4 +11,10 @@ public interface MailService {
 
 
     String sendPwdEmail(String MEM_EMAIL);
+
+
+    String JoinVerification(String verification, String memEmail);
+
+
+    String getMyPwd(Map<String,Object> map);
 }

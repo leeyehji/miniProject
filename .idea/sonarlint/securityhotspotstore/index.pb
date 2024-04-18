@@ -14,7 +14,7 @@ h
 ^
 .src/main/webapp/resources/mainpage/js/miniP.js,8\3\8385654db0f7f81ea7a57500712b1245b8ab30e1
 m
-=src/main/java/com/Spring/miniprojectMaven/HomeController.java,6\5\652ca03c3d88b900c3ca9c3b51718dbbe106a6f1
+=src/main/java/com/Spring/miniprojectMaven/HomeController.java,6/5/652ca03c3d88b900c3ca9c3b51718dbbe106a6f1
 k
 ;src/main/java/com/nadeuli/common/config/DatabaseConfig.java,5\8\5842e611cb11a5cb6b623a80d0181cd6c11ffbfc
 `
@@ -22,7 +22,7 @@ k
 ]
 -src/main/webapp/resources/frame/css/frame.css,a\d\ad6841eba5bc80ef71400c0301b9752f0904d8e1
 [
-+src/main/webapp/resources/frame/js/frame.js,a\a\aa0d9af07f87a463e8fed33767d463a8c9df4b58
++src/main/webapp/resources/frame/js/frame.js,a/a/aa0d9af07f87a463e8fed33767d463a8c9df4b58
 ^
 .src/main/webapp/WEB-INF/views/frame/footer.jsp,5\4\54bd0df723eb3a7ef996bb426c16bb0c3833da7b
 ]
@@ -195,8 +195,6 @@ p
 @src/main/java/com/nadeuli/member/controller/NaverController.java,c/4/c4ab6109f712b079ea8b4cc7d7230d355f935f9a
 \
 ,src/main/webapp/resources/member/js/login.js,f/1/f1501bf8f160e2aff1086ff9572299d0ccc79915
-e
-5src/main/webapp/WEB-INF/views/member/findPassword.jsp,6/b/6b3491ec32930df3cde85cf58a15d8f42782276c
 a
 1src/main/webapp/resources/member/js/emailCheck.js,4/0/4099c1632fd606642582c8b162994a4bd8d8f7ec
 ^
@@ -247,3 +245,13 @@ c
 3src/main/webapp/resources/member/css/memberJoin.css,5/4/549bb811615df0ea3d6c25ea9b45fc9007267698
 _
 /src/main/webapp/WEB-INF/spring/root-context.xml,5/2/528c08e315052712c6de729d808bc541b1c5b506
+_
+/src/main/webapp/resources/member/css/yourId.css,7/9/79d9e0ca94c97df086aebed9a2661dcb0f61984b
+a
+1src/main/webapp/resources/member/js/mailWindow.js,2/b/2bb333fd053deabeff15624ab0dfafc74154f1e7
+`
+0src/main/webapp/WEB-INF/views/member/findPwd.jsp,f/7/f752627317974f7ceca1ae7af4beadd2eac80329
+^
+.src/main/webapp/resources/member/js/lostPwd.js,c/4/c4449e9aeab4952da76a81a2b5ba288ae7cb5a2d
+c
+3src/main/webapp/resources/member/js/sendPwdEmail.js,3/9/39cea3f57d42cce4fbad05e6a6f003cae8346698

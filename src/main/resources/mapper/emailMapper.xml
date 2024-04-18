@@ -20,4 +20,38 @@
         auth_code = VALUES(auth_code),
         expire_at = VALUES(pwdemail)
     </select>
+    <select id="findJoinEmail" resultType="java.lang.String">
+<!--        SELECT CASE-->
+<!--        WHEN authstr = verification THEN '일치'-->
+<!--        ELSE '불일치'-->
+<!--        END AS verification_result-->
+<!--        FROM MAIL-->
+<!--        WHERE MEM_EMAIL = '해당 이메일 주소';-->
+        SELECT
+        email
+        FROM MAIL
+        WHERE email = #{email}
+        AND auth_code = #{verification};
+    </select>
+    <select id="getMyPwd" parameterType="java.util.HashMap" resultType="java.lang.String">
+<!--        select MEM_PW-->
+<!--        from MEMBER ME-->
+<!--        join MAIL MA on ME.MEM_EMAIL = MA.email-->
+<!--        where MA.auth_code = #{verification}-->
+<!--        AND MA.email = #{MEM_EMAIL}-->
+<!--        AND ME.MEM_ID=#{MEM_ID}-->
+<!--        AND ME.MEM_NAME= #{MEM_NAME}-->
+<!--        AND ME.MEM_PHONE = #{MEM_PHONE};-->
+<!--        -->
+<!--        -->
+        SELECT ME.MEM_PW
+        FROM MEMBER ME
+        JOIN MAIL MA ON ME.MEM_EMAIL = MA.email
+        WHERE MA.auth_code = #{verification}
+        AND MA.email = #{MEM_EMAIL}
+        AND ME.MEM_ID = #{MEM_ID}
+        AND ME.MEM_NAME = #{MEM_NAME}
+        AND ME.MEM_PHONE = #{MEM_PHONE};
+
+    </select>
 </mapper>
