@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(/member/image/background.jpg);
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.wrap{
+    background-color: white;
+    height: 500px;
+    width: 400px;
+    text-align: center;
+}
+.di_wrap{
+
+    font-size: 20px;
+    margin-top: 200px;
+}
+.pre_btn{
+    margin-bottom: 20px;
+
+}

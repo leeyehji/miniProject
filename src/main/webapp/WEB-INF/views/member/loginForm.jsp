@@ -37,7 +37,7 @@
 	</form>
 
 	<div class="caption">
-		<a href="/member/findPassword">비밀번호 찾기</a> /
+		<a href="/member/findPwd">비밀번호 찾기</a> /
 		<a href="/member/findId">아이디 찾기</a> /
 		<a href="/member/memberJoinForm">회원가입</a> /
 		<a href="/"> HOME  </a>

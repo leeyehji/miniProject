@@ -1,5 +1,6 @@
 package com.nadeuli.member.service;
 
+import com.nadeuli.member.dto.MemberRequestDTO;
 import com.nadeuli.member.repository.MailRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+import java.util.Map;
 import java.util.Random;
 
 @Service
@@ -20,6 +22,37 @@ class MailServiceImpl implements MailService {
     private  JavaMailSender mailSender;
     @Autowired
     private MailRepository mailRepository;
+
+//이메일 인증하기
+
+    @Override
+    public String JoinVerification(String verification, String MEM_EMAIL) {
+        System.out.println("MailServiceImpl.JoinVerification");
+
+        String cass = String.valueOf(mailRepository.findJoinEmail(MEM_EMAIL,verification));
+        System.out.println(cass);
+        if (cass != null){
+            return "true";
+        }else {
+            return "false";
+        }
+    }
+
+    @Override
+    public String getMyPwd(Map<String,Object> map) {
+
+        String yourPwd = mailRepository.getMyPwd(map);
+        if(yourPwd != null){
+            return yourPwd;
+        }else {
+            return "false";
+        }
+    }
+
+
+    /**
+     * 비밀번호 찾기
+     * */
 
     //난수 발생 시키기
     public String createCode() {
@@ -107,7 +140,6 @@ class MailServiceImpl implements MailService {
         String pwdemail = createCode();
         try {
             MimeMessage emailForm = createEmailForm1(MEM_EMAIL, pwdemail);
-
             mailSender.send(emailForm); //
             mailRepository.findpwdemail(MEM_EMAIL, pwdemail);
         } catch (MessagingException e) {
@@ -117,6 +149,10 @@ class MailServiceImpl implements MailService {
         return pwdemail;
 
     }
+
+
+
+
     public MimeMessage createEmailForm1(String MEM_EMAIL, String authstr) throws MessagingException {
 
         String setFrom = "inhwan3596@gmail.com"; // 보내는 사람의 이메일 주소

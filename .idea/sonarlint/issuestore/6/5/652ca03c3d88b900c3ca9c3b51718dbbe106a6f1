@@ -1,2 +1,10 @@
 
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ş–½8ª²ğ”ê1
+‡
+java:S6833"eReplace the "@Controller" annotation by "@RestController" and remove all "@ResponseBody" annotations.(íœ¡ñùÿÿÿÿ8àğÉÿî1
+L	java:S106&"+Replace this use of System.out by a logger.(Ò™‰Âıÿÿÿÿ8äğÉÿî1
+]	java:S125%"<This block of commented-out lines of code should be removed.(ïÉˆÓüÿÿÿÿ8åğÉÿî1
+u
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ8æğÉÿî1
+t
+java:S1128"RRemove this unused import 'org.springframework.web.bind.annotation.RequestMethod'.(Ê™Ğÿûÿÿÿÿ8èğÉÿî1
