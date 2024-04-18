@@ -326,6 +326,7 @@ input::placeholder {
     height: 41px;
     font-size: 20px;
     border-radius: 10px;
+    padding-left: 10px;
 }
 
 .search #searchBtn {

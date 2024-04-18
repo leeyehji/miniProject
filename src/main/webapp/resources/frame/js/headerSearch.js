@@ -15,6 +15,15 @@ $('#searchBtn').click(function(){
     }
     //검색 결과 페이지로 이동하도록 변경
 })
+$('#inp_search').keypress(function(e){
+    if(e.which == 13){ // 13 is the enter key's keycode
+        if($('#inp_search').val() === ""){
+            alert("검색어를 입력하세요")
+        }else {
+            location.href = "/search/searchResultForm?keyword=" + $('#inp_search').val();
+        }
+    }
+});
 
 
 $('#inp_search').autocomplete({
