@@ -76,14 +76,12 @@ $("#loginBtn").click(function(){
 } );
 /*로그아웃*/
 $("#logoutBtn").click(function(){
-	alert("로그아웃 버튼 누름.");
 	
 	$.ajax({
 		type:'get'
 		,url:'/member/logout'
 		,success: function(){
-			//alert("로그아웃 되셨습니다.");
-			window.location.href = '/mainpage';
+			window.location.href='/';
 		},error:function(xhr, status, error){
 			console.error("Status: " + status + "\nError: " + error + "\nResponse: " + xhr.responseText);
 	    }
@@ -91,12 +89,10 @@ $("#logoutBtn").click(function(){
 });//logoutBtn.click
 /* 마이페이지 */
 $("#mypageBtn").click(function(){
-	alert("마이페이지버튼 누름");
 	$.ajax({
 		type:'get'
 		,url:'/mypage/mypage'
 		,success: function(){
-			alert("마이페이지 이동 되셨습니다.");
 			window.location.href='/mypage/mypage';
 		},error:function(xhr, status, error){
 			console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
@@ -105,7 +101,6 @@ $("#mypageBtn").click(function(){
 });//mypageBtn.click
 /*회원가입페이지 */
 $("#JoinBtn").click(function(){
-	alert("회원가입");
 	window.location.href="/member/memberJoinForm";
 } );
 /*page content*/

@@ -133,13 +133,13 @@ public class MemberController {
      */
     @GetMapping("/logout")
     @ResponseBody
-    public void logout(HttpServletRequest request) {
+    public String logout(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if (session != null) {
             session.invalidate(); // 세션 제거
         }
         System.out.println("로그아웃 성공");
-        //return "/";
+        return "/";
     }
 
     /**
