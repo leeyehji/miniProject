@@ -147,4 +147,11 @@ public class MypageController {
     	String memId = (String) session.getAttribute("MEM_ID");
     	return mypageService.getMyBest(memId);
     }
+    
+    @PostMapping(value = "deleteMyBoard")
+    @ResponseBody
+    public void deleteMyBoard(HttpSession session) {
+    	String memId = (String) session.getAttribute("MEM_ID");
+    	mypageService.deleteMyBoard(memId);
+    }
 }

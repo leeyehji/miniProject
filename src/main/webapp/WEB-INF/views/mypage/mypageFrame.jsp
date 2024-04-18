@@ -27,32 +27,32 @@
 				<div class="horizonBox">
 					<div class="verticalBox">
 						<div>&#9812; 아이디</div>
-						<div><p id="memId"></p></div>
+						<div><p class= "userP" id="memId"></p></div>
 					</div>
 					
 					<div class="verticalBox">
 						<div>&#9786; 이름</div>
-						<div><p id="memName"></p></div>
+						<div><p class= "userP"  id="memName"></p></div>
 					</div>
 					
 					<div class="verticalBox">
 						<div>&#9743; 전화번호</div>
-						<div><p id="memPhone"></p></div>
+						<div><p class= "userP" id="memPhone"></p></div>
 					</div>
 					
 					<div class="verticalBox">
 						<div>&#9993; 이메일</div>
-						<div><p id="memEmail"></p></div>
+						<div><p class= "userP" id="memEmail"></p></div>
 					</div>
 					
 					<div class="verticalBox">
 						<div>&#9892; 성별</div>
-						<div><p id="memGender"></p></div>
+						<div><p class= "userP" id="memGender"></p></div>
 					</div>
 					
 					<div class="verticalBox " id="lastVerticalBox">
 						<div>&#9752; 가입일</div>
-						<div><p id="memJoinDate"></p></div>
+						<div><p class= "userP" id="memJoinDate"></p></div>
 					</div>
 				</div>
 				
@@ -75,9 +75,9 @@
 					<div class="horizonBoxL">
 						<div id="box1Img"></div>
 						<div class="horizon">
-							<div id="box1Title">제목</div>
+							<div id="box1Title"></div>
 							<div id="box1Txt">
-								대표글 변경 버튼 누르지 마세요. 
+								대표글을 등록해 주세요. 
 							</div>
 							<!-- <div id="box1TxtOver">. . .</div> -->
 						</div>
@@ -86,7 +86,8 @@
 			</div>
 		</div>
 		<div class="btnRight">
-				<input type="button" id="goMyBoard" onclick="location.href='/mypage/myBoard'" value="대표글 변경" class="mypageChangeBtn">		
+				<input type="button" id="goMyBoard" onclick="location.href='/mypage/myBoard'" value="대표글 변경" class="mypageChangeBtn">	
+				<input type="button" id="deleteMyBoard" value="대표글 삭제" class="mypageChangeBtn">	
 		</div>
 			
 		

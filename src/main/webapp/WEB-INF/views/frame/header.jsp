@@ -21,8 +21,8 @@
       </div>
 
       <div class="login">
-        <input type="button" id="loginBtn" value="로그인" />
-        <input type="button" id="JoinBtn" value="회원가입" />
+        <!--<input type="button" id="loginBtn" value="로그인" />
+        <input type="button" id="JoinBtn" value="회원가입" />-->
       </div>
 
     </div>

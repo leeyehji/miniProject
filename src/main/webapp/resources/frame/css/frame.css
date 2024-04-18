@@ -343,7 +343,7 @@ input::placeholder {
     /* 박스의 테두리 */
 }
 
-.login #loginBtn {
+.login #loginBtn, #logoutBtn {
     width: 100px;
     /* 박스의 넓이 */
     color: #000000;
@@ -354,7 +354,7 @@ input::placeholder {
     /* 박스의 테두리 */
 }
 
-.login #JoinBtn {
+.login #JoinBtn, #mypageBtn {
     width: 100px;
     margin-left: 10px;
     /* 박스의 넓이 */
@@ -368,11 +368,12 @@ input::placeholder {
 
 
 #searchBtn,
-#loginBtn,
-#JoinBtn {
+#loginBtn, #logoutBtn
+,#JoinBtn, #mypageBtn{
     border-radius: 10px;
     /* 원하는 둥근 정도를 픽셀로 지정 */
     margin-top: 15px;
+    cursor: pointer;
 }
 
 /* 검색 버튼 호버 스타일 */

@@ -17,6 +17,13 @@
     <link rel="stylesheet" href="../../resources/mainpage/css/miniP.css"/>
     <link rel="stylesheet" type="text/css" href="./frame/css/frame.css">
 
+	<!-- 차트를 가져옵니다. -->
+	<!-- Step 1) Load D3.js -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <!-- Step 2) Load billboard.js with style -->
+    <link rel="stylesheet" href="/mypage/css/billboard.css">
+    <script src="/mypage/js/billboard.js"></script>
+    <script src="/mainpage/js/chart.js"></script>
 </head>
 
 <body>
@@ -124,6 +131,11 @@
                 </a>
             </div>
         </div>
+    </section>
+    
+    <section class="chart">
+    	<div id="chart1">차트1</div>
+    	<div id="chart2">차트2</div>
     </section>
     </tfoot>
 

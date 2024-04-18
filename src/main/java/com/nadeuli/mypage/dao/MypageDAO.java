@@ -28,4 +28,6 @@ public interface MypageDAO {
 	public void setBestReview(Map<String, Object> tempMap);
 
 	public ReviewDTO getMyBest(String memId);
+
+	public void deleteMyBoard(String memId);
 }

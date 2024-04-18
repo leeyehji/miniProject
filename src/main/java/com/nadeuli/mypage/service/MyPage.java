@@ -183,4 +183,8 @@ public class MyPage implements MypageService {
         return mypageDAO.getMyBest(memId);
 	}
 	
+	@Override
+	public void deleteMyBoard(String memId) {
+		mypageDAO.deleteMyBoard(memId);
+	}
 }

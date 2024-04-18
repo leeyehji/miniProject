@@ -1,5 +1,29 @@
 /*header*/
-// 메뉴바 시작
+$(function(){
+	//로그인이 안되어 있다면
+	$.ajax({
+		type:'post'
+		,url:'/mypage/getMemId'
+		,success: function(data){
+			if(data != '' && data != null){
+				//<input type="button" id="loginBtn" value="로그인" />	->마이페이지
+        		//<input type="button" id="JoinBtn" value="회원가입" />	-> 로그아웃
+				// 마이페이지 버튼 생성
+				var userBtn = `<input type="button" id="logoutBtn" value="로그아웃" />`
+								+`<input type="button" id="mypageBtn" onclick="window.location.href='/mypage/mypage'" value="마이페이지" />`;			
+				
+				$('.login').append(userBtn);
+			}else{
+				var notUserBtn = `<input type="button" id="loginBtn" value="로그인" />`
+        					+`<input type="button" id="JoinBtn" value="회원가입" />`;
+        		$('.login').append(notUserBtn);
+			}
+		}
+	});
+	
+
+});//function
+
 function toggleNavSections() {
   var navSection = document.querySelector('.nav_section');
   navSection.classList.toggle('show');
@@ -56,6 +80,18 @@ $(function() {
 $("#loginBtn").click(function(){
 	window.location.href="/member/loginForm";
 } );
+/*로그아웃*/
+$("#logoutBtn").click(function(){
+	$.ajax({
+		type:'get'
+		,url:'/member/logout'
+		,success: function(){
+			alert("로그아웃 되셨습니다.");
+		},error:function(xhr, status, error){
+			console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
+	    }
+	});//ajax
+});//logoutBtn.click
 /*회원가입페이지 */
 $("#JoinBtn").click(function(){
 	window.location.href="/member/memberJoinForm";

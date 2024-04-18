@@ -1,52 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-
- <!--jQuery-->
-    <script src="http://code.jQuery.com/jquery-3.7.1.min.js">//선언.internet필수.</script>
-
-    <!-- Step 1) Load D3.js -->
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-
-    <!-- Step 2) Load billboard.js with style -->
-    <link rel="stylesheet" href="/mypage/css/billboard.css">
-    <script src="/mypage/js/billboard.js"></script>
-    
-    <!-- Or load different theme style -->
-    <link rel="stylesheet" href="/mypage/css/insight.min.css">
-
-    <style>
-        #chart1,#chart2 {
-            width:800px;
-        }
-    </style>
-
-
-</head>
-<body>
-	<div>차트페이지입니다.</div>
-    <div id="chart1">1번</div>
-    <div id="chart2">2번</div>
-
-	<script>
-	$(function(){
+$(function(){
 		console.log("차트 페이지");
+		$('#chart2').hide();
+		
 		$.ajax({
 			type: 'get'
-			,url:'/mypage/showChart'
+			,url:'/showChart'
 			,dataType: 'json'
 			,contentType: 'application/json'
 			,success:function(data){
-				/*setinterval으로 show, hide 고민.*/
 				console.log(JSON.stringify(data));
 				
 				var chartData = [];
 					$.each(data, function(index, item) {
-				    	//chartData.push([item.dataName, 5]);
 				    	chartData.push([item.dataName, item.dataValue]);
 				    });
 				console.log(chartData);
@@ -100,40 +65,53 @@
 		                }
 		            });
 
-				 	/*line 또는 bubble, scatter 형식의 인기 검색어/인기 태그/인기글(B_LIKE, B_COMMENTCOUNT, B_VIEW)*/
+			}, error: function(xhr, status, error){
+				console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
+		    }
+		});//ajax
+		 
+		 $.ajax({
+		 	type:'get'
+		 	,url:'/showChart2'
+		 	,dataType: 'json'
+			,contentType: 'application/json'
+		 	,success:function(data){
+		 		console.log(JSON.stringify(data));
+				var chartData2 = [];
+					$.each(data, function(index, item) {
+				    	chartData2.push([item.dataName, item.dataValue]);
+				    });
+				console.log(chartData2);
+				
+		 		//line 또는 bubble, scatter 형식의 인기 검색어/인기 태그/인기글(B_LIKE, B_COMMENTCOUNT, B_VIEW)
 					var chart = bb.generate({
-			             data: {
-			                 /*columns대신 url:"./aa.json, mimeType:"json"*/
-			                 columns: [
-			                     ["data1", 30, 200, 100, 400, 150, 250],
-			                     ["data2", 130, 100, 140, 200, 150, 50]
-			                 ],type: "area"
-			                 ,colors: {
-			                     data1: "green",
-			                     data2: "skyblue"
-			                 },labels:{
-			                     colors: "#fff"
-			                     ,centered:true
-			                     ,format:{
-			                         data1: function(x){return d3.format(x)+('명');}
-			                     }
-			                 },names: {
-			                     data1: "오늘 작성된 글 수",
-			                     data2: "어제까지 작성된 글 수"
-			                 },onmax:{
-
+			        	title:{
+		                    text: "여행지 유형별 조회수"
+		                },padding:{
+		                    top:10
+		                    ,bottom:20
+		                },data: {
+			            	columns: chartData2
+			                ,type: "pie"
+			                ,colors: {
+			                    data1: "green",
+			                    data2: "skyblue"
+			                },labels:{
+			                    colors: "#fff"
+			                    ,centered:true
+			                    ,format:{
+			                        data1: function(x){return d3.format(x)+('명');}
+			                    }
+			                },names: {
+			                    data1: "오늘 작성된 글 수",
+			                    data2: "어제까지 작성된 글 수"
+			                },onmax:{
 			                 },selection: {
 			                     enabled: true,
 			                     draggable: true
 			                 },stack: {
 			                     normalize: true
-			                 },clipPath: false
-			                 ,groups: [
-			                     [
-			                         "data1",
-			                         "data2"
-			                     ]
-			                 ]
+			                 },clipPath: false		
 			             },
 			             bar: {
 			                 width: {
@@ -155,15 +133,13 @@
 			                 ]
 			             },bindto: "#chart2"
 			         });
-			}, error: function(xhr, status, error){
+		 	}, error: function(xhr, status, error){
 				console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
 		    }
-		});//ajax
-		
-		
+		 });//ajax
 		 
+		 setInterval(function(){
+			$('#chart1').toggle();
+			$('#chart2').toggle();
+		},3000);//setInterval
 	});
-
-	</script>
-</body>
-</html>

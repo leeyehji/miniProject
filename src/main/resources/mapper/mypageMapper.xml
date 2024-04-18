@@ -45,4 +45,8 @@
     <select id="getMyBest" parameterType="String" resultType="com.nadeuli.review.bean.ReviewDTO">
     	SELECT * FROM BOARD WHERE B_NO = (SELECT MEM_BESTREVIEW FROM MEMBER WHERE MEM_ID = #{memId}) 
     </select>
+    
+    <update id="deleteMyBoard" parameterType="String">
+    	update MEMBER SET MEM_BESTREVIEW = null where MEM_ID = #{memid}
+    </update>
  </mapper>

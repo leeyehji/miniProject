@@ -34,5 +34,7 @@ public interface MypageService {
 
 	public ReviewDTO getMyBest(String memId);
 
+	public void deleteMyBoard(String memId);
+
 
 }

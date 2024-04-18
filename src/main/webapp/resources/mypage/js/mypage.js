@@ -196,16 +196,16 @@ $(function(){
     
     
     
-    // 정규표현식을 사용하여 HTML 태그를 제거하고 텍스트만 추출하는 함수
+    // 정규표현식을 사용하여 img 태그를 제거하고 텍스트를 추출하는 함수
 	function extractTextFromHTML(htmlString) {
-	  // HTML 태그를 제거하는 정규표현식
-	  var regex = /(<([^>]+)>)/gi;
-	  var text = htmlString.replace(regex, "");
+		// HTML img 태그를 제거하는 정규표현식
+		var regex = /<img[^>]+>/gi;	  // +전역검색
+		var text = htmlString.replace(regex, "");
 	  
-	  // 문장 단위 텍스트 추출
-	  var sentences = text.split(/[.!?]/);
-	  var formattedText = sentences.join("\n\n");
-	  return formattedText;
+	  	// <br>태그가 있다면 제거하고 줄바꿈 넣기 (<br> </br> <br/>등 전부)
+	  	var sentences = htmlString.replace(regex, "");
+		var formattedText = sentences.replace(/<br\s*\/?>/g, "\n");
+	  	return formattedText;
 	}
 	
     //나의 대표글 불러오기
@@ -234,5 +234,17 @@ $(function(){
 	    }
     });//ajax 대표글
     
+    $('#deleteMyBoard').click(function(){
+    	$.ajax({
+    		type:'post'
+    		,url:'/mypage/deleteMyBoard'
+    		,success:function(){
+    			alert('대표글이 삭제 되었습니다.');
+    			location.href='/mypage/mypage';
+    		},error:function(xhr, status, error){
+				console.error("Status: " + status + ",\nError: " + error + ",\nResponse: " + xhr.responseText);
+	    	}
+    	});//ajax
+    });//click deleteMyBoard
 
 });//function()
