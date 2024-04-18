@@ -95,7 +95,7 @@ public class MyPage implements MypageService {
             hash.put("start", start);
             hash.put("end", end);
             hash.put("description",listAll.get(i).getCal_memo() );
-
+            hash.put("color", listAll.get(i).getCal_color());
             jsonObj = JSONObject.fromObject(hash);;
             jsonArr.add(jsonObj);
         }
@@ -134,7 +134,7 @@ public class MyPage implements MypageService {
 	public void deleteProfile(MemberDTO memberDTO) {
 		//NCP 삭제
 		String imageFileName= memberDTO.getMem_profileImage();
-		objectStorageService.deleteFile(bucketName,"profile/"+imageFileName);
+		objectStorageService.deleteFile(bucketName,"storage/profile/"+imageFileName);
 		System.out.println("ncp 삭제");
 		
 		//MySQL 삭제
@@ -150,6 +150,7 @@ public class MyPage implements MypageService {
         tempMap.put("startNum", startNum);
         tempMap.put("mem_id", id);
         //List객체가 JSON으로 자동 변환된다. - pom.xml <dependency>에 추가해야 함
+        System.out.println(tempMap.get("mem_id")+", "+tempMap.get("startNum"));
         List<ReviewDTO> list = mypageDAO.getMyBoardList(tempMap);
 
         //페이징 처리
@@ -167,6 +168,19 @@ public class MyPage implements MypageService {
         map.put("totalA", totalA);
 
         return map;
+	}
+	
+	@Override
+	public void setBestReview(String no, String mem_id) {
+        Map<String, Object> tempMap = new HashMap<String, Object>();
+        tempMap.put("mem_id", mem_id);
+        tempMap.put("b_no", no);
+		mypageDAO.setBestReview(tempMap);
+	}
+	
+	@Override
+	public ReviewDTO getMyBest(String memId) {
+        return mypageDAO.getMyBest(memId);
 	}
 	
 }

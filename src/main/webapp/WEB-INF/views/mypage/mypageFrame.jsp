@@ -50,7 +50,7 @@
 						<div><p id="memGender"></p></div>
 					</div>
 					
-					<div class="verticalBox" id="lastVerticalBox">
+					<div class="verticalBox " id="lastVerticalBox">
 						<div>&#9752; 가입일</div>
 						<div><p id="memJoinDate"></p></div>
 					</div>
@@ -71,16 +71,17 @@
 			
 				<div id="box1Content">
 					<div class="boxHeader"><strong>나의 대표 글</strong></div>
-					<br><br>
 					
-					<div class="horizonBox">
+					<div class="horizonBoxL">
 						<div id="box1Img"></div>
-						<div id="box1Txt">
-							대표글 변경 버튼 누르지 마세요. 
+						<div class="horizon">
+							<div id="box1Title">제목</div>
+							<div id="box1Txt">
+								대표글 변경 버튼 누르지 마세요. 
+							</div>
+							<!-- <div id="box1TxtOver">. . .</div> -->
 						</div>
 					</div>
-					
-					<br>
 				</div>	
 			</div>
 		</div>

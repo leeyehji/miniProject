@@ -1,19 +1,29 @@
 package com.nadeuli.serviceCenter.controller;
 
+import com.nadeuli.serviceCenter.service.ServiceCenterMailService;
 import com.nadeuli.serviceCenter.service.ServiceCenterService;
 import com.nadeuli.serviceCenter.bean.NoticeDTO;
 import com.nadeuli.serviceCenter.bean.InquiryDTO;
 import com.nadeuli.serviceCenter.bean.FaqDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class ServiceCenterController {
+
+    @Autowired
+    private ServiceCenterMailService mailService; // 서비스 주입
+
+    @Autowired
+    private JavaMailSender mailSender;
 
     private ServiceCenterService serviceCenterService;
 
@@ -30,7 +40,7 @@ public class ServiceCenterController {
         return "serviceCenter/ServiceCenter";
     }
 
-    @GetMapping(value = "/NoticeDetail/{nNo}")
+    @GetMapping(value = "/serviceCenter/NoticeDetail/{nNo}")
     public String getNoticeDetail(@PathVariable Long nNo, Model model) {
         model.addAttribute("notice", serviceCenterService.findNoticeById(nNo));
         return "serviceCenter/NoticeDetail";
@@ -132,9 +142,17 @@ public class ServiceCenterController {
         return ResponseEntity.ok(notices);
     }
 
-    @GetMapping("/inquiries/answered")
-    public ResponseEntity<List<InquiryDTO>> findByAnswered(@RequestParam Integer qIsAnswered) {
-        List<InquiryDTO> inquiries = serviceCenterService.findByAnswered(qIsAnswered);
-        return ResponseEntity.ok(inquiries);
+    @PostMapping("/sendEmail")
+    public ResponseEntity<String> sendEmail(@RequestBody Map<String,String> request) {
+        // inquiryDTO 내부에 MemberRequestDTO 정보가 포함되어 있다고 가정
+
+        boolean isSent = mailService.sendInquiryEmail(request.get("MEM_EMAIL"),request.get("MEM_NAME"),request.get("q_Content"));
+        if(isSent) {
+            return ResponseEntity.ok().body("이메일이 성공적으로 전송되었습니다.");
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("이메일 전송에 실패했습니다.");
+        }
     }
+
 }
+

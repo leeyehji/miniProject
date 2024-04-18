@@ -119,8 +119,6 @@ $('#reviewWriteBtn').click(function(){
                     dataType:'text',
                     success : function(data){
 
-                        alert(data);
-
                         location.href='reviewList?pg=1';
 
                     },

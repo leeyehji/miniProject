@@ -326,6 +326,7 @@ input::placeholder {
     height: 41px;
     font-size: 20px;
     border-radius: 10px;
+    padding-left: 10px;
 }
 
 .search #searchBtn {
@@ -396,10 +397,10 @@ input::placeholder {
 /*-------------------------------------------------------------------------------------------------------------*/
 /*content*/
 #frameContent {
-    border-right: solid 2px #CAE9FF;
+    border-top: solid 2px #CAE9FF;
     display: flex;
-    min-height: 400px;
-    width: 1895px;
+    min-height: 800px;
+    width: 1903px;
 }
 
 #frameNav {

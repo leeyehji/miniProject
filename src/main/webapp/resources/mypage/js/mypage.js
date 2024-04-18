@@ -107,11 +107,6 @@ $(function(){
 			console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
 	    }
 	});//ajax
-		
-	/* 대표글 불러오기 */
-	//$('#box1Img').html();//대표글 이미지 DB에서 가져오기
-	//$('#box1Txt').html();//대표글 요약문
-	
 	
 	/* 미니 캘린더 한글화. */
 	$.datepicker.setDefaults({
@@ -142,11 +137,6 @@ $(function(){
 							,dataType:'json'
 						});
 		dateList.done(function(data){
-			//이번달만 나오도록.
-			console.log(data);
-			//console.log(data[0].start);//yyyy-MM-dd T HH:MM:SS.sss +09:00
-			//console.log(data[28].end);
-			//console.log(data[data.size].end);
 		});
 	/* 캘린더 선택 */
 	$("#datepicker").datepicker({
@@ -168,18 +158,18 @@ $(function(){
 			        selectedDate: selectedDate
 			    }),success:function(data){
 			    	$.each(data, function(index, calDTO){//css 조정!
+			    		console.log(calDTO);
 			    		var result=`<tr><th colspan="2">`
-			    					+`<div class="calTitle">제목:`+calDTO.title+`</div>`
+			    					+`<div class="calTitle" style="border-top:`+calDTO.color +` solid; color:`+calDTO.color+`">제목:`+calDTO.title+`</div>`
 				    				+`</th></tr>`
 				    				+`<tr><td>`
-				    					+`<div class="calDate" style="margin-right:15px">시작일:`+calDTO.start+`</div>`
-				    				+`</td>`
-				    				+`<td>`
-				    					+`<div class="calDate">종료일:`+calDTO.end+`</div>`
+				    					+`<div class="calDate">시작일: `+calDTO.start+`&emsp;`
+				    					+`종료일: `+calDTO.end+`</div>`
 				    				+`</td></tr>`
 				    				+`<tr><td colspan="2">`
-				    					+`<div class="schedule">일정: `+calDTO.description+`</div>`
+				    					+`<div class="schedule" style="border-bottom:`+calDTO.color+` solid;">일정: `+calDTO.description+`</div>`
 				    				+`</td></tr>`;
+				    	
 			    		$('#myCalTable').append(result);
 			    	});
 			    				    	
@@ -194,11 +184,55 @@ $(function(){
     $('#myBoard').click(function(){
     	$.ajax({
            		type:'post'
-           		,url:'/mypage/getMyBoardList'
+           		,url:'/mypage/getReviewList'
            		,success:function(data){
            			console.log(data);
-           		}
+           		},error:function(xhr, status, error){
+					console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
+	    		}
         });//ajax
     });//click.myBoard
     
+    
+    
+    
+    // 정규표현식을 사용하여 HTML 태그를 제거하고 텍스트만 추출하는 함수
+	function extractTextFromHTML(htmlString) {
+	  // HTML 태그를 제거하는 정규표현식
+	  var regex = /(<([^>]+)>)/gi;
+	  var text = htmlString.replace(regex, "");
+	  
+	  // 문장 단위 텍스트 추출
+	  var sentences = text.split(/[.!?]/);
+	  var formattedText = sentences.join("\n\n");
+	  return formattedText;
+	}
+	
+    //나의 대표글 불러오기
+    $.ajax({
+    	type:'post'	//비밀글 대비
+    	,url:'/mypage/getMyBest'
+    	,dataType:'json'
+        ,contentType:'application/json'
+        ,success:function(data){
+	    	console.log(JSON.stringify(data));
+        	var img="https://kr.object.ncloudstorage.com/miniproject/"+data.b_THUMBNAIL;			
+			//var temp='div 태그에 텍스트 출력 시 엔터가 그대로 나오는 CSS 방법. div 태그에 텍스트를 출력할 때 엔터가 그대로 나오게 하려면 CSS의 white-space 속성을 사용하면 됩니다.white-space: pre-line;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하면서 자동으로 줄바꿈이 됩니다. 3white-space: pre-wrap;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하고, 필요에 따라 자동으로 줄바꿈이 됩니다. div 태그에 텍스트 출력 시 엔터가 그대로 나오는 CSS 방법. div 태그에 텍스트를 출력할 때 엔터가 그대로 나오게 하려면 CSS의 white-space 속성을 사용하면 됩니다.white-space: pre-line;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하면서 자동으로 줄바꿈이 됩니다. 3white-space: pre-wrap;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하고, 필요에 따라 자동으로 줄바꿈이 됩니다. div 태그에 텍스트 출력 시 엔터가 그대로 나오는 CSS 방법. div 태그에 텍스트를 출력할 때 엔터가 그대로 나오게 하려면 CSS의 white-space 속성을 사용하면 됩니다.white-space: pre-line;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하면서 자동으로 줄바꿈이 됩니다. 3white-space: pre-wrap;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하고, 필요에 따라 자동으로 줄바꿈이 됩니다. div 태그에 텍스트 출력 시 엔터가 그대로 나오는 CSS 방법. div 태그에 텍스트를 출력할 때 엔터가 그대로 나오게 하려면 CSS의 white-space 속성을 사용하면 됩니다.white-space: pre-line;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하면서 자동으로 줄바꿈이 됩니다. 3white-space: pre-wrap;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하고, 필요에 따라 자동으로 줄바꿈이 됩니다. div 태그에 텍스트 출력 시 엔터가 그대로 나오는 CSS 방법. div 태그에 텍스트를 출력할 때 엔터가 그대로 나오게 하려면 CSS의 white-space 속성을 사용하면 됩니다.white-space: pre-line;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하면서 자동으로 줄바꿈이 됩니다. 3white-space: pre-wrap;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하고, 필요에 따라 자동으로 줄바꿈이 됩니다. div 태그에 텍스트 출력 시 엔터가 그대로 나오는 CSS 방법. div 태그에 텍스트를 출력할 때 엔터가 그대로 나오게 하려면 CSS의 white-space 속성을 사용하면 됩니다.white-space: pre-line;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하면서 자동으로 줄바꿈이 됩니다. 3white-space: pre-wrap;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하고, 필요에 따라 자동으로 줄바꿈이 됩니다. div 태그에 텍스트 출력 시 엔터가 그대로 나오는 CSS 방법. div 태그에 텍스트를 출력할 때 엔터가 그대로 나오게 하려면 CSS의 white-space 속성을 사용하면 됩니다.white-space: pre-line;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하면서 자동으로 줄바꿈이 됩니다. 3white-space: pre-wrap;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하고, 필요에 따라 자동으로 줄바꿈이 됩니다. 4이를 통해 HTML 문서에서 텍스트 내용을 효과적으로 추출하고, 가독성 있게 표시할 수 있습니다. 말줄임표내놔🙂. 이자식아.';
+			var content = extractTextFromHTML(data.b_CONTENT);
+			var title = data.b_TITLE;
+			
+			$('#box1Title').html(title);
+			$('#box1Txt').html( content );
+			//$('#box1Txt').html( temp );
+			$('#box1Img').css('background-image','url("'+img+'")');//대표글 이미지 DB에서 가져오기
+        	
+        	
+        	
+        	
+        },error:function(xhr, status, error){
+			console.error("Status: " + status + ",\nError: " + error + ",\nResponse: " + xhr.responseText);
+	    }
+    });//ajax 대표글
+    
+
 });//function()

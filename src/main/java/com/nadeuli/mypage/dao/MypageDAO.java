@@ -23,5 +23,9 @@ public interface MypageDAO {
 
 	public List<ReviewDTO> getMyBoardList(Map<String, Object> map);
 
-	public int getTotalA(String id);
+	public int getTotalA(String mem_id);
+
+	public void setBestReview(Map<String, Object> tempMap);
+
+	public ReviewDTO getMyBest(String memId);
 }

@@ -5,17 +5,17 @@
 
 <mapper namespace="com.nadeuli.review.dao.ReviewDAO">
     <insert id="reviewWrite" parameterType="com.nadeuli.review.bean.ReviewDTO">
-       insert into BOARD(B_TITLE,B_CONTENT,B_THUMBNAIL,B_CREATETIME) values(#{B_TITLE},#{B_CONTENT},#{B_THUMBNAIL},now())
+        insert into BOARD(MEM_NO,B_TITLE,B_CONTENT,B_THUMBNAIL,B_CREATETIME) values((select MEM_NO from MEMBER where MEM_ID=#{MEM_ID}),#{B_TITLE},#{B_CONTENT},#{B_THUMBNAIL},now())
     </insert>
     <select id="getReviewList" parameterType="int" resultType="com.nadeuli.review.bean.ReviewDTO">
-        select * from BOARD order by B_NO desc limit #{Integer}, 6
+        select MEMBER.MEM_ID,BOARD.* from BOARD join MEMBER using(MEM_NO) order by B_NO desc limit #{Integer}, 6
     </select>
     <select id="getTotalA" resultType="int">
         select count(*) from BOARD
     </select>
 
     <select id="getReviewView" parameterType="Integer" resultType="com.nadeuli.review.bean.ReviewDTO">
-        select * from BOARD where B_NO = ${Integer}
+        select MEMBER.MEM_ID,BOARD.* from BOARD join MEMBER using(MEM_NO) where B_NO = ${Integer}
     </select>
     <update id="boardViewPlus" parameterType="Integer">
         update BOARD set B_VIEW=B_VIEW+1 where B_NO = #{Integer}
@@ -25,13 +25,26 @@
     </update>
 
     <insert id="commentWrite" parameterType="com.nadeuli.review.bean.CommentDTO">
-        insert into COMMENT(B_NO,C_CONTENT) values(#{B_NO},#{C_CONTENT})
+        insert into COMMENT(MEM_NO,B_NO,C_CONTENT) values((select MEM_NO from MEMBER where MEM_ID = #{MEM_ID}),#{B_NO},#{C_CONTENT})
     </insert>
     <update id="commentCountUp" parameterType="Integer">
         update BOARD set B_COMMENTCOUNT = B_COMMENTCOUNT +1 where B_NO = #{Integer}
     </update>
 
     <select id="getCommentList" parameterType="Integer" resultType="com.nadeuli.review.bean.CommentDTO">
-        select * from COMMENT where B_NO = #{Integer} order by C_NO desc;
+        select MEMBER.MEM_ID,MEMBER.MEM_PROFILEIMAGE,COMMENT.* from COMMENT join MEMBER using(MEM_NO) where B_NO = #{Integer} order by C_NO desc;
+    </select>
+    <select id="getPrevView" resultType="int">
+
+        SELECT COALESCE(
+        (select B_NO from BOARD where B_NO <![CDATA[<]]> ${B_NO} order by B_NO desc limit 1),
+        -1
+        ) AS result
+    </select>
+    <select id="getNextView" resultType="int">
+        SELECT COALESCE(
+        (select B_NO from BOARD where B_NO > ${B_NO} order by B_NO asc limit 1),
+        -1
+        ) AS result;
     </select>
 </mapper>

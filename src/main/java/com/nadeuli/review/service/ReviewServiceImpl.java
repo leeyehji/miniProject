@@ -25,10 +25,10 @@ public class ReviewServiceImpl implements ReviewService {
     public void reviewWrite(ReviewDTO reviewDTO) {
         String newCONTENT = reviewDTO.getB_CONTENT();
         String oldCONTENT = reviewDTO.getB_CONTENT();
-        String mem_id = "admin";
+
 
         if(oldCONTENT.contains("https://kr.object.ncloudstorage.com/miniproject/storage/review/")){
-            newCONTENT = oldCONTENT.replace("/storage/review/"+mem_id+"/temp","/storage/review/"+mem_id+"/success");
+            newCONTENT = oldCONTENT.replace("/storage/review/"+reviewDTO.getMEM_ID()+"/temp","/storage/review/"+reviewDTO.getMEM_ID()+"/success");
             reviewDTO.setB_CONTENT(newCONTENT);
         }
         System.out.println("old = " +oldCONTENT);
@@ -92,6 +92,17 @@ public class ReviewServiceImpl implements ReviewService {
         return reviewDAO.getCommentList(b_no);
     }
 
+    @Override
+    public int getPrevView(String no) {
+        int b_no = Integer.parseInt(no);
+        return reviewDAO.getPrevView(b_no);
+    }
+
+    @Override
+    public int getNextView(String no) {
+        int b_no = Integer.parseInt(no);
+        return reviewDAO.getNextView(b_no);
+    }
 
 
 }

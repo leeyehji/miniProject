@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,6 +35,7 @@ public class ThemaController {
     public ThemaDTO getThemaItem(@RequestParam(value="contentNo") String contentNo,@RequestParam(value="typeId") String typeId){
         int T_CONTENTNO = Integer.parseInt(contentNo);
         int T_CONTENTTYPEID = Integer.parseInt(typeId);
+
 //        Map<String,Object> themaMap = new HashMap<>();
 //        CommonDTO commonDTO = themaService.getCommonItem(T_CONTENTNO);
 //        int typeId = commonDTO.getT_CONTENTTYPEID();
@@ -46,9 +48,15 @@ public class ThemaController {
 
     @PostMapping(value="themaLikeUp")
     @ResponseBody
-    public String themaLikeUp(@RequestParam(value="contentNo") String contentNo){
-        return themaService.themaLikeUp(contentNo)+ "";
+    public String themaLikeUp(@RequestParam(value="contentNo") String contentNo, HttpSession session){
 
+        if(session.getAttribute("todayClickBoard")==null) {
+            session.setAttribute("todayClickBoard", "yes");
+            themaService.themaLikeUp(contentNo);
+            return "firstClick";
+        }else{
+            return "doubleClick";
+        }
     }
 
     @RequestMapping(value="themaBoardList")

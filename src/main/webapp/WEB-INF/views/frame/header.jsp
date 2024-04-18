@@ -37,7 +37,7 @@
 
         <li class="a1"><a href="/">홈</a></li>
         <li class="a2"><a href="/map/map">여행지</a></li>
-        <li class="a3"><a href="/review/review">후기</a></li>
+        <li class="a3"><a href="/review/reviewList">후기</a></li>
         <li class="a5"><a href="/serviceCenter/ServiceCenter">고객센터</a></li>
       </ul>
     </div>
@@ -55,7 +55,7 @@
     <div id="후기" class="sub_menu review">
       <ul>
         <li><a href="/review/reviewList">후기 목록</a></li>
-        <li><a href="/review/reviewWrite">후기 작성</a></li>
+        <li><a href="/review/reviewWriteForm">후기 작성</a></li>
       </ul>
     </div>
 
