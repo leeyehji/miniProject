@@ -31,10 +31,13 @@ $(function(){
 			if(commentList.length === 0) {
 				$('#commentConsole').text("댓글이 없습니다.")
 			}else{
-				let commentImageURL = "https://kr.object.ncloudstorage.com/miniproject/storage/profile/defaultProfileImage.png";
+				let commentImageMainURL = "https://kr.object.ncloudstorage.com/miniproject/storage/profile/";
+				let commentImageURL = "";
 				$.each(commentList, function (idx, item) {
 					if(item.mem_PROFILEIMAGE !== null){
-						commentImageURL = item.mem_PROFILEIMAGE;
+						commentImageURL = commentImageMainURL + item.mem_PROFILEIMAGE;
+					}else{
+						commentImageURL = commentImageMainURL + "defaultProfileImage.png";
 					}
 					createComment(commentImageURL, item.mem_ID, item.c_CONTENT, item.c_CREATETIME);
 
