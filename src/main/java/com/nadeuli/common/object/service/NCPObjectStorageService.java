@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import spring.conf.NaverConfiguration;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -78,13 +79,23 @@ public class NCPObjectStorageService implements ObjectStorageService {
 	}
 
 	@Override
-	public String moveFile(List<String> imgArray) {
+	public String moveFile(List<String> imgArray,String MEM_ID) {
 		String bucket = "miniproject";
+		String path = "storage/review/"+MEM_ID+"/temp/";
+		List<String> objectList = new ArrayList<>();
+		ObjectListing objectListing = s3.listObjects(bucket,path);
+
+		for (S3ObjectSummary objectSummary : objectListing.getObjectSummaries()) {
+			objectList.add(objectSummary.getKey());
+		}
+
 		String B_THUMBNAIL = "";
 		String oldSource;
 		String newSource;
 		for(int i=0 ; i< imgArray.size(); i++){
 			String imgURL=imgArray.get(i);
+
+
 			if(imgArray.size()==1){
 				imgURL=imgURL.replace("[","");
 				imgURL=imgURL.replace("]","");
@@ -94,16 +105,20 @@ public class NCPObjectStorageService implements ObjectStorageService {
 			}else if(i == imgArray.size()-1){
 				imgURL=imgURL.replace("]","");
 			}
-
 			imgURL=imgURL.replace("\"","");
 			oldSource=imgURL.replace("https://kr.object.ncloudstorage.com/miniproject/","");
 			newSource=oldSource.replace("temp","success");
-
-			CopyObjectRequest copyObjRequest = new CopyObjectRequest(bucket, oldSource, bucket, newSource).withCannedAccessControlList(CannedAccessControlList.PublicRead);
-			s3.copyObject(copyObjRequest);
-
 			B_THUMBNAIL=newSource;
-			System.out.println(B_THUMBNAIL);
+			if(objectList.isEmpty()) {
+				continue;
+			}else{
+				for(int j=0;j<objectList.size();j++){
+					if(oldSource.equals(objectList.get(j))){
+						CopyObjectRequest copyObjRequest = new CopyObjectRequest(bucket, oldSource, bucket, newSource).withCannedAccessControlList(CannedAccessControlList.PublicRead);
+						s3.copyObject(copyObjRequest);
+					}
+				}
+			}
 		}
 		return B_THUMBNAIL;
 	}
@@ -114,7 +129,6 @@ public class NCPObjectStorageService implements ObjectStorageService {
 		String path = "storage/review/"+mem_id+"/temp/";
 
 		try {
-
 			ObjectListing objectListing = s3.listObjects(bucketName,path);
 
 			System.out.println("File List:");

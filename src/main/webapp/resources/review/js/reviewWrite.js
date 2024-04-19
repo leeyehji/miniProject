@@ -83,7 +83,6 @@ function uploadSummernoteImageFile(file, el) {
 
 
 $('#reviewWriteBtn').click(function(){
-    let thisPage = $('')
     let title = $('#title').val();
     let content = $('#summernote').val();
 
@@ -108,9 +107,11 @@ $('#reviewWriteBtn').click(function(){
             },
             dataType:'text',
             success : function(data){
+
                 alert("이미지 저장 성공");
                 $("#thumbNail").val(data);
 
+                if($('#whereAreYou').val()==="w2r7i9"){
                 $.ajax({
                     type:'POST',
                     url : 'reviewWrite',
@@ -125,6 +126,23 @@ $('#reviewWriteBtn').click(function(){
                         console.log(e);
                     }
                 })
+                }else if($('#whereAreYou').val() === "u5p2d1"){
+                    $.ajax({
+                        type:'POST',
+                        url : '/review/reviewUpdate',
+                        data : $('#reviewWriteForm').serialize(),
+                        dataType:'text',
+                        success : function(data){
+
+                            location.href='reviewList?pg=1';
+
+                        },
+                        error:function(e){
+                            console.log(e);
+                        }
+                    })
+
+                }
             },
             error:function(e){
                 console.log(e);

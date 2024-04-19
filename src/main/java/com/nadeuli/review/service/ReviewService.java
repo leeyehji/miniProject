@@ -27,4 +27,18 @@ public interface ReviewService {
  int getPrevView(String no);
 
  int getNextView(String no);
+
+    int isMatchId(String loginId, String no);
+
+ Map<String,Object> getReviewUpdate(String no);
+
+ void reviewUpdate(ReviewDTO reviewDTO);
+
+    void reviewDelete(String bNo);
+
+ void commentUpdate(String cNo, String cContent);
+
+ void commentDelete(String cNo);
+
+ void boardCommentMinus(String bNo);
 }

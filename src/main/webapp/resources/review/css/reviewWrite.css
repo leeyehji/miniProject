@@ -38,10 +38,12 @@
 	height: 3em;
 	line-height: 3em;
 	font-size: 18px;
+	text-align: center;
+	font-style: italic;
 	margin-bottom: 10px;
 }
 
-#reviewWriteMain input {
+#reviewWriteMain input[type="button"] {
 	text-align: center;
 	width: 30%;
 	height: 50px;
@@ -53,7 +55,7 @@
 	cursor: pointer;
 }
 
-#reviewWriteMain tr:last-child td:nth-child(1) {
+#reviewWriteMain tr:last-child td {
 	text-align: center;
 }
 

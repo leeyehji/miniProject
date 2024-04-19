@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <input type="hidden" id="whereAreYou" value="write">
+    <input type="hidden" id="whereAreYou" value="w2r7i9">
 	<header><jsp:include page="../frame/header.jsp"></jsp:include></header>
 
 	<div id="frameContent">
