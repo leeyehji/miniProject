@@ -167,12 +167,6 @@
 </p>
 
 ### DB 구조
-사용한 데이터베이스는 MySQL 데이터 베이스다. 네이버 클라우드 플랫폼을 이용하여 MySQL 데이터 베이스를 만들어 유저 정보, 관광지 정보 등을 저장하였다.
-
-데이터 베이스는 엑셀 및 DB diagram을 만들어 각 테이블의 구조를 직관적으로 볼 수 있도록 하였다.
-
-완성된 DB diagram은 다음과 같다.
-![DB diagram](주소)
 
 **2.FLOWCHART**
 ```angular2html
@@ -184,6 +178,8 @@
 </p>
 
 **3.DB Diagram**
+<p>사용한 데이터베이스는 MySQL 데이터 베이스다. 네이버 클라우드 플랫폼을 이용하여 MySQL 데이터 베이스를 만들어 유저 정보, 관광지 정보 등을 저장하였다.</p>
+<p>데이터 베이스는 엑셀 및 DB diagram을 만들어 각 테이블의 구조를 직관적으로 볼 수 있도록 하였다.</p>
 <p align="center">
     <img src="./forREADME/DBDiagram.png">
     <sup style="color:#0AC5A8; font-weight: bolder;">- DB Diagram -</sup>
