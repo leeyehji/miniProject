@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원정보 수정</title>
 <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
 
 <!-- css -->
@@ -30,7 +30,7 @@
 			<tbody>
 				<tr>
 					<th>아이디 :</th>
-					<td><input type="text" readonly name="updateId" id="updateId" value="hong">
+					<td><input type="text" readonly name="updateId" id="updateId">
 					</td>
 				</tr>
 
@@ -87,8 +87,8 @@
 			<tfoot>
 				<tr>
 					<th colspan="2">
-						<input type="button" id="updateSubmit"value="제출하기"> 
-						<input type="button" id="updateReset"value="초기화">
+						<input type="button" id="updateSubmit" value="제출하기"> 
+						<input type="button" id="updateReset" value="초기화">
 					</th>
 				</tr>
 			</tfoot>

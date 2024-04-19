@@ -24,7 +24,7 @@ import com.nadeuli.review.service.ReviewService;
 
 @Controller
 @RequestMapping(value = "mypageRead")
-public class MyBoardRead {
+public class MyBoardReadController {
 	@Autowired
 	private MypageDAO mypageDAO;
 	@Autowired
@@ -34,7 +34,10 @@ public class MyBoardRead {
 	
 	@GetMapping(value="myBoard")
     public String myBoard(HttpServletRequest request,HttpSession session) { //id 내놔
-    	return "review/reviewList";
+		if(session.getAttribute("MEM_ID") == null)
+			return "mypage/plzLogin";
+		else
+			return "review/reviewList";
     }
 	
 	/*내가 작성한 글 목록 보여주기*/
@@ -43,6 +46,9 @@ public class MyBoardRead {
     public Map<String, Object> getMyBoardList(@RequestParam(value="pg",
             required = false, defaultValue="1") String pg, HttpSession session){
     	String id = (String) session.getAttribute("MEM_ID");
+    	if(id == null) {
+    		
+    	}
     	//1페이지당 3개씩 - MySQL
         int startNum = Integer.parseInt(pg) * 6 - 6; //시작위치는 0부터
         
@@ -50,7 +56,7 @@ public class MyBoardRead {
         tempMap.put("startNum", startNum);
         tempMap.put("mem_id", id);
         //List객체가 JSON으로 자동 변환된다. - pom.xml <dependency>에 추가해야 함
-        System.out.println(tempMap.get("mem_id")+", "+tempMap.get("startNum"));
+        //System.out.println(tempMap.get("mem_id")+", "+tempMap.get("startNum"));
         List<ReviewDTO> list = mypageDAO.getMyBoardList(tempMap);
         for(int i=0; i<list.size(); i++)
         	list.get(i).setMEM_ID(id);
@@ -89,13 +95,13 @@ public class MyBoardRead {
         Map<String,Object> reviewViewMap = new HashMap<String,Object>();
         ReviewDTO reviewDTO = reviewService.getReviewView(no);
         List<CommentDTO> commentList = reviewService.getCommentList(no);
-        System.out.println("ReviewController.getReviewView");
+        //System.out.println("ReviewController.getReviewView");
 
 
         int prevViewNo = reviewService.getPrevView(no);
-        System.out.println(prevViewNo);
+        //System.out.println(prevViewNo);
         int nextViewNo = reviewService.getNextView(no);
-        System.out.println(nextViewNo);
+        //System.out.println(nextViewNo);
 
         if(session.getAttribute("MEM_ID")==null){
             reviewViewMap.put("isLogin","false");

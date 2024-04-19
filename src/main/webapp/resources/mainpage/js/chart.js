@@ -1,5 +1,4 @@
 $(function(){
-		console.log("차트 페이지");
 		$('#chart2').hide();
 		
 		$.ajax({
@@ -8,13 +7,11 @@ $(function(){
 			,dataType: 'json'
 			,contentType: 'application/json'
 			,success:function(data){
-				console.log(JSON.stringify(data));
 				
 				var chartData = [];
 					$.each(data, function(index, item) {
 				    	chartData.push([item.dataName, item.dataValue]);
 				    });
-				console.log(chartData);
 
 				
 				 var chart = bb.generate({
@@ -76,12 +73,10 @@ $(function(){
 		 	,dataType: 'json'
 			,contentType: 'application/json'
 		 	,success:function(data){
-		 		console.log(JSON.stringify(data));
 				var chartData2 = [];
 					$.each(data, function(index, item) {
 				    	chartData2.push([item.dataName, item.dataValue]);
 				    });
-				console.log(chartData2);
 				
 		 		//line 또는 bubble, scatter 형식의 인기 검색어/인기 태그/인기글(B_LIKE, B_COMMENTCOUNT, B_VIEW)
 					var chart = bb.generate({

@@ -10,7 +10,7 @@ $(function(){
 				location.href='/mypage/plzLogin';
 			}else{
 				$('#memId').text(data);
-				console.log("id = "+data);
+				//console.log("id = "+data);
 			}
 		}
 	});
@@ -22,10 +22,10 @@ $(function(){
 		,data:{'memId':$('#memId').text()}
 		,dataType:'json'
 		,success: function(data){
-			console.log(JSON.stringify(data));	//profileUUID:null
+			//console.log(JSON.stringify(data));	//profileUUID:null
 			
 		if(data.mem_profileImage !== "" && data.mem_profileImage !== null){
-				console.log(data.mem_profileImage);
+				//console.log(data.mem_profileImage);
 				//NCP storage에 접근하여 이미지를 가져옴.
 				var profileImg = "https://kr.object.ncloudstorage.com/miniproject/storage/profile/" + data.mem_profileImage;
 				$('.profile').css('background-image', 'url(' + profileImg + ')');
@@ -42,7 +42,7 @@ $(function(){
 	
 	/* 프로필 사진 업로드 */
 	$('#changeProfileImg').change(function(img){
-		console.log("프사 업로드");
+		//console.log("프사 업로드");
 		
 		var formData = new FormData();
 	    formData.append('img', img.target.files[0]); // 'img'는 서버에서 요구하는 키 값입니다.
@@ -60,7 +60,7 @@ $(function(){
 	       		,contentType: false
 				,data: formData
 				,success: function(){
-					console.log("업로드 성공");
+					//console.log("업로드 성공");
 					
 					window.location.reload();
 				},error: function(e){
@@ -77,7 +77,7 @@ $(function(){
 			,url: '/mypage/deleteProfile'
 			,data: {'memId':$('#memId').text()}
 			,success: function(){
-				console.log("삭제 성공");
+				//console.log("삭제 성공");
 				var defaultProfileImg = "https://kr.object.ncloudstorage.com/miniproject/storage/profile/defaultProfileImage.png";
 					$('.profile').css('background-image', 'url(' + defaultProfileImg + ')');
 					
@@ -158,7 +158,7 @@ $(function(){
 			        selectedDate: selectedDate
 			    }),success:function(data){
 			    	$.each(data, function(index, calDTO){//css 조정!
-			    		console.log(calDTO);
+			    		//console.log(calDTO);
 			    		var result=`<tr><th colspan="2">`
 			    					+`<div class="calTitle" style="padding-top:5px;border-top:`+calDTO.color +` solid; color:`+calDTO.color+`">`+calDTO.title+`</div>`
 				    				+`</th></tr>`
@@ -174,7 +174,7 @@ $(function(){
 			    	});
 			    				    	
            		},error:function(xhr, status, error){
-				console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
+					console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
 	    		}
            	});//ajax
      
@@ -186,7 +186,7 @@ $(function(){
            		type:'post'
            		,url:'/mypage/getReviewList'
            		,success:function(data){
-           			console.log(data);
+           			//console.log(data);
            		},error:function(xhr, status, error){
 					console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
 	    		}
@@ -223,7 +223,7 @@ $(function(){
     	,dataType:'json'
         ,contentType:'application/json'
         ,success:function(data){
-	    	console.log(JSON.stringify(data));
+	    	//console.log(JSON.stringify(data));
         	var img="https://kr.object.ncloudstorage.com/miniproject/"+data.b_THUMBNAIL;			
 			//var temp='div 태그에 텍스트 출력 시 엔터가 그대로 나오는 CSS 방법. div 태그에 텍스트를 출력할 때 엔터가 그대로 나오게 하려면 CSS의 white-space 속성을 사용하면 됩니다.white-space: pre-line;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하면서 자동으로 줄바꿈이 됩니다. 3white-space: pre-wrap;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하고, 필요에 따라 자동으로 줄바꿈이 됩니다. div 태그에 텍스트 출력 시 엔터가 그대로 나오는 CSS 방법. div 태그에 텍스트를 출력할 때 엔터가 그대로 나오게 하려면 CSS의 white-space 속성을 사용하면 됩니다.white-space: pre-line;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하면서 자동으로 줄바꿈이 됩니다. 3white-space: pre-wrap;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하고, 필요에 따라 자동으로 줄바꿈이 됩니다. div 태그에 텍스트 출력 시 엔터가 그대로 나오는 CSS 방법. div 태그에 텍스트를 출력할 때 엔터가 그대로 나오게 하려면 CSS의 white-space 속성을 사용하면 됩니다.white-space: pre-line;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하면서 자동으로 줄바꿈이 됩니다. 3white-space: pre-wrap;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하고, 필요에 따라 자동으로 줄바꿈이 됩니다. div 태그에 텍스트 출력 시 엔터가 그대로 나오는 CSS 방법. div 태그에 텍스트를 출력할 때 엔터가 그대로 나오게 하려면 CSS의 white-space 속성을 사용하면 됩니다.white-space: pre-line;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하면서 자동으로 줄바꿈이 됩니다. 3white-space: pre-wrap;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하고, 필요에 따라 자동으로 줄바꿈이 됩니다. div 태그에 텍스트 출력 시 엔터가 그대로 나오는 CSS 방법. div 태그에 텍스트를 출력할 때 엔터가 그대로 나오게 하려면 CSS의 white-space 속성을 사용하면 됩니다.white-space: pre-line;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하면서 자동으로 줄바꿈이 됩니다. 3white-space: pre-wrap;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하고, 필요에 따라 자동으로 줄바꿈이 됩니다. div 태그에 텍스트 출력 시 엔터가 그대로 나오는 CSS 방법. div 태그에 텍스트를 출력할 때 엔터가 그대로 나오게 하려면 CSS의 white-space 속성을 사용하면 됩니다.white-space: pre-line;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하면서 자동으로 줄바꿈이 됩니다. 3white-space: pre-wrap;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하고, 필요에 따라 자동으로 줄바꿈이 됩니다. div 태그에 텍스트 출력 시 엔터가 그대로 나오는 CSS 방법. div 태그에 텍스트를 출력할 때 엔터가 그대로 나오게 하려면 CSS의 white-space 속성을 사용하면 됩니다.white-space: pre-line;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하면서 자동으로 줄바꿈이 됩니다. 3white-space: pre-wrap;: 텍스트 내의 공백 문자스페이스, 탭, 엔터를 유지하고, 필요에 따라 자동으로 줄바꿈이 됩니다. 4이를 통해 HTML 문서에서 텍스트 내용을 효과적으로 추출하고, 가독성 있게 표시할 수 있습니다. 말줄임표내놔🙂. 이자식아.';
 			var content = extractTextFromHTML(data.b_CONTENT);
@@ -236,7 +236,7 @@ $(function(){
         	
         	var a_href="/review/reviewView?no="+data.b_NO+" ";
 			$('#horizonBoxA').attr('href', a_href);
-			console.log(a_href);
+			//console.log(a_href);
         },error:function(xhr, status, error){
 			console.error("Status: " + status + ",\nError: " + error + ",\nResponse: " + xhr.responseText);
 	    }

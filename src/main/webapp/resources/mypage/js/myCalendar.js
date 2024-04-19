@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			if(data == '' || data == null){
 				//alert("로그인을 해 주세요.");
 				location.href='/mypage/plzLogin';
-			}else
-				console.log("id = "+data);
+			}
+				//console.log("id = "+data);
 		}
 	});
 		
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
 						});//ajax
 						
 		request.done(function(data){
-			console.log(data);
+			//console.log(data);
 			
 			var calendarEl = document.getElementById('calendar');
 			
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				
 				,select: function(info){//write
 					//22~23 선택시 22~24 00:00으로 계산하므로 22~24 출력.
-					console.log('selected from '+ info.startStr + ' to ' + info.endStr);
+					//console.log('selected from '+ info.startStr + ' to ' + info.endStr);
 					//console.log(info.start+' '+info.end);
 					
 					$('#startDate').val(info.startStr);
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				        }
 				    });
 					
-					console.log(info);
+					//console.log(info);
 					
 					var events = [];
 					        var obj = {
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					            cal_color:  info.event.backgroundColor
 					        };
                     events.push(obj);
- 					console.log(events);
+ 					//console.log(events);
 					
 					var startDate = new Date(info.event._instance.range.start).toISOString().split('T')[0];
 					$('#startDateUpdate').val(startDate);//2024-04-02T00:00:00+09:00 ->2024-04-02

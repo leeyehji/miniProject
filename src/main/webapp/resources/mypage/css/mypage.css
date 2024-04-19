@@ -334,6 +334,9 @@ a.ui-state-default{
 }
 .calDate{
 	display:inline-block;
+	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
 }
 .schedule{
 	padding-top:10px;

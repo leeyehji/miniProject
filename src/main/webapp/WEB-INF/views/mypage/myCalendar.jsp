@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>나의 캘린더</title>
 <!-- jQuery -->
 <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
 <!-- full calnedar -->

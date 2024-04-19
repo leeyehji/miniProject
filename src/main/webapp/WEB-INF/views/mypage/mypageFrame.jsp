@@ -73,13 +73,11 @@
 					<div class="boxHeader"><strong>나의 대표 글</strong></div>
 					
 					<a id="horizonBoxA">
-						<div class="horizonBoxL">
+						<div class="horizonBoxL"> 
 							<div id="box1Img"></div>
 							<div class="horizon">
 								<div id="box1Title"></div>
-								<div id="box1Txt">
-									대표글을 등록해 주세요. 
-								</div>
+								<div id="box1Txt"></div>
 								<!-- <div id="box1TxtOver">. . .</div> -->
 							</div>
 						</div>

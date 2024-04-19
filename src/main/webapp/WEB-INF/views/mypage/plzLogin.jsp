@@ -17,7 +17,7 @@
         <div id="frameNav"><jsp:include page="../frame/nav.jsp"></jsp:include></div>
         <div id="content">
 			<div class="notLogin">
-					해당 페이지혹은 기능은 로그인한 유저만 이용할 수 있습니다. 로그인 후 이용해주시길 바랍니다.
+					해당 페이지 혹은 기능은 로그인한 유저만 이용할 수 있습니다. 로그인 후 이용해주시길 바랍니다.
 			</div>
         </div>
     </div>

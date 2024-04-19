@@ -10,19 +10,19 @@ $(function(){
 				location.href='/mypage/plzLogin';
 			}else{
 				memId = data;
-				console.log("id = "+data);
+				//console.log("id = "+data);
 			}
 		}
 	});
     
-	console.log($('#updateId').val());
+	//console.log($('#updateId').val());
 
 	$.ajax({
 		type:'post'
 		,url:'/mypage/getUser'
-		,data: {memId: $('#updateId').val()}		//아이디를 보내서.
 		,dataType: 'json'
-		,success: function(memberDTO){			
+		,success: function(memberDTO){	
+			$('#updateId').val(memberDTO.mem_id);		
 			$('#updateName').val(memberDTO.mem_name);	//이를 웹에 출력 
 			$('#updateTel').val(memberDTO.mem_phone);
 			$('#updateEmail').val(memberDTO.mem_email);
@@ -41,6 +41,13 @@ $(function(){
     const expEmailText = /^[A-Za-z0-9\.\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z0-9\.\-]+$/; 
         
 	$('#updateSubmit').click(function(){
+		$('#updateNameDiv').html('');
+		$('#updatePwdDiv').html('');
+		$('#updateTelDiv').html('');
+		$('#updateEmailDiv').html('');
+		$('#updateGenderDiv').html('');
+		
+		//alert('비번길이:' +$('#updatePwd').val().length);
 		//유효성 검사 - not null 확인 | 비번 확인 | 이메일
 		if($('#updateName').val() == ''){
 			//굳이 한글 이름 형식일 필요가 있을까요?
@@ -51,6 +58,8 @@ $(function(){
 			$('#updatePwdDiv').html("비밀번호를 입력하세요.");
 		}else if($('#updatePwd').val().length<6 && $('#updatePwd').val().length>20){
 			$('#updatePwdDiv').html("올바른 형식의 비밀번호를 입력하세요. 비밀번호는 6자 이상, 20자 이하여야 합니다.");
+			alert('비번길이:' +$('#updatePwd').val().length);
+			return false;
 		}else if($('#updateTel').val() == ''){
 			$('#updateTelDiv').html("전화번호를 입력하세요.");
 		}else if (!expHpText.test( $('#updateTel').val() )) {
@@ -92,5 +101,26 @@ $(function(){
 	    }//else
 	});//updateSubmit.click	
 	
+	$('#updateReset').click(function(){
+		$.ajax({
+			type:'post'
+			,url:'/mypage/getUser'
+			,dataType: 'json'
+			,success: function(memberDTO){	
+				$('#updateId').val(memberDTO.mem_id);		
+				$('#updateName').val(memberDTO.mem_name);	//이를 웹에 출력 
+				$('#updatePwd').val('');
+				$('#updateRepwd').val('');
+				$('#updateTel').val(memberDTO.mem_phone);
+				$('#updateEmail').val(memberDTO.mem_email);
+				if(memberDTO.mem_gender == 0)
+	            	$('#updateMale').prop('checked', true);
+				else
+	            	$('#updateFemale').prop('checked', true);
+			},error:function(xhr, status, error){
+				console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
+		    }
+		});//ajax
+	});//updateReset.click
 });//function
 
