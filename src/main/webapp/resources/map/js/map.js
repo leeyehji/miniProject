@@ -18,6 +18,10 @@ window.addEventListener("message", function(event) {
     document.getElementById("clickedsubject").innerHTML = clickedSubject;
     document.getElementById("clickedcontent").innerHTML = clickedContent;
 
+    // 모든 .theme button의 'active' 클래스를 제거
+    document.querySelectorAll(".theme button").forEach((themeButton) =>
+        themeButton.classList.remove("active")
+    );
     // 클릭된 지역의 버튼에 'active' 클래스 추가
     var buttons = document.querySelectorAll(".location button");
     for (var i = 0; i < buttons.length; i++) {
@@ -77,6 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             .catch(error => {}); // 오류가 발생해도 아무것도 하지 않음
                         document.getElementById("mapframe").src = regionPage;
                     }
+                    // 모든 .theme button의 'active' 클래스를 제거
+                    document.querySelectorAll(".theme button").forEach((themeButton) =>
+                        themeButton.classList.remove("active")
+                    );
                 });
             });
         })

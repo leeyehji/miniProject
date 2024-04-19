@@ -35,7 +35,7 @@
 
 #main_map > .leftmain > .clickedsubject {
     margin: 50px auto;
-    font-size: 14px;
+    font-size: 18px;
     /* border: 3px solid #BDE3FF; */
 }
 
@@ -55,7 +55,7 @@
 
 #main_map > .leftmain > .clickedcontent {
     margin: 50px auto;
-    font-size: 14px;
+    font-size: 18px;
     /* border: 3px solid #BDE3FF; */
 }
 #main_map > .leftmain > .clickedcontent > h3{

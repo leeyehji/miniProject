@@ -1,7 +1,5 @@
 window.addEventListener('message', function (e) {
     var id = e.data; // 부모 페이지로부터 받은 id 값
-    // console.log(id); // 콘솔에 id 값 출력
-    // alert(id); // 알림창에 id 값 출력
 });
 
 var map = L.map('mapid', {
