@@ -149,3 +149,9 @@
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
+#commentContentUpdateArea {
+	resize: none; /* 크기 조절 비활성화 */
+	overflow-y: scroll; /* 세로 스크롤바 항상 표시 */
+	height: 100px; /* 적절한 높이 설정 */
+	width: 80%; /* 적절한 너비 설정 */
+}

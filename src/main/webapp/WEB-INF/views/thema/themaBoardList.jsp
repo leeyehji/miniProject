@@ -26,7 +26,7 @@
                 <div id="themaDataList">
                     <label for="contentTypeId">테마 선택</label>
                     <select id="contentTypeId">
-                        <option>테마 선택</option>
+                        <option value="">테마 선택</option>
                         <option class="contentTypeId" value="12">관광지</option>
                         <option class="contentTypeId" value="14">문화시설</option>
                         <option class="contentTypeId" value="15">축제/공연/행사</option>

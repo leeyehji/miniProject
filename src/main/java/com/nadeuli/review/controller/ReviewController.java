@@ -40,28 +40,77 @@ public class ReviewController {
         return "쓰기 완료";
     }
     @RequestMapping(value="reviewUpdateForm")
-    public String reviewUpdateForm(@RequestParam(value="no", required = true) String no,Model model){
-        model.addAttribute("no",no);
-        return "review/reviewUpdate";
+    public String reviewUpdateForm(@RequestParam(value="no", required = true) String no,Model model,HttpSession session){
+
+
+        if(session.getAttribute("MEM_ID")==null) {
+            return "member/loginForm";
+        }else{
+            String MEM_ID = (String) session.getAttribute("MEM_ID");
+            if(reviewService.isMatchId(MEM_ID,no)==1) {
+                model.addAttribute("no", no);
+                return "review/reviewUpdate";
+            }
+            else{
+                return "redirect:/";
+            }
+        }
     }
+
+
+    @PostMapping(value="getReviewUpdate")
+    @ResponseBody
+    public Map<String,Object> getReviewUpdate(@RequestParam(value="no") String no,HttpSession session){
+        if(session.getAttribute("MEM_ID") != null ){
+           String loginId=(String) session.getAttribute("MEM_ID");
+
+           if(reviewService.isMatchId(loginId,no)==1){
+               Map<String,Object> getReviewMap = reviewService.getReviewUpdate(no);
+               return getReviewMap;
+           }
+
+        }
+
+        return null;
+    }
+
+    @PostMapping(value="reviewUpdate")
+    public void reviewUpdate(@ModelAttribute ReviewDTO reviewDTO,HttpSession session){
+        String MEM_ID = (String) session.getAttribute("MEM_ID");
+        reviewDTO.setMEM_ID(MEM_ID);
+        reviewService.reviewUpdate(reviewDTO);
+    }
+    @PostMapping(value="reviewDelete")
+    @ResponseBody
+    public String reviewDelete(@RequestParam(value="B_NO") String B_NO,HttpSession session){
+        String MEM_ID = (String) session.getAttribute("MEM_ID");
+
+        if(reviewService.isMatchId(MEM_ID,B_NO)==1){
+            reviewService.reviewDelete(B_NO);
+            return "삭제 완료";
+        }
+        else return "삭제 실패";
+    }
+
     @PostMapping(value="reviewImageUpload")
     @ResponseBody
     public String reviewImageUpload(@RequestParam(value="imgArray") List<String> imgArray,HttpSession session){
         String B_THUMBNAIL = "";
+        String MEM_ID = (String) session.getAttribute("MEM_ID");
         if(imgArray.get(0).equals("[]")) {
 
             System.out.println("없음");
 
         }else{
-            B_THUMBNAIL = objectStorageService.moveFile(imgArray);
+            B_THUMBNAIL = objectStorageService.moveFile(imgArray,MEM_ID);
             try {
                 Thread.sleep(1000);
             }catch (InterruptedException e){
                 e.printStackTrace();
             }
         }
-        String MEM_ID = (String) session.getAttribute("MEM_ID");
         objectStorageService.clearTemp(MEM_ID);
+        System.out.println("생겼나");
         return B_THUMBNAIL;
     }
 
@@ -149,6 +198,7 @@ public class ReviewController {
         reviewViewMap.put("prevViewNo",prevViewNo);
         reviewViewMap.put("nextViewNo",nextViewNo);
 
+
         return reviewViewMap;
     }
 
@@ -185,5 +235,17 @@ public class ReviewController {
             }
         }
 
+    }
+    @PostMapping(value="commentUpdate")
+    @ResponseBody
+    public void commentUpdate(@RequestParam(value="C_NO") String cNo,@RequestParam(value="C_CONTENT") String cContent){
+        reviewService.commentUpdate(cNo,cContent);
+    }
+
+    @PostMapping(value="commentDelete")
+    @ResponseBody
+    public void commentDelete(@RequestParam(value="C_NO") String cNo,@RequestParam(value="B_NO") String bNo){
+        reviewService.boardCommentMinus(bNo);
+        reviewService.commentDelete(cNo);
     }
 }

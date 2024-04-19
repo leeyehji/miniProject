@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface ReviewDAO {
@@ -25,4 +26,20 @@ public interface ReviewDAO {
     int getPrevView(@Param(value="B_NO") int bNo);
 
     int getNextView(@Param(value="B_NO") int bNo);
+
+    int isMatchId(Map<String, Object> isMatchMap);
+
+    Map<String, Object> getReviewUpdate(int bNo);
+
+    void reviewUpdate(ReviewDTO reviewDTO);
+
+    void reviewDelete(int bNo);
+
+    void reviewCommentDelete(int bNo);
+
+    void commentUpdate(Map<String, Object> commentUpdateMap);
+
+    void commentDelete(int cNo);
+
+    void boardCommentMinus(int bNo);
 }

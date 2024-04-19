@@ -130,9 +130,11 @@ $(function () {
     $(document).on('change', '#contentTypeId', function () {
 
         $('#cat1').empty();
+        $('#cat1').append(`<option value="">대분류 선택</opntion>`);
         $('#cat2').empty();
+        $('#cat2').append(`<option value="">중분류 선택</opntion>`);
         $('#cat3').empty();
-
+        $('#cat3').append(`<option value="">소분류 선택</opntion>`);
 
         let typeId = $('#contentTypeId').find('option:selected').attr('value');
         depthArr = [typeId];
@@ -144,7 +146,9 @@ $(function () {
     $(document).on('change', '#cat1', function () {
 
         $('#cat2').empty();
+        $('#cat2').append(`<option value="">중분류 선택</opntion>`);
         $('#cat3').empty();
+        $('#cat3').append(`<option value="">소분류 선택</opntion>`);
 
         let typeId = $('#contentTypeId').find('option:selected').attr('value');
         let cat1 = $(this).find('option:selected').attr('value');
@@ -157,6 +161,7 @@ $(function () {
     $(document).on('change', '#cat2', function () {
 
         $('#cat3').empty();
+        $('#cat3').append(`<option value="">소분류 선택</opntion>`);
 
         let typeId = $('#contentTypeId').find('option:selected').attr('value');
         let cat1 =$('#cat1').find('option:selected').attr('value');
@@ -190,7 +195,7 @@ function categoryAjax(depth, optionValueCode) {
             if (depth === 'depth1') {
                 $.each(data.contentTypeId, function (depth1, typeId) {
                     if (typeId.code === optionValueCode[0]) {
-                        $('#cat1').append(`<option>대분류 선택</opntion>`);
+                        // $('#cat1').append(`<option value="">대분류 선택</opntion>`);
                         $.each(typeId.cat1, function (depth2, cat1) {
 
                             const cat1Option = $('<option></option>').attr("value", cat1.code).text(cat1.name);
@@ -206,7 +211,7 @@ function categoryAjax(depth, optionValueCode) {
                     if (typeId.code === optionValueCode[0]) {
                         $.each(typeId.cat1, function (depth2, cat1) {
                             if (cat1.code === optionValueCode[1]) {
-                                $('#cat2').append(`<option>중분류 선택</opntion>`);
+                                // $('#cat2').append(`<option value="">중분류 선택</opntion>`);
                                 $.each(cat1.cat2, function (depth3, cat2) {
                                     const cat2Option = $('<option></option>').attr("value", cat2.code).text(cat2.name);
                                     $('#cat2').append(cat2Option)
@@ -224,7 +229,7 @@ function categoryAjax(depth, optionValueCode) {
                             if (cat1.code === optionValueCode[1]) {
                                 $.each(cat1.cat2, function (depth3, cat2) {
                                     if (cat2.code === optionValueCode[2]) {
-                                        $('#cat3').append(`<option>소분류 선택</opntion>`);
+                                        // $('#cat3').append(`<option value="">소분류 선택</opntion>`);
                                         $.each(cat2.cat3, function (depth4, cat3) {
                                             const cat3Option = $('<option></option>').attr("value", cat3.code).text(cat3.name);
                                             $('#cat3').append(cat3Option)

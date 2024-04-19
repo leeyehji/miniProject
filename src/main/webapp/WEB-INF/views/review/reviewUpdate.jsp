@@ -8,28 +8,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 <!-- jQuery/ BootStrap-->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-<!-- CDN 파일 summernote css/js -->
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-<!-- CDN 한글화 -->
-<script
-	src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
+	<!-- CDN 파일 summernote css/js -->
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+	<!-- CDN 한글화 -->
+	<script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
 
 
-<!-- CSS -->
-<link rel="stylesheet" href="/reivew/css/reviewWrite.css">
-<link rel="stylesheet" type="text/css" href="/review/css/frame.css">
-
-
-
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="/review/css/reviewWrite.css">
+	<link rel="stylesheet" type="text/css" href="/frame/css/frame.css">
 
 </head>
 
 <body>
-    <input type="hidden" id="whereAreYou" value="update">
+    <input type="hidden" id="whereAreYou" value="u5p2d1">
+
 	<header><jsp:include page="../frame/header.jsp"></jsp:include></header>
 
 	<div id="frameContent">
@@ -37,30 +33,33 @@
 		<div id="content">
 
 			<!-- 글쓰기 시작 -->
-			<div id="reviewWrite">
-					<div id="reviewWriteMain">
-						<form action="#" id=reviewWriteForm>
-							<table>
-								<tr>
-									<td style="text-align: center;"><img
-										src="../icon/camera4.jpg" width="100px" height="100px"></td>
-								</tr>
-								<tr>
-									<td id="writeInput" style="text-align: center;"><input
-										type="text" name="title" id="title" value="글 수정"/></td>
-								</tr>
-								<tr>
-									<td><textarea id="summernote" name="editordata"><pre></pre></textarea>
-									</td>
-								</tr>
-								<tr>
-									<td><input type="button" value="수정완료" id="reviewUpdateBtn">
-										<input type="reset" value="취소" id="reviewResetBtn">
-									</td>
-								</tr>
-							</table>
-						</form>
-					</div>
+
+			<div id="reviewWrite" class="reviewWrite">
+				<div id="reviewWriteMain">
+					<form action="review/reviewWrite" id=reviewWriteForm method="post">
+						<input type="hidden" id="B_NO" name="B_NO" value="${no}">
+						<table>
+							<tr>
+								<td style="text-align: center;">
+									<img src="/review/icon/camera4.jpg" width="100px" height="100px"></td>
+							</tr>
+							<tr>
+								<td id="writeInput" style="text-align: center;"><input
+										type="text" name="B_TITLE" id="title" placeholder="제목을 입력하세요" /></td>
+							</tr>
+							<tr>
+								<td><textarea id="summernote" name="B_CONTENT"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="button" value="글 수정" id="reviewWriteBtn">
+								<input type="button" value="리 셋" id="reviewResetBtn"></td>
+							</tr>
+						</table>
+						<input type="hidden" id="thumbNail" name="B_THUMBNAIL"/>
+					</form>
+
+				</div>
 			</div>
 			<!-- 글쓰기 end -->
 
@@ -76,6 +75,7 @@
 	<div id="bottom"></div>
 
 	<script src="/review/js/reviewWrite.js"></script>
+	<script src="/review/js/reviewUpdate.js"></script>
 	<script src="/frame/js/frame.js"></script>
 
 </body>
