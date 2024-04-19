@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         let regionPage = './korea'; // 기본값
                         let regionName = regionData.properties.CTP_ENG_NM.toLowerCase();
                         regionPage = './sido/' + regionName;
-                        fetch("./sido/" + regionName + ".json")
+                        fetch("./sido/" + regionName)
                             .then(response => response.json())
                             .then(regionData => {
                                 const locationButton = document.querySelector(".rightmain .location button");
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     locationButton.id = regionData.properties.SIG_KOR_NM;
                                 }
                             })
-                            .catch(error => console.error(regionName + " 데이터 로드 실패:", error));
+                            .catch(error => {}); // 오류가 발생해도 아무것도 하지 않음
                         document.getElementById("mapframe").src = regionPage;
                     }
                 });
