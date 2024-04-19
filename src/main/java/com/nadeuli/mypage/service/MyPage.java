@@ -110,7 +110,7 @@ public class MyPage implements MypageService {
 		//실제폴더
     	//D:/Spring/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/miniproject/resources/mypage/storage
     	String filePath = httpSession.getServletContext().getRealPath("resources/mypage/storage");
-    	System.out.println("실제폴더 = " + filePath);
+    	//System.out.println("실제폴더 = " + filePath);
     	
     	//ncp에 업로드. UUID 저장.
     	String imageFileName = null;
@@ -135,7 +135,7 @@ public class MyPage implements MypageService {
 		//NCP 삭제
 		String imageFileName= memberDTO.getMem_profileImage();
 		objectStorageService.deleteFile(bucketName,"storage/profile/"+imageFileName);
-		System.out.println("ncp 삭제");
+		//System.out.println("ncp 삭제");
 		
 		//MySQL 삭제
 		mypageDAO.deleteFile(memberDTO);
@@ -150,7 +150,7 @@ public class MyPage implements MypageService {
         tempMap.put("startNum", startNum);
         tempMap.put("mem_id", id);
         //List객체가 JSON으로 자동 변환된다. - pom.xml <dependency>에 추가해야 함
-        System.out.println(tempMap.get("mem_id")+", "+tempMap.get("startNum"));
+        //System.out.println(tempMap.get("mem_id")+", "+tempMap.get("startNum"));
         List<ReviewDTO> list = mypageDAO.getMyBoardList(tempMap);
         for(int i=0; i<list.size(); i++)
         	list.get(i).setMEM_ID(id);

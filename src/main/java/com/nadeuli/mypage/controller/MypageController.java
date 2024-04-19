@@ -36,12 +36,12 @@ public class MypageController {
     public void started() {
     	//GMT -> KST
         TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
-        System.out.println(new Date());
+        //System.out.println(new Date());
     }
 	
 	@GetMapping(value = "mypage")
     public String mypage(HttpSession session) {
-		System.out.println("mypage 접근 - 아이디: "+session.getAttribute("MEM_ID"));
+		//System.out.println("mypage 접근 - 아이디: "+session.getAttribute("MEM_ID"));
     	return "mypage/mypage";
     }
     
@@ -71,7 +71,7 @@ public class MypageController {
     public Map<String, Object> getMyBoardList(@RequestParam(value="pg",
             required = false, defaultValue="1") String pg, HttpSession session){
     	String mem_id = (String) session.getAttribute("MEM_ID");
-    	System.out.println(mem_id + ", "+pg);
+    	//System.out.println(mem_id + ", "+pg);
         Map<String,Object> myBoardListMap =mypageService.getMyBoardList(pg, mem_id);
         session.setAttribute("totalA",myBoardListMap.get("totalA"));
         
@@ -81,7 +81,7 @@ public class MypageController {
     /* board 클릭 시 대표 글로 결정. */
     @GetMapping(value ="reviewView")
     public String setBestReview(@RequestParam(value="no")String no, HttpSession session){
-    	System.out.println("대표글 클릭 no: "+no);
+    	//System.out.println("대표글 클릭 no: "+no);
     	String mem_id = (String) session.getAttribute("MEM_ID");
     	mypageService.setBestReview(no, mem_id);
     	return "mypage/mypage";
@@ -90,7 +90,7 @@ public class MypageController {
     @PostMapping(value="memberUpdateForm")
     @ResponseBody
     public void memberUpdateDB(@ModelAttribute MemberDTO memberDTO) {
-    	System.out.println(memberDTO);
+    	//System.out.println(memberDTO);
     	mypageService.update(memberDTO);
     }
     

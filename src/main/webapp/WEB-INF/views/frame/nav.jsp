@@ -31,13 +31,9 @@
 
 	<li>고객센터
 		<ul class="nav-content">
-			<li>
-				<ul>
-					<li><a href="/serviceCenter/ServiceCenter">공지사항</a></li>
-					<li><a href="/serviceCenter/Inquiry">1 : 1 문의</a></li>
-					<li><a href="/serviceCenter/Faq">F A Q</a></li>
-				</ul>
-			</li>
+			<li><a href="/serviceCenter/ServiceCenter">공지사항</a></li>
+			<li><a href="/serviceCenter/Inquiry">1 : 1 문의</a></li>
+			<li><a href="/serviceCenter/Faq">F A Q</a></li>
 		</ul>
 	</li>
 	<br>
@@ -49,7 +45,7 @@
 					<li><a href="/mypageRead/myBoard">내가 쓴 글</a></li>
 				</ul>
 			</li>
-			<br>
+			
 			<li><a href="/mypage/myCalendar">나의 일정 관리</a></li>
 		</ul>
 	</li>

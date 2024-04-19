@@ -417,12 +417,12 @@ input::placeholder {
     width: 200px;
     margin-left: 30px;
     padding: 10px;
-    font-weight: bolder;
     position: absolute;
     z-index: 99;
     background-color: #ffffff;
     color: #496B73 !important;
     transition : 0.5s ease-out;
+    font-size: 25px;
 }
 
 #nadeuliNav>li:first-of-type {
@@ -455,7 +455,7 @@ input::placeholder {
     text-overflow: ellipsis;
     margin-left: 30px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 18px;
     color: #496B73;
 }
 
@@ -466,7 +466,7 @@ input::placeholder {
     margin-left: 50px; /*너무 많이 잡으면 nav 영역 넘어가 content영역 침범!*/
     text-decoration: none;
     color: #496B73;
-    font-size: 12px;
+    font-size: 15px;
     /*하위 항목은 점점 글씨가 작아지나 여기는 너무 작아져서 바로 상위 항목과 같은 글씨 크기로 맞춤*/
 }
 

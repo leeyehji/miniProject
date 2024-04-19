@@ -179,6 +179,7 @@ p{
 	overflow: hidden;
   	text-overflow: ellipsis;
   	display:block;
+  	color: #224148;
 }
 #box1Txt {
   width: 950px;
@@ -188,6 +189,7 @@ p{
   text-overflow: ellipsis;
   font-size: 18px; 
   display: block;
+  color: #224148;
 }
 #box1TxtOver{
   	bottom: -10px;  	
@@ -231,6 +233,9 @@ p{
 	justify-content: center;
 	display: flex; /* Flexbox를 활성화합니다. */
     /* align-items: flex-start; */ /* 자식 요소들을 상단으로 정렬합니다. */	
+}
+a #horizonBoxA,#horizonBoxA:link,#horizonBoxA::visited,#horizonBoxA:hover,#horizonBoxA:active{
+	cursor:pointer;
 }
 .horizonBoxL{
 	justify-content: left;

@@ -160,14 +160,14 @@ $(function(){
 			    	$.each(data, function(index, calDTO){//css 조정!
 			    		console.log(calDTO);
 			    		var result=`<tr><th colspan="2">`
-			    					+`<div class="calTitle" style="border-top:`+calDTO.color +` solid; color:`+calDTO.color+`">제목:`+calDTO.title+`</div>`
+			    					+`<div class="calTitle" style="padding-top:5px;border-top:`+calDTO.color +` solid; color:`+calDTO.color+`">`+calDTO.title+`</div>`
 				    				+`</th></tr>`
-				    				+`<tr><td>`
+				    				+`<tr><td style="text-align:center;">`
 				    					+`<div class="calDate">시작일: `+calDTO.start+`&emsp;`
 				    					+`종료일: `+calDTO.end+`</div>`
 				    				+`</td></tr>`
-				    				+`<tr><td colspan="2">`
-				    					+`<div class="schedule" style="border-bottom:`+calDTO.color+` solid;">일정: `+calDTO.description+`</div>`
+				    				+`<tr><td colspan="2" >`
+				    					+`<div class="schedule" style="text-align:center;padding-bottom:10px;border-bottom:`+calDTO.color+` solid;">`+calDTO.description+`</div>`
 				    				+`</td></tr>`;
 				    	
 			    		$('#myCalTable').append(result);
@@ -208,6 +208,14 @@ $(function(){
 	  	return formattedText;
 	}
 	
+	$('#horizonBoxL').on('click', 'a', function(e) {
+  		e.preventDefault(); // 기본 링크 동작 방지
+  		// 클릭 이벤트 처리 로직 작성
+  		var reviewNo = $(this).attr('data-review-no');
+  		window.location.href = '/review/reviewView?no=' + reviewNo;
+	});
+	
+	
     //나의 대표글 불러오기
     $.ajax({
     	type:'post'	//비밀글 대비
@@ -226,9 +234,9 @@ $(function(){
 			//$('#box1Txt').html( temp );
 			$('#box1Img').css('background-image','url("'+img+'")');//대표글 이미지 DB에서 가져오기
         	
-        	
-        	
-        	
+        	var a_href="/review/reviewView?no="+data.b_NO+" ";
+			$('#horizonBoxA').attr('href', a_href);
+			console.log(a_href);
         },error:function(xhr, status, error){
 			console.error("Status: " + status + ",\nError: " + error + ",\nResponse: " + xhr.responseText);
 	    }
