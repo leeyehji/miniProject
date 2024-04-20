@@ -3,14 +3,18 @@ package com.nadeuli.serviceCenter.service;
 import com.nadeuli.serviceCenter.bean.NoticeDTO;
 import com.nadeuli.serviceCenter.bean.InquiryDTO;
 import com.nadeuli.serviceCenter.bean.FaqDTO;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
+//@Mapper
 public interface ServiceCenterService {
+
+    void insertFaq(FaqDTO faq);
+
     void insertNotice(NoticeDTO notice);
 
     NoticeDTO findNoticeById(Long nNo);
-
-    NoticeDTO findNoticeById(Integer nNo);
 
     List<NoticeDTO> findAllNotices();
 
@@ -30,8 +34,6 @@ public interface ServiceCenterService {
 
     void deleteInquiry(Integer qNo);
 
-    void insertFaq(FaqDTO faq);
-
     FaqDTO findFaqByNo(Integer faqNo);
 
     List<FaqDTO> findAllFaqs();
@@ -43,4 +45,7 @@ public interface ServiceCenterService {
     List<NoticeDTO> findAll();
 
     List<InquiryDTO> findByAnswered(Integer qIsAnswered);
+
+    List<NoticeDTO> selectNoticesWithPaging(int offset, int limit);
+
 }

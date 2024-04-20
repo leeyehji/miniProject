@@ -70,6 +70,7 @@ table {
 }
 
 h2 {
+    position: relative;
     color: #333;
 }
 
@@ -134,6 +135,7 @@ h2 {
     height: 50px;
     font-size: 28px;
     text-align: left;
+    margin-top: 30px;
     border-radius: 10px;
     background-color: #CAE9FF;
 }
@@ -157,6 +159,8 @@ h2 {
     padding: 10px;
     background-color: #ffffff;
     font-size: 16px;
+    position: relative;
+    bottom: 30px;
 }
 
 #createBtn {
@@ -225,9 +229,13 @@ h2 {
 
 /* 테이블 스타일링 */
 .type1 {
-    border-bottom: 2px solid #CAE9FF;
+    border: 2px solid #CAE9FF;
+    font-size: 28px;
     width: 1000px;
     height: auto;
+    position: relative;
+    left: 125px;
+    top: 100px;
 }
 
 /* 페이지네이션 스타일링 */
@@ -266,16 +274,16 @@ h2 {
 
 #writeNoticeBtn {
     position: relative;
-    top: 10px;
+    top: 110px;
+    left: 1050px;
 }
 
 #writeModal{
     display: none;
     font-size: 18px;
     color: #000000;
-    position: relative;
-    left: 500px;
-    bottom: 50px;
+    position: absolute;
+    margin-left: 700px;
     width: 1500px;
     min-height: 700px;
     height: auto;
@@ -283,12 +291,12 @@ h2 {
     background-color: white;
     padding: 20px;
     border: 1px solid rgb(204, 204, 204);
-    z-index: 100;
+    z-index: 9999;
 }
 
 #contentLabel {
     position: relative;
-    bottom: 390px;
+    bottom: 400px;
 }
 
 .center-align {
@@ -300,17 +308,18 @@ h2 {
     border: 1px solid #000000;
 }
 
-#content2 {
-    width: 1450px;
-    height: 400px;
-    font-size: 18px;
-}
-
 .left-align a {
     color: #000000;
 }
 
 .paginate{
 position: relative;
-right: 50px;
+    right: 170px;
+    top: 100px;
+}
+
+.type1 > tbody > tr > td {
+    color: black;
+    border: 1px solid #CAE9FF;
+    text-align: center;
 }

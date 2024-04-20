@@ -108,16 +108,29 @@ window.addEventListener('scroll', function () {
 // 고객센터
 ///////////////////////////////////////////////////자주 묻는 질문/////////////////////////////////////////
 var currentFaq = null;
+// let contents;
+const toggleButtons = document.querySelectorAll(".toggleBtn");
+toggleButtons.forEach(Btn => {
+    Btn.addEventListener('click',function (e){
+        const children = e.currentTarget.parentElement.nextElementSibling;
+        if (children.style.display === "none") {
+            children.style.display = "block";
+        } else {
+            children.style.display = "none";
+        }
+    })
+})
+
 
 function showPopup(edit = false) {
-    var title = "", text = "";
+    let title = "", text = "";
 
     if (edit && currentFaq) {
         title = currentFaq.title;
         text = currentFaq.text;
     }
 
-    var myWindow = window.open("", "a", "width=400, height=300, left=100, top=50");
+    let myWindow = window.open("", "a", "width=400, height=300, left=100, top=50");
 
     myWindow.document.write('<html><head><title>자주묻는질문 작성</title></head><body>');
     myWindow.document.write('<div id="writeForm">');
@@ -134,25 +147,30 @@ function showPopup(edit = false) {
 
     myWindow.onload = function() {
         myWindow.document.getElementById('saveBtn').onclick = function() {
-            var newTitle = myWindow.document.getElementById('titleText').value;
-            var newText = myWindow.document.getElementById('faqText').value;
+            let newTitle = myWindow.document.getElementById('titleText').value;
+            let newText = myWindow.document.getElementById('faqText').value;
+            console.log(newTitle);
+            console.log(newText);
+            const datas ={
+                faq_Subject: newTitle,
+                faq_Content: newText
+                // 필요한 추가 데이터
+            }
 
             if (newTitle.trim() !== "" && newText.trim() !== "") {
+
                 // Ajax 요청을 여기에 추가
                 $.ajax({
-                    url: "/FAQ",
                     type: "POST",
-                    contentType: "application/json",
-                    data: JSON.stringify({
-                        faqSubject: newTitle,
-                        faqContent: newText,
-                        // 필요한 추가 데이터
-                    }),
+                    url: "/faqs",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(datas),
+                    dataType:"json",
                     success: function(response) {
                         console.log("입력되었습니다.", response);
                     },
                     error: function(xhr, status, error) {
-                        console.error("입력할 수 없습니다.", status, error);
+                        console.log("입력할 수 없습니다."+xhr+ status + error);
                     }
                 });
 
@@ -196,4 +214,22 @@ function showPopup(edit = false) {
             myWindow.close();
         };
     };
+}
+function updatePopup(){
+    let subject;
+    let content;
+    $.ajax({
+        type: "GET",
+        url: "/faqs",
+        contentType: "application/json; charset=utf-8",
+        dataType:"json",
+        success: function(response) {
+            console.log(response);
+            subject = response.faq_Subject;
+            content = response.faq_Content;
+        },
+        error: function(xhr, status, error) {
+            console.log("입력할 수 없습니다."+xhr+ status + error);
+        }
+    });
 }

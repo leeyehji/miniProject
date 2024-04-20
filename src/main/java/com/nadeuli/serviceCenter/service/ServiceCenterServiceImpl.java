@@ -1,107 +1,109 @@
 package com.nadeuli.serviceCenter.service;
 
+import com.nadeuli.common.object.service.ObjectStorageService;
 import com.nadeuli.serviceCenter.bean.FaqDTO;
 import com.nadeuli.serviceCenter.bean.InquiryDTO;
 import com.nadeuli.serviceCenter.bean.NoticeDTO;
-import com.nadeuli.serviceCenter.dao.ServiceCenterDAO;
+import com.nadeuli.serviceCenter.dao.FaqDAO;
+import com.nadeuli.serviceCenter.dao.NoticeDAO;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class ServiceCenterServiceImpl implements ServiceCenterService {
-    private final ServiceCenterDAO serviceCenterDAO;
 
-    @Autowired
-    public ServiceCenterServiceImpl(ServiceCenterDAO serviceCenterDAO) {
-        this.serviceCenterDAO = serviceCenterDAO;
+    private final FaqDAO faqDAO;
+    private final NoticeDAO noticeDAO;
+
+    @Transactional
+    @Override
+    public void insertFaq(FaqDTO faqDTO) {
+        faqDAO.insertFaq(faqDTO);
     }
+
 
 
     @Override
     public void insertNotice(NoticeDTO notice) {
-        serviceCenterDAO.saveNotice(notice);
+        noticeDAO.insertNotice(notice);
     }
 
     @Override
     public NoticeDTO findNoticeById(Long nNo) {
-        return null;
-    }
-
-    @Override
-    public NoticeDTO findNoticeById(Integer nNo) {
-        return (NoticeDTO) serviceCenterDAO.findById(nNo).orElse(null);
+        return noticeDAO.findNoticeById(nNo);
     }
 
     @Override
     public List<NoticeDTO> findAllNotices() {
-        return serviceCenterDAO.findAllNotices();
+        return noticeDAO.findAllNotices();
     }
 
+    @Transactional
     @Override
     public void updateNotice(NoticeDTO notice) {
-        serviceCenterDAO.updateNotice(notice);
+        noticeDAO.updateNotice(notice);
     }
 
+    @Transactional
     @Override
     public void deleteNotice(Long nNo) {
-        serviceCenterDAO.deleteNotice(nNo);
+        noticeDAO.deleteNotice(nNo);
     }
+
 
     @Override
     public void insertInquiry(InquiryDTO inquiry) {
-        serviceCenterDAO.insertInquiry(inquiry);
+
     }
 
     @Override
     public InquiryDTO findInquiryById(Integer qNo) {
-        return serviceCenterDAO.findInquiryById(qNo);
+        return null;
     }
 
     @Override
     public List<InquiryDTO> findAllInquiries() {
-        return serviceCenterDAO.findAllInquiries();
+        return List.of();
     }
 
     @Override
     public List<InquiryDTO> findInquiriesByAnswered(Integer qIsAnswered) {
-        return serviceCenterDAO.findInquiriesByAnswered(qIsAnswered);
+        return List.of();
     }
 
     @Override
     public void updateInquiry(InquiryDTO inquiry) {
-        serviceCenterDAO.updateInquiry(inquiry);
+
     }
 
     @Override
     public void deleteInquiry(Integer qNo) {
-        serviceCenterDAO.deleteById(qNo);
-    }
 
-    @Override
-    public void insertFaq(FaqDTO faq) {
-        serviceCenterDAO.saveFaq(faq);
     }
 
     @Override
     public FaqDTO findFaqByNo(Integer faqNo) {
-        return serviceCenterDAO.findFaqByNo(faqNo);
+        return faqDAO.findFaqByNo(faqNo);
     }
 
     @Override
     public List<FaqDTO> findAllFaqs() {
-        return serviceCenterDAO.findAllFaqs();
+        return faqDAO.findAllFaqs();
     }
 
     @Override
     public void updateFaq(FaqDTO faq) {
-        serviceCenterDAO.updateFaq(faq);
+
     }
 
     @Override
     public void deleteFaq(Integer faqNo) {
-        serviceCenterDAO.deleteById(faqNo);
+
     }
 
     @Override
@@ -111,6 +113,11 @@ public class ServiceCenterServiceImpl implements ServiceCenterService {
 
     @Override
     public List<InquiryDTO> findByAnswered(Integer qIsAnswered) {
-        return serviceCenterDAO.findByAnswered(qIsAnswered); // 이 메소드는 답변 여부에 따른 문의사항을 조회합니다.
+        return List.of();
+    }
+
+    @Override
+    public List<NoticeDTO> selectNoticesWithPaging(int offset, int limit) {
+        return noticeDAO.selectNoticesWithPaging(offset, limit);
     }
 }
