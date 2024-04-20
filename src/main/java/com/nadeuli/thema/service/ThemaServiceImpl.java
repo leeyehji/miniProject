@@ -41,9 +41,8 @@ public class ThemaServiceImpl implements ThemaService {
         }else if(typeId == 39){
             table="type39";
         }
-        System.out.println("ThemaServiceImpl.getThemaItem");
+
         ThemaDTO themaDTO = themaDAO.getThemaItem(table,contentNo);
-        System.out.println("ThemaServiceImpl DAO 경유");
         return themaDTO;
 
     }

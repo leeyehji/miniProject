@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>여행 후기 게시판</title>
+	<title>테마 여행 - 여행지 상세 정보</title>
 
 	<script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -25,7 +25,7 @@
 <div id="frameContent">
 	<div id="frameNav"><jsp:include page="../frame/nav.jsp"></jsp:include></div>
 	<div id="content">
-
+		<div id="backPage"><a href="javascript:history.back()">< 테마여행 목록으로</a></div>
 		<div id="detailWrap">
 			<div id="detailBody">
 				<input type="hidden" id="T_CONTENTNO" value="${T_CONTENTNO}"/>
@@ -37,7 +37,7 @@
 					<h3></h3>
 
 				</div>
-				<hr>
+				<hr >
 
 				<div id="detailMain">
 					<div id="detailImg">
@@ -78,7 +78,7 @@
 						<tr>
 						<tr id="themaData6">
 						<tr>
-						  <td colSpan="4" id="icon">
+						  <td colSpan="4" id="icon" style="border-bottom: none">
 							<img src="/thema/icon/pet.png" id="pet" class="noAllow"/>
 							<img src="/thema/icon/stoller.png" id="stoller" class="noAllow"/>
 							<img src="/thema/icon/parking.png" id="parking" class="noAllow"/>
@@ -100,6 +100,8 @@
 
 
 			</div>
+			<div id="backPage"><a href="javascript:history.back()">< 테마여행 목록으로</a></div>
+
 		</div>
 
 		<div id="modal">

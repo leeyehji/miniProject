@@ -5,11 +5,12 @@ function createItem(b_THUMBNAIL,mem_NO,b_NO,b_TITLE,b_CREATETIME,b_VIEW,b_like,b
     var table = $('<table></table>');
 
     var tr1 = `<tr>
-                            <td colSpan="4">
+                            <td colSpan="4" >
                                 <span id="reviewListImg">
-                                    <img src="https://kr.object.ncloudstorage.com/miniproject/`
+               
+                                <a href='reviewView?no=`+b_NO+`'><img src="`
         +b_THUMBNAIL
-        +`"/>
+        +`"/></a>
                                 </span>
                             </td>
                       </tr>`;
@@ -17,7 +18,7 @@ function createItem(b_THUMBNAIL,mem_NO,b_NO,b_TITLE,b_CREATETIME,b_VIEW,b_like,b
     var tr2=
         `<tr>
                          <td colspan="4">
-                         <hr>
+                         
                          <a href='reviewView?no=`
         +b_NO+
         `' id="title">`
@@ -29,21 +30,21 @@ function createItem(b_THUMBNAIL,mem_NO,b_NO,b_TITLE,b_CREATETIME,b_VIEW,b_like,b
 
 
     var tr3 =`<tr>
-                         <td>작성자</td>
+                         <td width="60px">작성자</td>
                          <td colSpan="3" id="userId">`
         +mem_NO+
         `</td>
                      </tr>`;
 
     var tr4 =`<tr>
-                         <td>조회수</td>
+                         <td width="60px">조회수</td>
                          <td id="view">`
         +b_VIEW+
         `</td>
-                         <td><img src="/review/icon/comment.png"/><span id="commentCount">`
+                         <td class="commentCount"><span id="commentCount"><img src="/review/icon/comment.png"/>`
         +b_COMMENTCOUNT+
         `</span></td>
-                         <td><img src="/review/icon/like.png"/><span id="like">`
+                         <td class="like"><span id="like"><img src="/review/icon/like.png"/>`
         +b_like+
         `</span></td>
                      </tr>`
@@ -67,9 +68,15 @@ $(function(){
         dataType : 'JSON',
         success : function(data) {
             $.each(data.list, function (idx, item){
-                createItem(item.b_THUMBNAIL,item.mem_ID,item.b_NO,item.b_TITLE,item.b_CREATETIME,item.b_VIEW,item.b_LIKE,item.b_COMMENTCOUNT)
+                let thumbNailCheck =item.b_THUMBNAIL
+                if(thumbNailCheck.includes("https")){
+
+                }else{
+                    thumbNailCheck = "https://kr.object.ncloudstorage.com/miniproject/"+thumbNailCheck;
+                }
+                createItem(thumbNailCheck,item.mem_ID,item.b_NO,item.b_TITLE,item.b_CREATETIME,item.b_VIEW,item.b_LIKE,item.b_COMMENTCOUNT)
+
             })
-            console.log(JSON.stringify(data))
 
             if(data.isLogin === "true"){
                 $('#reviewListWriteBtn').show();

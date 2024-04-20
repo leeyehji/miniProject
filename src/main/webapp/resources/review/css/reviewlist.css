@@ -5,10 +5,11 @@
 	text-decoration: underline;
 	display: inline-block;
 }
-
+#frameNav{
+border: none;
+}
 #reviewList {
 	margin: 0;
-	padding: 10px;
 	width: 1200px;
 	min-width:1200px;
 	height: 100%;
@@ -47,24 +48,60 @@
 	margin-bottom:10px;
 }
 #reviewListMain table tr:nth-child(2){
-	font-size:15pt;
+	font-size:16pt;
+	height: 50px;
+    text-align: center;
+	vertical-align: middle;
+}
+.reviewListItem #title{
+	font-weight: bold;
+}
+.reviewListItem #title:hover{
+	text-decoration: underline;
+}
+.commentCount{
+	text-align: right;
+}
+.like{
+	text-align: center;
 }
 #reviewListMain .reviewListItem #reviewListImg img {
 	width: 100%;
-	height: 434px;
+	height: 424px;
+	border :1px solid rgba(0, 0, 0, .3);
 }
 
 #reviewListMain .reviewListItem tr:nth-last-child(2) img {
 	width: 20px;
 	height: 20px;
 }
-
+.reviewListItem a{
+	color:black;
+}
+.reviewListItem a:visited{
+	color:black;
+}
 #reviewListFoot {
 	
-	
+	margin-top: 30px;
 	text-align: center;
 }
-
+#reviewListWriteBtn{
+	text-align: center;
+	width: 20%;
+	height: 50px;
+	background-color: white;
+	border: 1px solid rgba(0, 0, 0, .3);
+	border-radius: 15px;
+	font-size: 20px;
+	font-style: italic;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+}
+#reviewListWriteBtn:hover {
+	background-color: #CAE9FF; /* 호버 시 배경색 변경 */
+	color: white; /* 호버 시 텍스트 색상 변경 */
+}
 #reviewListWrite {
 	margin-top: 30px;
 	text-align: center;

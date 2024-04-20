@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>여행 후기 쓰기</title>
 <!-- jQuery/ BootStrap-->
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -19,9 +19,8 @@
 
 
 <!-- CSS -->
-<link rel="stylesheet" href="/review/css/reviewWrite.css">
 <link rel="stylesheet" type="text/css" href="/frame/css/frame.css">
-
+	<link rel="stylesheet" href="/review/css/reviewWrite.css">
 
 
 </head>

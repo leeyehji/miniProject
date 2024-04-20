@@ -173,7 +173,7 @@ function createComment(imageURL, USERID, commentContent, commentDate,commentNo) 
 				  </tr>
 				  
 				  <tr>
-				  	<td colspan="2">작성자 :
+				  	<td colspan="2">&nbsp;
 				  		<span id="commentUserId">`
 		+ USERID +
 		`</span>
