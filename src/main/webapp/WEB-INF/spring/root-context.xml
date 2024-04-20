@@ -38,4 +38,7 @@
 	<!-- MEMBER -->
 	<mybatis-spring:scan base-package="com.nadeuli.member.repository"/>
 	<context:component-scan base-package="com.nadeuli.member"/>
+
+	<!-- 고객센터 -->
+	<context:component-scan base-package="com.nadeuli.serviceCenter"/>
 </beans>

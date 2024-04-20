@@ -1,3 +1,5 @@
+<%@ page import="com.nadeuli.serviceCenter.bean.NoticeDTO" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -30,16 +32,15 @@
     <div id="content" style="padding: 0px">
 
         <div class="notice-detail-container">
-            <h1><script>document.write(sessionStorage.getItem('noticeTitle'));</script></h1>
-            <p><script>document.write(sessionStorage.getItem('noticeDate'));</script></p>
-            <p><script>document.write(sessionStorage.getItem('noticeContent'));</script></p>
-<%--            <% if (sessionStorage.getItem("noticeImage") != null) { %>--%>
-            <img src="<script>document.write(sessionStorage.getItem('noticeImage'));</script>" alt="공지사항 이미지">
-<%--            <% } %>--%>
-            <a href="ServiceCenter#notice">목록으로 돌아가기</a>
+<%--            <c:set var="notice" value="${notice}"/>--%>
+            <h1><c:out value="${notice.n_Subject}"/></h1>
+            <p><c:out value="${notice.n_Writer}"/></p>
+            <p><c:out value="${notice.n_Content}"/></p>
+            <img src="https://kr.object.ncloudstorage.com/miniproject/storage/notice/${notice.n_Photo_Path}" alt="공지사항 이미지">
+            <a href="/serviceCenter/ServiceCenter">목록으로 돌아가기</a>
         </div>
-        <div>
 
+        <div style="margin: 20px 0px;">
             <button id="deleteNotice" onclick="deleteNotice()">삭제</button>
             <button id="editNotice" onclick="editNotice()">수정</button>
         </div>
