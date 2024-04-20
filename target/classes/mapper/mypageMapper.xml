@@ -31,11 +31,22 @@
 	</update>
 	
 	<select id="getMyBoardList" parameterType="java.util.Map" resultType="com.nadeuli.review.bean.ReviewDTO">
-        select * from BOARD order by B_NO desc limit #{startNum}, 6 where MEM_NO = (select MEM_NO from MEMBER where MEM_ID = #{mem_id})
+        SELECT * from BOARD WHERE MEM_NO = (SELECT MEM_NO FROM MEMBER WHERE MEM_ID = #{mem_id}) order by B_NO desc LIMIT #{startNum}, 6 
     </select>
     
     <select id="getTotalA" parameterType="String" resultType="int">
-        select count(*) from BOARD where MEM_NO = (select MEM_NO from MEMBER where MEM_ID = #{mem_id})
+        SELECT COUNT(*) FROM BOARD WHERE MEM_NO = (SELECT MEM_NO FROM MEMBER WHERE MEM_ID = #{mem_id})
     </select>
     
+    <update id="setBestReview" parameterType="java.util.Map">
+    	UPDATE MEMBER SET MEM_BESTREVIEW = #{b_no} where MEM_ID = #{mem_id}
+    </update>
+    
+    <select id="getMyBest" parameterType="String" resultType="com.nadeuli.review.bean.ReviewDTO">
+    	SELECT * FROM BOARD WHERE B_NO = (SELECT MEM_BESTREVIEW FROM MEMBER WHERE MEM_ID = #{memId}) 
+    </select>
+    
+    <update id="deleteMyBoard" parameterType="String">
+    	update MEMBER SET MEM_BESTREVIEW = null where MEM_ID = #{memid}
+    </update>
  </mapper>

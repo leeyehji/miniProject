@@ -47,4 +47,47 @@
         -1
         ) AS result;
     </select>
+    <select id="isMatchId" parameterType="java.util.HashMap" resultType="int">
+        SELECT COUNT(*)
+        FROM BOARD B
+        INNER JOIN MEMBER M ON B.MEM_NO = M.MEM_NO
+        WHERE B.B_NO = #{B_NO} AND M.MEM_ID = #{MEM_ID};
+    </select>
+    <select id="getReviewUpdate" parameterType="Integer" resultType="java.util.HashMap">
+        SELECT
+        B_TITLE,
+        B_CONTENT
+        FROM BOARD
+        WHERE B_NO = #{Integer}
+    </select>
+    <update id="reviewUpdate" parameterType="com.nadeuli.review.bean.ReviewDTO">
+        UPDATE BOARD
+        SET B_TITLE = #{B_TITLE},
+            B_CONTENT = #{B_CONTENT},
+            B_THUMBNAIL = #{B_THUMBNAIL},
+            B_CREATETIME = now()
+        WHERE B_NO = #{B_NO}
+    </update>
+    <delete id="reviewCommentDelete" parameterType="Integer">
+        delete from COMMENT where B_NO=#{Integer}
+    </delete>
+    <delete id="reviewDelete" parameterType="Integer">
+        delete from BOARD where B_NO=#{Integer}
+    </delete>
+    <update id="commentUpdate" parameterType="java.util.HashMap">
+        UPDATE COMMENT
+        SET C_CONTENT = #{C_CONTENT},
+            C_CREATETIME = now()
+        WHERE C_NO = #{C_NO}
+    </update>
+    <update id="boardCommentMinus" parameterType="Integer">
+        UPDATE BOARD
+        SET B_COMMENTCOUNT = B_COMMENTCOUNT-1
+        WHERE B_NO = #{Integer}
+    </update>
+    <delete id="commentDelete" parameterType="Integer">
+        DELETE
+        FROM COMMENT
+        WHERE C_NO=#{Integer}
+    </delete>
 </mapper>

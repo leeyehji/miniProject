@@ -18,6 +18,10 @@ window.addEventListener("message", function(event) {
     document.getElementById("clickedsubject").innerHTML = clickedSubject;
     document.getElementById("clickedcontent").innerHTML = clickedContent;
 
+    // 모든 .theme button의 'active' 클래스를 제거
+    document.querySelectorAll(".theme button").forEach((themeButton) =>
+        themeButton.classList.remove("active")
+    );
     // 클릭된 지역의 버튼에 'active' 클래스 추가
     var buttons = document.querySelectorAll(".location button");
     for (var i = 0; i < buttons.length; i++) {
@@ -65,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         let regionPage = './korea'; // 기본값
                         let regionName = regionData.properties.CTP_ENG_NM.toLowerCase();
                         regionPage = './sido/' + regionName;
-                        fetch("./sido/" + regionName + ".json")
+                        fetch("./sido/" + regionName)
                             .then(response => response.json())
                             .then(regionData => {
                                 const locationButton = document.querySelector(".rightmain .location button");
@@ -74,9 +78,13 @@ document.addEventListener("DOMContentLoaded", function () {
                                     locationButton.id = regionData.properties.SIG_KOR_NM;
                                 }
                             })
-                            .catch(error => console.error(regionName + " 데이터 로드 실패:", error));
+                            .catch(error => {}); // 오류가 발생해도 아무것도 하지 않음
                         document.getElementById("mapframe").src = regionPage;
                     }
+                    // 모든 .theme button의 'active' 클래스를 제거
+                    document.querySelectorAll(".theme button").forEach((themeButton) =>
+                        themeButton.classList.remove("active")
+                    );
                 });
             });
         })

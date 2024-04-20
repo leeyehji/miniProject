@@ -27,8 +27,7 @@ https://www.springframework.org/schema/mvc/spring-mvc.xsd
 	<resources mapping="/serviceCenter/**/**" location="/resources/serviceCenter/" />
 	<resources mapping="/thema/**/**" location="/resources/thema/" />
 	<resources mapping="/member/**/**" location="/resources/member/"/>
-	<!--<resources mapping="/WEB-INF/storage" location="/storage/**" />-->
-
+	<resources mapping="/font/**/**" location="/resources/font/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

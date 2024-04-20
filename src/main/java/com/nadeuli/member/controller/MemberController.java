@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Member;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -63,8 +64,6 @@ public class MemberController {
     @PostMapping("/emailCheck")
     public Map<String, String> chekcEmail(@RequestBody Map<String, Object> map) {
 
-
-
         String MEM_EMAIL = (String) map.get("MEM_EMAIL");
         Map<String, String> EmailResult = new HashMap<>();
         boolean ChekcEmailResult = memberService.checkEmail(MEM_EMAIL);
@@ -80,9 +79,6 @@ public class MemberController {
     /**
      * 회원가입
      */
-
-
-
     @ResponseBody
     @PostMapping("/memberJoin")
     public String memberJoin(@ModelAttribute MemberRequestDTO memberRequestDTO) {
@@ -133,16 +129,17 @@ public class MemberController {
     }
 
     /**
-     * // * 로그아웃 세션 없애기
-     * // *
+      * 로그아웃 세션 없애기
      */
     @GetMapping("/logout")
+    @ResponseBody
     public String logout(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if (session != null) {
             session.invalidate(); // 세션 제거
         }
-        return "redirect:/index";
+        System.out.println("로그아웃 성공");
+        return "/";
     }
 
     /**
@@ -153,34 +150,29 @@ public class MemberController {
         return "member/findId";
     }
 
+
     /**
      * 아이디 찾기
      */
 
     @PostMapping("/lostId")
     @ResponseBody
-    public String lostId(@RequestBody MemberRequestDTO memberRequestDTO) {
-        // 이름과 이메일을 사용하여 아이디 찾기
+    public String lostId(@ModelAttribute MemberRequestDTO memberRequestDTO) {
         String result = memberService.lostId(memberRequestDTO);
+        System.out.println("memberRequestDTO = " + memberRequestDTO);
+        System.out.println(memberRequestDTO.getMEM_EMAIL());
+
         return result;
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @GetMapping("/yourId")
+    public String yourId (@RequestParam String result, Model model){
+        model.addAttribute("MEMBER",result);
+        System.out.println("MemberController.yourId");
+        System.out.println("result = " + result);
+        return "member/yourId";
+    }
 
 
 
@@ -188,17 +180,23 @@ public class MemberController {
      * 비밀번호 찾기 로직
      */
     @GetMapping("/findPwd")
-    public String findPwdForm() {
-        return "member/findPwd";
+    public String findPwd() {
+        return "/member/findPwd";
     }
 
-
-
+//    @ResponseBody
+//    @PostMapping(value = "/findPwd")
+//    public String findPassword(@ModelAttribute MemberRequestDTO memberRequestDTO){
+//        String result = memberService.lostPwd(memberRequestDTO);
+//        return result;
+//    }
 
 
 
     @GetMapping("/mailWindow")
-    public String mailWidowForm(){
+    public String mailWidowForm(@RequestParam(value = "MEM_EMAIL") String MEM_EMAIL,Model model){
+        System.out.println(MEM_EMAIL);
+        model.addAttribute("MEM_EMAIL",MEM_EMAIL);
         return "/member/mailWindow";
     }
 

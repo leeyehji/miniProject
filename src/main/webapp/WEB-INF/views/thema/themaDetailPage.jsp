@@ -72,6 +72,11 @@
 						<tr id="themaData3">
 
 						</tr>
+						<tr id="themaData4">
+						<tr>
+						<tr id="themaData5">
+						<tr>
+						<tr id="themaData6">
 						<tr>
 						  <td colSpan="4" id="icon">
 							<img src="/thema/icon/pet.png" id="pet" class="noAllow"/>

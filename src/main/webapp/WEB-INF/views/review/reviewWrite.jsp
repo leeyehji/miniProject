@@ -27,7 +27,7 @@
 </head>
 
 <body>
-
+    <input type="hidden" id="whereAreYou" value="w2r7i9">
 	<header><jsp:include page="../frame/header.jsp"></jsp:include></header>
 
 	<div id="frameContent">
@@ -41,7 +41,7 @@
 							<table>
 								<tr>
 									<td style="text-align: center;">
-										<img src="review/icon/camera4.jpg" width="100px" height="100px"></td>
+										<img src="/review/icon/camera4.jpg" width="100px" height="100px"></td>
 								</tr>
 								<tr>
 									<td id="writeInput" style="text-align: center;"><input

@@ -95,7 +95,7 @@ public class MyPage implements MypageService {
             hash.put("start", start);
             hash.put("end", end);
             hash.put("description",listAll.get(i).getCal_memo() );
-
+            hash.put("color", listAll.get(i).getCal_color());
             jsonObj = JSONObject.fromObject(hash);;
             jsonArr.add(jsonObj);
         }
@@ -110,7 +110,7 @@ public class MyPage implements MypageService {
 		//실제폴더
     	//D:/Spring/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/miniproject/resources/mypage/storage
     	String filePath = httpSession.getServletContext().getRealPath("resources/mypage/storage");
-    	System.out.println("실제폴더 = " + filePath);
+    	//System.out.println("실제폴더 = " + filePath);
     	
     	//ncp에 업로드. UUID 저장.
     	String imageFileName = null;
@@ -134,8 +134,8 @@ public class MyPage implements MypageService {
 	public void deleteProfile(MemberDTO memberDTO) {
 		//NCP 삭제
 		String imageFileName= memberDTO.getMem_profileImage();
-		objectStorageService.deleteFile(bucketName,"profile/"+imageFileName);
-		System.out.println("ncp 삭제");
+		objectStorageService.deleteFile(bucketName,"storage/profile/"+imageFileName);
+		//System.out.println("ncp 삭제");
 		
 		//MySQL 삭제
 		mypageDAO.deleteFile(memberDTO);
@@ -150,8 +150,10 @@ public class MyPage implements MypageService {
         tempMap.put("startNum", startNum);
         tempMap.put("mem_id", id);
         //List객체가 JSON으로 자동 변환된다. - pom.xml <dependency>에 추가해야 함
+        //System.out.println(tempMap.get("mem_id")+", "+tempMap.get("startNum"));
         List<ReviewDTO> list = mypageDAO.getMyBoardList(tempMap);
-
+        for(int i=0; i<list.size(); i++)
+        	list.get(i).setMEM_ID(id);
         //페이징 처리
         int totalA = mypageDAO.getTotalA(id); //총글수
 
@@ -169,4 +171,21 @@ public class MyPage implements MypageService {
         return map;
 	}
 	
+	@Override
+	public void setBestReview(String no, String mem_id) {
+        Map<String, Object> tempMap = new HashMap<String, Object>();
+        tempMap.put("mem_id", mem_id);
+        tempMap.put("b_no", no);
+		mypageDAO.setBestReview(tempMap);
+	}
+	
+	@Override
+	public ReviewDTO getMyBest(String memId) {
+        return mypageDAO.getMyBest(memId);
+	}
+	
+	@Override
+	public void deleteMyBoard(String memId) {
+		mypageDAO.deleteMyBoard(memId);
+	}
 }

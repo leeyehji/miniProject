@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.nadeuli.mypage.dto.CalDTO;
 import com.nadeuli.mypage.dto.MemberDTO;
+import com.nadeuli.review.bean.ReviewDTO;
 
 public interface MypageService {
 
@@ -28,6 +29,12 @@ public interface MypageService {
 	MemberDTO getUserDTO(String memId);
 
 	public Map<String, Object> getMyBoardList(String pg, String id);
+
+	public void setBestReview(String no, String mem_id);
+
+	public ReviewDTO getMyBest(String memId);
+
+	public void deleteMyBoard(String memId);
 
 
 }

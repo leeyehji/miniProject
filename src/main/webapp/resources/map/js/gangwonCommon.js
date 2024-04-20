@@ -10,7 +10,6 @@ var infowindow = new naver.maps.InfoWindow({
 
 window.addEventListener('message', function(e) {
     var id = e.data; // 부모 페이지로부터 받은 id 값
-    console.log(id);
 
     // 기존 마커를 지도에서 제거하고 배열 비우기
     markers.forEach(marker => marker.setMap(null));

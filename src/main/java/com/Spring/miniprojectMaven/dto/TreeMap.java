@@ -1,11 +1,10 @@
-package com.nadeuli.mypage.dto;
-
-import org.springframework.stereotype.Service;
+package com.Spring.miniprojectMaven.dto;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
-@Service
+@Setter
 public class TreeMap {
 	private int t_SIGUNGU;
 	private int dataValue;

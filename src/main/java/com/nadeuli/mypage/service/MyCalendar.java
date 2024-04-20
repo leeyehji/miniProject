@@ -45,7 +45,7 @@ public class MyCalendar implements MyCalendarService {
         	Object color = listAll.get(i).getCal_color();
         	Object id = listAll.get(i).getCal_no();
             hash.put("title", listAll.get(i).getCal_title());
-            System.out.println("title"+listAll.get(i).getCal_title());
+            //System.out.println("title"+listAll.get(i).getCal_title());
             hash.put("start", start);
             hash.put("end", end);
             hash.put("description",listAll.get(i).getCal_memo() );

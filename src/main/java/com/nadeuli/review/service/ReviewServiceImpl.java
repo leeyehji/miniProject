@@ -5,6 +5,7 @@ import com.nadeuli.review.bean.CommentDTO;
 import com.nadeuli.review.bean.ReviewDTO;
 import com.nadeuli.review.bean.ReviewPagingDTO;
 import com.nadeuli.review.dao.ReviewDAO;
+import org.graalvm.nativebridge.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -102,6 +103,64 @@ public class ReviewServiceImpl implements ReviewService {
     public int getNextView(String no) {
         int b_no = Integer.parseInt(no);
         return reviewDAO.getNextView(b_no);
+    }
+
+    @Override
+    public int isMatchId(String loginId, String no) {
+        Map<String,Object> isMatchMap = new HashMap<>();
+        int B_NO = Integer.parseInt(no);
+        isMatchMap.put("MEM_ID",loginId);
+        isMatchMap.put("B_NO",B_NO);
+
+        return reviewDAO.isMatchId(isMatchMap);
+    }
+
+    @Override
+    public Map<String,Object> getReviewUpdate(String no) {
+        int B_NO = Integer.parseInt(no);
+        return reviewDAO.getReviewUpdate(B_NO);
+    }
+
+    @Override
+    public void reviewUpdate(ReviewDTO reviewDTO) {
+        String newCONTENT = reviewDTO.getB_CONTENT();
+        String oldCONTENT = reviewDTO.getB_CONTENT();
+
+
+        if(oldCONTENT.contains("https://kr.object.ncloudstorage.com/miniproject/storage/review/"+reviewDTO.getMEM_ID()+"/temp")){
+            newCONTENT = oldCONTENT.replace("/storage/review/"+reviewDTO.getMEM_ID()+"/temp","/storage/review/"+reviewDTO.getMEM_ID()+"/success");
+            reviewDTO.setB_CONTENT(newCONTENT);
+        }
+        reviewDAO.reviewUpdate(reviewDTO);
+    }
+
+    @Override
+    public void reviewDelete(String bNo) {
+        int B_NO = Integer.parseInt(bNo);
+        reviewDAO.reviewCommentDelete(B_NO);
+        reviewDAO.reviewDelete(B_NO);
+    }
+
+    @Override
+    public void commentUpdate(String cNo, String cContent) {
+        Map<String,Object> commentUpdateMap = new HashMap<>();
+        int C_NO = Integer.parseInt(cNo);
+        commentUpdateMap.put("C_NO",C_NO);
+        commentUpdateMap.put("C_CONTENT",cContent);
+        reviewDAO.commentUpdate(commentUpdateMap);
+
+    }
+
+    @Override
+    public void commentDelete(String cNo) {
+        int C_NO = Integer.parseInt(cNo);
+        reviewDAO.commentDelete(C_NO);
+    }
+
+    @Override
+    public void boardCommentMinus(String bNo) {
+        int B_NO = Integer.parseInt(bNo);
+        reviewDAO.boardCommentMinus(B_NO);
     }
 
 

@@ -1,5 +1,23 @@
 /*header*/
-// 메뉴바 시작
+$(function(){
+	//로그인이 안되어 있다면
+	$.ajax({
+		type:'post'
+		,url:'/mypage/getMemId'
+		,success: function(data){
+			if(data != '' && data != null){//로그인이 안되어 있으면
+				$('#imUser').hide();
+				$('#imNotUser').show();
+			}else{
+				$('#imNotUser').hide();
+				$('#imUser').show();
+			}
+		}
+	});
+	
+
+});//function
+
 function toggleNavSections() {
   var navSection = document.querySelector('.nav_section');
   navSection.classList.toggle('show');
@@ -56,6 +74,31 @@ $(function() {
 $("#loginBtn").click(function(){
 	window.location.href="/member/loginForm";
 } );
+/*로그아웃*/
+$("#logoutBtn").click(function(){
+	
+	$.ajax({
+		type:'get'
+		,url:'/member/logout'
+		,success: function(){
+			window.location.href='/';
+		},error:function(xhr, status, error){
+			console.error("Status: " + status + "\nError: " + error + "\nResponse: " + xhr.responseText);
+	    }
+	});//ajax
+});//logoutBtn.click
+/* 마이페이지 */
+$("#mypageBtn").click(function(){
+	$.ajax({
+		type:'get'
+		,url:'/mypage/mypage'
+		,success: function(){
+			window.location.href='/mypage/mypage';
+		},error:function(xhr, status, error){
+			console.error("Status: " + status + ", Error: " + error + ", Response: " + xhr.responseText);
+	    }
+	});//ajax
+});//mypageBtn.click
 /*회원가입페이지 */
 $("#JoinBtn").click(function(){
 	window.location.href="/member/memberJoinForm";

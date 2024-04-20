@@ -61,10 +61,10 @@
                     </div>
 
                     <div id="delUpdate" style='margin-top: 20px'>
-                        <button onclick="prevView(B_NO-1)">이전글</button>
-                        <button>글 수정</button>
-                        <button>글 삭제</button>
-                        <button onclick="nextView(B_NO+1)">다음글</button>
+                        <button class="prevView" onclick="">이전글</button>
+                        <button class="myArticle" id="reviewViewUpdateBtn">글 수정</button>
+                        <button class="myArticle" id="reviewViewDeleteBtn">글 삭제</button>
+                        <button class="nextView" onclick="">다음글</button>
                     </div>
 
                 </div>
@@ -106,17 +106,18 @@
     var B_NO = ${no};
 
     function prevView(no){
-        if(no > 1){
-            location.href="reviewView?no="+no;
-        }else{
-            alert("최신글 입니다.")
+        if(no === -1){
+            alert("마지막 글입니다.")
+        }else {
+            location.href = "reviewView?no=" + no;
         }
+
     }
     function nextView(no){
-        if(no < ${sessionScope.totalA}){
-            location.href="reviewView?no="+no;
-        }else{
-            alert("마지막 글 입니다.")
+        if(no === -1){
+            alert("마지막 글입니다.")
+        }else {
+            location.href = "reviewView?no=" + no;
         }
     }
 
@@ -124,8 +125,6 @@
 </script>
 <script src="/frame/js/frame.js"></script>
 <script src="/review/js/reviewView.js"></script>
-
-
 
 
 </body>

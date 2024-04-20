@@ -23,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.nadeuli.mypage.dto.MemberDTO;
 import com.nadeuli.mypage.service.MypageService;
+import com.nadeuli.review.bean.ReviewDTO;
 
 
 @Controller
@@ -35,12 +36,12 @@ public class MypageController {
     public void started() {
     	//GMT -> KST
         TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
-        System.out.println(new Date());
+        //System.out.println(new Date());
     }
 	
 	@GetMapping(value = "mypage")
     public String mypage(HttpSession session) {
-		System.out.println("로그인"+session.getAttribute("member"));
+		//System.out.println("mypage 접근 - 아이디: "+session.getAttribute("MEM_ID"));
     	return "mypage/mypage";
     }
     
@@ -49,12 +50,14 @@ public class MypageController {
     	return "mypage/memberUpdate";
     }
     
+    /*내가 작성한 글*/
     @GetMapping(value="myBoard")
     public String myBoard(HttpServletRequest request,HttpSession session) { //id 내놔
-        //System.out.println("아이디"+session.getAttribute("MEM_ID")); //로그인 : null
     	return "review/reviewList";
     }
     
+    
+    /* mypage 내 로그인 여부 검사용*/
     @PostMapping(value = "getMemId")
     @ResponseBody
     public String getMemId(HttpSession session) {
@@ -62,20 +65,32 @@ public class MypageController {
     	return mem_id;
     }
     
-    @PostMapping(value="getMyBoardList")
+    /*내가 작성한 글 목록 보여주기*/
+    @PostMapping(value="getReviewList")
     @ResponseBody
     public Map<String, Object> getMyBoardList(@RequestParam(value="pg",
             required = false, defaultValue="1") String pg, HttpSession session){
-    	String memId = (String) session.getAttribute("MEM_ID");
-        Map<String,Object> myBoardListMap =mypageService.getMyBoardList(pg, memId);
+    	String mem_id = (String) session.getAttribute("MEM_ID");
+    	//System.out.println(mem_id + ", "+pg);
+        Map<String,Object> myBoardListMap =mypageService.getMyBoardList(pg, mem_id);
         session.setAttribute("totalA",myBoardListMap.get("totalA"));
+        
         return myBoardListMap;
+    }
+    
+    /* board 클릭 시 대표 글로 결정. */
+    @GetMapping(value ="reviewView")
+    public String setBestReview(@RequestParam(value="no")String no, HttpSession session){
+    	//System.out.println("대표글 클릭 no: "+no);
+    	String mem_id = (String) session.getAttribute("MEM_ID");
+    	mypageService.setBestReview(no, mem_id);
+    	return "mypage/mypage";
     }
     
     @PostMapping(value="memberUpdateForm")
     @ResponseBody
     public void memberUpdateDB(@ModelAttribute MemberDTO memberDTO) {
-    	System.out.println(memberDTO);
+    	//System.out.println(memberDTO);
     	mypageService.update(memberDTO);
     }
     
@@ -107,9 +122,6 @@ public class MypageController {
     	MemberDTO memberDTO = mypageService.getUserDTO(memId);
     	//기존 프로필 사진 ncp에서 삭제
     	mypageService.deleteProfile(memberDTO);
-    	//파일 용량 제한
-    	
-    	//DB에는 파일 이름만 저장.
     	mypageService.setProfileImg(memberDTO, session, img);
     }
     
@@ -129,4 +141,18 @@ public class MypageController {
 	    List<Map<String, Object>> jsonArr = mypageService.getSchedule(map);//memId, selectDate
         return jsonArr;
 	}
+    
+    @PostMapping(value = "getMyBest")
+    @ResponseBody
+    public ReviewDTO myBest(HttpSession session){
+    	String memId = (String) session.getAttribute("MEM_ID");
+    	return mypageService.getMyBest(memId);
+    }
+    
+    @PostMapping(value = "deleteMyBoard")
+    @ResponseBody
+    public void deleteMyBoard(HttpSession session) {
+    	String memId = (String) session.getAttribute("MEM_ID");
+    	mypageService.deleteMyBoard(memId);
+    }
 }

@@ -25,7 +25,7 @@
             <p><input type="text" name="MEM_NAME" id="MEM_NAME" placeholder="이름 입력"></p>
             <p><input type="text" name="MEM_EMAIL" id="MEM_EMAIL" placeholder="E-mail"></p>
 
-            <p><input type="button" value="아이디찾기" id="lostId" class="signup_btn"  ></p>
+            <p><input type="button" value="아이디찾기" id="lostId" class="signup_btn" onclick="lostId()" ></p>
             <span id="result"></span>
         </form>
         <p class="pre_btn" id="befor">
