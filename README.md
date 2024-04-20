@@ -87,17 +87,35 @@
 ## 설계의 주안점
 
 - 정보 제공 사이트에 맞춰 다양한 여행 정보와 기능을 제공하기 위해 노력했습니다.
-1. 지도 이미지를 통한 관광지 탐색 기능 
-2. 테마 태그를 이용한 관광지 탐색 기능 
-3. 사용자 편의성과 심미성을 갖춘 리뷰 작성 기능 
-4. 사용자 전용 캘린더 기능
+
+1. 웹페이지를 이용한 간편한 회원가입 / 로그인 시스템
+2. HTML, CSS, jQuery를 이용한 사용자가 이해하기 쉬운 UI구성
+3. HTML을 이용한 각각의 페이지 프레임 구성
+4. SPRING MVC를 통한 게시판 및 홈페이지 구성
+5. AJAX를 이용한 테이블(화면전환) 처리
+6. 다양한 API 활용(지도, 차트, 캘린더, 소셜로그인, 공공데이터)
 
 -----------------
 
 ## 주요기능
 
-
-- 지도 이미지를 통한 관광지 탐색 기능
+- 네이버 지도와 공공데이터를 활용한 관광지 탐색 기능
+<p>
+    <img src="./forREADME/MapGuide.png">
+    <sup style="color:#0AC5A8; font-weight: bolder;">- 여행지 안내문 -</sup>
+</p>
+<p align="center">
+    <img src="./forREADME/Seoul.png">
+    <sup style="color:#0AC5A8; font-weight: bolder;">- 서울 지도 -</sup>
+</p>
+<p align="center">
+    <img src="./forREADME/MapMarker.png">
+    <sup style="color:#0AC5A8; font-weight: bolder;">- 각 테마 클릭에 따른 마커/정보창 표시 -</sup>
+</p>
+<p align="center">
+    <img src="./forREADME/MapDetail.png">
+    <sup style="color:#0AC5A8; font-weight: bolder;">- 정보창에서 이동 가능한 상세 정보창 -</sup>
+</p>
 
 - 테마 태그를 이용한 관광지 탐색 기능
 
@@ -110,7 +128,7 @@
 ```
 -----------------
 
-## 개발 환경
+## 개발환경
 
 ### 프론트엔드
 - HTML
@@ -153,46 +171,42 @@
 
 ## 문서
 
-**1.디렉토리구조**
+### **디렉토리 구조**
 
-스프링 디렉토리 구조는 크게 계층형과 도메인 구조로 나눌 수 있다. 
-
-계층형은 프로젝트의 이해도가 낮아도 전체적인 구조를 빠르게 파악할 수 있다는 장점이 있다. 
-하지만 한 디렉토리 내에 너무 많은 클래스가 들어가 세부적인 구조를 파악하기는 불편하다.
-
-따라서 해당 프로젝트는 **도메인 구조**를 활용한다. 프로젝트에 대한 이해가 있다면 계층형보다 빠르고 쉽게 구조를 파악할 수 있다. 구체적인 구조는 다음과 같다. 
+<p>스프링 디렉토리 구조는 크게 계층형과 도메인 구조로 나눌 수 있습니다.</p> <p>계층형은 프로젝트의 이해도가 낮더라도 전체적인 구조를 빠르게 파악할 수 있다는 장점이 있습니다.</p> <p>하지만 한 디렉토리 내에 너무 많은 클래스가 들어가 세부적인 구조를 파악하기는 불편합니다.</p> <p>따라서 해당 프로젝트에서는 **도메인 구조**를 활용하였습니다.</p> <p>프로젝트에 대한 이해도가 충분하다면 계층형보다 빠르고 쉽게 구조를 파악할 수 있습니다.</p> <p>구체적인 구조는 다음과 같습니다.</p>
 <p align="center">
     <img src="./forREADME/DDD.png">
     <sup style="color:#0AC5A8; font-weight: bolder;">- 도메인 구조 -</sup>
 </p>
 
-### DB 구조
+### **2.FLOWCHART**
 
-**2.FLOWCHART**
-```angular2html
-<여기에 flowchart 사진 넣을 예정>
-```
+<p>애플리케이션의 전체적인 흐름을 나타내는 FLOWCHART입니다. 사용자의 요청을 받아 처리하는 과정과 데이터베이스와의 상호작용을 시각적으로 표현하였습니다.</p>
 <p align="center">
     <img src="">
     <sup style="color:#0AC5A8; font-weight: bolder;">- FLOWCHART -</sup>
 </p>
 
-**3.DB Diagram**
-<p>사용한 데이터베이스는 MySQL 데이터 베이스다. 네이버 클라우드 플랫폼을 이용하여 MySQL 데이터 베이스를 만들어 유저 정보, 관광지 정보 등을 저장하였다.</p>
-<p>데이터 베이스는 엑셀 및 DB diagram을 만들어 각 테이블의 구조를 직관적으로 볼 수 있도록 하였다.</p>
+### **DB Diagram**
+<p>사용한 데이터베이스는 MySQL 데이터베이스이며, 네이버 클라우드 플랫폼을 이용하여 MySQL 데이터 베이스를 만들어 유저 정보, 관광지 정보 등을 저장하였습니다.</p>
+<p>데이터 베이스는 엑셀 및 DB diagram을 만들어 각 테이블의 구조를 직관적으로 확인할 수 있도록 하였습니다.</p>
 <p align="center">
     <img src="./forREADME/DBDiagram.png">
     <sup style="color:#0AC5A8; font-weight: bolder;">- DB Diagram -</sup>
 </p>
 
-**4.테이블 정의서**
+### **4.테이블 정의서**
+
+<p>데이터베이스의 각 테이블에 대한 정의서입니다. 테이블 명칭, 컬럼명, 데이터 타입, 제약조건 등의 정보를 상세히 기술하였습니다.</p>
 <p align="center">
     <img src="./forREADME/DBTableDefMem.png">
     <img src="./forREADME/DBTableDefTravel.png">
     <sup style="color:#0AC5A8; font-weight: bolder;">- DB Table Def -</sup>
 </p>
 
-**5.클래스 Diagram**
+### **5.클래스 Diagram**
+
+<p>애플리케이션의 클래스 구조를 나타내는 다이어그램입니다. 각 클래스 간의 관계와 메서드, 속성 등을 시각적으로 표현하였습니다.</p>
 <p align="center">
     <img src="">
     <sup style="color:#0AC5A8; font-weight: bolder;">- Class Diagram -</sup>
