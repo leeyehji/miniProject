@@ -93,13 +93,13 @@
 3. HTML을 이용한 각각의 페이지 프레임 구성
 4. SPRING MVC를 통한 게시판 및 홈페이지 구성
 5. AJAX를 이용한 테이블(화면전환) 처리
-6. 다양한 API 활용(지도, 차트, 캘린더, 소셜로그인)
+6. 다양한 API 활용(지도, 차트, 캘린더, 소셜로그인, 공공데이터)
 
 -----------------
 
 ## 주요기능
 
-- 지도 이미지를 통한 관광지 탐색 기능
+- 네이버 지도와 공공데이터를 활용한 관광지 탐색 기능
 <p>
     <img src="./forREADME/MapGuide.png">
     <sup style="color:#0AC5A8; font-weight: bolder;">- 여행지 안내문 -</sup>
@@ -116,6 +116,7 @@
     <img src="./forREADME/MapDetail.png">
     <sup style="color:#0AC5A8; font-weight: bolder;">- 정보창에서 이동 가능한 상세 정보창 -</sup>
 </p>
+
 - 테마 태그를 이용한 관광지 탐색 기능
 
 - 사용자 편의성과 심미성을 갖춘 리뷰 작성 기능
