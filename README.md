@@ -29,11 +29,11 @@
 <table>
     <tr>
         <th align="center" style="color: whitesmoke">이름</th>
-        <th align="center" style="color: whitesmoke">이예지</th>
-        <th align="center" style="color: whitesmoke">이훈민</th>
-        <th align="center" style="color: whitesmoke">정용철</th>
-        <th align="center" style="color: whitesmoke">최인환</th>
-        <th align="center" style="color: whitesmoke">김재원</th>
+        <th align="center" style="color: whitesmoke" width=200px;>이예지</th>
+        <th align="center" style="color: whitesmoke" width=200px;>이훈민</th>
+        <th align="center" style="color: whitesmoke" width=200px;>정용철</th>
+        <th align="center" style="color: whitesmoke" width=200px;>최인환</th>
+        <th align="center" style="color: whitesmoke" width=200px;>김재원</th>
     </tr>
     <tr>
         <th align="center" style="color: whitesmoke">사진</th>
@@ -50,26 +50,26 @@
                                 <br><strong style="color: white">백엔드</strong>
                                 <br>
         </td>
-        <td align="center"><strong style="color: white">프론트</strong>
-                                <br>
-                                <br>백
-                                <br>
-        </td>
-        <td align="center"><strong style="color: white">프론트</strong>
-                                <br>
+        <td align="center"><strong style="color: white">프론트엔드</strong>
+                                <br>상세정보/후기/테마 페이지
                                 <br><strong style="color: white">백엔드</strong>
-                                <br>
+                                <br>DB설계<br>상세정보/후기, 테마
         </td>
-        <td align="center"><strong style="color: white">프론트</strong>
-                                <br>
+        <td align="center"><strong style="color: white">프론트엔드</strong>
+                                <br>메인페이지<br>공지/QnA,FnA 페이지
                                 <br><strong style="color: white">백엔드</strong>
-                                <br>
+                                <br>공지/QnA/FnA
         </td>
-        <td align="center"><strong style="color: white">프론트</strong>
-                                <br>맵페이지 지도 구현<br>메인페이지 디자인
+        <td align="center"><strong style="color: white">프론트엔드</strong>
+                                <br>로그인/로그아웃, 회원가입 페이지
                                 <br><strong style="color: white">백엔드</strong>
+                                <br>로그인/로그아웃, 회원가입<br>소셜로그인 연동
+        </td>
+        <td align="center"><strong style="color: white">프론트엔드</strong>
                                 <br>지도 페이지
-                                <br>메인페이지(추천여행지)
+                                <br><strong style="color: white">백엔드</strong>
+                                <br>DB설계, 지도
+                                <br>메인(추천여행지)
         </td>
     </tr>
     <tr>
@@ -99,7 +99,7 @@
 
 ## 주요기능
 
-- 네이버 지도와 공공데이터를 활용한 관광지 탐색 기능
+- <h3>네이버 지도와 공공데이터를 활용한 관광지 탐색 기능</h3>
 <p align="center">
     <img src="./forREADME/MapGuide.png">
     <sup style="color:#0AC5A8; font-weight: bolder;">- 여행지 안내문 -</sup>
@@ -117,27 +117,29 @@
     <sup style="color:#0AC5A8; font-weight: bolder;">- 정보창에서 이동 가능한 상세 정보창 -</sup>
 </p>
 
-- 테마 태그를 이용한 관광지 탐색 기능
+- <h3>테마 태그를 이용한 관광지 탐색 기능</h3>
 <p>DB에 저장된 TOUR API의 관광지 정보를 사용자의 태그선택에 따라 출력</p>
-<p>
+<p align="center">
     <img src="./forREADME/ThemeTag.png">
     <sup style="color:#0AC5A8; font-weight: bolder;">- 7가지 테마에 따른 각기 다른 정보 출력 -</sup>
 </p>
-<p>
-    <img src="./forREADME/ThemeDetail1.png">
-    <img src="./forREADME/ThemeDetail2.png">
+<p align="center">
+    <img src="./forREADME/ThemeDetail1.png"><br>
+    <img src="./forREADME/ThemeDetail2.png"><br>
     <sup style="color:#0AC5A8; font-weight: bolder;">- 테마 검색 결과에서 이동 가능한 상세 정보창 -</sup>
 </p>
-- 사용자 편의성과 심미성을 갖춘 리뷰 작성 기능
-<p>
-    <img src="./forREADME/ReviewWrite.png">
-    <sup style="color:#0AC5A8; font-weight: bolder;">- wizwig 에디터를 이용한 리뷰 작성 -</sup>
+
+- <h3>사용자 편의성과 심미성을 갖춘 리뷰 작성 기능</h3>
+<p align="center">
+    <img src="./forREADME/ReviewWrite.png"><br>
+    <sup style="color:#0AC5A8; font-weight: bolder;">- wizwig 에디터를 이용한 리뷰 작성 -</sup>
 </p>
-<p>
+<p align="center">
     <img src="./forREADME/ReviewList.png">
     <sup style="color:#0AC5A8; font-weight: bolder;">- NCP Object Storage를 활용하여 사용자의 File을 저장, 후기 리스트 출력 -</sup>
 </p>
-- 사용자 전용 캘린더 기능
+
+- <h3>사용자 전용 캘린더 기능</h3>
 
 -----------------
 
