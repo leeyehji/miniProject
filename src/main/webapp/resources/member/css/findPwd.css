@@ -18,6 +18,7 @@ body {
     height: 100vh;
     background: url(/member/img/background.jpg);
     background-size: cover;
+    border-radius: 10%;
 }
 
 body::before {
@@ -32,7 +33,7 @@ body::before {
 
 .wrap {
     width: 500px;
-    height: 710px;
+    height: 760px;
     margin: 0 auto;
     background-color: rgb(236, 239, 241);
     border-radius: 5px;
@@ -56,7 +57,7 @@ h1 {
 /* submit을 제외한 나머지 input 태그에 적용 */
 .wrap .form input:not(input[type='submit'], input[type='radio']) {
     border: 1px solid #db2020;
-    width: 400px;
+    width: 450px;
     height: 50px;
     margin: 20px;
     padding-left: 10px;
@@ -71,7 +72,11 @@ h1 {
     margin: 0 0 10px 10px;
     cursor: pointer;
 }
+.wrap{
+    border: 1px;
+    border-radius: 10px;
 
+}
 .wrap .form input[type='submit'] {
     font-size: 35px;
     padding: 0 40px;

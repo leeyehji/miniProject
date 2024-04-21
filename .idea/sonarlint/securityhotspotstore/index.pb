@@ -255,3 +255,7 @@ a
 .src/main/webapp/resources/member/js/lostPwd.js,c/4/c4449e9aeab4952da76a81a2b5ba288ae7cb5a2d
 c
 3src/main/webapp/resources/member/js/sendPwdEmail.js,3/9/39cea3f57d42cce4fbad05e6a6f003cae8346698
+c
+3src/main/webapp/resources/member/css/mailWindow.css,f/5/f597393e1505eb8f240a85747a0bb08a59fb2bd7
+`
+0src/main/webapp/resources/member/css/findPwd.css,e/3/e3e3a3d55f60d7a5522de97b4aafb0b2bc83b038
