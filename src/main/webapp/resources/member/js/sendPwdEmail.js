@@ -11,8 +11,6 @@ function sendPwdEmail() {
             alert("인증번호가 전송되었습니다.");
         },
         error: function(xhr, status, error) {
-
-            alert("오류 발생: " + error);
         }
     });
 }

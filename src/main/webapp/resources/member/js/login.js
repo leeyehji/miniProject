@@ -31,7 +31,7 @@ function login() {
         MEM_ID: MEM_ID,
         MEM_PW: MEM_PW
     };
-    console.log(MEM_ID)
+
 
     $.ajax({
         url: '/member/login',
@@ -42,11 +42,11 @@ function login() {
                 alert('로그인 성공: ' + data.MEM_ID);
                 window.location.href = '/'; // 로그인 성공 시 리다이렉트할 페이지
             } else {
-                console.error('로그인 실패',erroor);
+
             }
         },
         error: function(xhr, status, error) {
-            console.error('로그인 요청 에러:', error);
+
         }
     });
 }

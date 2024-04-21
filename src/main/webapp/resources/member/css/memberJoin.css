@@ -35,7 +35,7 @@ body::before {
 }
 .wrap {
     width: 500px;
-    height: 700px;
+    height: 950px;
     margin: 0 auto;
     background-color: rgba(228, 246, 245, 0.986);
     border-radius: 5px;

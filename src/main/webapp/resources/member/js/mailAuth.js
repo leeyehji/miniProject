@@ -19,7 +19,7 @@ function mailAuth() {
     });
 }
 function mailAuth() {
-    console.log("!1111111111111")
+
 
     $.ajax({
         type: "POST",
@@ -38,7 +38,7 @@ function mailAuth() {
         },
         error: function(xhr, status, error) {
             alert("에러: 이메일이 맞지 않습니다.");
-            console.error("에러 발생: " + error);
+
         }
     });
 }
