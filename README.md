@@ -100,7 +100,7 @@
 ## 주요기능
 
 - 네이버 지도와 공공데이터를 활용한 관광지 탐색 기능
-<p>
+<p align="center">
     <img src="./forREADME/MapGuide.png">
     <sup style="color:#0AC5A8; font-weight: bolder;">- 여행지 안내문 -</sup>
 </p>
@@ -118,14 +118,27 @@
 </p>
 
 - 테마 태그를 이용한 관광지 탐색 기능
-
+<p>DB에 저장된 TOUR API의 관광지 정보를 사용자의 태그선택에 따라 출력</p>
+<p>
+    <img src="./forREADME/ThemeTag.png">
+    <sup style="color:#0AC5A8; font-weight: bolder;">- 7가지 테마에 따른 각기 다른 정보 출력 -</sup>
+</p>
+<p>
+    <img src="./forREADME/ThemeDetail1.png">
+    <img src="./forREADME/ThemeDetail2.png">
+    <sup style="color:#0AC5A8; font-weight: bolder;">- 테마 검색 결과에서 이동 가능한 상세 정보창 -</sup>
+</p>
 - 사용자 편의성과 심미성을 갖춘 리뷰 작성 기능
-
+<p>
+    <img src="./forREADME/ReviewWrite.png">
+    <sup style="color:#0AC5A8; font-weight: bolder;">- wizwig 에디터를 이용한 리뷰 작성 -</sup>
+</p>
+<p>
+    <img src="./forREADME/ReviewList.png">
+    <sup style="color:#0AC5A8; font-weight: bolder;">- NCP Object Storage를 활용하여 사용자의 File을 저장, 후기 리스트 출력 -</sup>
+</p>
 - 사용자 전용 캘린더 기능
 
-```angular2html
-사진,그림 등을 통해 기능을 설명할 예정
-```
 -----------------
 
 ## 개발환경
