@@ -10,7 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpSession;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -99,7 +102,7 @@ public class ReviewController {
         String MEM_ID = (String) session.getAttribute("MEM_ID");
         if(imgArray.get(0).equals("[]")) {
 
-            System.out.println("없음");
+
 
         }else{
             B_THUMBNAIL = objectStorageService.moveFile(imgArray,MEM_ID);
@@ -110,15 +113,17 @@ public class ReviewController {
             }
         }
         objectStorageService.clearTemp(MEM_ID);
-        System.out.println("생겼나");
+
+
         return B_THUMBNAIL;
     }
 
     @PostMapping(value="uploadSummernoteImageFile")
     @ResponseBody
-    public String uploadImage(@RequestParam(value="file") MultipartFile file,HttpSession session){
+    public String uploadImage(@RequestParam(value="file") MultipartFile file,HttpSession session) {
+        Map<String,Object> resultMap = new HashMap<>();
         if(session.getAttribute("MEM_ID")==null){
-            return "로그인 하지 않음";
+            return "로그인 해 주세요";
         }else{
             String mem_id= (String) session.getAttribute("MEM_ID");
             StringBuilder folderNameBuffer = new StringBuilder();
@@ -129,8 +134,9 @@ public class ReviewController {
             String folderName = folderNameBuffer.toString();
             String bucketName = "miniproject";
             String fileName = objectStorageService.uploadFile(bucketName,folderName,file);
+            String resultUrl =folderName+fileName;
 
-            return folderName+fileName;
+            return resultUrl;
         }
     }
 
@@ -179,13 +185,13 @@ public class ReviewController {
         Map<String,Object> reviewViewMap = new HashMap<String,Object>();
         ReviewDTO reviewDTO = reviewService.getReviewView(no);
         List<CommentDTO> commentList = reviewService.getCommentList(no);
-        System.out.println("ReviewController.getReviewView");
+
 
 
         int prevViewNo = reviewService.getPrevView(no);
-        System.out.println(prevViewNo);
+
         int nextViewNo = reviewService.getNextView(no);
-        System.out.println(nextViewNo);
+
 
         if(session.getAttribute("MEM_ID")==null){
             reviewViewMap.put("isLogin","false");

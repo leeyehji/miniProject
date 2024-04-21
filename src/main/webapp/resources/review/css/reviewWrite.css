@@ -4,18 +4,26 @@
 	display: block;
 	clear: both;
 }
-
+#frameNav{
+	border:none;
+}
 #reviewWriteMain {
-	width: 1200px;
-	min-width:1200px;
+	width: 1000px;
+	min-width:1000px;
 	border-radius: 25px;
 	padding: 30px;
 	border:#CAE9FF solid 3px;
 	background-color: white;
+	text-align: center;
+	margin-left: 60px;
 }
 
 #reviewWriteMain table {
 	width: 100%;
+	margin: 0 auto;
+}
+#reviewWriteForm{
+	margin:0 auto;
 }
 
 #reviewWriteMain td {
@@ -53,6 +61,11 @@
 	font-size: 20px;
 	font-style: italic;
 	cursor: pointer;
+	transition: all 0.3s ease 0s;
+}
+#reviewListWriteBtn:hover {
+	background-color: #CAE9FF; /* 호버 시 배경색 변경 */
+	color: white; /* 호버 시 텍스트 색상 변경 */
 }
 
 #reviewWriteMain tr:last-child td {

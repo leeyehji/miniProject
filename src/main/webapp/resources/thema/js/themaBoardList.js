@@ -57,8 +57,8 @@ function themaBoardListDivForm(imageUrl,title,text,address,sido,cat1,cat2,cat3,c
     });
 
     verticalContainer.append(themaTitle).append(`<br>`)
-        .append(themaText).append(`<br>`)
         .append(themaAddress).append(`<br>`)
+        .append(themaText).append(`<br>`)
         .append(themaHashTag);
 
     themaBoard.append(themaBoardImg).append(verticalContainer);
@@ -131,10 +131,15 @@ $(function () {
 
         $('#cat1').empty();
         $('#cat1').append(`<option value="">대분류 선택</opntion>`);
+        $('#cat1').removeClass("selected");
         $('#cat2').empty();
         $('#cat2').append(`<option value="">중분류 선택</opntion>`);
+        $('#cat2').removeClass("selected");
         $('#cat3').empty();
         $('#cat3').append(`<option value="">소분류 선택</opntion>`);
+        $('#cat3').removeClass("selected");
+
+        $('#contentTypeId').addClass("selected");
 
         let typeId = $('#contentTypeId').find('option:selected').attr('value');
         depthArr = [typeId];
@@ -147,8 +152,12 @@ $(function () {
 
         $('#cat2').empty();
         $('#cat2').append(`<option value="">중분류 선택</opntion>`);
+        $('#cat2').removeClass("selected");
         $('#cat3').empty();
         $('#cat3').append(`<option value="">소분류 선택</opntion>`);
+        $('#cat3').removeClass("selected");
+
+        $('#cat1').addClass("selected");
 
         let typeId = $('#contentTypeId').find('option:selected').attr('value');
         let cat1 = $(this).find('option:selected').attr('value');
@@ -162,6 +171,9 @@ $(function () {
 
         $('#cat3').empty();
         $('#cat3').append(`<option value="">소분류 선택</opntion>`);
+        $('#cat3').removeClass("selected");
+
+        $('#cat2').addClass("selected");
 
         let typeId = $('#contentTypeId').find('option:selected').attr('value');
         let cat1 =$('#cat1').find('option:selected').attr('value');
@@ -177,6 +189,8 @@ $(function () {
         let cat1 =$('#cat1').find('option:selected').attr('value');
         let cat2 = $('#cat2').find('option:selected').attr('value');
         let cat3 = $('#cat3').find('option:selected').attr('value');
+
+        $('#cat3').addClass("selected");
 
         depthArr = [typeId, cat1,cat2,cat3];
         $('#themaBoardContentConsole').empty();

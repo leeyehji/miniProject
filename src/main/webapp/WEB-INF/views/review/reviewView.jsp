@@ -47,7 +47,7 @@
                     </p>
 
                 </div>
-                <hr>
+
                 <div id="reviewContent">
 
 
@@ -73,14 +73,13 @@
 
             <div id="reviewComment" style="background-color: white;">
 
-                <p>&emsp;&emsp;&emsp;댓글</p>
-                <hr>
+                <p>&emsp;&emsp;&emsp;&emsp;댓글</p>
                 <div id="commentWrite">
                     <textarea id="commentText" name="C_CONTENT" cols="30" rows="5"
-                              placeholder="댓글을 작성해 주세요."></textarea>
+                              placeholder="여기에 작성해 주세요."></textarea>
                     <input type="button" id="commentBtn" value="댓글 작성">
                 </div>
-                <hr>
+
                 <div id="commentConsole" >
                     <table id="commentTable" >
 

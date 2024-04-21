@@ -17,6 +17,11 @@
 
 
     <style>
+        #observer {
+            text-align: left;
+            margin-top: 50px;
+        }
+        /*이전 이후 button*/
     </style>
 </head>
 

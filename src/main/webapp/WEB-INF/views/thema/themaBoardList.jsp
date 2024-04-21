@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>테마별 여행지</title>
 
     <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -24,7 +24,8 @@
                 <div id="title">테마여행 소개</div>
 
                 <div id="themaDataList">
-                    <label for="contentTypeId">테마 선택</label>
+                    <p style="text-align: left">&emsp;&emsp;&emsp;원하는 테마를 선택하세요</p>
+                    <label for="contentTypeId"></label>
                     <select id="contentTypeId">
                         <option value="">테마 선택</option>
                         <option class="contentTypeId" value="12">관광지</option>
@@ -35,15 +36,15 @@
                         <option class="contentTypeId" value="38">쇼핑</option>
                         <option class="contentTypeId" value="39">음식</option>
                     </select>
-                    <label for="cat1">대분류</label>
+                    <label for="cat1"></label>
                     <select id="cat1">
                         <option>대분류 선택</option>
                     </select>
-                    <label for="cat2">중분류</label>
+                    <label for="cat2"></label>
                     <select id="cat2">
                         <option>중분류 선택</option>
                     </select>
-                    <label for="cat1">소분류</label>
+                    <label for="cat1"></label>
                     <select id="cat3">
                         <option>소분류 선택</option>
                     </select>

@@ -21,7 +21,7 @@ function inputData(themaDTO) {
     $('#detailTitle h5').text(themaDTO.t_ADDRESS);
     $('#detailTitle h3').text("임시 정보");
     $('#detailImg img').attr("src", themaDTO.t_MAIN_IMAGE);
-    $('#detailContents').html(themaDTO.t_INFORMATION);
+    $('#detailContents').html("&emsp;"+themaDTO.t_INFORMATION);
     $('#detailInfo #homepage').html(themaDTO.t_HOMEPAGE);
     $('#detailInfo #phone').text(themaDTO.t_PHONE);
     $('#detailFoot #view span').text(themaDTO.t_VIEW);
