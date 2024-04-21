@@ -17,7 +17,7 @@
 <body>
 <div id="regist_wrap" class="wrap">
     <div>
-        <h1>회원가입</h1>
+        <h1>nadeuli</h1>
         <!-- 변경된 부분: 회원가입 폼의 action 속성 -->
         <form  method="post" name="regiform" id="regist_form" class="form" onsubmit="return sendit()">
             <p><input type="text" name="MEM_ID" id="MEM_ID"  placeholder="아이디 입력" onblur="checkId()"></p>
@@ -25,11 +25,16 @@
 
             <p><input type="password" name="MEM_PW" id="MEM_PW" placeholder="비밀번호"></p>
             <p><input type="password" name="MEM_PW_CH" id="MEM_PW_CH" placeholder="비밀번호 확인"></p>
+            <span id="passwordError"></span>
 
             <p><input type="text" name="MEM_NAME" id="MEM_NAME" placeholder="이름 입력"></p>
+            <span id="nameError"></span>
 
             <p><input type="text" name="MEM_PHONE" id="MEM_PHONE" placeholder="전화번호 입력해주세요"></p>
+            <span id="phoneError"></span>
+
             <p><input type="text" name="MEM_EMAIL" id="MEM_EMAIL" placeholder="E-mail" > </p>
+            <span id="emailError"></span>
 
             <p><input type="button" value="이메일 확인" id="check" class="checkEmail" name="checkEmail" onclick="mailAuth()" > </p>
 

@@ -15,8 +15,7 @@ function lostPwd() {
         verification:verification
 
     };
-console.log("111111")
-    console.log(MEM_PHONE)
+
     // AJAX 요청 보내기
     $.ajax({
         type: 'POST',
@@ -29,7 +28,6 @@ console.log("111111")
         },
         error: function(xhr, status, error) {
             // 서버로부터 오류 응답을 받았을 때의 처리
-            alert('오류가 발생했습니다.');
         }
     });
 }

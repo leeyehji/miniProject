@@ -7,6 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 @Service
 
 public class MemberServiceImpl implements MemberService {
@@ -14,6 +17,14 @@ public class MemberServiceImpl implements MemberService {
     @Autowired
     private  MemberRepository memberRepository;
 
+    private static final String EMAIL_PATTERN =
+            "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+
+    public static boolean validateEmail(String email) {
+        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
 
     /*로그인 구현 */
     @Override
@@ -47,11 +58,31 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public boolean memberJoin(MemberRequestDTO memberRequestDTO) {
 
-        if(memberRequestDTO .getMEM_PW()!= null){
-            memberRepository.memberJoin(memberRequestDTO);
-            return true;
-        }
-        return false;
+//        if(memberRequestDTO .getMEM_PW()!= null){
+//            memberRepository.memberJoin(memberRequestDTO);
+//            return true;
+//        }
+//        return false;
+
+        if (memberRequestDTO.getMEM_PW() == null ||
+                memberRequestDTO.getMEM_NAME() == null ||
+                memberRequestDTO.getMEM_PHONE() == null ||
+                memberRequestDTO.getMEM_EMAIL() == null ||
+                memberRequestDTO.getMEM_ID() == null ) {
+            return false;
+        }else if (memberRequestDTO.getMEM_EMAIL().trim().isEmpty() ||
+                memberRequestDTO.getMEM_ID().trim().isEmpty()||
+                memberRequestDTO.getMEM_NAME().trim().isEmpty()||
+                memberRequestDTO.getMEM_PHONE().trim().isEmpty()){
+            return false;
+        }else if (memberRequestDTO.getMEM_NAME().length()<3){
+            return false;
+        }else if(memberRequestDTO.getMEM_PW().length()<=6){
+            return false;
+        }else if (!validateEmail(memberRequestDTO.getMEM_EMAIL())) {
+            return false;
+        }else return true;
+
     }
     /*이메일 유효성 검사 */
     @Override

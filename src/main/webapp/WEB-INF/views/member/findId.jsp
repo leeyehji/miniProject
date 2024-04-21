@@ -12,10 +12,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/member/css/findId.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="findId.jsp"></script>
     <script defer src="/member/js/lostId.js"></script>
+    <link rel="stylesheet" href="../../../resources/member/css/findId.css"/>
+
 </head>
 <body>
 <div id="regist_wrap" class="wrap">
@@ -27,12 +28,13 @@
 
             <p><input type="button" value="아이디찾기" id="lostId" class="signup_btn" onclick="lostId()" ></p>
             <span id="result"></span>
-        </form>
-        <p class="pre_btn" id="befor">
-            <a href="/member/loginForm">Login</a>/
-            <a href="/">Home</a>
 
-        </p>
+            <p class="pre_btn" id="befor">
+                <a href="/member/loginForm">Login</a>/
+                <a href="/">Home</a>
+            </p>
+        </form>
+
     </div>
 </div>
 </body>

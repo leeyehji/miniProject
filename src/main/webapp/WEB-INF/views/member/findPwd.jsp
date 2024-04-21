@@ -31,7 +31,6 @@
             <p><input type="text" name="verification" id="verification" placeholder="인증번호 입력해주세요"></p>
             <p><input type="button" id="verificationBtn" value="인증확인하기" onclick="lostPwd()"></p>
 
-            <p><input type="button" value="비밀번호 찾기" class="signup_btn" onclick=""></p>
             <p class="pre_btn">
                 <a href="/member/loginForm">Login</a>  /
                 <a href="/">Home</a>
