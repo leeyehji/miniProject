@@ -46,9 +46,10 @@
     <tr>
         <th align="center" style="color: whitesmoke">역할</th>
         <td align="center"><strong style="color: white">프론트엔드</strong>
-                                <br>
+                                <br>마이페이지/캘린더
                                 <br><strong style="color: white">백엔드</strong>
-                                <br>
+                                <br>마이페이지/캘린더
+                                <br>메인페이지(도표)
         </td>
         <td align="center"><strong style="color: white">프론트엔드</strong>
                                 <br>상세정보/후기/테마 페이지
