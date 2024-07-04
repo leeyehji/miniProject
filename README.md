@@ -1,9 +1,9 @@
 # 국내 관광지 소개 웹페이지, 나들이
 
 -----------------
+![MainPage](https://github.com/leeyehji/miniProject/assets/65521821/705b6f8f-a535-4bd4-a1d0-f4791913e803)
 
 <p align="center">
-    ![MainPage](https://github.com/leeyehji/miniProject/assets/65521821/705b6f8f-a535-4bd4-a1d0-f4791913e803)
     <sup><a href="http:/223.130.130.226:8090/" target="_blank">Nadeuli 메인페이지</a></sup>
 </p>
 
@@ -101,49 +101,56 @@
 ## 주요기능
 
 - <h3>네이버 지도와 공공데이터를 활용한 관광지 탐색 기능</h3>
+![MapGuide](https://github.com/leeyehji/miniProject/assets/65521821/8bcf05fe-9815-4c3e-b5a1-de36da06edc7)
 <p align="center">
-    ![MapGuide](https://github.com/leeyehji/miniProject/assets/65521821/8bcf05fe-9815-4c3e-b5a1-de36da06edc7)
     <sup style="color:#0AC5A8; font-weight: bolder;">- 여행지 안내문 -</sup>
 </p>
+
+![Seoul](https://github.com/leeyehji/miniProject/assets/65521821/2b057241-afd7-48e8-a585-071e)
 <p align="center">
-    ![Seoul](https://github.com/leeyehji/miniProject/assets/65521821/2b057241-afd7-48e8-a585-071e)
     <sup style="color:#0AC5A8; font-weight: bolder;">- 서울 지도 -</sup>
 </p>
+
+![MapMarker](https://github.com/leeyehji/miniProject/assets/65521821/f624aebc-6885-40ec-811b-0cb299f6d428)
 <p align="center">
-    ![MapMarker](https://github.com/leeyehji/miniProject/assets/65521821/f624aebc-6885-40ec-811b-0cb299f6d428)
     <sup style="color:#0AC5A8; font-weight: bolder;">- 각 테마 클릭에 따른 마커/정보창 표시 -</sup>
 </p>
+
+![MapDetail](https://github.com/leeyehji/miniProject/assets/65521821/fea50d40-5f3d-4377-b04b-026e310de042)
 <p align="center">
-    ![MapDetail](https://github.com/leeyehji/miniProject/assets/65521821/fea50d40-5f3d-4377-b04b-026e310de042)
     <sup style="color:#0AC5A8; font-weight: bolder;">- 정보창에서 이동 가능한 상세 정보창 -</sup>
 </p>
 
 - <h3>테마 태그를 이용한 관광지 탐색 기능</h3>
 <p>DB에 저장된 TOUR API의 관광지 정보를 사용자의 태그선택에 따라 출력</p>
+
+ ![ThemeTag](https://github.com/leeyehji/miniProject/assets/65521821/5be7b130-b3f3-4140-8079-f345d5eaae9a)
 <p align="center">
-    ![ThemeTag](https://github.com/leeyehji/miniProject/assets/65521821/5be7b130-b3f3-4140-8079-f345d5eaae9a)
     <sup style="color:#0AC5A8; font-weight: bolder;">- 7가지 테마에 따른 각기 다른 정보 출력 -</sup>
 </p>
+
+![ThemeDetail1](https://github.com/leeyehji/miniProject/assets/65521821/95c239d7-e38b-402d-9a02-ec3995138b78)
+![ThemeDetail2](https://github.com/leeyehji/miniProject/assets/65521821/858b3698-2704-45ef-b493-880ae58e0b12)
 <p align="center">
-    ![ThemeDetail1](https://github.com/leeyehji/miniProject/assets/65521821/95c239d7-e38b-402d-9a02-ec3995138b78)
-    ![ThemeDetail2](https://github.com/leeyehji/miniProject/assets/65521821/858b3698-2704-45ef-b493-880ae58e0b12)
     <sup style="color:#0AC5A8; font-weight: bolder;">- 테마 검색 결과에서 이동 가능한 상세 정보창 -</sup>
 </p>
 
 - <h3>사용자 편의성과 심미성을 갖춘 리뷰 작성 기능</h3>
+
+![ReviewWrite](https://github.com/leeyehji/miniProject/assets/65521821/591840fa-5fdb-4c02-8fa7-59f5195eb835)
 <p align="center">
-    ![ReviewWrite](https://github.com/leeyehji/miniProject/assets/65521821/591840fa-5fdb-4c02-8fa7-59f5195eb835)
     <sup style="color:#0AC5A8; font-weight: bolder;">- wizwig 에디터를 이용한 리뷰 작성 -</sup>
 </p>
+
+![ReviewList](https://github.com/leeyehji/miniProject/assets/65521821/834a2e98-f52b-4729-927f-b8b0dd6905f1)
 <p align="center">
-    ![ReviewList](https://github.com/leeyehji/miniProject/assets/65521821/834a2e98-f52b-4729-927f-b8b0dd6905f1)
     <sup style="color:#0AC5A8; font-weight: bolder;">- NCP Object Storage를 활용하여 사용자의 File을 저장, 후기 리스트 출력 -</sup>
 </p>
 
 - <h3>사용자 전용 캘린더 기능</h3>
 <p align="center">
-    ![calendarBig](https://github.com/leeyehji/miniProject/assets/65521821/db5d8658-c57b-4c3f-8d82-d38b13223baa)
-    ![calendarModal](https://github.com/leeyehji/miniProject/assets/65521821/b848f96c-2c02-4caf-a922-fb14bad36665)
+    <img src ="https://github.com/leeyehji/miniProject/assets/65521821/db5d8658-c57b-4c3f-8d82-d38b13223baa" alt = "calendarBig"><br>
+    <img src ="https://github.com/leeyehji/miniProject/assets/65521821/b848f96c-2c02-4caf-a922-fb14bad36665" alt = "calendarModal"><br>
     <sup style="color:#0AC5A8; font-weight: bolder;">- 캘린더 페이지에서 모달을 통한 일정 작성 및 수정, 상세 일정 확인 -</sup>
 </p>
 -----------------
@@ -199,16 +206,16 @@
 <p>프로젝트에 대한 이해도가 충분하다면 계층형보다 빠르고 쉽게 구조를 파악할 수 있습니다.</p> 
 <p>구체적인 구조는 다음과 같습니다.</p>
 
+![DDD (2)](https://github.com/leeyehji/miniProject/assets/65521821/d69b5260-5d3f-4f79-a496-d0c137b96b3a)
 <p align="center">
-  ![DDD (2)](https://github.com/leeyehji/miniProject/assets/65521821/d69b5260-5d3f-4f79-a496-d0c137b96b3a)
   <sup style="color:#0AC5A8; font-weight: bolder;">- 도메인 구조 -</sup>
 </p>
 
 ### **2.FLOWCHART**
 
 <p>애플리케이션의 전체적인 흐름을 나타내는 FLOWCHART입니다. 사용자의 요청을 받아 처리하는 과정과 데이터베이스와의 상호작용을 시각적으로 표현하였습니다.</p>
-![flowChart](https://github.com/leeyehji/miniProject/assets/65521821/57ddef94-e62f-4560-a332-c9f05306ad23)
 
+![flowChart](https://github.com/leeyehji/miniProject/assets/65521821/57ddef94-e62f-4560-a332-c9f05306ad23)
 <p align="center">
     <sup style="color:#0AC5A8; font-weight: bolder;">- FLOWCHART -</sup>
 </p>
@@ -216,25 +223,27 @@
 ### **DB Diagram**
 <p>사용한 데이터베이스는 MySQL 데이터베이스이며, 네이버 클라우드 플랫폼을 이용하여 MySQL 데이터 베이스를 만들어 유저 정보, 관광지 정보 등을 저장하였습니다.</p>
 <p>데이터 베이스는 엑셀 및 DB diagram을 만들어 각 테이블의 구조를 직관적으로 확인할 수 있도록 하였습니다.</p>
+
+![DBDiagram](https://github.com/leeyehji/miniProject/assets/65521821/83d68e74-1db1-43e4-a8c5-55d0d43b6b5b)
 <p align="center">
-    ![DBDiagram](https://github.com/leeyehji/miniProject/assets/65521821/83d68e74-1db1-43e4-a8c5-55d0d43b6b5b)
     <sup style="color:#0AC5A8; font-weight: bolder;">- DB Diagram -</sup>
 </p>
 
 ### **4.테이블 정의서**
 
 <p>데이터베이스의 각 테이블에 대한 정의서입니다. 테이블 명칭, 컬럼명, 데이터 타입, 제약조건 등의 정보를 상세히 기술하였습니다.</p>
+
+![DBTableDefMem](https://github.com/leeyehji/miniProject/assets/65521821/9578278b-2323-42bc-88d0-6f2242fee652)
+![DBTableDefTravel](https://github.com/leeyehji/miniProject/assets/65521821/efdaacd2-f73c-49d6-8eb0-44d3f9f1ef78)
 <p align="center">
-    ![DBTableDefMem](https://github.com/leeyehji/miniProject/assets/65521821/9578278b-2323-42bc-88d0-6f2242fee652)
-    ![DBTableDefTravel](https://github.com/leeyehji/miniProject/assets/65521821/efdaacd2-f73c-49d6-8eb0-44d3f9f1ef78)
     <sup style="color:#0AC5A8; font-weight: bolder;">- DB Table Def -</sup>
 </p>
 
 ### **5.클래스 Diagram**
 
 <p>애플리케이션의 클래스 구조를 나타내는 다이어그램입니다. 각 클래스 간의 관계와 메서드, 속성 등을 시각적으로 표현하였습니다.</p>
+
+![classDiagram](https://github.com/leeyehji/miniProject/assets/65521821/b88ed790-3817-4983-a329-34f843526cc0)
 <p align="center">
-    ![classDiagram](https://github.com/leeyehji/miniProject/assets/65521821/b88ed790-3817-4983-a329-34f843526cc0)
-7ded4da3)<br>
     <sup style="color:#0AC5A8; font-weight: bolder;">- Class Diagram -</sup>
 </p>
