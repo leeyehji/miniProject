@@ -106,7 +106,7 @@
     <sup style="color:#0AC5A8; font-weight: bolder;">- 여행지 안내문 -</sup>
 </p>
 
-![Seoul](https://github.com/leeyehji/miniProject/assets/65521821/2b057241-afd7-48e8-a585-071e)
+![Seoul](https://github.com/leeyehji/miniProject/assets/65521821/57cf6909-97fb-4aa6-b088-71b383fdb5f9)
 <p align="center">
     <sup style="color:#0AC5A8; font-weight: bolder;">- 서울 지도 -</sup>
 </p>
@@ -153,6 +153,7 @@
     <img src ="https://github.com/leeyehji/miniProject/assets/65521821/b848f96c-2c02-4caf-a922-fb14bad36665" alt = "calendarModal"><br>
     <sup style="color:#0AC5A8; font-weight: bolder;">- 캘린더 페이지에서 모달을 통한 일정 작성 및 수정, 상세 일정 확인 -</sup>
 </p>
+
 -----------------
 
 ## 개발환경
@@ -190,14 +191,29 @@
 
 - 2024.03.29 ~ 2024.04.21
   ![projectPlan0](https://github.com/leeyehji/miniProject/assets/65521821/370f7cc7-415b-48e4-a235-29945d04bcf7)
+  <p align="center">
+    <sup style="color:#0AC5A8; font-weight: bolder;">- 전체 개발 일정 -</sup>
+  </p>
+  
   ![projectPlan1](https://github.com/leeyehji/miniProject/assets/65521821/c3b2f7bc-0ab0-47a9-a723-4f50ed401930)
+  <p align="center">
+    <sup style="color:#0AC5A8; font-weight: bolder;">- 프로젝트 도구 결정 및 퍼블리싱 -</sup>
+  </p>
+  
   ![projectPlan2](https://github.com/leeyehji/miniProject/assets/65521821/362e72c9-548f-4af8-b584-bbb91ba29cf8)
+  <p align="center">
+    <sup style="color:#0AC5A8; font-weight: bolder;">- 프론트 및 백엔드 개발 -</sup>
+  </p>
+  
   ![projectPlan3](https://github.com/leeyehji/miniProject/assets/65521821/a8713028-6345-4668-aa76-117880745e14)
+  <p align="center">
+    <sup style="color:#0AC5A8; font-weight: bolder;">- 프로젝트 마무리 -</sup>
+  </p>
 -----------------
 
 ## 문서
 
-### **디렉토리 구조**
+### **1. 디렉토리 구조**
 
 <p>스프링 디렉토리 구조는 크게 계층형과 도메인 구조로 나눌 수 있습니다.</p> 
 <p>계층형은 프로젝트의 이해도가 낮더라도 전체적인 구조를 빠르게 파악할 수 있다는 장점이 있습니다.</p> 
@@ -211,7 +227,7 @@
   <sup style="color:#0AC5A8; font-weight: bolder;">- 도메인 구조 -</sup>
 </p>
 
-### **2.FLOWCHART**
+### **2. FLOWCHART**
 
 <p>애플리케이션의 전체적인 흐름을 나타내는 FLOWCHART입니다. 사용자의 요청을 받아 처리하는 과정과 데이터베이스와의 상호작용을 시각적으로 표현하였습니다.</p>
 
@@ -220,7 +236,7 @@
     <sup style="color:#0AC5A8; font-weight: bolder;">- FLOWCHART -</sup>
 </p>
 
-### **DB Diagram**
+### **3. DB Diagram**
 <p>사용한 데이터베이스는 MySQL 데이터베이스이며, 네이버 클라우드 플랫폼을 이용하여 MySQL 데이터 베이스를 만들어 유저 정보, 관광지 정보 등을 저장하였습니다.</p>
 <p>데이터 베이스는 엑셀 및 DB diagram을 만들어 각 테이블의 구조를 직관적으로 확인할 수 있도록 하였습니다.</p>
 
@@ -229,7 +245,7 @@
     <sup style="color:#0AC5A8; font-weight: bolder;">- DB Diagram -</sup>
 </p>
 
-### **4.테이블 정의서**
+### **4. 테이블 정의서**
 
 <p>데이터베이스의 각 테이블에 대한 정의서입니다. 테이블 명칭, 컬럼명, 데이터 타입, 제약조건 등의 정보를 상세히 기술하였습니다.</p>
 
@@ -239,7 +255,7 @@
     <sup style="color:#0AC5A8; font-weight: bolder;">- DB Table Def -</sup>
 </p>
 
-### **5.클래스 Diagram**
+### **5. 클래스 Diagram**
 
 <p>애플리케이션의 클래스 구조를 나타내는 다이어그램입니다. 각 클래스 간의 관계와 메서드, 속성 등을 시각적으로 표현하였습니다.</p>
 
